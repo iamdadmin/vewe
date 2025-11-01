@@ -1,0 +1,40 @@
+{
+  "name": "vewe/styled",
+  "description": "Vewe Styled UI Components",
+  "keywords": [
+    "components",
+    "ui",
+    "styled",
+    "tempestphp",
+    "tempest",
+    "vewe"
+  ],
+  "homepage": "https://github.com/iamdadmin/vewe",
+  "support": {
+    "issues": "https://github.com/iamdadmin/vewe/issues",
+    "source": "https://github.com/iamdadmin/vewe/"
+  },
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "iamdadmin",
+      "email": "no@email.yet"
+    }
+  ],
+  "require": {
+    "php": "^8.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vewe\\Styled\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vewe\\Styled\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

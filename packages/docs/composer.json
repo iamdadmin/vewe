@@ -1,0 +1,32 @@
+{
+  "name": "vewe/docs",
+  "description": "Vewe UI Components Documentation",
+  "homepage": "https://github.com/iamdadmin/vewe",
+  "support": {
+    "issues": "https://github.com/iamdadmin/vewe/issues",
+    "source": "https://github.com/iamdadmin/vewe/"
+  },
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "iamdadmin",
+      "email": "no@email.yet"
+    }
+  ],
+  "require": {
+    "php": "^8.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vewe\\Docs\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vewe\\Docs\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
