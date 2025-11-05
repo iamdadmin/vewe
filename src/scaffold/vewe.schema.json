@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "vewe api schema v1",
+  "type": "object",
+  "required": [
+    "$schema",
+    "version",
+    "generated_at",
+    "package",
+    "components"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "package": {
+      "type": "string"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "component",
+          "fqcn",
+          "source_path",
+          "ancestry",
+          "primitives_used",
+          "flat_attributes",
+          "slots",
+          "emits",
+          "html_blueprint",
+          "notes",
+          "conflicts",
+          "template"
+        ],
+        "properties": {
+          "component": {
+            "type": "string"
+          },
+          "fqcn": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": "string"
+          },
+          "ancestry": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "primitives_used": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "flat_attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "type",
+                "required",
+                "default"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "default": {},
+                "enum": {
+                  "type": "array",
+                  "items": {}
+                },
+                "from_ancestor": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "conflicts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "provenance": {
+                  "type": "object",
+                  "required": [
+                    "nearest_owner",
+                    "earliest_owner",
+                    "lineage",
+                    "leaf_redeclared",
+                    "changed"
+                  ],
+                  "properties": {
+                    "nearest_owner": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "earliest_owner": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "lineage": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "leaf_redeclared": {
+                      "type": "boolean"
+                    },
+                    "changed": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "slots": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "required"
+              ],
+              "properties": {
+                "required": {
+                  "type": "boolean"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "emits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "html_blueprint": {
+            "type": "object",
+            "required": [
+              "root",
+              "parts"
+            ],
+            "properties": {
+              "root": {
+                "type": "object",
+                "required": [
+                  "tag",
+                  "attributes"
+                ],
+                "properties": {
+                  "tag": {
+                    "type": "string"
+                  },
+                  "attributes": {
+                    "type": "object"
+                  }
+                }
+              },
+              "parts": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "required": [
+                    "tag",
+                    "attributes"
+                  ],
+                  "properties": {
+                    "tag": {
+                      "type": "string"
+                    },
+                    "attributes": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "conflicts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
