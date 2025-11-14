@@ -6,8 +6,8 @@ declare(strict_types=1);
 
 $scripts = [
     //'1-unzip.php',
-    //'2-glob.php',
-    '3-scrape.php',
+    '2-glob.php',
+    //'3-scrape.php',
 ];
 
 foreach ($scripts as $scriptName) {
