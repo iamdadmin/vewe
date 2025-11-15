@@ -18,7 +18,7 @@ foreach ($mdFiles as $file) {
     if (!is_file($file)) continue;
 
     // for debugging, only process this file
-    if (strpos($file, 'DateFieldRoot') === false) continue;
+    // if (strpos($file, 'DateFieldRoot') === false) continue;
 
     // Get extension and file name
     $ext = pathinfo($file, PATHINFO_EXTENSION);
@@ -47,16 +47,13 @@ foreach ($mdFiles as $file) {
     // Programmatically find all JSON stringified data
     preg_match_all("/<([A-Za-z]+)Table\s+:data=\"(.*?)\"\s*\/?>/s", $content, $matches, PREG_SET_ORDER);
 
-    // write to temp.log for debugging
-    exit(print_r($matches, true));
-
     if (empty($matches)) continue;
 
     foreach ($matches as $m) {
         // $m[1] is tag prefix like Props, Emits, Slots
         // $m[2] is the raw attribute content
         $tag = strtolower($m[1]);           // e.g. props, emits, slots
-        $raw = $m[2];
+        $raw = "[" . $m[2] . "]";
 
         // Replace unescaped single quotes used as delimiters with double quotes
         $data = preg_replace("/(?<!\\\\)'/", '"', $raw);
@@ -64,35 +61,23 @@ foreach ($mdFiles as $file) {
         // Try to decode to PHP array
         $data = json_decode($data, true);
 
-        // Fallback: try a simpler replace of all single quotes -> double quotes
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            $altData = str_replace("'", '"', $raw);
-            $data = json_decode($altData, true);
-        }
-
-        // Final fallback: keep as decoded string if JSON parse still fails
-        $extractedData = (json_last_error() === JSON_ERROR_NONE && $data !== null) ? $data : $raw;
-
-        print_r($extractedData);
-
         // Explode pipe-separated fake arrays into proper arrays, dynamically
-        foreach ($extractedData as $eDKey => $eDVal) {
+        foreach ($data as $eDKey => $eDVal) {
             foreach ($eDVal as $key => $val) {
                 // Only process string values
                 if (!is_string($val)) continue;
-
+                
+                // Split stringified arrays denoted by pipe
                 if (strpos($val, " | ") !== false) {
                     $explode = explode(" | ", $val);
-                    $extractedData[$eDKey][$key] = array_map('trim', $explode);
+                    $data[$eDKey][$key] = array_map('trim', $explode);
                 }
             }
         }
-        print_r($extractedData);
-        exit("pause for debug\n");
 
         // store under the filename key and the tag (props/emits/slots)
         if (!isset($result[$basename])) $result[$basename] = new stdClass(); // keep object style
-        $result[$basename]->{$tag} = $value;
+        $result[$basename]->{$tag} = $data;
     }
 }
 
