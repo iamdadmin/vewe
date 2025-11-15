@@ -7,7 +7,8 @@ declare(strict_types=1);
 $scripts = [
     //'1-unzip.php',
     //'2-glob-meta.php',
-    '3-glob-components.php',
+    '3-glob-more-meta.php',
+    //'4-glob-components.php',
 ];
 
 foreach ($scripts as $scriptName) {
