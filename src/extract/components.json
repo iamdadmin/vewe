@@ -1,0 +1,2604 @@
+{
+    "Accordion": {
+        "title": "Accordion",
+        "description": "A vertically stacked set of interactive headings that each reveal an associated section of content.",
+        "name": "accordion",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion",
+        "anatomy": [
+            {
+                "tag": "AccordionRoot",
+                "children": [
+                    {
+                        "tag": "AccordionItem",
+                        "children": [
+                            {
+                                "tag": "AccordionHeader",
+                                "children": [
+                                    {
+                                        "tag": "AccordionTrigger",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "AccordionContent",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "When focus is on an <code>AccordionTrigger</code> of a collapsed section, expands the section."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "When focus is on an <code>AccordionTrigger</code> of a collapsed section, expands the section."
+            },
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Moves focus to the next focusable element."
+            },
+            {
+                "keys": [
+                    "Shift + Tab"
+                ],
+                "description": "Moves focus to the previous focusable element."
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "Moves focus to the next <code>AccordionTrigger</code> when <code>orientation</code> is <code>vertical</code>."
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "Moves focus to the previous <code>AccordionTrigger</code> when <code>orientation</code> is <code>vertical</code>."
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "Moves focus to the next <code>AccordionTrigger</code> when <code>orientation</code> is <code>horizontal</code>."
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "Moves focus to the previous <code>AccordionTrigger</code> when <code>orientation</code> is <code>horizontal</code>."
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "When focus is on an <code>AccordionTrigger</code>, moves focus to the start <code>AccordionTrigger</code>."
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "When focus is on an <code>AccordionTrigger</code>, moves focus to the last <code>AccordionTrigger</code>."
+            }
+        ]
+    },
+    "AlertDialog": {
+        "title": "Alert Dialog",
+        "description": "A modal dialog that interrupts the user with important content and expects a response.",
+        "name": "alert-dialog",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog",
+        "anatomy": [
+            {
+                "tag": "AlertDialogRoot",
+                "children": [
+                    {
+                        "tag": "AlertDialogTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "AlertDialogPortal",
+                        "children": [
+                            {
+                                "tag": "AlertDialogOverlay",
+                                "children": []
+                            },
+                            {
+                                "tag": "AlertDialogContent",
+                                "children": [
+                                    {
+                                        "tag": "AlertDialogTitle",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "AlertDialogDescription",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "AlertDialogCancel",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "AlertDialogAction",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Opens/closes the dialog."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Opens/closes the dialog."
+            },
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Moves focus to the next focusable element."
+            },
+            {
+                "keys": [
+                    "Shift + Tab"
+                ],
+                "description": "Moves focus to the previous focusable element."
+            },
+            {
+                "keys": [
+                    "Esc"
+                ],
+                "description": "Closes the dialog and moves focus to <Code>AlertDialogTrigger</code>."
+            }
+        ]
+    },
+    "AspectRatio": {
+        "title": "Aspect Ratio",
+        "description": "Displays content within a desired ratio.",
+        "name": "aspect-ratio",
+        "anatomy": [
+            {
+                "tag": "AspectRatio",
+                "children": []
+            }
+        ]
+    },
+    "Avatar": {
+        "title": "Avatar",
+        "description": "An image element with a fallback for representing the user.",
+        "name": "avatar",
+        "anatomy": [
+            {
+                "tag": "AvatarRoot",
+                "children": [
+                    {
+                        "tag": "AvatarImage",
+                        "children": []
+                    },
+                    {
+                        "tag": "AvatarFallback",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "Calendar": {
+        "title": "Calendar",
+        "description": "Displays dates and days of the week, facilitating date-related interactions.",
+        "name": "calendar",
+        "anatomy": [
+            {
+                "tag": "CalendarRoot",
+                "children": [
+                    {
+                        "tag": "CalendarHeader",
+                        "children": [
+                            {
+                                "tag": "CalendarPrev",
+                                "children": []
+                            },
+                            {
+                                "tag": "CalendarHeading",
+                                "children": []
+                            },
+                            {
+                                "tag": "CalendarNext",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "CalendarGrid",
+                        "children": [
+                            {
+                                "tag": "CalendarGridHead",
+                                "children": [
+                                    {
+                                        "tag": "CalendarGridRow",
+                                        "children": [
+                                            {
+                                                "tag": "CalendarHeadCell",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "CalendarGridBody",
+                                "children": [
+                                    {
+                                        "tag": "CalendarGridRow",
+                                        "children": [
+                                            {
+                                                "tag": "CalendarCell",
+                                                "children": [
+                                                    {
+                                                        "tag": "CalendarCellTrigger",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Checkbox": {
+        "title": "Checkbox",
+        "description": "A control that allows the user to toggle between checked and not checked.",
+        "name": "checkbox",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/checkbox",
+        "anatomy": [
+            {
+                "tag": "CheckboxRoot",
+                "children": [
+                    {
+                        "tag": "CheckboxIndicator",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "tag": "CheckboxGroupRoot",
+                "children": [
+                    {
+                        "tag": "CheckboxRoot",
+                        "children": [
+                            {
+                                "tag": "CheckboxIndicator",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Checks/unchecks the checkbox"
+            }
+        ]
+    },
+    "Collapsible": {
+        "title": "Collapsible",
+        "description": "An interactive component which expands/collapses a panel.",
+        "name": "collapsible",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure",
+        "anatomy": [
+            {
+                "tag": "CollapsibleRoot",
+                "children": [
+                    {
+                        "tag": "CollapsibleTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "CollapsibleContent",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Opens/closes the collapsible"
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Opens/closes the collapsible"
+            }
+        ]
+    },
+    "Combobox": {
+        "title": "Combobox",
+        "description": "Choose from a list of suggested values with full keyboard support.",
+        "name": "combobox",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox",
+        "anatomy": [
+            {
+                "tag": "ComboboxRoot",
+                "children": [
+                    {
+                        "tag": "ComboboxAnchor",
+                        "children": [
+                            {
+                                "tag": "ComboboxInput",
+                                "children": []
+                            },
+                            {
+                                "tag": "ComboboxTrigger",
+                                "children": []
+                            },
+                            {
+                                "tag": "ComboboxCancel",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "ComboboxPortal",
+                        "children": [
+                            {
+                                "tag": "ComboboxContent",
+                                "children": [
+                                    {
+                                        "tag": "ComboboxViewport",
+                                        "children": [
+                                            {
+                                                "tag": "ComboboxItem",
+                                                "children": [
+                                                    {
+                                                        "tag": "ComboboxItemIndicator",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "ComboboxGroup",
+                                                "children": [
+                                                    {
+                                                        "tag": "ComboboxLabel",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "tag": "ComboboxItem",
+                                                        "children": [
+                                                            {
+                                                                "tag": "ComboboxItemIndicator",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "ComboboxSeparator",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "ComboboxArrow",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "<span>When focus is on <Code>ComboboxItem</Code>, selects the focused item. </span>"
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "<span> When focus is on <Code>ComboboxInput</Code>, opens the combobox content. <br /> When focus is on an item, moves focus to the next item. </span>"
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "<span> When focus is on <Code>ComboboxInput</Code>, opens the combobox content. <br /> When focus is on an item, moves focus to the previous item. </span>"
+            },
+            {
+                "keys": [
+                    "Esc"
+                ],
+                "description": "<span> Closes combobox and restores the selected item in the <Code>ComboboxInput</Code> field. </span>"
+            }
+        ]
+    },
+    "ContextMenu": {
+        "title": "Context Menu",
+        "description": "Displays a menu located at the pointer, triggered by a right-click or a long-press.",
+        "name": "context-menu",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/menu",
+        "anatomy": [
+            {
+                "tag": "ContextMenuRoot",
+                "children": [
+                    {
+                        "tag": "ContextMenuTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "ContextMenuPortal",
+                        "children": [
+                            {
+                                "tag": "ContextMenuContent",
+                                "children": [
+                                    {
+                                        "tag": "ContextMenuLabel",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "ContextMenuItem",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "ContextMenuGroup",
+                                        "children": [
+                                            {
+                                                "tag": "ContextMenuItem",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "ContextMenuCheckboxItem",
+                                        "children": [
+                                            {
+                                                "tag": "ContextMenuItemIndicator",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "ContextMenuRadioGroup",
+                                        "children": [
+                                            {
+                                                "tag": "ContextMenuRadioItem",
+                                                "children": [
+                                                    {
+                                                        "tag": "ContextMenuItemIndicator",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "ContextMenuSub",
+                                        "children": [
+                                            {
+                                                "tag": "ContextMenuSubTrigger",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "ContextMenuPortal",
+                                                "children": [
+                                                    {
+                                                        "tag": "ContextMenuSubContent",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "ContextMenuSeparator",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "DateField": {
+        "title": "Date Field",
+        "description": "Enables users to input specific dates within a designated field.",
+        "name": "date-field",
+        "anatomy": [
+            {
+                "tag": "DateFieldRoot",
+                "children": [
+                    {
+                        "tag": "DateFieldInput",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "DatePicker": {
+        "title": "Date Picker",
+        "description": "Facilitates the selection of dates through an input and calendar-based interface.",
+        "name": "date-picker",
+        "anatomy": [
+            {
+                "tag": "DatePickerRoot",
+                "children": [
+                    {
+                        "tag": "DatePickerField",
+                        "children": [
+                            {
+                                "tag": "DatePickerInput",
+                                "children": []
+                            },
+                            {
+                                "tag": "DatePickerTrigger",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DatePickerAnchor",
+                        "children": []
+                    },
+                    {
+                        "tag": "DatePickerContent",
+                        "children": [
+                            {
+                                "tag": "DatePickerClose",
+                                "children": []
+                            },
+                            {
+                                "tag": "DatePickerArrow",
+                                "children": []
+                            },
+                            {
+                                "tag": "DatePickerCalendar",
+                                "children": [
+                                    {
+                                        "tag": "DatePickerHeader",
+                                        "children": [
+                                            {
+                                                "tag": "DatePickerPrev",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "DatePickerHeading",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "DatePickerNext",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "DatePickerGrid",
+                                        "children": [
+                                            {
+                                                "tag": "DatePickerGridHead",
+                                                "children": [
+                                                    {
+                                                        "tag": "DatePickerGridRow",
+                                                        "children": [
+                                                            {
+                                                                "tag": "DatePickerHeadCell",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DatePickerGridBody",
+                                                "children": [
+                                                    {
+                                                        "tag": "DatePickerGridRow",
+                                                        "children": [
+                                                            {
+                                                                "tag": "DatePickerCell",
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "DatePickerCellTrigger",
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "DateRangeField": {
+        "title": "Date Range Field",
+        "description": "Allows users to input a range of dates within a designated field.",
+        "name": "date-range-field",
+        "anatomy": [
+            {
+                "tag": "DateRangeFieldRoot",
+                "children": [
+                    {
+                        "tag": "DateRangeFieldInput",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "DateRangePicker": {
+        "title": "Date Range Picker",
+        "description": "Facilitates the selection of date ranges through an input and calendar-based interface.",
+        "name": "date-range-picker",
+        "anatomy": [
+            {
+                "tag": "DateRangePickerRoot",
+                "children": [
+                    {
+                        "tag": "DateRangePickerField",
+                        "children": [
+                            {
+                                "tag": "DateRangePickerInput",
+                                "children": []
+                            },
+                            {
+                                "tag": "DateRangePickerTrigger",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DateRangePickerAnchor",
+                        "children": []
+                    },
+                    {
+                        "tag": "DateRangePickerContent",
+                        "children": [
+                            {
+                                "tag": "DateRangePickerClose",
+                                "children": []
+                            },
+                            {
+                                "tag": "DateRangePickerArrow",
+                                "children": []
+                            },
+                            {
+                                "tag": "DateRangePickerCalendar",
+                                "children": [
+                                    {
+                                        "tag": "DateRangePickerHeader",
+                                        "children": [
+                                            {
+                                                "tag": "DateRangePickerPrev",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "DateRangePickerHeading",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "DateRangePickerNext",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "DateRangePickerGrid",
+                                        "children": [
+                                            {
+                                                "tag": "DateRangePickerGridHead",
+                                                "children": [
+                                                    {
+                                                        "tag": "DateRangePickerGridRow",
+                                                        "children": [
+                                                            {
+                                                                "tag": "DateRangePickerHeadCell",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DateRangePickerGridBody",
+                                                "children": [
+                                                    {
+                                                        "tag": "DateRangePickerGridRow",
+                                                        "children": [
+                                                            {
+                                                                "tag": "DateRangePickerCell",
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "DateRangePickerCellTrigger",
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Dialog": {
+        "title": "Dialog",
+        "description": "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.",
+        "name": "dialog",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal",
+        "anatomy": [
+            {
+                "tag": "DialogRoot",
+                "children": [
+                    {
+                        "tag": "DialogTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "DialogPortal",
+                        "children": [
+                            {
+                                "tag": "DialogOverlay",
+                                "children": []
+                            },
+                            {
+                                "tag": "DialogContent",
+                                "children": [
+                                    {
+                                        "tag": "DialogTitle",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "DialogDescription",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "DialogClose",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Opens/closes the dialog"
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Opens/closes the dialog"
+            },
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Moves focus to the next focusable element."
+            },
+            {
+                "keys": [
+                    "Shift + Tab"
+                ],
+                "description": "Moves focus to the previous focusable element."
+            },
+            {
+                "keys": [
+                    "Esc"
+                ],
+                "description": "<span>Closes the dialog and moves focus to <Code>DialogTrigger</Code>.</span>"
+            }
+        ]
+    },
+    "DropdownMenu": {
+        "title": "Dropdown Menu",
+        "description": "Displays a menu to the user—such as a set of actions or functions—triggered by a button.",
+        "name": "dropdown-menu",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/menubutton",
+        "anatomy": [
+            {
+                "tag": "DropdownMenuRoot",
+                "children": [
+                    {
+                        "tag": "DropdownMenuTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "DropdownMenuPortal",
+                        "children": [
+                            {
+                                "tag": "DropdownMenuContent",
+                                "children": [
+                                    {
+                                        "tag": "DropdownMenuLabel",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "DropdownMenuItem",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "DropdownMenuGroup",
+                                        "children": [
+                                            {
+                                                "tag": "DropdownMenuItem",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "DropdownMenuCheckboxItem",
+                                        "children": [
+                                            {
+                                                "tag": "DropdownMenuItemIndicator",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "DropdownMenuRadioGroup",
+                                        "children": [
+                                            {
+                                                "tag": "DropdownMenuRadioItem",
+                                                "children": [
+                                                    {
+                                                        "tag": "DropdownMenuItemIndicator",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "DropdownMenuSub",
+                                        "children": [
+                                            {
+                                                "tag": "DropdownMenuSubTrigger",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "DropdownMenuPortal",
+                                                "children": [
+                                                    {
+                                                        "tag": "DropdownMenuSubContent",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "DropdownMenuSeparator",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "DropdownMenuArrow",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Editable": {
+        "title": "Editable",
+        "description": "Displays an input field used for editing a single line of text, rendering as static text on load.",
+        "name": "editable",
+        "anatomy": [
+            {
+                "tag": "EditableRoot",
+                "children": [
+                    {
+                        "tag": "EditableArea",
+                        "children": [
+                            {
+                                "tag": "EditablePreview",
+                                "children": []
+                            },
+                            {
+                                "tag": "EditableInput",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "EditableEditTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "EditableSubmitTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "EditableCancelTrigger",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "HoverCard": {
+        "title": "Hover Card",
+        "description": "For sighted users to preview content available behind a link.",
+        "name": "hover-card",
+        "anatomy": [
+            {
+                "tag": "HoverCardRoot",
+                "children": [
+                    {
+                        "tag": "HoverCardTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "HoverCardPortal",
+                        "children": [
+                            {
+                                "tag": "HoverCardContent",
+                                "children": [
+                                    {
+                                        "tag": "HoverCardArrow",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Opens/closes the hover card."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Opens the hover card link"
+            }
+        ]
+    },
+    "Label": {
+        "title": "Label",
+        "description": "Renders an accessible label associated with controls.",
+        "name": "label",
+        "anatomy": [
+            {
+                "tag": "Label",
+                "children": []
+            }
+        ]
+    },
+    "Listbox": {
+        "title": "Listbox",
+        "description": "A control that allows the user to toggle between checked and not checked.",
+        "name": "listbox",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox",
+        "anatomy": [
+            {
+                "tag": "ListboxRoot",
+                "children": [
+                    {
+                        "tag": "ListboxFilter",
+                        "children": []
+                    },
+                    {
+                        "tag": "ListboxContent",
+                        "children": [
+                            {
+                                "tag": "ListboxItem",
+                                "children": [
+                                    {
+                                        "tag": "ListboxItemIndicator",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "ListboxGroup",
+                                "children": [
+                                    {
+                                        "tag": "ListboxGroupLabel",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "ListboxItem",
+                                        "children": [
+                                            {
+                                                "tag": "ListboxItemIndicator",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "ListboxVirtualizer",
+                                "children": [
+                                    {
+                                        "tag": "ListboxItem",
+                                        "children": [
+                                            {
+                                                "tag": "ListboxItemIndicator",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "<span>When highlight on <code>ListboxItem</code>, selects the focused item. </span>"
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "When focus is on <code>ListboxItem</code>, moves focus to the next item. </span>"
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "When focus is on <code>ListboxItem</code>, moves focus to the previous item. </span>"
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "<span>Moves focus and highlight to the first item.</span>"
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "<span>Moves focus and highlight to the last item.</span>"
+            },
+            {
+                "keys": [
+                    "Ctrl/Cmd + A"
+                ],
+                "description": "<span>Select all the items.</span>"
+            }
+        ]
+    },
+    "Menubar": {
+        "title": "Menubar",
+        "description": "A visually persistent menu common in desktop applications that provides quick",
+        "name": "menubar",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/menu/",
+        "anatomy": [
+            {
+                "tag": "MenubarRoot",
+                "children": [
+                    {
+                        "tag": "MenubarMenu",
+                        "children": [
+                            {
+                                "tag": "MenubarTrigger",
+                                "children": []
+                            },
+                            {
+                                "tag": "MenubarPortal",
+                                "children": [
+                                    {
+                                        "tag": "MenubarContent",
+                                        "children": [
+                                            {
+                                                "tag": "MenubarLabel",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "MenubarItem",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "MenubarGroup",
+                                                "children": [
+                                                    {
+                                                        "tag": "MenubarItem",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "MenubarCheckboxItem",
+                                                "children": [
+                                                    {
+                                                        "tag": "MenubarItemIndicator",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "MenubarRadioGroup",
+                                                "children": [
+                                                    {
+                                                        "tag": "MenubarRadioItem",
+                                                        "children": [
+                                                            {
+                                                                "tag": "MenubarItemIndicator",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "MenubarSub",
+                                                "children": [
+                                                    {
+                                                        "tag": "MenubarSubTrigger",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "tag": "MenubarPortal",
+                                                        "children": [
+                                                            {
+                                                                "tag": "MenubarSubContent",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "MenubarSeparator",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "MenubarArrow",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "NavigationMenu": {
+        "title": "Navigation Menu",
+        "description": "A collection of links for navigating websites.",
+        "name": "navigation-menu",
+        "aria": "https://www.w3.org/TR/wai-aria/#navigation",
+        "anatomy": [
+            {
+                "tag": "NavigationMenuRoot",
+                "children": [
+                    {
+                        "tag": "NavigationMenuList",
+                        "children": [
+                            {
+                                "tag": "NavigationMenuItem",
+                                "children": [
+                                    {
+                                        "tag": "NavigationMenuTrigger",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "NavigationMenuContent",
+                                        "children": [
+                                            {
+                                                "tag": "NavigationMenuLink",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "NavigationMenuItem",
+                                "children": [
+                                    {
+                                        "tag": "NavigationMenuLink",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "NavigationMenuItem",
+                                "children": [
+                                    {
+                                        "tag": "NavigationMenuTrigger",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "NavigationMenuContent",
+                                        "children": [
+                                            {
+                                                "tag": "NavigationMenuSub",
+                                                "children": [
+                                                    {
+                                                        "tag": "NavigationMenuList",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "tag": "NavigationMenuViewport",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "NavigationMenuIndicator",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "NavigationMenuViewport",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "NumberField": {
+        "title": "Number Field",
+        "description": "A number field allows a user to enter a number and increment or decrement the value using stepper buttons.",
+        "name": "number field",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton",
+        "anatomy": [
+            {
+                "tag": "NumberFieldRoot",
+                "children": [
+                    {
+                        "tag": "NumberFieldDecrement",
+                        "children": []
+                    },
+                    {
+                        "tag": "NumberFieldInput",
+                        "children": []
+                    },
+                    {
+                        "tag": "NumberFieldIncrement",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Arrow Up"
+                ],
+                "description": "Increase the value"
+            },
+            {
+                "keys": [
+                    "Arrow Down"
+                ],
+                "description": "Decrease the value"
+            },
+            {
+                "keys": [
+                    "Page Up"
+                ],
+                "description": "Increase the value by scale of 10"
+            },
+            {
+                "keys": [
+                    "Page Down"
+                ],
+                "description": "Decrease the value by scale of 10"
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "Set value to minimum (if <code>min</code> is provided)"
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "Set value to maximum (if <code>max</code> is provided)"
+            }
+        ]
+    },
+    "Pagination": {
+        "title": "Pagination",
+        "description": "Displays data in paged format and provides navigation between pages.",
+        "name": "pagination",
+        "anatomy": [
+            {
+                "tag": "PaginationRoot",
+                "children": [
+                    {
+                        "tag": "PaginationList",
+                        "children": [
+                            {
+                                "tag": "PaginationFirst",
+                                "children": []
+                            },
+                            {
+                                "tag": "PaginationPrev",
+                                "children": []
+                            },
+                            {
+                                "tag": "template",
+                                "children": [
+                                    {
+                                        "tag": "PaginationListItem",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "PaginationEllipsis",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "PinInput": {
+        "title": "Pin Input",
+        "description": "A sequence of one-character alphanumeric inputs.",
+        "name": "pin-input",
+        "anatomy": [
+            {
+                "tag": "PinInputRoot",
+                "children": [
+                    {
+                        "tag": "PinInputInput",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "Popover": {
+        "title": "Popover",
+        "description": "Displays rich content in a portal, triggered by a button.",
+        "name": "popover",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+        "anatomy": [
+            {
+                "tag": "PopoverRoot",
+                "children": [
+                    {
+                        "tag": "PopoverTrigger",
+                        "children": []
+                    },
+                    {
+                        "tag": "PopoverAnchor",
+                        "children": []
+                    },
+                    {
+                        "tag": "PopoverPortal",
+                        "children": [
+                            {
+                                "tag": "PopoverContent",
+                                "children": [
+                                    {
+                                        "tag": "PopoverClose",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "PopoverArrow",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Opens/closes the popover."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Opens/closes the popover."
+            },
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Moves focus to the next focusable element"
+            },
+            {
+                "keys": [
+                    "Shift + Tab"
+                ],
+                "description": "Moves focus to the previous focusable element"
+            },
+            {
+                "keys": [
+                    "Esc"
+                ],
+                "description": "<span> Closes the popover and moves focus to <code>PopoverTrigger</code>.</span>"
+            }
+        ]
+    },
+    "Progress": {
+        "title": "Progress",
+        "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        "name": "progress",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/meter",
+        "anatomy": [
+            {
+                "tag": "ProgressRoot",
+                "children": [
+                    {
+                        "tag": "ProgressIndicator",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "RadioGroup": {
+        "title": "Radio Group",
+        "description": "A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.",
+        "name": "radio-group",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/radiobutton",
+        "anatomy": [
+            {
+                "tag": "RadioGroupRoot",
+                "children": [
+                    {
+                        "tag": "RadioGroupItem",
+                        "children": [
+                            {
+                                "tag": "RadioGroupIndicator",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Moves focus to either the checked radio item or the first radio item in the group."
+            },
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "When focus is on an unchecked radio item, checks it."
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "Moves focus and checks the next radio item in the group."
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "Moves focus and checks the next radio item in the group."
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "Moves focus to the previous radio item in the group."
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "Moves focus to the previous radio item in the group."
+            }
+        ]
+    },
+    "RangeCalendar": {
+        "title": "RangeCalendar",
+        "description": "Presents a calendar view tailored for selecting date ranges.",
+        "name": "range-calendar",
+        "anatomy": [
+            {
+                "tag": "RangeCalendarRoot",
+                "children": [
+                    {
+                        "tag": "RangeCalendarHeader",
+                        "children": [
+                            {
+                                "tag": "RangeCalendarPrev",
+                                "children": []
+                            },
+                            {
+                                "tag": "RangeCalendarHeading",
+                                "children": []
+                            },
+                            {
+                                "tag": "RangeCalendarNext",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "RangeCalendarGrid",
+                        "children": [
+                            {
+                                "tag": "RangeCalendarGridHead",
+                                "children": [
+                                    {
+                                        "tag": "RangeCalendarGridRow",
+                                        "children": [
+                                            {
+                                                "tag": "RangeCalendarHeadCell",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "RangeCalendarGridBody",
+                                "children": [
+                                    {
+                                        "tag": "RangeCalendarGridRow",
+                                        "children": [
+                                            {
+                                                "tag": "RangeCalendarCell",
+                                                "children": [
+                                                    {
+                                                        "tag": "RangeCalendarCellTrigger",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "ScrollArea": {
+        "title": "Scroll Area",
+        "description": "Augments native scroll functionality for custom, cross-browser styling.",
+        "name": "scroll-area",
+        "anatomy": [
+            {
+                "tag": "ScrollAreaRoot",
+                "children": [
+                    {
+                        "tag": "ScrollAreaViewport",
+                        "children": []
+                    },
+                    {
+                        "tag": "ScrollAreaScrollbar",
+                        "children": [
+                            {
+                                "tag": "ScrollAreaThumb",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "ScrollAreaScrollbar",
+                        "children": [
+                            {
+                                "tag": "ScrollAreaThumb",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "ScrollAreaCorner",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "Select": {
+        "title": "Select",
+        "description": "Displays a list of options for the user to pick from—triggered by a button.",
+        "name": "select",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox",
+        "anatomy": [
+            {
+                "tag": "SelectRoot",
+                "children": [
+                    {
+                        "tag": "SelectTrigger",
+                        "children": [
+                            {
+                                "tag": "SelectValue",
+                                "children": []
+                            },
+                            {
+                                "tag": "SelectIcon",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "SelectPortal",
+                        "children": [
+                            {
+                                "tag": "SelectContent",
+                                "children": [
+                                    {
+                                        "tag": "SelectScrollUpButton",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "SelectViewport",
+                                        "children": [
+                                            {
+                                                "tag": "SelectItem",
+                                                "children": [
+                                                    {
+                                                        "tag": "SelectItemText",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "tag": "SelectItemIndicator",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "SelectGroup",
+                                                "children": [
+                                                    {
+                                                        "tag": "SelectLabel",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "tag": "SelectItem",
+                                                        "children": [
+                                                            {
+                                                                "tag": "SelectItemText",
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "tag": "SelectItemIndicator",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "SelectSeparator",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "SelectScrollDownButton",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "SelectArrow",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "<span> When focus is on <Code>SelectTrigger</Code>, opens the select and focuses the selected item. <br /> When focus is on an item, selects the focused item. </span>"
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "<span> When focus is on <Code>SelectTrigger</Code>, opens the select and focuses the first item. <br /> When focus is on an item, selects the focused item. </span>"
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "<span> When focus is on <Code>SelectTrigger</Code>, opens the Select <br /> When focus is on an item, moves focus to the next item. </span>"
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "<span> When focus is on <Code>SelectTrigger</Code>, opens the Select <br /> When focus is on an item, moves focus to the previous item. </span>"
+            },
+            {
+                "keys": [
+                    "Esc"
+                ],
+                "description": "<span> Closes the select and moves focus to <Code>SelectTrigger</Code>. </span>"
+            }
+        ]
+    },
+    "Separator": {
+        "title": "Separator",
+        "description": "Visually or semantically separates content.",
+        "name": "separator",
+        "aria": "https://www.w3.org/TR/wai-aria-1.2/#separator",
+        "anatomy": [
+            {
+                "tag": "Separator",
+                "children": []
+            }
+        ]
+    },
+    "Slider": {
+        "title": "Slider",
+        "description": "An input where the user selects a value from within a given range.",
+        "name": "slider",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/slidertwothumb",
+        "anatomy": [
+            {
+                "tag": "SliderRoot",
+                "children": [
+                    {
+                        "tag": "SliderTrack",
+                        "children": [
+                            {
+                                "tag": "SliderRange",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "SliderThumb",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "Increases the value by the <Code>step</Code> amount."
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "Decreases the value by the <Code>step</Code> amount."
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "Increases the value by the <Code>step</Code> amount."
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "Decreases the value by the <Code>step</Code> amount."
+            },
+            {
+                "keys": [
+                    "PageUp"
+                ],
+                "description": "Increases the value by a larger <Code>step</Code>."
+            },
+            {
+                "keys": [
+                    "PageDown"
+                ],
+                "description": "Decreases the value by a larger <Code>step</Code>."
+            },
+            {
+                "keys": [
+                    "Shift + ArrowUp"
+                ],
+                "description": "Increases the value by a larger <Code>step</Code>."
+            },
+            {
+                "keys": [
+                    "Shift + ArrowDown"
+                ],
+                "description": "Decreases the value by a larger <Code>step</Code>."
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "Sets the value to its minimum."
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "Sets the value to its maximum."
+            }
+        ]
+    },
+    "Splitter": {
+        "title": "Splitter",
+        "description": "A component that divides your layout into resizable sections.",
+        "name": "splitter",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/",
+        "anatomy": [
+            {
+                "tag": "SplitterGroup",
+                "children": [
+                    {
+                        "tag": "SplitterPanel",
+                        "children": []
+                    },
+                    {
+                        "tag": "SplitterResizeHandle",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "If the primary pane is not collapsed, collapses the pane. If the pane is collapsed, restores the splitter to its previous position."
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "Moves a horizontal splitter down."
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "Moves a horizontal splitter up."
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "Moves a vertical splitter to the right."
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "Moves a vertical splitter to the left."
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "Moves splitter to the position that gives the primary pane its smallest allowed size. "
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "Moves splitter to the position that gives the primary pane its largest allowed size."
+            }
+        ]
+    },
+    "Stepper": {
+        "title": "Stepper",
+        "description": "A set of steps that are used to indicate progress through a multi-step process.",
+        "name": "stepper",
+        "anatomy": [
+            {
+                "tag": "StepperRoot",
+                "children": [
+                    {
+                        "tag": "StepperItem",
+                        "children": [
+                            {
+                                "tag": "StepperTrigger",
+                                "children": []
+                            },
+                            {
+                                "tag": "StepperIndicator",
+                                "children": []
+                            },
+                            {
+                                "tag": "StepperTitle",
+                                "children": []
+                            },
+                            {
+                                "tag": "StepperDescription",
+                                "children": []
+                            },
+                            {
+                                "tag": "StepperSeparator",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "<span> When focus moves onto the steps, focuses the first step .</span>"
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "<span> Moves focus to the next step depending on <Code>orientation</Code>.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "<span> Moves focus to the next step depending on <Code>orientation</Code> .</span>"
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "<span> Moves focus to the previous step depending on <Code>orientation</Code> .</span>"
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "<span> Moves focus to the previous step depending on <Code>orientation</Code> .</span>"
+            },
+            {
+                "keys": [
+                    "Enter",
+                    "Space"
+                ],
+                "description": "<span>Selects the focused step.</span>"
+            }
+        ]
+    },
+    "Switch": {
+        "title": "Switch",
+        "description": "A control that allows the user to toggle between checked and not checked.",
+        "name": "switch",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/switch",
+        "anatomy": [
+            {
+                "tag": "SwitchRoot",
+                "children": [
+                    {
+                        "tag": "SwitchThumb",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Toggles the component\"s state."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Toggles the component\"s state."
+            }
+        ]
+    },
+    "Tabs": {
+        "title": "Tabs",
+        "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+        "name": "tabs",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel",
+        "anatomy": [
+            {
+                "tag": "TabsRoot",
+                "children": [
+                    {
+                        "tag": "TabsList",
+                        "children": [
+                            {
+                                "tag": "TabsIndicator",
+                                "children": []
+                            },
+                            {
+                                "tag": "TabsTrigger",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "TabsContent",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "<span> When focus moves onto the tabs, focuses the active trigger. When a trigger is focused, moves focus to the active content.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "<span> Moves focus to the next trigger depending on <Code>orientation</Code> and activates its associated content.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "<span> Moves focus to the next trigger depending on <Code>orientation</Code> and activates its associated content.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "<span> Moves focus to the previous trigger depending on <Code>orientation</Code> and activates its associated content.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "<span> Moves focus to the previous trigger depending on <Code>orientation</Code> and activates its associated content.</span>"
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "<span> Moves focus to the first trigger and activates its associated content.</span>"
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "<span> Moves focus to the last trigger and activates its associated content.</span>"
+            }
+        ]
+    },
+    "TagsInput": {
+        "title": "Tags Input",
+        "description": "Tags input render tags inside an input, followed by an actual text input.",
+        "name": "tags-input",
+        "anatomy": [
+            {
+                "tag": "TagsInputRoot",
+                "children": [
+                    {
+                        "tag": "TagsInputItem",
+                        "children": [
+                            {
+                                "tag": "TagsInputItemText",
+                                "children": []
+                            },
+                            {
+                                "tag": "TagsInputItemDelete",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "TagsInputInput",
+                        "children": []
+                    },
+                    {
+                        "tag": "TagsInputClear",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Delete"
+                ],
+                "description": "<span> When tag is active, remove it and set the tag on right active.</span>"
+            },
+            {
+                "keys": [
+                    "Backspace"
+                ],
+                "description": "<span> When tag is active, remove it and set the tag on left active. If there are no tags to the left, either the next tags gets focus, or the input.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "<span> Set the next tag active.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "<span> Set the previous tag active.</span>"
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "<span> Set the first tag active</span>"
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "<span> Set the last tag active</span>"
+            }
+        ]
+    },
+    "TimeField": {
+        "title": "Time Field",
+        "description": "Enables users to input specific times within a designated field.",
+        "name": "time-field",
+        "anatomy": [
+            {
+                "tag": "TimeFieldRoot",
+                "children": [
+                    {
+                        "tag": "TimeFieldInput",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "Toast": {
+        "title": "Toast",
+        "description": "A succinct message that is displayed temporarily.",
+        "name": "toast",
+        "aria": "https://www.w3.org/TR/wai-aria/#aria-live",
+        "anatomy": [
+            {
+                "tag": "ToastProvider",
+                "children": [
+                    {
+                        "tag": "ToastRoot",
+                        "children": [
+                            {
+                                "tag": "ToastTitle",
+                                "children": []
+                            },
+                            {
+                                "tag": "ToastDescription",
+                                "children": []
+                            },
+                            {
+                                "tag": "ToastAction",
+                                "children": []
+                            },
+                            {
+                                "tag": "ToastClose",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "ToastViewport",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "ToggleGroup": {
+        "title": "Toggle Group",
+        "description": "A set of two-state buttons that can be toggled on or off.",
+        "name": "toggle-group",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/button",
+        "anatomy": [
+            {
+                "tag": "ToggleGroupRoot",
+                "children": [
+                    {
+                        "tag": "ToggleGroupItem",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Moves focus to either the pressed item or the first item in the group."
+            },
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Activates/deactivates the item."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Activates/deactivates the item."
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "Moves focus to the next item in the group."
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "Moves focus to the next item in the group."
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "Moves focus to the previous item in the group."
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "Moves focus to the previous item in the group."
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "Moves focus to the first item."
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "Moves focus to the last item."
+            }
+        ]
+    },
+    "Toggle": {
+        "title": "Toggle",
+        "description": "A two-state button that can be either on or off.",
+        "name": "toggle",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/button",
+        "anatomy": [
+            {
+                "tag": "Toggle",
+                "children": []
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Activates/deactivates the toggle."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Activates/deactivates the toggle."
+            }
+        ]
+    },
+    "Toolbar": {
+        "title": "Toolbar",
+        "description": "A container for grouping a set of controls, such as buttons, toggle groups or dropdown menus.",
+        "name": "toolbar",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/toolbar",
+        "anatomy": [
+            {
+                "tag": "ToolbarRoot",
+                "children": [
+                    {
+                        "tag": "ToolbarButton",
+                        "children": []
+                    },
+                    {
+                        "tag": "ToolbarSeparator",
+                        "children": []
+                    },
+                    {
+                        "tag": "ToolbarLink",
+                        "children": []
+                    },
+                    {
+                        "tag": "ToolbarToggleGroup",
+                        "children": [
+                            {
+                                "tag": "ToolbarToggleItem",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Moves focus to the first item in the group."
+            },
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "Activates/deactivates the item."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "Activates/deactivates the item."
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "<span> Moves focus to the next item depending on <Code>orientation</Code>.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "<span> Moves focus to the next item depending on <Code>orientation</Code>.</span>"
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "<span> Moves focus to the previous item depending on <Code>orientation</Code> .</span>"
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "<span> Moves focus to the previous item depending on <Code>orientation</Code> .</span>"
+            },
+            {
+                "keys": [
+                    "Home"
+                ],
+                "description": "<span>Moves focus to the first item.</span>"
+            },
+            {
+                "keys": [
+                    "End"
+                ],
+                "description": "<span>Moves focus to the last item.</span>"
+            }
+        ]
+    },
+    "Tooltip": {
+        "title": "Tooltip",
+        "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+        "name": "tooltip",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip",
+        "anatomy": [
+            {
+                "tag": "TooltipProvider",
+                "children": [
+                    {
+                        "tag": "TooltipRoot",
+                        "children": [
+                            {
+                                "tag": "TooltipTrigger",
+                                "children": []
+                            },
+                            {
+                                "tag": "TooltipPortal",
+                                "children": [
+                                    {
+                                        "tag": "TooltipContent",
+                                        "children": [
+                                            {
+                                                "tag": "TooltipArrow",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Tab"
+                ],
+                "description": "Opens/closes the tooltip without delay."
+            },
+            {
+                "keys": [
+                    "Space"
+                ],
+                "description": "If open, closes the tooltip without delay."
+            },
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "If open, closes the tooltip without delay."
+            },
+            {
+                "keys": [
+                    "Escape"
+                ],
+                "description": "If open, closes the tooltip without delay."
+            }
+        ]
+    },
+    "Tree": {
+        "title": "Tree",
+        "description": "A tree view widget displays a hierarchical list of items that can be expanded or collapsed to show or hide their child items, such as in a file system navigator.",
+        "name": "tree",
+        "aria": "https://www.w3.org/WAI/ARIA/apg/patterns/treeview/",
+        "anatomy": [
+            {
+                "tag": "TreeRoot",
+                "children": [
+                    {
+                        "tag": "TreeItem",
+                        "children": []
+                    },
+                    {
+                        "tag": "TreeVirtualizer",
+                        "children": [
+                            {
+                                "tag": "TreeItem",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "keyboard": [
+            {
+                "keys": [
+                    "Enter"
+                ],
+                "description": "When highlight on <code>TreeItem</code>, selects the focused item."
+            },
+            {
+                "keys": [
+                    "ArrowDown"
+                ],
+                "description": "When focus is on <code>TreeItem</code>, moves focus to the next item."
+            },
+            {
+                "keys": [
+                    "ArrowUp"
+                ],
+                "description": "When focus is on <code>TreeItem</code>, moves focus to the previous item."
+            },
+            {
+                "keys": [
+                    "ArrowRight"
+                ],
+                "description": "When focus is on a closed <code>TreeItem</code> (node), it opens the node without moving focus. When on an open node, it moves focus to the first child node. When on an end node, it does nothing."
+            },
+            {
+                "keys": [
+                    "ArrowLeft"
+                ],
+                "description": "When focus is on an open <code>TreeItem</code> (node), closes the node. When focus is on a child node that is also either an end node or a closed node, moves focus to its parent node. When focus is on a root node that is also either an end node or a closed node, does nothing."
+            },
+            {
+                "keys": [
+                    "Home",
+                    "PageUp"
+                ],
+                "description": "<span>Moves focus first <code>TreeItem</code></span>"
+            },
+            {
+                "keys": [
+                    "End",
+                    "PageDown"
+                ],
+                "description": "<span>Moves focus last <code>TreeItem</code></span>"
+            }
+        ]
+    }
+}
