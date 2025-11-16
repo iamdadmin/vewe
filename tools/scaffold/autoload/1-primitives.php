@@ -8,7 +8,7 @@ function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJ
 
     foreach ($inputPrimitives as $primitive => $data) {
         // Just work with one for now
-        if ($primitive !== 'Viewport') {
+        if ($primitive !== 'AccordionRoot') {
             continue;
         }
 
