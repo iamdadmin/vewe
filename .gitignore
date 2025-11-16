@@ -43,4 +43,4 @@ Thumbs.db
 .vagrant/
 
 # Ignore specific scaffold path
-/src/extract/reka-ui*
+/tools/extract/reka-ui*
