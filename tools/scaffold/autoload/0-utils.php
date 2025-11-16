@@ -2,9 +2,41 @@
 declare(strict_types=1);
 
 function lw(string $text): void {
-    echo $text . PHP_EOL;
+    echo($text . PHP_EOL);
 }
 
 function ld(string $text): void {
-    exit(lw($text));
+    lw($text);
+    exit(1);
+}
+
+function lwpr(mixed $stuff): void {
+    print_r($stuff);
+    echo(PHP_EOL);
+}
+
+function ldpr(mixed $stuff): void {
+    lwpr($stuff);
+    exit(1);
+}
+
+// Snake case text
+function toSnake(string $text): string {
+    $text = preg_replace('/[^\w]+/', '_', $text);
+    $text = strtolower($text);
+    return trim($text, '_');
+}
+
+// Pascal case text
+function toPascal(string $text): string {
+    $words = preg_split('/[^\w]+/', $text);
+    $words = array_map(fn($w) => ucfirst(strtolower($w)), $words);
+    return implode('', $words);
+}
+
+// Kebab case text
+function toKebab(string $text): string {
+    $text = preg_replace('/[^\w]+/', '-', $text);
+    $text = strtolower($text);
+    return trim($text, '-');
 }

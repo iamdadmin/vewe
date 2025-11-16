@@ -13,4 +13,4 @@ foreach (glob(__DIR__ . '/autoload/*.php') as $required) {
     require_once $required;
 }
 
-doBuildPrimitives();
+doBuildPrimitives($inputComponentsJson, $inputPrimitivesJson, $outputPrimitives, $outputComponents);
