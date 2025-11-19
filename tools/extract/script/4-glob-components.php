@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 $jsonFlags = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
 
-$outPath = __DIR__ . "/../components.json";
-$dir = __DIR__ . "/../reka-components";
+$outPath = __DIR__ . '/../components.json';
+$dir = __DIR__ . '/../reka-components';
 $mdFiles = glob($dir . '/*.md');
 
 $result = [];
@@ -40,11 +40,10 @@ foreach ($mdFiles as $filePath) {
     }
 }
 
-
 // Write output
 file_put_contents($outPath, json_encode($result, $jsonFlags));
 
-$outPath = str_replace("script/../", "", $outPath);
+$outPath = str_replace('script/../', '', $outPath);
 echo "Wrote meta to: {$outPath}\n";
 
 /**
@@ -58,7 +57,7 @@ function toPascalCase(string $value): string
 
     $parts = array_map(
         static fn (string $part): string => ucfirst(strtolower($part)),
-        $parts
+        $parts,
     );
 
     return implode('', $parts);
@@ -74,7 +73,7 @@ function toPascalCase(string $value): string
  */
 function extractFrontMatter(string $markdown): ?array
 {
-    if (!preg_match('/^---\R(.*?)\R---/s', $markdown, $match)) {
+    if (! preg_match('/^---\R(.*?)\R---/s', $markdown, $match)) {
         return null;
     }
 
@@ -109,20 +108,20 @@ function extractFrontMatter(string $markdown): ?array
 function extractAnatomyTemplate(string $markdown): ?string
 {
     // Narrow down to Anatomy section
-    if (!preg_match('/## Anatomy(.*?)(## |\z)/s', $markdown, $sectionMatch)) {
+    if (! preg_match('/## Anatomy(.*?)(## |\z)/s', $markdown, $sectionMatch)) {
         return null;
     }
 
     $section = $sectionMatch[1];
 
     // Inside that, find the vue code block and then <template>...</template>
-    if (!preg_match('/```vue(.*?)```/s', $section, $codeMatch)) {
+    if (! preg_match('/```vue(.*?)```/s', $section, $codeMatch)) {
         return null;
     }
 
     $code = $codeMatch[1];
 
-    if (!preg_match('/<template>(.*?)<\/template>/s', $code, $templateMatch)) {
+    if (! preg_match('/<template>(.*?)<\/template>/s', $code, $templateMatch)) {
         return null;
     }
 
@@ -233,7 +232,7 @@ function parseTemplateTree(string $template): array
  */
 function extractKeyboardTable(string $markdown): ?array
 {
-    if (!preg_match("/<KeyboardTable\s+[^>]*:data=\"(\[.*?\])\"[^>]*\/>/s", $markdown, $match)) {
+    if (! preg_match("/<KeyboardTable\s+[^>]*:data=\"(\[.*?\])\"[^>]*\/>/s", $markdown, $match)) {
         return null;
     }
 
@@ -255,12 +254,12 @@ function extractKeyboardTable(string $markdown): ?array
     $payload = preg_replace(
         '/(^|\s)([A-Za-z0-9_]+)\s*:/m',
         '$1"$2":',
-        $payload
+        $payload,
     );
 
     $decoded = json_decode($payload, true);
 
-    if (!is_array($decoded)) {
+    if (! is_array($decoded)) {
         // For debugging, you might temporarily var_dump($payload) and json_last_error_msg()
         return null;
     }

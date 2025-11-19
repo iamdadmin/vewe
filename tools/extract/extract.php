@@ -12,9 +12,9 @@ $scripts = [
 ];
 
 foreach ($scripts as $scriptName) {
-    $script = __DIR__."/script/{$scriptName}";
+    $script = __DIR__ . "/script/{$scriptName}";
 
-    if (!is_file($script) || !is_readable($script)) {
+    if (! is_file($script) || ! is_readable($script)) {
         fwrite(STDERR, "Error: script not found or not readable: {$script}\n");
         exit(1);
     }

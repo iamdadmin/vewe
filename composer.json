@@ -1,0 +1,12 @@
+{
+    "name": "vewe/monorepo",
+    "type": "metapackage",
+    "require-dev": {
+        "phpstan/phpstan": "2.1.x-dev"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "tempest/framework": "dev-main"
+    }
+}

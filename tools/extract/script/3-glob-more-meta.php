@@ -4,30 +4,33 @@ declare(strict_types=1);
 
 $jsonFlags = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
 
-$outPath = __DIR__ . "/../meta.json";
-$dir = __DIR__ . "/../reka-components";
+$outPath = __DIR__ . '/../meta.json';
+$dir = __DIR__ . '/../reka-components';
 $mdFiles = glob($dir . '/*.md');
 
 // Read existing meta.json if it exists
-$metaPath = __DIR__ . "/../meta.json";
+$metaPath = __DIR__ . '/../meta.json';
 $result = file_exists($metaPath) ? json_decode(file_get_contents($metaPath), true) : [];
 
 foreach ($mdFiles as $file) {
     // Precautionary check, shouldn't be necessary with glob
-    if (!is_file($file)) continue;
+    if (! is_file($file))
+        continue;
 
     // Get extension and file name
     $ext = pathinfo($file, PATHINFO_EXTENSION);
     $basename = pathinfo($file, PATHINFO_FILENAME);
 
     // for debugging, only process this file
-    if ($basename !== 'accordion') continue;
-    
+    if ($basename !== 'accordion')
+        continue;
+
     // Load file
     $content = file_get_contents($file);
-    
+
     // Skip this iteration if file read fails
-    if ($content === false) continue;
+    if ($content === false)
+        continue;
 
     // Replace certain square brackets with html chars temporarily
     //$content = str_replace(['[]'], ['&#91;&#93;'], $content);
@@ -49,7 +52,7 @@ foreach ($mdFiles as $file) {
         '/<!--\s+@include:\s+@\/meta\/([A-Za-z0-9]+)\.md\s+-->\s*((?:<[A-Za-z]+Table[^>]*\/>|\s+)*)/s',
         $content,
         $matches,
-        PREG_SET_ORDER
+        PREG_SET_ORDER,
     );
 
     //print_r($matches);
@@ -63,18 +66,18 @@ foreach ($mdFiles as $file) {
             "/<([A-Za-z]+)Table\s+:data=\"(.*?)\"\s*\/?>/s",
             $blockContent,
             $tableMatches,
-            PREG_SET_ORDER
+            PREG_SET_ORDER,
         );
 
         //print_r($tableMatches);
 
         foreach ($tableMatches as $tableMatch) {
-            $tag = strtolower($tableMatch[1]);  // props, emits, slots, datatable, etc.
+            $tag = strtolower($tableMatch[1]); // props, emits, slots, datatable, etc.
             $raw = $tableMatch[2];
 
             // Replace bits in $raw
             $raw = str_replace(["'[", "]'"], "'", $raw);
-            $raw = str_replace("}]", "}\n]", $raw);
+            $raw = str_replace('}]', "}\n]", $raw);
 
             // Replace unescaped single quotes with double quotes
             $raw = preg_replace("/(?<!\\\\)'/", '"', $raw);
@@ -84,33 +87,35 @@ foreach ($mdFiles as $file) {
 
             // Remove trailing commas before closing brackets/braces
             $raw = preg_replace('/,\s*(?=[}\]])/', '', $raw);
-            
+
             // Decode to PHP array
             $data = json_decode($raw, true);
 
             if ($data === null) {
-                echo "JSON Decode Error: " . json_last_error_msg() . "\n";
-                echo "Error Code: " . json_last_error() . "\n";
+                echo 'JSON Decode Error: ' . json_last_error_msg() . "\n";
+                echo 'Error Code: ' . json_last_error() . "\n";
                 echo "Raw input:\n";
                 var_dump($raw);
                 exit("\n");
             }
 
             if ($data === null) {
-                echo(":: failed component {$tag}\n");
+                echo ":: failed component {$tag}\n";
                 continue;
             }
 
             // Explode pipe-separated values into proper arrays
             // I don't think there are any but keeping for consistency/future-proofing
             foreach ($data as $eDKey => $eDVal) {
-                if (!is_array($eDVal)) continue;
-                
+                if (! is_array($eDVal))
+                    continue;
+
                 foreach ($eDVal as $key => $val) {
-                    if (!is_string($val)) continue;
-                    
-                    if (strpos($val, " | ") !== false) {
-                        $explode = explode(" | ", $val);
+                    if (! is_string($val))
+                        continue;
+
+                    if (strpos($val, ' | ') !== false) {
+                        $explode = explode(' | ', $val);
                         $data[$eDKey][$key] = array_map('trim', $explode);
                     }
                 }
@@ -124,5 +129,5 @@ foreach ($mdFiles as $file) {
 // Write output
 file_put_contents($outPath, json_encode($result, $jsonFlags));
 
-$outPath = str_replace("script/../", "", $outPath);
+$outPath = str_replace('script/../', '', $outPath);
 echo "Wrote meta to: {$outPath}\n";

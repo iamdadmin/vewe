@@ -7,15 +7,16 @@ declare(strict_types=1);
  * and write a JSON file at the folder's parent as meta.json
  */
 
-$outPath = __DIR__ . "/../meta.json";
-$dir = __DIR__ . "/../reka-meta";
+$outPath = __DIR__ . '/../meta.json';
+$dir = __DIR__ . '/../reka-meta';
 $mdFiles = glob($dir . '/*.md');
 
 $result = [];
 
 foreach ($mdFiles as $file) {
     // Precautionary check, shouldn't be necessary with glob
-    if (!is_file($file)) continue;
+    if (! is_file($file))
+        continue;
 
     // for debugging, only process this file
     // if (strpos($file, 'DateFieldRoot') === false) continue;
@@ -23,12 +24,13 @@ foreach ($mdFiles as $file) {
     // Get extension and file name
     $ext = pathinfo($file, PATHINFO_EXTENSION);
     $basename = pathinfo($file, PATHINFO_FILENAME);
-    
+
     // Load file
     $content = file_get_contents($file);
-    
+
     // Skip this iteration if file read fails
-    if ($content === false) continue;
+    if ($content === false)
+        continue;
 
     // Replace certain square brackets with html chars temporarily
     $content = str_replace(['[]'], ['&#91;&#93;'], $content);
@@ -47,13 +49,14 @@ foreach ($mdFiles as $file) {
     // Programmatically find all JSON stringified data
     preg_match_all("/<([A-Za-z]+)Table\s+:data=\"(.*?)\"\s*\/?>/s", $content, $matches, PREG_SET_ORDER);
 
-    if (empty($matches)) continue;
+    if (empty($matches))
+        continue;
 
     foreach ($matches as $m) {
         // $m[1] is tag prefix like Props, Emits, Slots
         // $m[2] is the raw attribute content
-        $tag = strtolower($m[1]);           // e.g. props, emits, slots
-        $raw = "[" . $m[2] . "]";
+        $tag = strtolower($m[1]); // e.g. props, emits, slots
+        $raw = '[' . $m[2] . ']';
 
         // Replace unescaped single quotes used as delimiters with double quotes
         $data = preg_replace("/(?<!\\\\)'/", '"', $raw);
@@ -65,18 +68,20 @@ foreach ($mdFiles as $file) {
         foreach ($data as $eDKey => $eDVal) {
             foreach ($eDVal as $key => $val) {
                 // Only process string values
-                if (!is_string($val)) continue;
-                
+                if (! is_string($val))
+                    continue;
+
                 // Split stringified arrays denoted by pipe
-                if (strpos($val, " | ") !== false) {
-                    $explode = explode(" | ", $val);
+                if (strpos($val, ' | ') !== false) {
+                    $explode = explode(' | ', $val);
                     $data[$eDKey][$key] = array_map('trim', $explode);
                 }
             }
         }
 
         // store under the filename key and the tag (props/emits/slots)
-        if (!isset($result[$basename])) $result[$basename] = new stdClass(); // keep object style
+        if (! isset($result[$basename]))
+            $result[$basename] = new stdClass(); // keep object style
         $result[$basename]->{$tag} = $data;
     }
 }
