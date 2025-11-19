@@ -58,11 +58,11 @@ function mustache(string $template, array $data): string
     /** @var string $key
      * @var string $value */
     foreach ($data as $key => $value) {
-        $return = str_replace('{{ ' . $key . ' }}', $value, $return);
+        $return = str_replace('{# ' . $key . ' #}', $value, $return);
     }
 
     // Now preg_replace any remaining {{ ... }} strings in case not all mustache were set
-    $return = preg_replace('/{{\s*.*?}}/', '', $return);
+    $return = preg_replace('/{#\s*.*?#}/', '', $return);
 
     /** @var string $return */
     return $return;

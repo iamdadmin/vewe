@@ -55,8 +55,20 @@ function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJ
         lwpr($varDeclaration);
         lwpr($varDefaults);
 
+        $replace['var_declaration'] = '';
+
+        foreach ($varDeclaration as $key => $value) {
+            $replace['var_declaration'] .= " * @var {$value} ${$key}\n";
+        }
+
         // Build the primitive
         $output = '';
+
+        $primitiveTmpl = file_get_contents(dirname(__DIR__) . '/templates/primitive.stub');
+
+        $output = mustache($primitiveTmpl, $replace);
+
+        ldpr($output);
 
         //lwpr($primitive);
         //lwpr($data);
