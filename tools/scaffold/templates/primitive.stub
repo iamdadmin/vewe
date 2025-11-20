@@ -5,13 +5,14 @@
 {# var_declaration #}
  */
 
-use Tempest\View\Slot;
+use Tempest\Support\Arr\ImmutableArray;
+use Tempest\Support\Str\MutableString;
 
 use function Vewe\mkAttrs;
 
-{# var_defaults #}
-
-$attributeString = mkAttrs($attributes);
+$attributeString = mkAttrs(new ImmutableArray([
+    {# var_defaults #}
+]));
 ?>
 
 <{{ $is }} {{ $attributeString }}>

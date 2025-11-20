@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJson, string $outputPrimitives, string $outputComponents): void
 {
+    lw('Starting to build Primitives');
+
     $primitivesContent = file_get_contents($inputPrimitivesJson);
 
     if ($primitivesContent === false) {
@@ -29,36 +31,53 @@ function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJ
         foreach ($data['props'] as $prop) {
             // Props we don't currently implement
             $notImplemented = [
+                'as', // Hardcoded in the template as $is
                 'asChild',
                 'defaultValue',
+                'forceMount',
                 'modelValue',
                 'unmountOnHide',
+                'value',
             ];
             // Skip notImplemented
             if (in_array($prop['name'], $notImplemented, true)) {
                 continue;
             }
-
-            // Mapping "as" to "is"
-            $key = $prop['name'] === 'as' ? 'is' : $prop['name'];
-
             // Only string or boolean for now
             $type = $prop['type'] === 'boolean' ? 'bool' : 'string';
 
-            $varDeclaration[$key] = $type;
+            if ($prop['type'] !== 'boolean') {
+                $varDefaults[$prop['name']]['type'] = 'string';
+                $varDefaults[$prop['name']]['acceptable'] = $prop['type'];
+                $varDefaults[$prop['name']]['default'] = isset($prop['default']) ? $prop['default'] : $prop['type'][0];
+            } else {
+                $varDefaults[$prop['name']]['type'] = 'boolean';
+                $varDefaults[$prop['name']]['acceptable'] = ['false', 'true'];
+                $varDefaults[$prop['name']]['default'] = isset($prop['default']) ? $prop['default'] : 'false';
+            }
 
-            $varDefaults[$key] = isset($prop['default']) ? $prop['default'] : $prop['type'][0];
+            $varDeclaration[$prop['name']] = $type;
 
-            //lw($prop['name']);
+            //$varDefaults[$prop['name']] = isset($prop['default']) ? $prop['default'] : $prop['type'][0];
         }
 
-        lwpr($varDeclaration);
-        lwpr($varDefaults);
-
         $replace['var_declaration'] = '';
+        $replace['var_defaults'] = '';
 
         foreach ($varDeclaration as $key => $value) {
-            $replace['var_declaration'] .= " * @var {$value} ${$key}\n";
+            $replace['var_declaration'] .= " * @var {$value} \${$key}\n";
+        }
+
+        $lastKey = array_key_last($varDefaults);
+        foreach ($varDefaults as $key => $values) {
+            $allowed = implode(', ', array_map(fn ($v) => "'{$v}'", $values['acceptable']));
+            $replace['var_defaults'] .= "    '$key' => (new MutableString(\$$key ?? ''))\n";
+            $replace['var_defaults'] .= "        ->unlessOneOf([$allowed], fn(MutableString \$s) => \$s->set('{$values['default']}'))\n";
+            $replace['var_defaults'] .= '        ->toString()';
+
+            if ($key !== $lastKey) {
+                $replace['var_defaults'] .= ",\n";
+            }
         }
 
         // Build the primitive
@@ -68,11 +87,24 @@ function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJ
 
         $output = mustache($primitiveTmpl, $replace);
 
-        ldpr($output);
+        @mkdir(primitivesRelPath($primitive), 0777, true);
 
-        //lwpr($primitive);
-        //lwpr($data);
+        // Write output to file, using primitivesRelPath to figure out folder
+        file_put_contents(
+            primitivesOutputFile($primitive),
+            $output,
+        );
+
+        lw(' : Wrote ' . primitivesOutputFile($primitive));
     }
+}
+
+function primitivesOutputFile(string $primitive): string
+{
+    $filename = 'x-' . toKebab($primitive) . '.php';
+    $filepath = primitivesRelPath($primitive);
+
+    return $filepath . $filename;
 }
 
 // Return the Relative Path for a given primitive
@@ -88,6 +120,6 @@ function primitivesRelPath(string $primitive): string
         // Return just the first capitalised word from $pascal
         preg_match('/^[A-Z][a-z0-9]*/', $pascal, $matches);
         $firstWord = $matches[0] ?? $pascal;
-        return "./{$firstWord}/";
+        return str_replace('tools/scaffold', "src/Primitives/{$firstWord}/", dirname(__DIR__));
     }
 }

@@ -24,28 +24,41 @@ function ldpr(mixed $stuff): void
     exit(1);
 }
 
-// Snake case text
-function toSnake(string $text): string
+// Helper to convert any case to an array of words.
+function toWords(string $text): array
 {
-    $text = preg_replace('/[^\w]+/', '_', $text);
-    $text = strtolower($text);
-    return trim($text, '_');
+    // Add a space before uppercase letters (for PascalCase), but not at the start of the string.
+    $text = preg_replace('/(?<!^)[A-Z]/', ' $0', $text);
+    // Replace non-alphanumeric characters with spaces.
+    $text = preg_replace('/[^a-zA-Z0-9]+/', ' ', $text);
+    // Convert to lower case and split by spaces.
+    return explode(' ', strtolower(trim($text)));
 }
 
-// Pascal case text
+// Convert text to snake_case.
+function toSnake(string $text): string
+{
+    return implode('_', toWords($text));
+}
+
+// Convert text to PascalCase.
 function toPascal(string $text): string
 {
-    $words = preg_split('/[^\w]+/', $text);
-    $words = array_map(fn ($w) => ucfirst(strtolower($w)), $words);
+    $words = toWords($text);
+    $words = array_map(fn ($word) => ucfirst($word), $words);
     return implode('', $words);
 }
 
-// Kebab case text
+// Convert text to kebab-case.
 function toKebab(string $text): string
 {
-    $text = preg_replace('/[^\w]+/', '-', $text);
-    $text = strtolower($text);
-    return trim($text, '-');
+    return implode('-', toWords($text));
+}
+
+// Convert text to camelCase.
+function toCamel(string $text): string
+{
+    return lcfirst(toPascal($text));
 }
 
 /** Accept a stringified template and iterate mustache replacements from data
