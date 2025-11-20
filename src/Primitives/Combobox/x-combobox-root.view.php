@@ -1,0 +1,48 @@
+<?php
+/**
+ * @var string $is
+ * @var string $by
+ * @var bool $defaultOpen
+ * @var string $dir
+ * @var bool $disabled
+ * @var bool $highlightOnHover
+ * @var bool $ignoreFilter
+ * @var bool $multiple
+ * @var string $name
+ * @var bool $open
+ * @var bool $openOnClick
+ * @var bool $openOnFocus
+ * @var bool $required
+ * @var bool $resetModelValueOnClear
+ * @var bool $resetSearchTermOnBlur
+ * @var bool $resetSearchTermOnSelect
+ */
+
+use Tempest\Support\Arr\ImmutableArray;
+use Tempest\Support\Str\MutableString;
+
+use function Vewe\mkAttrs;
+
+$is = new MutableString($is ?? 'false')->match('/^(a|button|div|h1|h2|h3|h4|img|input|label|li|nav|ol|p|span|svg|table|tbody|td|th|thead|tr|ul)$/', default: 'div');
+$attributeString = mkAttrs(new ImmutableArray([
+    'by' => new MutableString($by ?? 'false')->match('/^(string|((a: AcceptableValue, b: AcceptableValue) => boolean))$/', default: 'string'),
+    'defaultOpen' => new MutableString($defaultOpen ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'dir' => new MutableString($dir ?? 'false')->match('/^(ltr|rtl)$/', default: 'ltr'),
+    'disabled' => new MutableString($disabled ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'highlightOnHover' => new MutableString($highlightOnHover ?? 'false')->match('/^(false|true)$/', default: 'true'),
+    'ignoreFilter' => new MutableString($ignoreFilter ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'multiple' => new MutableString($multiple ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'name' => new MutableString($name ?? 'false')->match('/^(string)$/', default: 's'),
+    'open' => new MutableString($open ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'openOnClick' => new MutableString($openOnClick ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'openOnFocus' => new MutableString($openOnFocus ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'required' => new MutableString($required ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'resetModelValueOnClear' => new MutableString($resetModelValueOnClear ?? 'false')->match('/^(false|true)$/', default: 'false'),
+    'resetSearchTermOnBlur' => new MutableString($resetSearchTermOnBlur ?? 'false')->match('/^(false|true)$/', default: 'true'),
+    'resetSearchTermOnSelect' => new MutableString($resetSearchTermOnSelect ?? 'false')->match('/^(false|true)$/', default: 'true'),
+]));
+
+?>
+<x-component :is="$is" :attributes="$attributeString">
+    <slot/>
+</x-component>

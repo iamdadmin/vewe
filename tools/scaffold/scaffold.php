@@ -13,4 +13,6 @@ foreach (glob(__DIR__ . '/autoload/*.php') as $required) {
     require_once $required;
 }
 
+//dumpDefaultPropTypes($inputComponentsJson, $inputPrimitivesJson, $outputPrimitives, $outputComponents);
+
 doBuildPrimitives($inputComponentsJson, $inputPrimitivesJson, $outputPrimitives, $outputComponents);

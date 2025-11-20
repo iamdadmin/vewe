@@ -1,10 +1,34 @@
 <?php
 declare(strict_types=1);
 
-function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJson, string $outputPrimitives, string $outputComponents): void
+function dumpDefaultPropTypes(string $inputComponentsJson, string $inputPrimitivesJson, string $outputPrimitives, string $outputComponents): void
 {
-    lw('Starting to build Primitives');
+    // lw out all the prop types
+    $defaults = [];
 
+    foreach (fetchPrimitives($inputPrimitivesJson) as $primitive => $data) {
+        if (! isset($data['props'])) {
+            continue;
+        }
+        foreach ($data['props'] as $prop) {
+            if ($prop['name'] == 'as' && isset($prop['default'])) {
+                $defaults[] = $prop['default'];
+            } else {
+                continue;
+            }
+        }
+    }
+
+    asort($defaults);
+
+    // Copy $defaults into new array with new keys deleting duplicate values.
+    $uniqueDefaults = array_values(array_unique($defaults));
+
+    lw(implode('|', $uniqueDefaults));
+}
+
+function fetchPrimitives(string $inputPrimitivesJson): array
+{
     $primitivesContent = file_get_contents($inputPrimitivesJson);
 
     if ($primitivesContent === false) {
@@ -16,11 +40,20 @@ function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJ
         ld("Failed to decode primitives JSON file: {$inputPrimitivesJson}. Error: " . json_last_error_msg());
     }
 
-    foreach ($inputPrimitives as $primitive => $data) {
+    return $inputPrimitives;
+}
+
+function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJson, string $outputPrimitives, string $outputComponents): void
+{
+    lw('Starting to build Primitives');
+
+    foreach (fetchPrimitives($inputPrimitivesJson) as $primitive => $data) {
         // Just work with one for now
-        if ($primitive !== 'AccordionRoot') {
-            continue;
+        if ($primitive !== 'AvatarImage') {
+            //continue;
         }
+
+        lw(" : Started $primitive");
 
         // var_declaration
         $varDeclaration = [];
@@ -31,7 +64,6 @@ function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJ
         foreach ($data['props'] as $prop) {
             // Props we don't currently implement
             $notImplemented = [
-                'as', // Hardcoded in the template as $is
                 'asChild',
                 'defaultValue',
                 'forceMount',
@@ -43,41 +75,66 @@ function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJ
             if (in_array($prop['name'], $notImplemented, true)) {
                 continue;
             }
-            // Only string or boolean for now
-            $type = $prop['type'] === 'boolean' ? 'bool' : 'string';
 
-            if ($prop['type'] !== 'boolean') {
-                $varDefaults[$prop['name']]['type'] = 'string';
-                $varDefaults[$prop['name']]['acceptable'] = $prop['type'];
-                $varDefaults[$prop['name']]['default'] = isset($prop['default']) ? $prop['default'] : $prop['type'][0];
-            } else {
+            //$replace['is'] = "\$is = new MutableString(\$is ?? 'false')->match('/^(div|p|a|span|h1|h2|h3|h4|h5|h6|img)$/', default: 'div');";
+            if ($prop['name'] === 'as') {
+                $replace['is'] = "\$is = new MutableString(\$is ?? 'false')->match('/^(a|button|div|h1|h2|h3|h4|img|input|label|li|nav|ol|p|span|svg|table|tbody|td|th|thead|tr|ul)$/', default: '{$prop['default']}');";
+                continue;
+            }
+
+            if ($prop['type'] === 'boolean') {
                 $varDefaults[$prop['name']]['type'] = 'boolean';
                 $varDefaults[$prop['name']]['acceptable'] = ['false', 'true'];
                 $varDefaults[$prop['name']]['default'] = isset($prop['default']) ? $prop['default'] : 'false';
+
+                $varDeclaration[$prop['name']] = 'bool';
+            } elseif ($prop['type'] === 'number') {
+                $varDefaults[$prop['name']]['type'] = 'number';
+                $varDefaults[$prop['name']]['acceptable'] = ['-?\d+(\/\d+)?(\.\d+)?'];
+                $varDefaults[$prop['name']]['default'] = isset($prop['default']) ? $prop['default'] : 1;
+
+                $varDeclaration[$prop['name']] = 'int|float|string';
+            } else {
+                $varDefaults[$prop['name']]['type'] = 'string';
+                $varDefaults[$prop['name']]['acceptable'] = $prop['type'];
+                $varDefaults[$prop['name']]['default'] = isset($prop['default']) ? $prop['default'] : $prop['type'][0];
+
+                $varDeclaration[$prop['name']] = 'string';
             }
-
-            $varDeclaration[$prop['name']] = $type;
-
-            //$varDefaults[$prop['name']] = isset($prop['default']) ? $prop['default'] : $prop['type'][0];
         }
 
-        $replace['var_declaration'] = '';
-        $replace['var_defaults'] = '';
+        if (count($varDeclaration) > 0 && count($varDefaults) > 0) {
+            // Add defaults
+            $replace['var_declaration'] = '';
+            $replace['var_defaults'] = "mkAttrs(new ImmutableArray([\n";
 
-        foreach ($varDeclaration as $key => $value) {
-            $replace['var_declaration'] .= " * @var {$value} \${$key}\n";
-        }
-
-        $lastKey = array_key_last($varDefaults);
-        foreach ($varDefaults as $key => $values) {
-            $allowed = implode(', ', array_map(fn ($v) => "'{$v}'", $values['acceptable']));
-            $replace['var_defaults'] .= "    '$key' => (new MutableString(\$$key ?? ''))\n";
-            $replace['var_defaults'] .= "        ->unlessOneOf([$allowed], fn(MutableString \$s) => \$s->set('{$values['default']}'))\n";
-            $replace['var_defaults'] .= '        ->toString()';
-
-            if ($key !== $lastKey) {
-                $replace['var_defaults'] .= ",\n";
+            foreach ($varDeclaration as $key => $value) {
+                $replace['var_declaration'] .= " * @var {$value} \${$key}\n";
             }
+
+            $lastKey = array_key_last($varDefaults);
+            foreach ($varDefaults as $key => $values) {
+                if (is_array($values['acceptable'])) {
+                    $allowed = implode('|', array_filter($values['acceptable']));
+                } else {
+                    $allowed = $values['acceptable'];
+                }
+
+                $replace['var_defaults'] .= "    '$key' => new MutableString(\$$key ?? 'false')->match('/^($allowed)$/', default: '{$values['default']}')";
+
+                //$allowed = implode(', ', array_map(fn ($v) => "'{$v}'", $values['acceptable']));
+                //$replace['var_defaults'] .= "    '$key' => (new MutableString(\$$key ?? ''))\n";
+                //$replace['var_defaults'] .= "        ->unlessOneOf([$allowed], fn(MutableString \$s) => \$s->set('{$values['default']}'))\n";
+                //$replace['var_defaults'] .= '        ->toString()';
+
+                if ($key !== $lastKey) {
+                    $replace['var_defaults'] .= ",\n";
+                }
+            }
+            $replace['var_defaults'] .= "\n    ])\n);\n";
+        } else {
+            $replace['var_declaration'] = '';
+            $replace['var_defaults'] = "'';\n";
         }
 
         // Build the primitive
@@ -101,7 +158,7 @@ function doBuildPrimitives(string $inputComponentsJson, string $inputPrimitivesJ
 
 function primitivesOutputFile(string $primitive): string
 {
-    $filename = 'x-' . toKebab($primitive) . '.php';
+    $filename = 'x-' . toKebab($primitive) . '.view.php';
     $filepath = primitivesRelPath($primitive);
 
     return $filepath . $filename;

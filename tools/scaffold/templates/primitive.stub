@@ -1,20 +1,16 @@
 <?php
 /**
  * @var string $is
- * @var \Tempest\Support\Arr\ImmutableArray $attributes
-{# var_declaration #}
- */
+{# var_declaration #} */
 
 use Tempest\Support\Arr\ImmutableArray;
 use Tempest\Support\Str\MutableString;
 
 use function Vewe\mkAttrs;
 
-$attributeString = mkAttrs(new ImmutableArray([
-    {# var_defaults #}
-]));
+{# is #}
+$attributeString = {# var_defaults #}
 ?>
-
-<{{ $is }} {{ $attributeString }}>
- <slot></slot>
-</{{ $is }}>
+<x-component :is="$is" :attributes="$attributeString">
+    <slot/>
+</x-component>
