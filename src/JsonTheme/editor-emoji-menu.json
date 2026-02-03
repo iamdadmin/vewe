@@ -1,0 +1,2 @@
+
+ (options: Required<ModuleOptions>) => editorSuggestionMenu(options)

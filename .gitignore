@@ -41,7 +41,3 @@ Thumbs.db
 *.swo
 .idea/
 .vagrant/
-
-# Ignore specific scaffold path
-/src/scaffold/reka*
-/src/scaffold
