@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "base": "rounded-md w-full",
     "overlay": "fixed inset-0 bg-default/75 backdrop-blur-sm will-change-opacity",
@@ -13,9 +13,11 @@
       "true": ""
     }
   },
-  "compoundVariants": [{
-    "zoom": true,
-    "open": false,
-    "class": "cursor-zoom-in"
-  }]
+  "compoundVariants": [
+    {
+      "zoom": true,
+      "open": false,
+      "class": "cursor-zoom-in"
+    }
+  ]
 }

@@ -18,42 +18,47 @@
     }
   },
   "compoundVariants": [
-  {
-    "color": "color",
-    "variant": "solid",
-    "class": "text-inverted bg-${color}"
-  },
-  {
-    "color": "color",
-    "variant": "outline",
-    "class": "ring ring-inset ring-${color}/50 text-${color}"
-  },
-  {
-    "color": "color",
-    "variant": "soft",
-    "class": "text-${color} bg-${color}/10"
-  },
-  {
-    "color": "color",
-    "variant": "subtle",
-    "class": "text-${color} ring ring-inset ring-${color}/25 bg-${color}/10"
-  })), {
-    "color": "neutral",
-    "variant": "solid",
-    "class": "text-inverted bg-inverted"
-  }, {
-    "color": "neutral",
-    "variant": "outline",
-    "class": "ring ring-inset ring-accented text-default bg-default"
-  }, {
-    "color": "neutral",
-    "variant": "soft",
-    "class": "text-default bg-elevated"
-  }, {
-    "color": "neutral",
-    "variant": "subtle",
-    "class": "ring ring-inset ring-accented text-default bg-elevated"
-  }],
+    {
+      "color": "color",
+      "variant": "solid",
+      "class": "text-inverted bg-${color}"
+    },
+    {
+      "color": "color",
+      "variant": "outline",
+      "class": "ring ring-inset ring-${color}/50 text-${color}"
+    },
+    {
+      "color": "color",
+      "variant": "soft",
+      "class": "text-${color} bg-${color}/10"
+    },
+    {
+      "color": "color",
+      "variant": "subtle",
+      "class": "text-${color} ring ring-inset ring-${color}/25 bg-${color}/10"
+    },
+    {
+      "color": "neutral",
+      "variant": "solid",
+      "class": "text-inverted bg-inverted"
+    },
+    {
+      "color": "neutral",
+      "variant": "outline",
+      "class": "ring ring-inset ring-accented text-default bg-default"
+    },
+    {
+      "color": "neutral",
+      "variant": "soft",
+      "class": "text-default bg-elevated"
+    },
+    {
+      "color": "neutral",
+      "variant": "subtle",
+      "class": "ring ring-inset ring-accented text-default bg-elevated"
+    }
+  ],
   "defaultVariants": {
     "variant": "outline",
     "color": "neutral",

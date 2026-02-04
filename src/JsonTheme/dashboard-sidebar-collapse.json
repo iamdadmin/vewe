@@ -1,4 +1,4 @@
- {
+{
   "base": "hidden lg:flex",
   "variants": {
     "side": {

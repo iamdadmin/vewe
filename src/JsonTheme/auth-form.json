@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "w-full space-y-6",
     "header": "flex flex-col text-center",

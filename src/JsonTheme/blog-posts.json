@@ -1,4 +1,4 @@
- {
+{
   "base": "flex flex-col gap-8 lg:gap-y-16",
   "variants": {
     "orientation": {

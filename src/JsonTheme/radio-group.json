@@ -112,11 +112,56 @@
     }
   },
   "compoundVariants": [
-    { size: "xs", variant: ["card", "table"], class: { item: "p-2.5" } },
-    { size: "sm", variant: ["card", "table"], class: { item: "p-3" } },
-    { size: "md", variant: ["card", "table"], class: { item: "p-3.5" } },
-    { size: "lg", variant: ["card", "table"], class: { item: "p-4" } },
-    { size: "xl", variant: ["card", "table"], class: { item: "p-4.5" } },
+    {
+      "size": "xs",
+      "variant": [
+        "card",
+        "table"
+      ],
+      "class": {
+        "item": "p-2.5"
+      }
+    },
+    {
+      "size": "sm",
+      "variant": [
+        "card",
+        "table"
+      ],
+      "class": {
+        "item": "p-3"
+      }
+    },
+    {
+      "size": "md",
+      "variant": [
+        "card",
+        "table"
+      ],
+      "class": {
+        "item": "p-3.5"
+      }
+    },
+    {
+      "size": "lg",
+      "variant": [
+        "card",
+        "table"
+      ],
+      "class": {
+        "item": "p-4"
+      }
+    },
+    {
+      "size": "xl",
+      "variant": [
+        "card",
+        "table"
+      ],
+      "class": {
+        "item": "p-4.5"
+      }
+    },
     {
       "orientation": "horizontal",
       "variant": "table",
@@ -133,14 +178,13 @@
         "fieldset": "gap-0 -space-y-px"
       }
     },
-    
-  {
-      color,
+    {
+      "color": "color",
       "variant": "card",
       "class": {
         "item": "has-data-[state=checked]:border-${color}"
       }
-    })),
+    },
     {
       "color": "neutral",
       "variant": "card",
@@ -148,14 +192,13 @@
         "item": "has-data-[state=checked]:border-inverted"
       }
     },
-    
-  {
-      color,
+    {
+      "color": "color",
       "variant": "table",
       "class": {
         "item": "has-data-[state=checked]:bg-${color}/10 has-data-[state=checked]:border-${color}/50 has-data-[state=checked]:z-[1]"
       }
-    })),
+    },
     {
       "color": "neutral",
       "variant": "table",
@@ -164,7 +207,10 @@
       }
     },
     {
-      "variant": ["card", "table"],
+      "variant": [
+        "card",
+        "table"
+      ],
       "disabled": true,
       "class": {
         "item": "cursor-not-allowed"

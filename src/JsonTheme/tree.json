@@ -68,25 +68,31 @@
     }
   },
   "compoundVariants": [
-  {
-    "color": "color",
-    "selected": true,
-    "class": {
-      "link": "text-${color}"
+    {
+      "color": "color",
+      "selected": true,
+      "class": {
+        "link": "text-${color}"
+      }
+    },
+    {
+      "color": "neutral",
+      "selected": true,
+      "class": {
+        "link": "text-highlighted"
+      }
+    },
+    {
+      "selected": false,
+      "disabled": false,
+      "class": {
+        "link": [
+          "hover:text-highlighted hover:before:bg-elevated/50",
+          "(options.theme.transitions) && transition-colors before:transition-colors"
+        ]
+      }
     }
-  })), {
-    "color": "neutral",
-    "selected": true,
-    "class": {
-      "link": "text-highlighted"
-    }
-  }, {
-    "selected": false,
-    "disabled": false,
-    "class": {
-      "link": ["hover:text-highlighted hover:before:bg-elevated/50", options.theme.transitions && "transition-colors before:transition-colors"]
-    }
-  }],
+  ],
   "defaultVariants": {
     "color": "primary",
     "size": "md"

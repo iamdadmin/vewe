@@ -1,5 +1,4 @@
-
- (options: Required<NuxtOptions["ui"]>) => ({
+{
   "slots": {
     "root": "",
     "content": "data-[state=open]:animate-[accordion-down_200ms_ease-out] data-[state=closed]:animate-[accordion-up_200ms_ease-out] overflow-hidden focus:outline-none",
@@ -60,94 +59,122 @@
       }
     }
   },
-  "compoundVariants": [{
-    "highlight": true,
-    "level": true,
-    "class": {
-      "link": ["after:absolute after:-left-1.5 after:inset-y-0.5 after:block after:w-px after:rounded-full", options.theme.transitions && "after:transition-colors"]
+  "compoundVariants": [
+    {
+      "highlight": true,
+      "level": true,
+      "class": {
+        "link": [
+          "after:absolute after:-left-1.5 after:inset-y-0.5 after:block after:w-px after:rounded-full",
+          "(options.theme.transitions) && after:transition-colors"
+        ]
+      }
+    },
+    {
+      "disabled": false,
+      "active": false,
+      "variant": "pill",
+      "class": {
+        "link": [
+          "hover:text-highlighted hover:before:bg-elevated/50 data-[state=open]:text-highlighted",
+          "(options.theme.transitions) && transition-colors before:transition-colors"
+        ],
+        "linkLeadingIcon": [
+          "group-hover:text-default group-data-[state=open]:text-default",
+          "(options.theme.transitions) && transition-colors"
+        ]
+      }
+    },
+    {
+      "color": "color",
+      "variant": "pill",
+      "active": true,
+      "class": {
+        "link": "text-${color}",
+        "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
+      }
+    },
+    {
+      "color": "neutral",
+      "variant": "pill",
+      "active": true,
+      "class": {
+        "link": "text-highlighted",
+        "linkLeadingIcon": "text-highlighted group-data-[state=open]:text-highlighted"
+      }
+    },
+    {
+      "variant": "pill",
+      "active": true,
+      "highlight": false,
+      "class": {
+        "link": "before:bg-elevated"
+      }
+    },
+    {
+      "variant": "pill",
+      "active": true,
+      "highlight": true,
+      "disabled": false,
+      "class": {
+        "link": [
+          "hover:before:bg-elevated/50",
+          "(options.theme.transitions) && before:transition-colors"
+        ]
+      }
+    },
+    {
+      "disabled": false,
+      "active": false,
+      "variant": "link",
+      "class": {
+        "link": [
+          "hover:text-highlighted data-[state=open]:text-highlighted",
+          "(options.theme.transitions) && transition-colors"
+        ],
+        "linkLeadingIcon": [
+          "group-hover:text-default group-data-[state=open]:text-default",
+          "(options.theme.transitions) && transition-colors"
+        ]
+      }
+    },
+    {
+      "color": "color",
+      "variant": "link",
+      "active": true,
+      "class": {
+        "link": "text-${color}",
+        "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
+      }
+    },
+    {
+      "color": "neutral",
+      "variant": "link",
+      "active": true,
+      "class": {
+        "link": "text-highlighted",
+        "linkLeadingIcon": "text-highlighted group-data-[state=open]:text-highlighted"
+      }
+    },
+    {
+      "highlightColor": "highlightColor",
+      "highlight": true,
+      "level": true,
+      "active": true,
+      "class": {
+        "link": "after:bg-${highlightColor}"
+      }
+    },
+    {
+      "highlightColor": "neutral",
+      "highlight": true,
+      "level": true,
+      "active": true,
+      "class": {
+        "link": "after:bg-inverted"
+      }
     }
-  }, {
-    "disabled": false,
-    "active": false,
-    "variant": "pill",
-    "class": {
-      "link": ["hover:text-highlighted hover:before:bg-elevated/50 data-[state=open]:text-highlighted", options.theme.transitions && "transition-colors before:transition-colors"],
-      "linkLeadingIcon": ["group-hover:text-default group-data-[state=open]:text-default", options.theme.transitions && "transition-colors"]
-    }
-  }, 
-  {
-    "color": "color",
-    "variant": "pill",
-    "active": true,
-    "class": {
-      "link": "text-${color}",
-      "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
-    }
-  })), {
-    "color": "neutral",
-    "variant": "pill",
-    "active": true,
-    "class": {
-      "link": "text-highlighted",
-      "linkLeadingIcon": "text-highlighted group-data-[state=open]:text-highlighted"
-    }
-  }, {
-    "variant": "pill",
-    "active": true,
-    "highlight": false,
-    "class": {
-      "link": "before:bg-elevated"
-    }
-  }, {
-    "variant": "pill",
-    "active": true,
-    "highlight": true,
-    "disabled": false,
-    "class": {
-      "link": ["hover:before:bg-elevated/50", options.theme.transitions && "before:transition-colors"]
-    }
-  }, {
-    "disabled": false,
-    "active": false,
-    "variant": "link",
-    "class": {
-      "link": ["hover:text-highlighted data-[state=open]:text-highlighted", options.theme.transitions && "transition-colors"],
-      "linkLeadingIcon": ["group-hover:text-default group-data-[state=open]:text-default", options.theme.transitions && "transition-colors"]
-    }
-  }, 
-  {
-    "color": "color",
-    "variant": "link",
-    "active": true,
-    "class": {
-      "link": "text-${color}",
-      "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
-    }
-  })), {
-    "color": "neutral",
-    "variant": "link",
-    "active": true,
-    "class": {
-      "link": "text-highlighted",
-      "linkLeadingIcon": "text-highlighted group-data-[state=open]:text-highlighted"
-    }
-  }, ...(options.theme.colors || []).map((highlightColor: string) => ({
-    highlightColor,
-    "highlight": true,
-    "level": true,
-    "active": true,
-    "class": {
-      "link": "after:bg-${highlightColor}"
-    }
-  })), {
-    "highlightColor": "neutral",
-    "highlight": true,
-    "level": true,
-    "active": true,
-    "class": {
-      "link": "after:bg-inverted"
-    }
-  }],
+  ],
   "defaultVariants": {
     "color": "primary",
     "highlightColor": "primary",

@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "w-full",
     "item": "border-b border-default last:border-b-0",

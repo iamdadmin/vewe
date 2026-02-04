@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "w-full relative",
     "table": "w-full table-fixed border-separate border-spacing-x-0 hidden md:table",

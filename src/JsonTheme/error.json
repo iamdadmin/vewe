@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "min-h-[calc(100vh-var(--ui-header-height))] flex flex-col items-center justify-center text-center",
     "statusCode": "text-base font-semibold text-primary",

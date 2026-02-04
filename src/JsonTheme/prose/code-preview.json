@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "my-5",
     "preview": "flex justify-center border border-muted relative p-4 rounded-md",

@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "relative flex flex-col items-stretch gap-2 px-2.5 py-2 w-full rounded-lg backdrop-blur",
     "header": "flex items-center gap-1.5",

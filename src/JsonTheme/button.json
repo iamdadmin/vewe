@@ -1,6 +1,7 @@
-{
+
+ {
   "slots": {
-    "base": ["rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75", options.theme.transitions && "transition-colors"],
+    "base": ["rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75", "(options.theme.transitions) && transition-colors"],
     "label": "truncate",
     "leadingIcon": "shrink-0",
     "leadingAvatar": "shrink-0",
@@ -8,7 +9,10 @@
     "trailingIcon": "shrink-0"
   },
   "variants": {
-    ...fieldGroupVariant,
+    "fieldGroupVariant": {
+   "import": "(fieldGroupVariant)"
+  },
+  
     "color": {
       "color": "",
       "neutral": ""
@@ -110,7 +114,7 @@
     "color": "color",
     "variant": "link",
     "class": "text-${color} hover:text-${color}/75 active:text-${color}/75 disabled:text-${color} aria-disabled:text-${color} focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}"
-  })), {
+  }, {
     "color": "neutral",
     "variant": "solid",
     "class": "text-inverted bg-inverted hover:bg-inverted/90 active:bg-inverted/90 disabled:bg-inverted aria-disabled:bg-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inverted"

@@ -87,19 +87,48 @@
     }
   },
   "compoundVariants": [
-    { size: "xs", variant: "card", class: { root: "p-2.5" } },
-    { size: "sm", variant: "card", class: { root: "p-3" } },
-    { size: "md", variant: "card", class: { root: "p-3.5" } },
-    { size: "lg", variant: "card", class: { root: "p-4" } },
-    { size: "xl", variant: "card", class: { root: "p-4.5" } },
-    
-  {
-      color,
+    {
+      "size": "xs",
+      "variant": "card",
+      "class": {
+        "root": "p-2.5"
+      }
+    },
+    {
+      "size": "sm",
+      "variant": "card",
+      "class": {
+        "root": "p-3"
+      }
+    },
+    {
+      "size": "md",
+      "variant": "card",
+      "class": {
+        "root": "p-3.5"
+      }
+    },
+    {
+      "size": "lg",
+      "variant": "card",
+      "class": {
+        "root": "p-4"
+      }
+    },
+    {
+      "size": "xl",
+      "variant": "card",
+      "class": {
+        "root": "p-4.5"
+      }
+    },
+    {
+      "color": "color",
       "variant": "card",
       "class": {
         "root": "has-data-[state=checked]:border-${color}"
       }
-    })),
+    },
     {
       "color": "neutral",
       "variant": "card",

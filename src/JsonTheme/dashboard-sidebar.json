@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "relative hidden lg:flex flex-col min-h-svh min-w-16 w-(--width) shrink-0",
     "header": "h-(--ui-header-height) shrink-0 flex items-center gap-1.5 px-4",

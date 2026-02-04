@@ -1,5 +1,4 @@
-
- (options: Required<NuxtOptions["ui"]>) => ({
+{
   "slots": {
     "root": "relative rounded-sm",
     "wrapper": "",
@@ -20,7 +19,10 @@
     },
     "to": {
       "true": {
-        "root": ["has-focus-visible:ring-2 has-focus-visible:ring-primary", options.theme.transitions && "transition"]
+        "root": [
+          "has-focus-visible:ring-2 has-focus-visible:ring-primary",
+          "(options.theme.transitions) && transition"
+        ]
       }
     },
     "title": {

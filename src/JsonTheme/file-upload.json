@@ -1,7 +1,10 @@
 {
   "slots": {
     "root": "relative flex flex-col",
-    "base": ["w-full flex-1 bg-default border border-default flex flex-col gap-2 items-stretch justify-center rounded-lg focus-visible:outline-2", options.theme.transitions && "transition-[background]"],
+    "base": [
+      "w-full flex-1 bg-default border border-default flex flex-col gap-2 items-stretch justify-center rounded-lg focus-visible:outline-2",
+      "(options.theme.transitions) && transition-[background]"
+    ],
     "wrapper": "flex flex-col items-center justify-center text-center",
     "icon": "shrink-0",
     "avatar": "shrink-0",
@@ -26,8 +29,7 @@
         "wrapper": "px-4 py-3",
         "base": "p-4"
       },
-      "button": {
-      }
+      "button": {}
     },
     "size": {
       "xs": {
@@ -93,99 +95,115 @@
     }
   },
   "compoundVariants": [
-  {
-    "color": "color",
-    "class": "focus-visible:outline-${color}"
-  },
-  {
-    "color": "color",
-    "highlight": true,
-    "class": "border-${color}"
-  })), {
-    "color": "neutral",
-    "class": "focus-visible:outline-inverted"
-  }, {
-    "color": "neutral",
-    "highlight": true,
-    "class": "border-inverted"
-  }, {
-    "size": "xs",
-    "layout": "list",
-    "class": {
-      "fileTrailingButton": "-me-1"
+    {
+      "color": "color",
+      "class": "focus-visible:outline-${color}"
+    },
+    {
+      "color": "color",
+      "highlight": true,
+      "class": "border-${color}"
+    },
+    {
+      "color": "neutral",
+      "class": "focus-visible:outline-inverted"
+    },
+    {
+      "color": "neutral",
+      "highlight": true,
+      "class": "border-inverted"
+    },
+    {
+      "size": "xs",
+      "layout": "list",
+      "class": {
+        "fileTrailingButton": "-me-1"
+      }
+    },
+    {
+      "size": "sm",
+      "layout": "list",
+      "class": {
+        "fileTrailingButton": "-me-1.5"
+      }
+    },
+    {
+      "size": "md",
+      "layout": "list",
+      "class": {
+        "fileTrailingButton": "-me-1.5"
+      }
+    },
+    {
+      "size": "lg",
+      "layout": "list",
+      "class": {
+        "fileTrailingButton": "-me-2"
+      }
+    },
+    {
+      "size": "xl",
+      "layout": "list",
+      "class": {
+        "fileTrailingButton": "-me-2"
+      }
+    },
+    {
+      "variant": "button",
+      "size": "xs",
+      "class": {
+        "base": "p-1"
+      }
+    },
+    {
+      "variant": "button",
+      "size": "sm",
+      "class": {
+        "base": "p-1.5"
+      }
+    },
+    {
+      "variant": "button",
+      "size": "md",
+      "class": {
+        "base": "p-1.5"
+      }
+    },
+    {
+      "variant": "button",
+      "size": "lg",
+      "class": {
+        "base": "p-2"
+      }
+    },
+    {
+      "variant": "button",
+      "size": "xl",
+      "class": {
+        "base": "p-2"
+      }
+    },
+    {
+      "layout": "grid",
+      "multiple": true,
+      "class": {
+        "files": "grid grid-cols-2 md:grid-cols-3 gap-4 w-full",
+        "file": "p-0 aspect-square"
+      }
+    },
+    {
+      "layout": "grid",
+      "multiple": false,
+      "class": {
+        "file": "absolute inset-0 p-0"
+      }
+    },
+    {
+      "interactive": true,
+      "disabled": false,
+      "class": "hover:bg-elevated/25"
     }
-  }, {
-    "size": "sm",
-    "layout": "list",
-    "class": {
-      "fileTrailingButton": "-me-1.5"
-    }
-  }, {
-    "size": "md",
-    "layout": "list",
-    "class": {
-      "fileTrailingButton": "-me-1.5"
-    }
-  }, {
-    "size": "lg",
-    "layout": "list",
-    "class": {
-      "fileTrailingButton": "-me-2"
-    }
-  }, {
-    "size": "xl",
-    "layout": "list",
-    "class": {
-      "fileTrailingButton": "-me-2"
-    }
-  }, {
-    "variant": "button",
-    "size": "xs",
-    "class": {
-      "base": "p-1"
-    }
-  }, {
-    "variant": "button",
-    "size": "sm",
-    "class": {
-      "base": "p-1.5"
-    }
-  }, {
-    "variant": "button",
-    "size": "md",
-    "class": {
-      "base": "p-1.5"
-    }
-  }, {
-    "variant": "button",
-    "size": "lg",
-    "class": {
-      "base": "p-2"
-    }
-  }, {
-    "variant": "button",
-    "size": "xl",
-    "class": {
-      "base": "p-2"
-    }
-  }, {
-    "layout": "grid",
-    "multiple": true,
-    "class": {
-      "files": "grid grid-cols-2 md:grid-cols-3 gap-4 w-full",
-      "file": "p-0 aspect-square"
-    }
-  }, {
-    "layout": "grid",
-    "multiple": false,
-    "class": {
-      "file": "absolute inset-0 p-0"
-    }
-  }, {
-    "interactive": true,
-    "disabled": false,
-    "class": "hover:bg-elevated/25"
-  }],
+  ],
   "defaultVariants": {
     "color": "primary",
     "variant": "area",

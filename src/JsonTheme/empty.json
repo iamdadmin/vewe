@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "relative flex flex-col items-center justify-center gap-4 rounded-lg p-4 sm:p-6 lg:p-8 min-w-0",
     "header": "flex flex-col items-center gap-2 max-w-sm text-center",

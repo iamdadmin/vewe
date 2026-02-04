@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "relative",
     "container": "flex flex-col gap-y-8 sm:gap-y-12 lg:gap-y-16",

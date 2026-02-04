@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "relative overflow-hidden",
     "title": "text-lg text-center font-semibold text-highlighted",

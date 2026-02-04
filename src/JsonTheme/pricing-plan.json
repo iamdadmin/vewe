@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "relative grid rounded-lg p-6 lg:p-8 xl:p-10 gap-6",
     "header": "",
@@ -67,19 +67,22 @@
       }
     }
   },
-  "compoundVariants": [{
-    "orientation": "horizontal",
-    "variant": "soft",
-    "class": {
-      "root": "divide-accented"
+  "compoundVariants": [
+    {
+      "orientation": "horizontal",
+      "variant": "soft",
+      "class": {
+        "root": "divide-accented"
+      }
+    },
+    {
+      "orientation": "horizontal",
+      "variant": "subtle",
+      "class": {
+        "root": "divide-accented"
+      }
     }
-  }, {
-    "orientation": "horizontal",
-    "variant": "subtle",
-    "class": {
-      "root": "divide-accented"
-    }
-  }],
+  ],
   "defaultVariants": {
     "variant": "outline"
   }

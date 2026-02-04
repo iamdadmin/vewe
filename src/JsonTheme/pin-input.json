@@ -1,7 +1,10 @@
 {
   "slots": {
     "root": "relative inline-flex items-center gap-1.5",
-    "base": ["rounded-md border-0 placeholder:text-dimmed text-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75", options.theme.transitions && "transition-colors"]
+    "base": [
+      "rounded-md border-0 placeholder:text-dimmed text-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75",
+      "(options.theme.transitions) && transition-colors"
+    ]
   },
   "variants": {
     "size": {
@@ -37,24 +40,33 @@
     }
   },
   "compoundVariants": [
-  {
-    "color": "color",
-    "variant": ["outline", "subtle"],
-    "class": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}"
-  },
-  {
-    "color": "color",
-    "highlight": true,
-    "class": "ring ring-inset ring-${color}"
-  })), {
-    "color": "neutral",
-    "variant": ["outline", "subtle"],
-    "class": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-inverted"
-  }, {
-    "color": "neutral",
-    "highlight": true,
-    "class": "ring ring-inset ring-inverted"
-  }],
+    {
+      "color": "color",
+      "variant": [
+        "outline",
+        "subtle"
+      ],
+      "class": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}"
+    },
+    {
+      "color": "color",
+      "highlight": true,
+      "class": "ring ring-inset ring-${color}"
+    },
+    {
+      "color": "neutral",
+      "variant": [
+        "outline",
+        "subtle"
+      ],
+      "class": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-inverted"
+    },
+    {
+      "color": "neutral",
+      "highlight": true,
+      "class": "ring ring-inset ring-inverted"
+    }
+  ],
   "defaultVariants": {
     "size": "md",
     "color": "primary",

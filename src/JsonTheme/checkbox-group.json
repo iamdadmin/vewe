@@ -57,11 +57,41 @@
     }
   },
   "compoundVariants": [
-    { size: "xs", variant: "table", class: { item: "p-2.5" } },
-    { size: "sm", variant: "table", class: { item: "p-3" } },
-    { size: "md", variant: "table", class: { item: "p-3.5" } },
-    { size: "lg", variant: "table", class: { item: "p-4" } },
-    { size: "xl", variant: "table", class: { item: "p-4.5" } },
+    {
+      "size": "xs",
+      "variant": "table",
+      "class": {
+        "item": "p-2.5"
+      }
+    },
+    {
+      "size": "sm",
+      "variant": "table",
+      "class": {
+        "item": "p-3"
+      }
+    },
+    {
+      "size": "md",
+      "variant": "table",
+      "class": {
+        "item": "p-3.5"
+      }
+    },
+    {
+      "size": "lg",
+      "variant": "table",
+      "class": {
+        "item": "p-4"
+      }
+    },
+    {
+      "size": "xl",
+      "variant": "table",
+      "class": {
+        "item": "p-4.5"
+      }
+    },
     {
       "orientation": "horizontal",
       "variant": "table",
@@ -78,14 +108,13 @@
         "fieldset": "gap-0 -space-y-px"
       }
     },
-    
-  {
-      color,
+    {
+      "color": "color",
       "variant": "table",
       "class": {
         "item": "has-data-[state=checked]:bg-${color}/10 has-data-[state=checked]:border-${color}/50 has-data-[state=checked]:z-[1]"
       }
-    })),
+    },
     {
       "color": "neutral",
       "variant": "table",

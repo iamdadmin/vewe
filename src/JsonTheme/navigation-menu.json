@@ -84,8 +84,14 @@
       "false": {
         "link": "text-muted",
         "linkLeadingIcon": "text-dimmed",
-        "childLink": ["hover:before:bg-elevated/50 text-default hover:text-highlighted", options.theme.transitions && "transition-colors before:transition-colors"],
-        "childLinkIcon": ["text-dimmed group-hover:text-default", options.theme.transitions && "transition-colors"]
+        "childLink": [
+          "hover:before:bg-elevated/50 text-default hover:text-highlighted",
+          "(options.theme.transitions) && transition-colors before:transition-colors"
+        ],
+        "childLinkIcon": [
+          "text-dimmed group-hover:text-default",
+          "(options.theme.transitions) && transition-colors"
+        ]
       }
     },
     "disabled": {
@@ -103,166 +109,206 @@
       "true": ""
     }
   },
-  "compoundVariants": [{
-    "orientation": "horizontal",
-    "contentOrientation": "horizontal",
-    "class": {
-      "childList": "grid-cols-2 gap-2"
+  "compoundVariants": [
+    {
+      "orientation": "horizontal",
+      "contentOrientation": "horizontal",
+      "class": {
+        "childList": "grid-cols-2 gap-2"
+      }
+    },
+    {
+      "orientation": "horizontal",
+      "contentOrientation": "vertical",
+      "class": {
+        "childList": "gap-1",
+        "content": "w-60"
+      }
+    },
+    {
+      "orientation": "vertical",
+      "collapsed": false,
+      "class": {
+        "childList": "ms-5 border-s border-default",
+        "childItem": "ps-1.5 -ms-px",
+        "content": "data-[state=open]:animate-[collapsible-down_200ms_ease-out] data-[state=closed]:animate-[collapsible-up_200ms_ease-out] overflow-hidden"
+      }
+    },
+    {
+      "orientation": "vertical",
+      "collapsed": true,
+      "class": {
+        "link": "px-1.5",
+        "linkLabel": "hidden",
+        "linkTrailing": "hidden",
+        "content": "shadow-sm rounded-sm min-h-6 p-1"
+      }
+    },
+    {
+      "orientation": "horizontal",
+      "highlight": true,
+      "class": {
+        "link": [
+          "after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full",
+          "(options.theme.transitions) && after:transition-colors"
+        ]
+      }
+    },
+    {
+      "orientation": "vertical",
+      "highlight": true,
+      "level": true,
+      "class": {
+        "link": [
+          "after:absolute after:-start-1.5 after:inset-y-0.5 after:block after:w-px after:rounded-full",
+          "(options.theme.transitions) && after:transition-colors"
+        ]
+      }
+    },
+    {
+      "disabled": false,
+      "active": false,
+      "variant": "pill",
+      "class": {
+        "link": [
+          "hover:text-highlighted hover:before:bg-elevated/50",
+          "(options.theme.transitions) && transition-colors before:transition-colors"
+        ],
+        "linkLeadingIcon": [
+          "group-hover:text-default",
+          "(options.theme.transitions) && transition-colors"
+        ]
+      }
+    },
+    {
+      "disabled": false,
+      "active": false,
+      "variant": "pill",
+      "orientation": "horizontal",
+      "class": {
+        "link": "data-[state=open]:text-highlighted",
+        "linkLeadingIcon": "group-data-[state=open]:text-default"
+      }
+    },
+    {
+      "disabled": false,
+      "variant": "pill",
+      "highlight": true,
+      "orientation": "horizontal",
+      "class": {
+        "link": "data-[state=open]:before:bg-elevated/50"
+      }
+    },
+    {
+      "disabled": false,
+      "variant": "pill",
+      "highlight": false,
+      "active": false,
+      "orientation": "horizontal",
+      "class": {
+        "link": "data-[state=open]:before:bg-elevated/50"
+      }
+    },
+    {
+      "color": "color",
+      "variant": "pill",
+      "active": true,
+      "class": {
+        "link": "text-${color}",
+        "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
+      }
+    },
+    {
+      "color": "neutral",
+      "variant": "pill",
+      "active": true,
+      "class": {
+        "link": "text-highlighted",
+        "linkLeadingIcon": "text-highlighted group-data-[state=open]:text-highlighted"
+      }
+    },
+    {
+      "variant": "pill",
+      "active": true,
+      "highlight": false,
+      "class": {
+        "link": "before:bg-elevated"
+      }
+    },
+    {
+      "variant": "pill",
+      "active": true,
+      "highlight": true,
+      "disabled": false,
+      "class": {
+        "link": [
+          "hover:before:bg-elevated/50",
+          "(options.theme.transitions) && before:transition-colors"
+        ]
+      }
+    },
+    {
+      "disabled": false,
+      "active": false,
+      "variant": "link",
+      "class": {
+        "link": [
+          "hover:text-highlighted",
+          "(options.theme.transitions) && transition-colors"
+        ],
+        "linkLeadingIcon": [
+          "group-hover:text-default",
+          "(options.theme.transitions) && transition-colors"
+        ]
+      }
+    },
+    {
+      "disabled": false,
+      "active": false,
+      "variant": "link",
+      "orientation": "horizontal",
+      "class": {
+        "link": "data-[state=open]:text-highlighted",
+        "linkLeadingIcon": "group-data-[state=open]:text-default"
+      }
+    },
+    {
+      "color": "color",
+      "variant": "link",
+      "active": true,
+      "class": {
+        "link": "text-${color}",
+        "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
+      }
+    },
+    {
+      "color": "neutral",
+      "variant": "link",
+      "active": true,
+      "class": {
+        "link": "text-highlighted",
+        "linkLeadingIcon": "text-highlighted group-data-[state=open]:text-highlighted"
+      }
+    },
+    {
+      "highlightColor": "highlightColor",
+      "highlight": true,
+      "level": true,
+      "active": true,
+      "class": {
+        "link": "after:bg-${highlightColor}"
+      }
+    },
+    {
+      "highlightColor": "neutral",
+      "highlight": true,
+      "level": true,
+      "active": true,
+      "class": {
+        "link": "after:bg-inverted"
+      }
     }
-  }, {
-    "orientation": "horizontal",
-    "contentOrientation": "vertical",
-    "class": {
-      "childList": "gap-1",
-      "content": "w-60"
-    }
-  }, {
-    "orientation": "vertical",
-    "collapsed": false,
-    "class": {
-      "childList": "ms-5 border-s border-default",
-      "childItem": "ps-1.5 -ms-px",
-      "content": "data-[state=open]:animate-[collapsible-down_200ms_ease-out] data-[state=closed]:animate-[collapsible-up_200ms_ease-out] overflow-hidden"
-    }
-  }, {
-    "orientation": "vertical",
-    "collapsed": true,
-    "class": {
-      "link": "px-1.5",
-      "linkLabel": "hidden",
-      "linkTrailing": "hidden",
-      "content": "shadow-sm rounded-sm min-h-6 p-1"
-    }
-  }, {
-    "orientation": "horizontal",
-    "highlight": true,
-    "class": {
-      "link": ["after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full", options.theme.transitions && "after:transition-colors"]
-    }
-  }, {
-    "orientation": "vertical",
-    "highlight": true,
-    "level": true,
-    "class": {
-      "link": ["after:absolute after:-start-1.5 after:inset-y-0.5 after:block after:w-px after:rounded-full", options.theme.transitions && "after:transition-colors"]
-    }
-  }, {
-    "disabled": false,
-    "active": false,
-    "variant": "pill",
-    "class": {
-      "link": ["hover:text-highlighted hover:before:bg-elevated/50", options.theme.transitions && "transition-colors before:transition-colors"],
-      "linkLeadingIcon": ["group-hover:text-default", options.theme.transitions && "transition-colors"]
-    }
-  }, {
-    "disabled": false,
-    "active": false,
-    "variant": "pill",
-    "orientation": "horizontal",
-    "class": {
-      "link": "data-[state=open]:text-highlighted",
-      "linkLeadingIcon": "group-data-[state=open]:text-default"
-    }
-  }, {
-    "disabled": false,
-    "variant": "pill",
-    "highlight": true,
-    "orientation": "horizontal",
-    "class": {
-      "link": "data-[state=open]:before:bg-elevated/50"
-    }
-  }, {
-    "disabled": false,
-    "variant": "pill",
-    "highlight": false,
-    "active": false,
-    "orientation": "horizontal",
-    "class": {
-      "link": "data-[state=open]:before:bg-elevated/50"
-    }
-  }, 
-  {
-    "color": "color",
-    "variant": "pill",
-    "active": true,
-    "class": {
-      "link": "text-${color}",
-      "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
-    }
-  })), {
-    "color": "neutral",
-    "variant": "pill",
-    "active": true,
-    "class": {
-      "link": "text-highlighted",
-      "linkLeadingIcon": "text-highlighted group-data-[state=open]:text-highlighted"
-    }
-  }, {
-    "variant": "pill",
-    "active": true,
-    "highlight": false,
-    "class": {
-      "link": "before:bg-elevated"
-    }
-  }, {
-    "variant": "pill",
-    "active": true,
-    "highlight": true,
-    "disabled": false,
-    "class": {
-      "link": ["hover:before:bg-elevated/50", options.theme.transitions && "before:transition-colors"]
-    }
-  }, {
-    "disabled": false,
-    "active": false,
-    "variant": "link",
-    "class": {
-      "link": ["hover:text-highlighted", options.theme.transitions && "transition-colors"],
-      "linkLeadingIcon": ["group-hover:text-default", options.theme.transitions && "transition-colors"]
-    }
-  }, {
-    "disabled": false,
-    "active": false,
-    "variant": "link",
-    "orientation": "horizontal",
-    "class": {
-      "link": "data-[state=open]:text-highlighted",
-      "linkLeadingIcon": "group-data-[state=open]:text-default"
-    }
-  }, 
-  {
-    "color": "color",
-    "variant": "link",
-    "active": true,
-    "class": {
-      "link": "text-${color}",
-      "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
-    }
-  })), {
-    "color": "neutral",
-    "variant": "link",
-    "active": true,
-    "class": {
-      "link": "text-highlighted",
-      "linkLeadingIcon": "text-highlighted group-data-[state=open]:text-highlighted"
-    }
-  }, ...(options.theme.colors || []).map((highlightColor: string) => ({
-    highlightColor,
-    "highlight": true,
-    "level": true,
-    "active": true,
-    "class": {
-      "link": "after:bg-${highlightColor}"
-    }
-  })), {
-    "highlightColor": "neutral",
-    "highlight": true,
-    "level": true,
-    "active": true,
-    "class": {
-      "link": "after:bg-inverted"
-    }
-  }],
+  ],
   "defaultVariants": {
     "color": "primary",
     "highlightColor": "primary",

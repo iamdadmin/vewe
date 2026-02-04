@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "data-[disabled]:opacity-75",
     "picker": "flex gap-4",

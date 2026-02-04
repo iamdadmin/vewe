@@ -1,4 +1,4 @@
- {
+{
   "base": "relative flex flex-col",
   "variants": {
     "divide": {

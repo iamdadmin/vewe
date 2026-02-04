@@ -1,5 +1,4 @@
-
- (options: Required<NuxtOptions["ui"]>) => ({
+{
   "slots": {
     "root": "relative flex rounded-lg",
     "spotlight": "absolute inset-0 rounded-[inherit] pointer-events-none bg-default/90",
@@ -55,7 +54,10 @@
     },
     "to": {
       "true": {
-        "root": ["has-focus-visible:ring-2 has-focus-visible:ring-primary", options.theme.transitions && "transition"]
+        "root": [
+          "has-focus-visible:ring-2 has-focus-visible:ring-primary",
+          "(options.theme.transitions) && transition"
+        ]
       }
     },
     "title": {
@@ -82,68 +84,79 @@
       "neutral": ""
     }
   },
-  "compoundVariants": [{
-    "variant": "solid",
-    "to": true,
-    "class": {
-      "root": "hover:bg-inverted/90"
+  "compoundVariants": [
+    {
+      "variant": "solid",
+      "to": true,
+      "class": {
+        "root": "hover:bg-inverted/90"
+      }
+    },
+    {
+      "variant": "outline",
+      "to": true,
+      "class": {
+        "root": "hover:bg-elevated/50"
+      }
+    },
+    {
+      "variant": "soft",
+      "to": true,
+      "class": {
+        "root": "hover:bg-elevated"
+      }
+    },
+    {
+      "variant": "subtle",
+      "to": true,
+      "class": {
+        "root": "hover:bg-elevated"
+      }
+    },
+    {
+      "variant": "subtle",
+      "to": true,
+      "highlight": false,
+      "class": {
+        "root": "hover:ring-accented"
+      }
+    },
+    {
+      "variant": "ghost",
+      "to": true,
+      "class": {
+        "root": "hover:bg-elevated/50"
+      }
+    },
+    {
+      "highlightColor": "highlightColor",
+      "highlight": true,
+      "class": {
+        "root": "ring-${highlightColor}"
+      }
+    },
+    {
+      "highlightColor": "neutral",
+      "highlight": true,
+      "class": {
+        "root": "ring-inverted"
+      }
+    },
+    {
+      "spotlightColor": "spotlightColor",
+      "spotlight": true,
+      "class": {
+        "root": "[--spotlight-color:var(--ui-${spotlightColor}]"
+      }
+    },
+    {
+      "spotlightColor": "neutral",
+      "spotlight": true,
+      "class": {
+        "root": "[--spotlight-color:var(--ui-bg-inverted)]"
+      }
     }
-  }, {
-    "variant": "outline",
-    "to": true,
-    "class": {
-      "root": "hover:bg-elevated/50"
-    }
-  }, {
-    "variant": "soft",
-    "to": true,
-    "class": {
-      "root": "hover:bg-elevated"
-    }
-  }, {
-    "variant": "subtle",
-    "to": true,
-    "class": {
-      "root": "hover:bg-elevated"
-    }
-  }, {
-    "variant": "subtle",
-    "to": true,
-    "highlight": false,
-    "class": {
-      "root": "hover:ring-accented"
-    }
-  }, {
-    "variant": "ghost",
-    "to": true,
-    "class": {
-      "root": "hover:bg-elevated/50"
-    }
-  }, ...(options.theme.colors || []).map((highlightColor: string) => ({
-    highlightColor,
-    "highlight": true,
-    "class": {
-      "root": "ring-${highlightColor}"
-    }
-  })), {
-    "highlightColor": "neutral",
-    "highlight": true,
-    "class": {
-      "root": "ring-inverted"
-    }
-  }, ...(options.theme.colors || []).map((spotlightColor: string) => ({
-    spotlightColor,
-    "spotlight": true,
-    "class": {
-      "root": "[--spotlight-color:var(--ui-${spotlightColor})]"
-    }
-  })), {
-    "spotlightColor": "neutral",
-    "spotlight": true,
-    "class": {
-      "root": "[--spotlight-color:var(--ui-bg-inverted)]"
-    }
-  }],
+  ],
   "defaultVariants": {
     "variant": "outline",
     "highlightColor": "primary",

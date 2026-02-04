@@ -1,4 +1,4 @@
- {
+{
   "slots": {
     "root": "rounded-lg overflow-hidden",
     "header": "p-4 sm:px-6",

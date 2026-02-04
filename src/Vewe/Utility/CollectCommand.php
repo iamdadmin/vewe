@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vewe\Utility;
 
 use RecursiveDirectoryIterator;
@@ -45,25 +47,40 @@ final class CollectCommand
 
         $filecount = 0;
 
+        $filesToSkip = ['editor-drag-handle.ts', 'editor-mention-menu.ts', 'editor-toolbar.ts', 'editor-emoji-menu.ts', 'editor-suggestion-menu.ts', 'editor.ts', 'index.ts'];
+
         foreach ($iterator as $file) {
+            if (in_array($file->getBasename(), $filesToSkip)) {
+                // Skip this file
+                continue;
+            }
+
             // Get the file
             $inputFile = file_get_contents($file->getPathName());
 
             // Replace a few common things
             $inputFile = preg_replace("/^import\s+.*\n/m", '', $inputFile);
             $inputFile = str_replace('export default', '', $inputFile);
-            $inputFile = str_replace("\n (options: Required<ModuleOptions>) => (", '', $inputFile);
-            $inputFile = str_replace("\n  (options: Required<NuxtOptions['ui']>) => (", '', $inputFile);
+            $inputFile = str_replace('(options: Required<ModuleOptions>) => (', '', $inputFile);
+            $inputFile = str_replace("(options: Required<NuxtOptions['ui']>) => (", '', $inputFile);
             $inputFile = str_replace('...(options.theme.colors || []).map((color: string) => (', "\n  ", $inputFile);
             $inputFile = str_replace('...Object.fromEntries((options.theme.colors || []).map((color: string) => [color, ', 'color: ', $inputFile);
             $inputFile = str_replace(')), ...(options.theme.colors || []).map((color: string) => (', "\n  ", $inputFile);
+            $inputFile = str_replace(')), ...(options.theme.colors || []).map((highlightColor: string) => (', "\n  ", $inputFile);
+            $inputFile = str_replace(')), ...(options.theme.colors || []).map((spotlightColor: string) => (', "\n  ", $inputFile);
+            $inputFile = str_replace(')), ...(options.theme.colors || []).map((loadingColor: string) => (', "\n  ", $inputFile);
             $inputFile = str_replace("      ...Object.fromEntries((options.theme.colors || []).map((color: string) => [color, ''])),\n", '', $inputFile);
+            $inputFile = str_replace("options.theme.transitions && '", "'(options.theme.transitions) && ", $inputFile);
+            $inputFile = str_replace("options.theme?.transitions && '", "'(options.theme.transitions) && ", $inputFile);
+            $inputFile = str_replace('...fieldGroupVariant,', "fieldGroupVariant: {\n   import: '(fieldGroupVariant)'\n  },\n  ", $inputFile);
+            $inputFile = str_replace('...fieldGroupVariantWithRoot,', "fieldGroupVariantWithRoot: {\n   import: '(fieldGroupVariantWithRoot)'\n  },\n  ", $inputFile);
 
+            $inputFile = str_replace("\n    highlightColor,\n", "\n    highlightColor: 'highlightColor',\n", $inputFile);
+            $inputFile = str_replace("\n    spotlightColor,\n", "\n    spotlightColor: 'spotlightColor',\n", $inputFile);
+            $inputFile = str_replace("\n    loadingColor,\n", "\n    loadingColor: 'loadingColor',\n", $inputFile);
             $inputFile = str_replace("\n    color,\n", "\n    color: 'color',\n", $inputFile);
+            $inputFile = str_replace("\n      color,\n", "\n    color: 'color',\n", $inputFile);
             $inputFile = str_replace("\n  })), \n  {\n", "\n  },\n  {\n", $inputFile);
-            $inputFile = str_replace(']))', '', $inputFile);
-            $inputFile = str_replace("}))\n", "}\n", $inputFile);
-            $inputFile = str_replace("})\n", "}\n", $inputFile);
 
             // Wrap array keys in double quotes (only keys, not content inside strings)
             $inputFile = preg_replace("/^(\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:/m", '$1"$2":', $inputFile);
@@ -71,8 +88,17 @@ final class CollectCommand
             // Replace single quotes with double
             $inputFile = str_replace("'", "\"", $inputFile);
 
+            // Except for bits in square brackets which we'll put back
+            $inputFile = str_replace('["*"]', "['*']", $inputFile);
+            $inputFile = str_replace('["·"]', "['·']", $inputFile);
+            $inputFile = str_replace('[""]', "['']", $inputFile);
+
             // Replace backticks with double
             $inputFile = str_replace('`', "\"", $inputFile);
+
+            $inputFile = str_replace(']))', '', $inputFile);
+            $inputFile = str_replace('}))', '}', $inputFile);
+            $inputFile = str_replace('})', '}', $inputFile);
 
             // Save the output
             $outputFile = str_replace($this->collectPath, '', $file->getPathname());
