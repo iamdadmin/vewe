@@ -1,5 +1,4 @@
-
- {
+{
   "slots": {
     "base": "font-medium inline-flex items-center",
     "label": "truncate",
@@ -10,9 +9,8 @@
   },
   "variants": {
     "fieldGroupVariant": {
-   "import": "(fieldGroupVariant)"
-  },
-  
+      "import": "(fieldGroupVariant)"
+    },
     "color": {
       "color": "",
       "neutral": ""
@@ -60,62 +58,72 @@
     }
   },
   "compoundVariants": [
-  {
-    "color": "color",
-    "variant": "solid",
-    "class": "bg-${color} text-inverted"
-  },
-  {
-    "color": "color",
-    "variant": "outline",
-    "class": "text-${color} ring ring-inset ring-${color}/50"
-  },
-  {
-    "color": "color",
-    "variant": "soft",
-    "class": "bg-${color}/10 text-${color}"
-  },
-  {
-    "color": "color",
-    "variant": "subtle",
-    "class": "bg-${color}/10 text-${color} ring ring-inset ring-${color}/25"
-  }, {
-    "color": "neutral",
-    "variant": "solid",
-    "class": "text-inverted bg-inverted"
-  }, {
-    "color": "neutral",
-    "variant": "outline",
-    "class": "ring ring-inset ring-accented text-default bg-default"
-  }, {
-    "color": "neutral",
-    "variant": "soft",
-    "class": "text-default bg-elevated"
-  }, {
-    "color": "neutral",
-    "variant": "subtle",
-    "class": "ring ring-inset ring-accented text-default bg-elevated"
-  }, {
-    "size": "xs",
-    "square": true,
-    "class": "p-0.5"
-  }, {
-    "size": "sm",
-    "square": true,
-    "class": "p-1"
-  }, {
-    "size": "md",
-    "square": true,
-    "class": "p-1"
-  }, {
-    "size": "lg",
-    "square": true,
-    "class": "p-1"
-  }, {
-    "size": "xl",
-    "square": true,
-    "class": "p-1"
-  }],
+    {
+      "color": "color",
+      "variant": "solid",
+      "class": "bg-${color} text-inverted"
+    },
+    {
+      "color": "color",
+      "variant": "outline",
+      "class": "text-${color} ring ring-inset ring-${color}/50"
+    },
+    {
+      "color": "color",
+      "variant": "soft",
+      "class": "bg-${color}/10 text-${color}"
+    },
+    {
+      "color": "color",
+      "variant": "subtle",
+      "class": "bg-${color}/10 text-${color} ring ring-inset ring-${color}/25"
+    },
+    {
+      "color": "neutral",
+      "variant": "solid",
+      "class": "text-inverted bg-inverted"
+    },
+    {
+      "color": "neutral",
+      "variant": "outline",
+      "class": "ring ring-inset ring-accented text-default bg-default"
+    },
+    {
+      "color": "neutral",
+      "variant": "soft",
+      "class": "text-default bg-elevated"
+    },
+    {
+      "color": "neutral",
+      "variant": "subtle",
+      "class": "ring ring-inset ring-accented text-default bg-elevated"
+    },
+    {
+      "size": "xs",
+      "square": true,
+      "class": "p-0.5"
+    },
+    {
+      "size": "sm",
+      "square": true,
+      "class": "p-1"
+    },
+    {
+      "size": "md",
+      "square": true,
+      "class": "p-1"
+    },
+    {
+      "size": "lg",
+      "square": true,
+      "class": "p-1"
+    },
+    {
+      "size": "xl",
+      "square": true,
+      "class": "p-1"
+    }
+  ],
   "defaultVariants": {
     "color": "primary",
     "variant": "solid",

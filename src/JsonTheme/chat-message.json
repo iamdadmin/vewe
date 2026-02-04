@@ -1,5 +1,4 @@
-
- {
+{
   "slots": {
     "root": "group/message relative w-full",
     "container": "relative flex items-start",
@@ -8,7 +7,10 @@
     "leadingAvatar": "shrink-0",
     "leadingAvatarSize": "",
     "content": "relative text-pretty min-w-0 *:first:mt-0 *:last:mb-0",
-    "actions": ["opacity-0 group-hover/message:opacity-100 absolute bottom-0 flex items-center", "(options.theme.transitions) && transition-opacity"]
+    "actions": [
+      "opacity-0 group-hover/message:opacity-100 absolute bottom-0 flex items-center",
+      "(options.theme.transitions) && transition-opacity"
+    ]
   },
   "variants": {
     "variant": {
@@ -57,47 +59,64 @@
       }
     }
   },
-  "compoundVariants": [{
-    "compact": true,
-    "actions": true,
-    "class": {
-      "container": "pb-8"
+  "compoundVariants": [
+    {
+      "compact": true,
+      "actions": true,
+      "class": {
+        "container": "pb-8"
+      }
+    },
+    {
+      "leading": true,
+      "compact": false,
+      "side": "left",
+      "class": {
+        "actions": "left-11"
+      }
+    },
+    {
+      "leading": true,
+      "compact": true,
+      "side": "left",
+      "class": {
+        "actions": "left-6.5"
+      }
+    },
+    {
+      "variant": [
+        "solid",
+        "outline",
+        "soft",
+        "subtle"
+      ],
+      "compact": false,
+      "class": {
+        "content": "px-4 py-3 rounded-lg min-h-12",
+        "leading": "mt-2"
+      }
+    },
+    {
+      "variant": [
+        "solid",
+        "outline",
+        "soft",
+        "subtle"
+      ],
+      "compact": true,
+      "class": {
+        "content": "px-2 py-1 rounded-lg min-h-8",
+        "leading": "mt-1"
+      }
+    },
+    {
+      "variant": "naked",
+      "side": "left",
+      "class": {
+        "content": "w-full"
+      }
     }
-  }, {
-    "leading": true,
-    "compact": false,
-    "side": "left",
-    "class": {
-      "actions": "left-11"
-    }
-  }, {
-    "leading": true,
-    "compact": true,
-    "side": "left",
-    "class": {
-      "actions": "left-6.5"
-    }
-  }, {
-    "variant": ["solid", "outline", "soft", "subtle"],
-    "compact": false,
-    "class": {
-      "content": "px-4 py-3 rounded-lg min-h-12",
-      "leading": "mt-2"
-    }
-  }, {
-    "variant": ["solid", "outline", "soft", "subtle"],
-    "compact": true,
-    "class": {
-      "content": "px-2 py-1 rounded-lg min-h-8",
-      "leading": "mt-1"
-    }
-  }, {
-    "variant": "naked",
-    "side": "left",
-    "class": {
-      "content": "w-full"
-    }
-  }],
+  ],
   "defaultVariants": {
     "variant": "naked"
   }

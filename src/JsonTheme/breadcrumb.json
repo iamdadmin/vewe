@@ -1,5 +1,4 @@
-
- {
+{
   "slots": {
     "root": "relative min-w-0",
     "list": "flex items-center gap-1.5",
@@ -30,12 +29,17 @@
       "true": ""
     }
   },
-  "compoundVariants": [{
-    "disabled": false,
-    "active": false,
-    "to": true,
-    "class": {
-      "link": ["hover:text-default", "(options.theme.transitions) && transition-colors"]
+  "compoundVariants": [
+    {
+      "disabled": false,
+      "active": false,
+      "to": true,
+      "class": {
+        "link": [
+          "hover:text-default",
+          "(options.theme.transitions) && transition-colors"
+        ]
+      }
     }
-  }]
+  ]
 }

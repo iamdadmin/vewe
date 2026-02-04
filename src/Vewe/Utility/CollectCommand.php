@@ -49,9 +49,16 @@ final class CollectCommand
 
         $filesToSkip = ['editor-drag-handle.ts', 'editor-mention-menu.ts', 'editor-toolbar.ts', 'editor-emoji-menu.ts', 'editor-suggestion-menu.ts', 'editor.ts', 'index.ts'];
 
+        $tempGet = ['input-date.ts', 'input-menu.ts', 'input-number.ts', 'input-tags.ts', 'input-time.ts', 'input.ts'];
+
         foreach ($iterator as $file) {
             if (in_array($file->getBasename(), $filesToSkip)) {
                 // Skip this file
+                continue;
+            }
+
+            if (! in_array($file->getBasename(), $tempGet)) {
+                // Skip not these files
                 continue;
             }
 
@@ -61,6 +68,15 @@ final class CollectCommand
             // Replace a few common things
             $inputFile = preg_replace("/^import\s+.*\n/m", '', $inputFile);
             $inputFile = str_replace('export default', '', $inputFile);
+            $inputFile = str_replace(' (options: Required<ModuleOptions>) => {', '', $inputFile);
+            $inputFile = str_replace('  return defuFn(', '', $inputFile);
+            $inputFile = str_replace('() => undefined', "''", $inputFile);
+            $inputFile = str_replace('() => ', '', $inputFile);
+            $inputFile = str_replace('(prev: string) => [prev, ', "['mergeWithParent', ", $inputFile);
+            $inputFile = str_replace("\n  }, input(options))", ",\n  mergeWith: 'input'", $inputFile);
+            $inputFile = str_replace('const input = inputTheme(options)', '', $inputFile);
+            $inputFile = str_replace('return {', '{', $inputFile);
+            $inputFile = str_replace('...input.variants.variant', "mergeWith: 'input.variants.variant'", $inputFile);
             $inputFile = str_replace('(options: Required<ModuleOptions>) => (', '', $inputFile);
             $inputFile = str_replace("(options: Required<NuxtOptions['ui']>) => (", '', $inputFile);
             $inputFile = str_replace('...(options.theme.colors || []).map((color: string) => (', "\n  ", $inputFile);
@@ -92,6 +108,7 @@ final class CollectCommand
             $inputFile = str_replace('["*"]', "['*']", $inputFile);
             $inputFile = str_replace('["·"]', "['·']", $inputFile);
             $inputFile = str_replace('[""]', "['']", $inputFile);
+            $inputFile = str_replace('state="active"', "state='active'", $inputFile);
 
             // Replace backticks with double
             $inputFile = str_replace('`', "\"", $inputFile);
