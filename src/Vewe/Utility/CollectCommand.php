@@ -49,7 +49,7 @@ final class CollectCommand
 
         $filesToSkip = ['editor-drag-handle.ts', 'editor-mention-menu.ts', 'editor-toolbar.ts', 'editor-emoji-menu.ts', 'editor-suggestion-menu.ts', 'editor.ts', 'index.ts'];
 
-        $tempGet = ['input-date.ts', 'input-menu.ts', 'input-number.ts', 'input-tags.ts', 'input-time.ts', 'input.ts'];
+        $tempGet = ['select.ts', 'select-menu.ts'];
 
         foreach ($iterator as $file) {
             if (in_array($file->getBasename(), $filesToSkip)) {
@@ -70,10 +70,12 @@ final class CollectCommand
             $inputFile = str_replace('export default', '', $inputFile);
             $inputFile = str_replace(' (options: Required<ModuleOptions>) => {', '', $inputFile);
             $inputFile = str_replace('  return defuFn(', '', $inputFile);
+            $inputFile = str_replace('  return defu(', '', $inputFile);
             $inputFile = str_replace('() => undefined', "''", $inputFile);
             $inputFile = str_replace('() => ', '', $inputFile);
             $inputFile = str_replace('(prev: string) => [prev, ', "['mergeWithParent', ", $inputFile);
-            $inputFile = str_replace("\n  }, input(options))", ",\n  mergeWith: 'input'", $inputFile);
+            $inputFile = str_replace("\n  }, input(options))", ",\n  mergeWith: 'input',", $inputFile);
+            $inputFile = str_replace("\n  }, select(options))", ",\n  mergeWith: 'select',", $inputFile);
             $inputFile = str_replace('const input = inputTheme(options)', '', $inputFile);
             $inputFile = str_replace('return {', '{', $inputFile);
             $inputFile = str_replace('...input.variants.variant', "mergeWith: 'input.variants.variant'", $inputFile);
@@ -90,6 +92,12 @@ final class CollectCommand
             $inputFile = str_replace("options.theme?.transitions && '", "'(options.theme.transitions) && ", $inputFile);
             $inputFile = str_replace('...fieldGroupVariant,', "fieldGroupVariant: {\n   import: '(fieldGroupVariant)'\n  },\n  ", $inputFile);
             $inputFile = str_replace('...fieldGroupVariantWithRoot,', "fieldGroupVariantWithRoot: {\n   import: '(fieldGroupVariantWithRoot)'\n  },\n  ", $inputFile);
+            $inputFile = str_replace('(content: string) => [content, ', "['contentFromParent',", $inputFile);
+            $inputFile = str_replace("(prev: Record<string, any>[]) => prev.map(item => ({\n      ...item,", " {\n", $inputFile);
+            $inputFile = str_replace("class: typeof item.class === 'string' ? replaceFocus(item.class) : item.class", '', $inputFile);
+            $inputFile = str_replace("function replaceFocus(str: string): string {\n  return str", '', $inputFile);
+            $inputFile = str_replace(".replace(/focus-visible:/g, 'focus:')", "replace: 'focus-visible:',\n replaceWith: 'focus:'", $inputFile);
+            $inputFile = str_replace(".replace(/focus:/g, 'focus-visible:')", "replace: 'focus:',\n replaceWith: 'focus-visible'", $inputFile);
 
             $inputFile = str_replace("\n    highlightColor,\n", "\n    highlightColor: 'highlightColor',\n", $inputFile);
             $inputFile = str_replace("\n    spotlightColor,\n", "\n    spotlightColor: 'spotlightColor',\n", $inputFile);
