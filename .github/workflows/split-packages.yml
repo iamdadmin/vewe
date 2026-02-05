@@ -18,41 +18,41 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Split headless package
+      # - name: Split headless package
+      #   uses: symplify/monorepo-split-github-action@v2.3.0
+      #   with:
+      #     package_directory: 'packages/headless'
+      #     split_repository_organization: 'iamdadmin'
+      #     split_repository_name: 'vewe-headless'
+      #     user_name: "GitHub Action"
+      #     user_email: "action@github.com"
+      #     branch: ${{ github.ref_name }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.SUBSPLIT_TOKEN }}
+
+      - name: Split ui package
         uses: symplify/monorepo-split-github-action@v2.3.0
         with:
-          package_directory: 'packages/headless'
+          package_directory: 'packages/ui'
           split_repository_organization: 'iamdadmin'
-          split_repository_name: 'vewe-headless'
+          split_repository_name: 'vewe-ui'
           user_name: "GitHub Action"
           user_email: "action@github.com"
           branch: ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.SUBSPLIT_TOKEN }}
 
-      - name: Split styled package
-        uses: symplify/monorepo-split-github-action@v2.3.0
-        with:
-          package_directory: 'packages/styled'
-          split_repository_organization: 'iamdadmin'
-          split_repository_name: 'vewe-styled'
-          user_name: "GitHub Action"
-          user_email: "action@github.com"
-          branch: ${{ github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.SUBSPLIT_TOKEN }}
-
-      - name: Split spalike package
-        uses: symplify/monorepo-split-github-action@v2.3.0
-        with:
-          package_directory: 'packages/spalike'
-          split_repository_organization: 'iamdadmin'
-          split_repository_name: 'vewe-spalike'
-          user_name: "GitHub Action"
-          user_email: "action@github.com"
-          branch: ${{ github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.SUBSPLIT_TOKEN }}
+      # - name: Split spalike package
+      #   uses: symplify/monorepo-split-github-action@v2.3.0
+      #   with:
+      #     package_directory: 'packages/spalike'
+      #     split_repository_organization: 'iamdadmin'
+      #     split_repository_name: 'vewe-spalike'
+      #     user_name: "GitHub Action"
+      #     user_email: "action@github.com"
+      #     branch: ${{ github.ref_name }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.SUBSPLIT_TOKEN }}
 
       - name: Split docs
         uses: symplify/monorepo-split-github-action@v2.3.0

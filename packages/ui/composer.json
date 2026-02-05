@@ -1,6 +1,6 @@
 {
-  "name": "vewe/styled",
-  "description": "Vewe Styled UI Components",
+  "name": "vewe/ui",
+  "description": "Vewe UI beautifully styled components for Tempest/View",
   "keywords": [
     "components",
     "ui",
@@ -23,16 +23,21 @@
     }
   ],
   "require": {
-    "php": "^8.4"
+    "php": "^8.5",
+    "feature-ninja/cva": "^0.3",
+    "tales-from-a-dev/tailwind-merge-php": "^0.1"
+  },
+  "require-dev": {
+    "carthage-software/mago": "1.0.0-beta.28"
   },
   "autoload": {
     "psr-4": {
-      "Vewe\\Styled\\": "src/"
+      "Vewe\\Ui\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Vewe\\Styled\\Tests\\": "tests/"
+      "Vewe\\Ui\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "dev",

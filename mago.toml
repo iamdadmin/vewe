@@ -2,7 +2,7 @@ php-version = "8.5.0"
 
 [source]
 paths = ["packages", "src", "tests"]
-includes = ["vendor"]
+includes = ["vendor", "/Users/iamdadmin/Dev/tempest-framework"]
 excludes = [
 	"./vendor/symfony/cache/Traits/ValueWrapper.php",
 	"./vendor/google/common-protos/metadata",
@@ -59,3 +59,5 @@ excessive-parameter-list = { enabled = false } # https://github.com/carthage-sof
 halstead = { enabled = false }
 strict-behavior = { allow-loose-behavior = true }
 no-redundant-use = { enabled = true }
+
+[analyzer]

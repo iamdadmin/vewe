@@ -7,18 +7,16 @@ namespace Vewe\Utility;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Tempest\Console\Console;
+use Tempest\Console\ConsoleArgument;
 use Tempest\Console\ConsoleCommand;
 use Tempest\Console\ExitCode;
 use Tempest\Console\Input\ConsoleArgumentBag;
-use Tempest\Core\PublishesFiles;
 use Tempest\Support\Str;
 
 use function Tempest\root_path;
 
 final class CollectCommand
 {
-    use PublishesFiles;
-
     private string $collectPath = '';
 
     private string $depositPath = '';
@@ -49,16 +47,9 @@ final class CollectCommand
 
         $filesToSkip = ['editor-drag-handle.ts', 'editor-mention-menu.ts', 'editor-toolbar.ts', 'editor-emoji-menu.ts', 'editor-suggestion-menu.ts', 'editor.ts', 'index.ts'];
 
-        $tempGet = ['select.ts', 'select-menu.ts'];
-
         foreach ($iterator as $file) {
             if (in_array($file->getBasename(), $filesToSkip)) {
                 // Skip this file
-                continue;
-            }
-
-            if (! in_array($file->getBasename(), $tempGet)) {
-                // Skip not these files
                 continue;
             }
 
@@ -135,13 +126,5 @@ final class CollectCommand
 
         $this->console->info("Success - {$filecount} files written");
         return Exitcode::SUCCESS;
-    }
-
-    /* ************************************* */
-    /*  Clean up the input file              */
-    /* ************************************* */
-    private function cleanInput(string $inputFile): string
-    {
-        //
     }
 }
