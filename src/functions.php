@@ -16,7 +16,7 @@ namespace Vewe {
     {
         return $attributes
             // @mago-expect analysis:possibly-invalid-argument
-            ->map(fn(string $value, string $key) => "{$key}=\"{$value}\"")
+            ->map(fn (string $value, string $key) => "{$key}=\"{$value}\"")
             ->implode(' ');
     }
 
@@ -31,7 +31,7 @@ namespace Vewe {
     function validateString(mixed $attribute, array $validation, string $default): string
     {
         // If not set or not a string, return default
-        if (!isset($attribute) || !is_string($attribute)) {
+        if (! isset($attribute) || ! is_string($attribute)) {
             return $default;
         }
 
@@ -55,7 +55,7 @@ namespace Vewe {
     function validateInteger(mixed $attribute, array $validation, int $default): int
     {
         // If not set, return default
-        if (!isset($attribute)) {
+        if (! isset($attribute)) {
             return $default;
         }
 
@@ -65,7 +65,7 @@ namespace Vewe {
         }
 
         // If not an integer after conversion attempt, return default
-        if (!is_int($attribute)) {
+        if (! is_int($attribute)) {
             return $default;
         }
 
@@ -92,7 +92,7 @@ namespace Vewe {
     function validateBoolean(mixed $attribute, bool $default): bool
     {
         // If not set, return default
-        if (!isset($attribute)) {
+        if (! isset($attribute)) {
             return $default;
         }
 
