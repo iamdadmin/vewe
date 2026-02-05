@@ -59,8 +59,7 @@ final class FixupCommand
             $json['compoundVariants'] = $compoundVariants;
 
             // Save the output
-            $outputFile = str_replace('.ts', '.v2.ts');
-            file_put_contents($outputFile, $inputFile);
+            file_put_contents($file->getPathName(), json_encode($json, JSON_PRETTY_PRINT));
             $filecount++;
         }
 

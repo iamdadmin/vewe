@@ -1,9 +1,9 @@
 {
-  "base": "lg:hidden",
-  "variants": {
-    "side": {
-      "left": "",
-      "right": ""
+    "base": "lg:hidden",
+    "variants": {
+        "side": {
+            "left": "",
+            "right": ""
+        }
     }
-  }
 }
