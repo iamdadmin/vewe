@@ -2,7 +2,7 @@
     "name": "vewe/monorepo",
     "type": "metapackage",
     "require": {
-        "tempest/framework": "@dev",
+        "tempest/framework": "^3",
         "feature-ninja/cva": "^0.3",
         "tales-from-a-dev/tailwind-merge-php": "^0.1"
     },
@@ -49,14 +49,5 @@
             "php-http/discovery": true,
             "carthage-software/mago": true
         }
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/iamdadmin/Dev/tempest-framework",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
+    }
 }

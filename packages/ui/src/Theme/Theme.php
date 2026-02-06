@@ -24,19 +24,4 @@ interface Theme
         array $variants = [],
         string|array|null $merge = null,
     ): string;
-
-    /**
-     * Get all available slot names for this theme
-     *
-     * @return array<string> Array of slot names
-     */
-    public static function getAvailableSlots(): array;
-
-    /**
-     * Get a closure for a specific slot (useful for inline usage)
-     *
-     * @param string $slotName The slot name
-     * @return \Closure Closure that accepts (array $variants, string|array|null $merge)
-     */
-    public static function slot(string $slotName): \Closure;
 }
