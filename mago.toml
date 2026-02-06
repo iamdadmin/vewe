@@ -2,7 +2,7 @@ php-version = "8.5.0"
 
 [source]
 paths = ["packages", "src", "tests"]
-includes = ["vendor", "/Users/iamdadmin/Dev/tempest-framework"]
+includes = ["vendor"]
 excludes = [
 	"./vendor/symfony/cache/Traits/ValueWrapper.php",
 	"./vendor/google/common-protos/metadata",

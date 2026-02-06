@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Vewe\Utility;
 
-use InvalidArgumentException;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Tempest\Console\Console;
@@ -12,20 +11,12 @@ use Tempest\Console\ConsoleArgument;
 use Tempest\Console\ConsoleCommand;
 use Tempest\Console\ExitCode;
 use Tempest\Console\Input\ConsoleArgumentBag;
-use Tempest\Core\PublishesFiles;
-use Tempest\Generation\DataObjects\StubFile;
-use Tempest\Generation\Enums\StubFileType;
-use Tempest\Generation\Exceptions\FileGenerationFailedException;
-use Tempest\Generation\Exceptions\FileGenerationWasAborted;
 use Tempest\Support\Str;
-use Vewe\Stubs\BaseThemeStub;
 
 use function Tempest\root_path;
 
 final class BaseThemeScaffoldCommand
 {
-    use PublishesFiles;
-
     private string $collectPath = '';
 
     private string $depositPath = '';
@@ -58,11 +49,6 @@ final class BaseThemeScaffoldCommand
                 continue;
             }
 
-            // TODO: remove after testing
-            if ($file->getFileName() != 'a.json') {
-                continue;
-            }
-
             // Get the file
             $inputFile = file_get_contents($file->getPathName());
 
@@ -72,30 +58,39 @@ final class BaseThemeScaffoldCommand
             // This is convoluted but required to handle the subfolders
             $targetPath = $this->depositPath . str_replace($this->collectPath, '', $file->getPath()) . '/';
             $targetPath .= Str\to_pascal_case(str_replace('.' . $file->getExtension(), '', $file->getFileName()));
-            $targetPath .= '.php';
+            str_ends_with($file->getPath(), '/prose') ? ($targetPath = str_replace('/prose', '/Prose', $targetPath)) : '';
+            $targetPath .= 'BaseTheme.php';
 
-            try {
-                $replacements = [];
+            $replacements = [];
 
-                foreach (['slots' => 'SLOTS', 'variants' => 'VARIANTS', 'compoundVariants' => 'COMPOUND_VARIANTS', 'defaultVariants' => 'DEFAULT_VARIANTS'] as $key => $value) {
-                    if (isset($json[$key]) && count($json[$key]) > 0) {
-                        $replacements['array ' . $value . ' = []'] = 'array ' . $value . ' = ' . $this->stringify($json['slots']);
-                    }
+            // Namespace
+            $replacements['namespace Vewe\Stubs'] = 'namespace Vewe\Ui\Theme\Base' . (str_ends_with($file->getPath(), '/prose') ? '\Prose' : '');
+
+            // Class name
+            $replacements['final class BaseThemeStub'] = 'final class ' . Str\to_pascal_case(str_replace('.' . $file->getExtension(), '', $file->getBaseName()) . 'BaseTheme');
+
+            // Render CONST ARRAYs from JsonTheme
+            foreach ([
+                'slots' => 'SLOTS',
+                'variants' => 'VARIANTS',
+                'compoundVariants' => 'COMPOUND_VARIANTS',
+                'defaultVariants' => 'DEFAULT_VARIANTS',
+            ] as $key => $value) {
+                if (isset($json[$key])) {
+                    $replacements['array ' . $value . ' = []'] = 'array ' . $value . ' = ' . $this->stringify($json[$key]);
                 }
+            }
 
-                $shouldOverride = $this->askForOverride($targetPath);
+            $stubFile = $this->publish(
+                stubFile: root_path('src/Vewe/Stubs/BaseThemeStub.php'),
+                targetPath: $targetPath,
+                replacements: $replacements,
+            );
 
-                $stubFile = $this->stubFileGenerator->generateClassFile(
-                    stubFile: StubFile::from(BaseThemeStub::class),
-                    targetPath: $targetPath,
-                    shouldOverride: $shouldOverride,
-                    replacements: $replacements,
-                );
-
-                // PublishFile
+            if (is_numeric($stubFile)) {
                 $filecount++;
-            } catch (FileGenerationWasAborted|FileGenerationFailedException|InvalidArgumentException $e) {
-                $this->error($e->getMessage());
+            } else {
+                $this->console->error("Failed writing {$targetPath}");
             }
         }
 
@@ -103,7 +98,20 @@ final class BaseThemeScaffoldCommand
         return Exitcode::SUCCESS;
     }
 
-    private function stringify(mixed $value, int $depth = 0): string
+    /**
+     * @param array<string,string> $replacements
+     */
+    private function publish(string $stubFile, string $targetPath, array $replacements): int|bool
+    {
+        /** @var string $stub */
+        $stub = file_get_contents($stubFile);
+        foreach ($replacements as $key => $value) {
+            $stub = str_replace($key, $value, $stub);
+        }
+        return file_put_contents($targetPath, $stub);
+    }
+
+    private function stringify(mixed $value, int $depth = 1): string
     {
         $indent = str_repeat('    ', $depth);
         $nextIndent = str_repeat('    ', $depth + 1);

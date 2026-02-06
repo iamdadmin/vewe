@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Vewe\Ui\Theme\Base;
+namespace Vewe\Stubs;
 
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
