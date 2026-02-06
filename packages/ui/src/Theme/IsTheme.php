@@ -1,4 +1,7 @@
 <?php
+// @mago-expect analysis:never-return
+// @mago-expect analysis:no-value
+// @mago-expect analysis:non-existent-class-constant
 
 declare(strict_types=1);
 
@@ -10,13 +13,38 @@ use TalesFromADev\TailwindMerge\TailwindMerge;
 /**
  * @return array|string|null
  */
-// @mago-expect analysis:no-value
-// @mago-expect analysis:non-existent-class-constant
+
 trait IsTheme
 {
     private static ?TailwindMerge $merger = null;
 
     protected string $color;
+
+    protected string $slot;
+
+    public array $slotData {
+        get {
+            return self::VARIANTS[$this->$slot];
+        }
+    }
+
+    public array $variantData {
+        get {
+            return $this->replacePlaceholders(self::VARIANTS);
+        }
+    }
+
+    public array $compoundVariantData {
+        get {
+            return $this->replacePlaceholders(self::COMPOUND_VARIANTS);
+        }
+    }
+
+    public array $defaultVariantData {
+        get {
+            return self::DEFAULT_VARIANTS ?? [];
+        }
+    }
 
     /**
      * Get CSS classes for a slot with variants applied
@@ -35,17 +63,18 @@ trait IsTheme
 
         // @mago-expect analysis:mixed-property-type-coercion
         $instance->color = $variants['color'] ?? 'primary';
+        $instance->slot = $slot;
 
-        return $instance->resolveSlot($slot, $variants, $merge);
+        return $instance->build($variants, $merge);
     }
 
-    protected function resolveSlot(string $slot, array $variants, string|array|null $merge): string
+    protected function build(array $variants, string|array|null $merge): string
     {
         $variance = [];
 
         // Get CVA result for this slot
         $cva = ClassVarianceAuthority::new(
-            self::SLOTS[$slot] ?? [],
+            self::SLOTS[$this->slot] ?? [],
             $variance,
         );
 
