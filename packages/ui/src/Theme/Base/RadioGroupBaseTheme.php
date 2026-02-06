@@ -26,9 +26,9 @@ final class RadioGroupBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'base' => 'focus-visible:outline-${color}',
-                'indicator' => 'bg-${color}',
+            '{{color}}' => [
+                'base' => 'focus-visible:outline-{{color}}',
+                'indicator' => 'bg-{{color}}',
             ],
             'neutral' => [
                 'base' => 'focus-visible:outline-inverted',
@@ -193,10 +193,10 @@ final class RadioGroupBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'card',
             'class' => [
-                'item' => 'has-data-[state=checked]:border-${color}',
+                'item' => 'has-data-[state=checked]:border-{{color}}',
             ],
         ],
         [
@@ -207,10 +207,10 @@ final class RadioGroupBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'table',
             'class' => [
-                'item' => 'has-data-[state=checked]:bg-${color}/10 has-data-[state=checked]:border-${color}/50 has-data-[state=checked]:z-[1]',
+                'item' => 'has-data-[state=checked]:bg-{{color}}/10 has-data-[state=checked]:border-{{color}}/50 has-data-[state=checked]:z-[1]',
             ],
         ],
         [

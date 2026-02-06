@@ -45,30 +45,32 @@ final class PinInputBaseTheme implements Theme
             'none' => 'text-highlighted bg-transparent',
         ],
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'highlight' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => [
                 'outline',
                 'subtle',
             ],
             'class' => [
-                'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}',
+                'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'highlight' => true,
             'class' => [
-                'base' => 'ring ring-inset ring-${color}',
+                'base' => 'ring ring-inset ring-{{color}}',
             ],
         ],
         [

@@ -30,8 +30,8 @@ final class TreeBaseTheme implements Theme
             ],
         ],
         'color' => [
-            'color' => [
-                'link' => 'focus-visible:before:ring-${color}',
+            '{{color}}' => [
+                'link' => 'focus-visible:before:ring-{{color}}',
             ],
             'neutral' => [
                 'link' => 'focus-visible:before:ring-inverted',
@@ -83,10 +83,10 @@ final class TreeBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'selected' => true,
             'class' => [
-                'link' => 'text-${color}',
+                'link' => 'text-{{color}}',
             ],
         ],
         [

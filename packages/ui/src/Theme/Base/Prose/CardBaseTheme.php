@@ -27,15 +27,17 @@ final class CardBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'icon' => 'text-${color}',
+            '{{color}}' => [
+                'icon' => 'text-{{color}}',
             ],
             'neutral' => [
                 'icon' => 'text-highlighted',
             ],
         ],
         'to' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'title' => [
             'true' => [
@@ -46,11 +48,11 @@ final class CardBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'to' => true,
             'class' => [
-                'base' => 'hover:bg-${color}/10 hover:border-${color} has-focus-visible:border-${color}',
-                'externalIcon' => 'group-hover:text-${color}',
+                'base' => 'hover:bg-{{color}}/10 hover:border-{{color}} has-focus-visible:border-{{color}}',
+                'externalIcon' => 'group-hover:text-{{color}}',
             ],
         ],
         [

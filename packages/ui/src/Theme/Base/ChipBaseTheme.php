@@ -18,7 +18,7 @@ final class ChipBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => 'bg-${color}',
+            '{{color}}' => 'bg-{{color}}',
             'neutral' => 'bg-inverted',
         ],
         'size' => [

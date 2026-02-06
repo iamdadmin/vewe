@@ -15,7 +15,7 @@ final class KbdBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'variant' => [
@@ -33,31 +33,31 @@ final class KbdBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'solid',
             'class' => [
-                'base' => 'text-inverted bg-${color}',
+                'base' => 'text-inverted bg-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'outline',
             'class' => [
-                'base' => 'ring ring-inset ring-${color}/50 text-${color}',
+                'base' => 'ring ring-inset ring-{{color}}/50 text-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'soft',
             'class' => [
-                'base' => 'text-${color} bg-${color}/10',
+                'base' => 'text-{{color}} bg-{{color}}/10',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'subtle',
             'class' => [
-                'base' => 'text-${color} ring ring-inset ring-${color}/25 bg-${color}/10',
+                'base' => 'text-{{color}} ring ring-inset ring-{{color}}/25 bg-{{color}}/10',
             ],
         ],
         [

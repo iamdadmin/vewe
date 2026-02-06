@@ -30,7 +30,7 @@ final class TabsBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'variant' => [
@@ -119,11 +119,11 @@ final class TabsBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'pill',
             'class' => [
-                'indicator' => 'bg-${color}',
-                'trigger' => 'data-[state=active]:text-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-${color}',
+                'indicator' => 'bg-{{color}}',
+                'trigger' => 'data-[state=active]:text-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{{color}}',
             ],
         ],
         [
@@ -135,11 +135,11 @@ final class TabsBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'link',
             'class' => [
-                'indicator' => 'bg-${color}',
-                'trigger' => 'data-[state=active]:text-${color} focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}',
+                'indicator' => 'bg-{{color}}',
+                'trigger' => 'data-[state=active]:text-{{color}} focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{{color}}',
             ],
         ],
         [

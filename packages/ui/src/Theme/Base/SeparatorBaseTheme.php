@@ -23,8 +23,8 @@ final class SeparatorBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'border' => 'border-${color}',
+            '{{color}}' => [
+                'border' => 'border-{{color}}',
             ],
             'neutral' => [
                 'border' => 'border-default',

@@ -30,9 +30,9 @@ final class SwitchBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'base' => 'data-[state=checked]:bg-${color} focus-visible:outline-${color}',
-                'icon' => 'group-data-[state=checked]:text-${color}',
+            '{{color}}' => [
+                'base' => 'data-[state=checked]:bg-{{color}} focus-visible:outline-{{color}}',
+                'icon' => 'group-data-[state=checked]:text-{{color}}',
             ],
             'neutral' => [
                 'base' => 'data-[state=checked]:bg-inverted focus-visible:outline-inverted',

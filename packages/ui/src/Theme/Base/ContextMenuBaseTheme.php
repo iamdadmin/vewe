@@ -33,7 +33,7 @@ final class ContextMenuBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'active' => [
@@ -108,19 +108,19 @@ final class ContextMenuBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'active' => false,
             'class' => [
-                'item' => 'text-${color} data-highlighted:text-${color} data-highlighted:before:bg-${color}/10 data-[state=open]:before:bg-${color}/10',
-                'itemLeadingIcon' => 'text-${color}/75 group-data-highlighted:text-${color} group-data-[state=open]:text-${color}',
+                'item' => 'text-{{color}} data-highlighted:text-{{color}} data-highlighted:before:bg-{{color}}/10 data-[state=open]:before:bg-{{color}}/10',
+                'itemLeadingIcon' => 'text-{{color}}/75 group-data-highlighted:text-{{color}} group-data-[state=open]:text-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'active' => true,
             'class' => [
-                'item' => 'text-${color} before:bg-${color}/10',
-                'itemLeadingIcon' => 'text-${color}',
+                'item' => 'text-{{color}} before:bg-{{color}}/10',
+                'itemLeadingIcon' => 'text-{{color}}',
             ],
         ],
     ];

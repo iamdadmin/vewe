@@ -24,9 +24,9 @@ final class CheckboxBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'base' => 'focus-visible:outline-${color}',
-                'indicator' => 'bg-${color}',
+            '{{color}}' => [
+                'base' => 'focus-visible:outline-{{color}}',
+                'indicator' => 'bg-{{color}}',
             ],
             'neutral' => [
                 'base' => 'focus-visible:outline-inverted',
@@ -96,7 +96,9 @@ final class CheckboxBaseTheme implements Theme
             ],
         ],
         'checked' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 
@@ -137,10 +139,10 @@ final class CheckboxBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'card',
             'class' => [
-                'root' => 'has-data-[state=checked]:border-${color}',
+                'root' => 'has-data-[state=checked]:border-{{color}}',
             ],
         ],
         [

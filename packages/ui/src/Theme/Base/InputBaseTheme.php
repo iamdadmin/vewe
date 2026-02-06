@@ -79,20 +79,28 @@ final class InputBaseTheme implements Theme
             'none' => 'text-highlighted bg-transparent',
         ],
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'leading' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'trailing' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'loading' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'highlight' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'type' => [
             'file' => 'file:me-1.5 file:font-medium file:text-muted file:outline-none',
@@ -101,20 +109,20 @@ final class InputBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => [
                 'outline',
                 'subtle',
             ],
             'class' => [
-                'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}',
+                'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'highlight' => true,
             'class' => [
-                'base' => 'ring ring-inset ring-${color}',
+                'base' => 'ring ring-inset ring-{{color}}',
             ],
         ],
         [

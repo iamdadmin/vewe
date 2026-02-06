@@ -45,9 +45,9 @@ final class NavigationMenuBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'link' => 'focus-visible:before:ring-${color}',
-                'childLink' => 'focus-visible:before:ring-${color}',
+            '{{color}}' => [
+                'link' => 'focus-visible:before:ring-{{color}}',
+                'childLink' => 'focus-visible:before:ring-{{color}}',
             ],
             'neutral' => [
                 'link' => 'focus-visible:before:ring-inverted',
@@ -113,13 +113,19 @@ final class NavigationMenuBaseTheme implements Theme
             ],
         ],
         'highlight' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'level' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'collapsed' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 
@@ -224,12 +230,12 @@ final class NavigationMenuBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'pill',
             'active' => true,
             'class' => [
-                'link' => 'text-${color}',
-                'linkLeadingIcon' => 'text-${color} group-data-[state=open]:text-${color}',
+                'link' => 'text-{{color}}',
+                'linkLeadingIcon' => 'text-{{color}} group-data-[state=open]:text-{{color}}',
             ],
         ],
         [
@@ -287,12 +293,12 @@ final class NavigationMenuBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'link',
             'active' => true,
             'class' => [
-                'link' => 'text-${color}',
-                'linkLeadingIcon' => 'text-${color} group-data-[state=open]:text-${color}',
+                'link' => 'text-{{color}}',
+                'linkLeadingIcon' => 'text-{{color}} group-data-[state=open]:text-{{color}}',
             ],
         ],
         [

@@ -32,9 +32,9 @@ final class CalendarBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'headCell' => 'text-${color}',
-                'cellTrigger' => 'focus-visible:ring-${color}',
+            '{{color}}' => [
+                'headCell' => 'text-{{color}}',
+                'cellTrigger' => 'focus-visible:ring-{{color}}',
             ],
             'neutral' => [
                 'headCell' => 'text-highlighted',
@@ -96,31 +96,31 @@ final class CalendarBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'solid',
             'class' => [
-                'cellTrigger' => 'data-[selected]:bg-${color} data-[selected]:text-inverted data-today:not-data-[selected]:text-${color} data-[highlighted]:bg-${color}/20 hover:not-data-[selected]:bg-${color}/20',
+                'cellTrigger' => 'data-[selected]:bg-{{color}} data-[selected]:text-inverted data-today:not-data-[selected]:text-{{color}} data-[highlighted]:bg-{{color}}/20 hover:not-data-[selected]:bg-{{color}}/20',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'outline',
             'class' => [
-                'cellTrigger' => 'data-[selected]:ring data-[selected]:ring-inset data-[selected]:ring-${color}/50 data-[selected]:text-${color} data-today:not-data-[selected]:text-${color} data-[highlighted]:bg-${color}/10 hover:not-data-[selected]:bg-${color}/10',
+                'cellTrigger' => 'data-[selected]:ring data-[selected]:ring-inset data-[selected]:ring-{{color}}/50 data-[selected]:text-{{color}} data-today:not-data-[selected]:text-{{color}} data-[highlighted]:bg-{{color}}/10 hover:not-data-[selected]:bg-{{color}}/10',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'soft',
             'class' => [
-                'cellTrigger' => 'data-[selected]:bg-${color}/10 data-[selected]:text-${color} data-today:not-data-[selected]:text-${color} data-[highlighted]:bg-${color}/20 hover:not-data-[selected]:bg-${color}/20',
+                'cellTrigger' => 'data-[selected]:bg-{{color}}/10 data-[selected]:text-{{color}} data-today:not-data-[selected]:text-{{color}} data-[highlighted]:bg-{{color}}/20 hover:not-data-[selected]:bg-{{color}}/20',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'subtle',
             'class' => [
-                'cellTrigger' => 'data-[selected]:bg-${color}/10 data-[selected]:text-${color} data-[selected]:ring data-[selected]:ring-inset data-[selected]:ring-${color}/25 data-today:not-data-[selected]:text-${color} data-[highlighted]:bg-${color}/20 hover:not-data-[selected]:bg-${color}/20',
+                'cellTrigger' => 'data-[selected]:bg-{{color}}/10 data-[selected]:text-{{color}} data-[selected]:ring data-[selected]:ring-inset data-[selected]:ring-{{color}}/25 data-today:not-data-[selected]:text-{{color}} data-[highlighted]:bg-{{color}}/20 hover:not-data-[selected]:bg-{{color}}/20',
             ],
         ],
         [

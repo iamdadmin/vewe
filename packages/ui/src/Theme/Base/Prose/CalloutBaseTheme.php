@@ -28,10 +28,10 @@ final class CalloutBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'base' => 'border border-${color}/25 bg-${color}/10 text-${color}-600 dark:text-${color}-300 [&_a]:text-${color} [&_a]:hover:border-${color} [&_a]:focus-visible:outline-${color} [&_code]:text-${color}-600 dark:[&_code]:text-${color}-300 [&_code]:border-${color}/25 [&_a]:hover:[&>code]:border-${color} [&_a]:hover:[&>code]:text-${color} [&_a]:focus-visible:[&>code]:border-${color} [&_a]:focus-visible:[&>code]:text-${color} [&>ul]:marker:text-${color}/50',
-                'icon' => 'text-${color}',
-                'externalIcon' => 'text-${color}-600 dark:text-${color}-300',
+            '{{color}}' => [
+                'base' => 'border border-{{color}}/25 bg-{{color}}/10 text-{{color}}-600 dark:text-{{color}}-300 [&_a]:text-{{color}} [&_a]:hover:border-{{color}} [&_a]:focus-visible:outline-{{color}} [&_code]:text-{{color}}-600 dark:[&_code]:text-{{color}}-300 [&_code]:border-{{color}}/25 [&_a]:hover:[&>code]:border-{{color}} [&_a]:hover:[&>code]:text-{{color}} [&_a]:focus-visible:[&>code]:border-{{color}} [&_a]:focus-visible:[&>code]:text-{{color}} [&>ul]:marker:text-{{color}}/50',
+                'icon' => 'text-{{color}}',
+                'externalIcon' => 'text-{{color}}-600 dark:text-{{color}}-300',
             ],
             'neutral' => [
                 'base' => 'border border-muted bg-muted text-default',
@@ -46,11 +46,11 @@ final class CalloutBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'to' => true,
             'class' => [
-                'base' => 'hover:border-${color} has-focus-visible:border-${color}',
-                'externalIcon' => 'group-hover:text-${color}',
+                'base' => 'hover:border-{{color}} has-focus-visible:border-{{color}}',
+                'externalIcon' => 'group-hover:text-{{color}}',
             ],
         ],
         [

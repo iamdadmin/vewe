@@ -76,7 +76,9 @@ final class BlogPostBaseTheme implements Theme
             ],
         ],
         'image' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 

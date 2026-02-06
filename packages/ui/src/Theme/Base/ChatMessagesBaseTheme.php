@@ -20,7 +20,9 @@ final class ChatMessagesBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'compact' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
             'false' => '',
         ],
     ];

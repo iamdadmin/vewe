@@ -28,24 +28,26 @@ final class BannerBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'root' => 'bg-${color}',
+            '{{color}}' => [
+                'root' => 'bg-{{color}}',
             ],
             'neutral' => [
                 'root' => 'bg-inverted',
             ],
         ],
         'to' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'to' => true,
             'class' => [
-                'root' => 'hover:bg-${color}/90',
+                'root' => 'hover:bg-{{color}}/90',
             ],
         ],
         [

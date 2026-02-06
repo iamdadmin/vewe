@@ -26,7 +26,7 @@ final class InputNumberBaseTheme implements Theme
             'import' => '(fieldGroupVariantWithRoot)',
         ],
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'size' => [
@@ -57,7 +57,9 @@ final class InputNumberBaseTheme implements Theme
             ],
         ],
         'highlight' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'increment' => [
             'false' => '',
@@ -69,20 +71,20 @@ final class InputNumberBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => [
                 'outline',
                 'subtle',
             ],
             'class' => [
-                'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}',
+                'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'highlight' => true,
             'class' => [
-                'base' => 'ring ring-inset ring-${color}',
+                'base' => 'ring ring-inset ring-{{color}}',
             ],
         ],
         [

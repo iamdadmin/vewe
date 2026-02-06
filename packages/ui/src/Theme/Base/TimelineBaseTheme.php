@@ -37,8 +37,8 @@ final class TimelineBaseTheme implements Theme
             ],
         ],
         'color' => [
-            'color' => [
-                'indicator' => 'group-data-[state=completed]:bg-${color} group-data-[state=active]:bg-${color}',
+            '{{color}}' => [
+                'indicator' => 'group-data-[state=completed]:bg-{{color}} group-data-[state=active]:bg-{{color}}',
             ],
             'neutral' => [
                 'indicator' => 'group-data-[state=completed]:bg-inverted group-data-[state=active]:bg-inverted',
@@ -56,23 +56,25 @@ final class TimelineBaseTheme implements Theme
             '3xl' => '',
         ],
         'reverse' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'reverse' => false,
             'class' => [
-                'separator' => 'group-data-[state=completed]:bg-${color}',
+                'separator' => 'group-data-[state=completed]:bg-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'reverse' => true,
             'class' => [
-                'separator' => 'group-data-[state=active]:bg-${color} group-data-[state=completed]:bg-${color}',
+                'separator' => 'group-data-[state=active]:bg-{{color}} group-data-[state=completed]:bg-{{color}}',
             ],
         ],
         [

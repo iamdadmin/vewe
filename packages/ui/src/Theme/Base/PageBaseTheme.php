@@ -20,10 +20,14 @@ final class PageBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'left' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'right' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 

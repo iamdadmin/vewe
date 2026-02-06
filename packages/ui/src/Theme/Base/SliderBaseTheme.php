@@ -20,9 +20,9 @@ final class SliderBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'range' => 'bg-${color}',
-                'thumb' => 'ring-${color} focus-visible:outline-${color}/50',
+            '{{color}}' => [
+                'range' => 'bg-{{color}}',
+                'thumb' => 'ring-{{color}} focus-visible:outline-{{color}}/50',
             ],
             'neutral' => [
                 'range' => 'bg-inverted',

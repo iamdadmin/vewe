@@ -52,10 +52,14 @@ final class ChatMessageBaseTheme implements Theme
             ],
         ],
         'leading' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'actions' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'compact' => [
             'true' => [

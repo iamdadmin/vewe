@@ -28,7 +28,7 @@ final class CheckboxGroupBaseTheme implements Theme
             ],
         ],
         'color' => [
-            'color' => [],
+            '{{color}}' => [],
             'neutral' => [],
         ],
         'variant' => [
@@ -123,10 +123,10 @@ final class CheckboxGroupBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'table',
             'class' => [
-                'item' => 'has-data-[state=checked]:bg-${color}/10 has-data-[state=checked]:border-${color}/50 has-data-[state=checked]:z-[1]',
+                'item' => 'has-data-[state=checked]:bg-{{color}}/10 has-data-[state=checked]:border-{{color}}/50 has-data-[state=checked]:z-[1]',
             ],
         ],
         [

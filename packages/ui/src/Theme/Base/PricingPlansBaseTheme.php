@@ -22,7 +22,9 @@ final class PricingPlansBaseTheme implements Theme
             'false' => 'gap-x-8',
         ],
         'scale' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 

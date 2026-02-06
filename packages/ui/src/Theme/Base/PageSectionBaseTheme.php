@@ -60,10 +60,14 @@ final class PageSectionBaseTheme implements Theme
             ],
         ],
         'description' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'body' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 

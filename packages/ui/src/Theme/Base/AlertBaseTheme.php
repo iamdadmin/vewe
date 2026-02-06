@@ -25,7 +25,7 @@ final class AlertBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'variant' => [
@@ -53,31 +53,31 @@ final class AlertBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'solid',
             'class' => [
-                'root' => 'bg-${color} text-inverted',
+                'root' => 'bg-{{color}} text-inverted',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'outline',
             'class' => [
-                'root' => 'text-${color} ring ring-inset ring-${color}/25',
+                'root' => 'text-{{color}} ring ring-inset ring-{{color}}/25',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'soft',
             'class' => [
-                'root' => 'bg-${color}/10 text-${color}',
+                'root' => 'bg-{{color}}/10 text-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'subtle',
             'class' => [
-                'root' => 'bg-${color}/10 text-${color} ring ring-inset ring-${color}/25',
+                'root' => 'bg-{{color}}/10 text-{{color}} ring ring-inset ring-{{color}}/25',
             ],
         ],
         [

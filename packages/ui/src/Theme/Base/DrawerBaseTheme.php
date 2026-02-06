@@ -51,7 +51,9 @@ final class DrawerBaseTheme implements Theme
             ],
         ],
         'snapPoints' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 

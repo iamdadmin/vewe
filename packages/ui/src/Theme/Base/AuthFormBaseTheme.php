@@ -11,6 +11,7 @@ final class AuthFormBaseTheme implements Theme
 {
     use IsTheme;
 
+    // @mago-expect lint:no-literal-password
     protected const array SLOTS = [
         'root' => 'w-full space-y-6',
         'header' => 'flex flex-col text-center',

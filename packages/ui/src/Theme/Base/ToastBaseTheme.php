@@ -26,9 +26,9 @@ final class ToastBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => [
-                'root' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}',
-                'icon' => 'text-${color}',
+            '{{color}}' => [
+                'root' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{{color}}',
+                'icon' => 'text-{{color}}',
             ],
             'neutral' => [
                 'root' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-inverted',

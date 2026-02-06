@@ -25,7 +25,7 @@ final class BadgeBaseTheme implements Theme
             'import' => '(fieldGroupVariant)',
         ],
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'variant' => [
@@ -67,37 +67,39 @@ final class BadgeBaseTheme implements Theme
             ],
         ],
         'square' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'solid',
             'class' => [
-                'base' => 'bg-${color} text-inverted',
+                'base' => 'bg-{{color}} text-inverted',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'outline',
             'class' => [
-                'base' => 'text-${color} ring ring-inset ring-${color}/50',
+                'base' => 'text-{{color}} ring ring-inset ring-{{color}}/50',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'soft',
             'class' => [
-                'base' => 'bg-${color}/10 text-${color}',
+                'base' => 'bg-{{color}}/10 text-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'variant' => 'subtle',
             'class' => [
-                'base' => 'bg-${color}/10 text-${color} ring ring-inset ring-${color}/25',
+                'base' => 'bg-{{color}}/10 text-{{color}} ring ring-inset ring-{{color}}/25',
             ],
         ],
         [

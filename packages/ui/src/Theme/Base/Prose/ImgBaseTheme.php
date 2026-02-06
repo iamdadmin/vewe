@@ -23,7 +23,9 @@ final class ImgBaseTheme implements Theme
             'true' => 'will-change-transform',
         ],
         'open' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 

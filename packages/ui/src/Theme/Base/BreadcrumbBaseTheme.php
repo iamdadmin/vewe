@@ -39,7 +39,9 @@ final class BreadcrumbBaseTheme implements Theme
             ],
         ],
         'to' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
     ];
 

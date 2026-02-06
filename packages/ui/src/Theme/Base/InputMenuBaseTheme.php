@@ -149,14 +149,14 @@ final class InputMenuBaseTheme implements Theme
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'multiple' => true,
             'variant' => [
                 'outline',
                 'subtle',
             ],
             'class' => [
-                'base' => 'has-focus-visible:ring-2 has-focus-visible:ring-${color}',
+                'base' => 'has-focus-visible:ring-2 has-focus-visible:ring-{{color}}',
             ],
         ],
         [

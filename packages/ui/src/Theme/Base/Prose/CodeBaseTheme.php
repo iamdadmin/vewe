@@ -15,7 +15,7 @@ final class CodeBaseTheme implements Theme
         'base' => 'px-1.5 py-0.5 text-sm font-mono font-medium rounded-md inline-block',
         'variants' => [
             'color' => [
-                'color' => 'border border-${color}/25 bg-${color}/10 text-${color}',
+                'color' => 'border border-{{color}}/25 bg-{{color}}/10 text-{{color}}',
                 'neutral' => 'border border-muted text-highlighted bg-muted',
             ],
         ],

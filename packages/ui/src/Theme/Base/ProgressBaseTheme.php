@@ -28,9 +28,9 @@ final class ProgressBaseTheme implements Theme
             'elastic' => '',
         ],
         'color' => [
-            'color' => [
-                'indicator' => 'bg-${color}',
-                'steps' => 'text-${color}',
+            '{{color}}' => [
+                'indicator' => 'bg-{{color}}',
+                'steps' => 'text-{{color}}',
             ],
             'neutral' => [
                 'indicator' => 'bg-inverted',

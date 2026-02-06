@@ -34,7 +34,7 @@ final class FileUploadBaseTheme implements Theme
 
     protected const array VARIANTS = [
         'color' => [
-            'color' => '',
+            '{{color}}' => '',
             'neutral' => '',
         ],
         'variant' => [
@@ -95,13 +95,19 @@ final class FileUploadBaseTheme implements Theme
             'true' => 'border-dashed data-[dragging=true]:bg-elevated/25',
         ],
         'interactive' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'highlight' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'multiple' => [
-            'true' => '',
+            'true' => [
+                'base' => '',
+            ],
         ],
         'disabled' => [
             'true' => 'cursor-not-allowed opacity-75',
@@ -110,16 +116,16 @@ final class FileUploadBaseTheme implements Theme
 
     protected const array COMPOUND_VARIANTS = [
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'class' => [
-                'base' => 'focus-visible:outline-${color}',
+                'base' => 'focus-visible:outline-{{color}}',
             ],
         ],
         [
-            'color' => 'color',
+            'color' => '{{color}}',
             'highlight' => true,
             'class' => [
-                'base' => 'border-${color}',
+                'base' => 'border-{{color}}',
             ],
         ],
         [
