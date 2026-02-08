@@ -30,7 +30,7 @@
             },
             "false": {
                 "item": [
-                    "text-default data-highlighted:text-highlighted data-[state=open]:text-highlighted data-highlighted:before:bg-elevated\/50 data-[state=open]:before:bg-elevated\/50",
+                    "text-default data-highlighted:text-highlighted data-[state=open]:text-highlighted data-highlighted:before:bg-elevated/50 data-[state=open]:before:bg-elevated/50",
                     "(options.theme.transitions) && transition-colors before:transition-colors"
                 ],
                 "itemLeadingIcon": [
@@ -97,16 +97,16 @@
             "color": "color",
             "active": false,
             "class": {
-                "item": "text-${color} data-highlighted:text-${color} data-highlighted:before:bg-${color}\/10 data-[state=open]:before:bg-${color}\/10",
-                "itemLeadingIcon": "text-${color}\/75 group-data-highlighted:text-${color} group-data-[state=open]:text-${color}"
+                "item": "text-phcolorph data-highlighted:text-phcolorph data-highlighted:before:bg-phcolorph/10 data-[state=open]:before:bg-phcolorph/10",
+                "itemLeadingIcon": "text-phcolorph/75 group-data-highlighted:text-phcolorph group-data-[state=open]:text-phcolorph"
             }
         },
         {
             "color": "color",
             "active": true,
             "class": {
-                "item": "text-${color} before:bg-${color}\/10",
-                "itemLeadingIcon": "text-${color}"
+                "item": "text-phcolorph before:bg-phcolorph/10",
+                "itemLeadingIcon": "text-phcolorph"
             }
         }
     ],

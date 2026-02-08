@@ -12,8 +12,8 @@
     "variants": {
         "color": {
             "color": {
-                "base": "focus-visible:outline-${color}",
-                "indicator": "bg-${color}"
+                "base": "focus-visible:outline-phcolorph",
+                "indicator": "bg-phcolorph"
             },
             "neutral": {
                 "base": "focus-visible:outline-inverted",
@@ -126,7 +126,7 @@
             "color": "color",
             "variant": "card",
             "class": {
-                "root": "has-data-[state=checked]:border-${color}"
+                "root": "has-data-[state=checked]:border-phcolorph"
             }
         },
         {

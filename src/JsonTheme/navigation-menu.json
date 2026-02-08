@@ -2,7 +2,7 @@
     "slots": {
         "root": "relative flex gap-1.5 [&>div]:min-w-0",
         "list": "isolate min-w-0",
-        "label": "w-full flex items-center gap-1.5 font-semibold text-xs\/5 text-highlighted px-2.5 py-1.5",
+        "label": "w-full flex items-center gap-1.5 font-semibold text-xs/5 text-highlighted px-2.5 py-1.5",
         "item": "min-w-0",
         "link": "group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-md focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2",
         "linkLeadingIcon": "shrink-0 size-5",
@@ -33,8 +33,8 @@
     "variants": {
         "color": {
             "color": {
-                "link": "focus-visible:before:ring-${color}",
-                "childLink": "focus-visible:before:ring-${color}"
+                "link": "focus-visible:before:ring-phcolorph",
+                "childLink": "focus-visible:before:ring-phcolorph"
             },
             "neutral": {
                 "link": "focus-visible:before:ring-inverted",
@@ -85,7 +85,7 @@
                 "link": "text-muted",
                 "linkLeadingIcon": "text-dimmed",
                 "childLink": [
-                    "hover:before:bg-elevated\/50 text-default hover:text-highlighted",
+                    "hover:before:bg-elevated/50 text-default hover:text-highlighted",
                     "(options.theme.transitions) && transition-colors before:transition-colors"
                 ],
                 "childLinkIcon": [
@@ -171,7 +171,7 @@
             "variant": "pill",
             "class": {
                 "link": [
-                    "hover:text-highlighted hover:before:bg-elevated\/50",
+                    "hover:text-highlighted hover:before:bg-elevated/50",
                     "(options.theme.transitions) && transition-colors before:transition-colors"
                 ],
                 "linkLeadingIcon": [
@@ -196,7 +196,7 @@
             "highlight": true,
             "orientation": "horizontal",
             "class": {
-                "link": "data-[state=open]:before:bg-elevated\/50"
+                "link": "data-[state=open]:before:bg-elevated/50"
             }
         },
         {
@@ -206,7 +206,7 @@
             "active": false,
             "orientation": "horizontal",
             "class": {
-                "link": "data-[state=open]:before:bg-elevated\/50"
+                "link": "data-[state=open]:before:bg-elevated/50"
             }
         },
         {
@@ -214,8 +214,8 @@
             "variant": "pill",
             "active": true,
             "class": {
-                "link": "text-${color}",
-                "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
+                "link": "text-phcolorph",
+                "linkLeadingIcon": "text-phcolorph group-data-[state=open]:text-phcolorph"
             }
         },
         {
@@ -242,7 +242,7 @@
             "disabled": false,
             "class": {
                 "link": [
-                    "hover:before:bg-elevated\/50",
+                    "hover:before:bg-elevated/50",
                     "(options.theme.transitions) && before:transition-colors"
                 ]
             }
@@ -277,8 +277,8 @@
             "variant": "link",
             "active": true,
             "class": {
-                "link": "text-${color}",
-                "linkLeadingIcon": "text-${color} group-data-[state=open]:text-${color}"
+                "link": "text-phcolorph",
+                "linkLeadingIcon": "text-phcolorph group-data-[state=open]:text-phcolorph"
             }
         },
         {

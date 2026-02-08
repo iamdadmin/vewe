@@ -8,7 +8,7 @@
         "container": "flex items-center",
         "thumb": "group pointer-events-none rounded-full bg-default shadow-lg ring-0 transition-transform duration-200 data-[state=unchecked]:translate-x-0 data-[state=unchecked]:rtl:-translate-x-0 flex items-center justify-center",
         "icon": [
-            "absolute shrink-0 group-data-[state=unchecked]:text-dimmed opacity-0 size-10\/12",
+            "absolute shrink-0 group-data-[state=unchecked]:text-dimmed opacity-0 size-10/12",
             "(options.theme.transitions) && transition-[color,opacity] duration-200"
         ],
         "wrapper": "ms-2",
@@ -18,8 +18,8 @@
     "variants": {
         "color": {
             "color": {
-                "base": "data-[state=checked]:bg-${color} focus-visible:outline-${color}",
-                "icon": "group-data-[state=checked]:text-${color}"
+                "base": "data-[state=checked]:bg-phcolorph focus-visible:outline-phcolorph",
+                "icon": "group-data-[state=checked]:text-phcolorph"
             },
             "neutral": {
                 "base": "data-[state=checked]:bg-inverted focus-visible:outline-inverted",

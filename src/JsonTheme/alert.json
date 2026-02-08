@@ -42,28 +42,28 @@
             "color": "color",
             "variant": "solid",
             "class": {
-                "root": "bg-${color} text-inverted"
+                "root": "bg-phcolorph text-inverted"
             }
         },
         {
             "color": "color",
             "variant": "outline",
             "class": {
-                "root": "text-${color} ring ring-inset ring-${color}\/25"
+                "root": "text-phcolorph ring ring-inset ring-phcolorph/25"
             }
         },
         {
             "color": "color",
             "variant": "soft",
             "class": {
-                "root": "bg-${color}\/10 text-${color}"
+                "root": "bg-phcolorph/10 text-phcolorph"
             }
         },
         {
             "color": "color",
             "variant": "subtle",
             "class": {
-                "root": "bg-${color}\/10 text-${color} ring ring-inset ring-${color}\/25"
+                "root": "bg-phcolorph/10 text-phcolorph ring ring-inset ring-phcolorph/25"
             }
         },
         {
@@ -84,14 +84,14 @@
             "color": "neutral",
             "variant": "soft",
             "class": {
-                "root": "text-highlighted bg-elevated\/50"
+                "root": "text-highlighted bg-elevated/50"
             }
         },
         {
             "color": "neutral",
             "variant": "subtle",
             "class": {
-                "root": "text-highlighted bg-elevated\/50 ring ring-inset ring-accented"
+                "root": "text-highlighted bg-elevated/50 ring ring-inset ring-accented"
             }
         }
     ],

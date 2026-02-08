@@ -79,7 +79,7 @@
             "outside": ""
         },
         "dropzone": {
-            "true": "border-dashed data-[dragging=true]:bg-elevated\/25"
+            "true": "border-dashed data-[dragging=true]:bg-elevated/25"
         },
         "interactive": {
             "true": ""
@@ -98,14 +98,14 @@
         {
             "color": "color",
             "class": {
-                "base": "focus-visible:outline-${color}"
+                "base": "focus-visible:outline-phcolorph"
             }
         },
         {
             "color": "color",
             "highlight": true,
             "class": {
-                "base": "border-${color}"
+                "base": "border-phcolorph"
             }
         },
         {
@@ -210,7 +210,7 @@
             "interactive": true,
             "disabled": false,
             "class": {
-                "base": "hover:bg-elevated\/25"
+                "base": "hover:bg-elevated/25"
             }
         }
     ],

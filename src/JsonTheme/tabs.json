@@ -108,8 +108,8 @@
             "color": "color",
             "variant": "pill",
             "class": {
-                "indicator": "bg-${color}",
-                "trigger": "data-[state=active]:text-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-${color}"
+                "indicator": "bg-phcolorph",
+                "trigger": "data-[state=active]:text-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-phcolorph"
             }
         },
         {
@@ -124,8 +124,8 @@
             "color": "color",
             "variant": "link",
             "class": {
-                "indicator": "bg-${color}",
-                "trigger": "data-[state=active]:text-${color} focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}"
+                "indicator": "bg-phcolorph",
+                "trigger": "data-[state=active]:text-phcolorph focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph"
             }
         },
         {

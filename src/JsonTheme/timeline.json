@@ -6,7 +6,7 @@
         "indicator": "group-data-[state=completed]:text-inverted group-data-[state=active]:text-inverted text-muted",
         "separator": "flex-1 rounded-full bg-elevated",
         "wrapper": "w-full",
-        "date": "text-dimmed text-xs\/5",
+        "date": "text-dimmed text-xs/5",
         "title": "font-medium text-highlighted text-sm",
         "description": "text-muted text-wrap text-sm"
     },
@@ -25,7 +25,7 @@
         },
         "color": {
             "color": {
-                "indicator": "group-data-[state=completed]:bg-${color} group-data-[state=active]:bg-${color}"
+                "indicator": "group-data-[state=completed]:bg-phcolorph group-data-[state=active]:bg-phcolorph"
             },
             "neutral": {
                 "indicator": "group-data-[state=completed]:bg-inverted group-data-[state=active]:bg-inverted"
@@ -51,14 +51,14 @@
             "color": "color",
             "reverse": false,
             "class": {
-                "separator": "group-data-[state=completed]:bg-${color}"
+                "separator": "group-data-[state=completed]:bg-phcolorph"
             }
         },
         {
             "color": "color",
             "reverse": true,
             "class": {
-                "separator": "group-data-[state=active]:bg-${color} group-data-[state=completed]:bg-${color}"
+                "separator": "group-data-[state=active]:bg-phcolorph group-data-[state=completed]:bg-phcolorph"
             }
         },
         {

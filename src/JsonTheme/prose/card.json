@@ -15,7 +15,7 @@
     "variants": {
         "color": {
             "color": {
-                "icon": "text-${color}"
+                "icon": "text-phcolorph"
             },
             "neutral": {
                 "icon": "text-highlighted"
@@ -35,15 +35,15 @@
             "color": "color",
             "to": true,
             "class": {
-                "base": "hover:bg-${color}\/10 hover:border-${color} has-focus-visible:border-${color}",
-                "externalIcon": "group-hover:text-${color}"
+                "base": "hover:bg-phcolorph/10 hover:border-phcolorph has-focus-visible:border-phcolorph",
+                "externalIcon": "group-hover:text-phcolorph"
             }
         },
         {
             "color": "neutral",
             "to": true,
             "class": {
-                "base": "hover:bg-elevated\/50 hover:border-inverted has-focus-visible:border-inverted",
+                "base": "hover:bg-elevated/50 hover:border-inverted has-focus-visible:border-inverted",
                 "externalIcon": "group-hover:text-highlighted"
             }
         }

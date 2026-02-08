@@ -22,28 +22,28 @@
             "color": "color",
             "variant": "solid",
             "class": {
-                "base": "text-inverted bg-${color}"
+                "base": "text-inverted bg-phcolorph"
             }
         },
         {
             "color": "color",
             "variant": "outline",
             "class": {
-                "base": "ring ring-inset ring-${color}\/50 text-${color}"
+                "base": "ring ring-inset ring-phcolorph/50 text-phcolorph"
             }
         },
         {
             "color": "color",
             "variant": "soft",
             "class": {
-                "base": "text-${color} bg-${color}\/10"
+                "base": "text-phcolorph bg-phcolorph/10"
             }
         },
         {
             "color": "color",
             "variant": "subtle",
             "class": {
-                "base": "text-${color} ring ring-inset ring-${color}\/25 bg-${color}\/10"
+                "base": "text-phcolorph ring ring-inset ring-phcolorph/25 bg-phcolorph/10"
             }
         },
         {

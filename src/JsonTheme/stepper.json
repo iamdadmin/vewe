@@ -66,8 +66,8 @@
         },
         "color": {
             "color": {
-                "trigger": "group-data-[state=completed]:bg-${color} group-data-[state=active]:bg-${color} focus-visible:outline-${color}",
-                "separator": "group-data-[state=completed]:bg-${color}"
+                "trigger": "group-data-[state=completed]:bg-phcolorph group-data-[state=active]:bg-phcolorph focus-visible:outline-phcolorph",
+                "separator": "group-data-[state=completed]:bg-phcolorph"
             },
             "neutral": {
                 "trigger": "group-data-[state=completed]:bg-inverted group-data-[state=active]:bg-inverted focus-visible:outline-inverted",

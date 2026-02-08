@@ -71,13 +71,13 @@ final class BaseThemeScaffoldCommand
 
             // Render CONST ARRAYs from JsonTheme
             foreach ([
-                'slots' => 'SLOTS',
-                'variants' => 'VARIANTS',
-                'compoundVariants' => 'COMPOUND_VARIANTS',
-                'defaultVariants' => 'DEFAULT_VARIANTS',
+                'slots' => 'PHslots',
+                'variants' => 'PHvariants',
+                'compoundVariants' => 'PHcompoundVariants',
+                'defaultVariants' => 'PHdefaultVariants',
             ] as $key => $value) {
                 if (isset($json[$key])) {
-                    $replacements['array ' . $value . ' = []'] = 'array ' . $value . ' = ' . $this->stringify($json[$key]);
+                    $replacements["'{$value}'"] = $this->stringify($json[$key]);
                 }
             }
 
@@ -111,7 +111,7 @@ final class BaseThemeScaffoldCommand
         return file_put_contents($targetPath, $stub);
     }
 
-    private function stringify(mixed $value, int $depth = 1): string
+    private function stringify(mixed $value, int $depth = 2): string
     {
         $indent = str_repeat('    ', $depth);
         $nextIndent = str_repeat('    ', $depth + 1);
@@ -164,6 +164,6 @@ final class BaseThemeScaffoldCommand
             }
         }
 
-        return "[\n" . implode("\n", $lines) . "\n" . $indent . ']';
+        return "\n" . implode("\n", $lines) . "\n" . $indent . '';
     }
 }

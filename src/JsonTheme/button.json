@@ -90,49 +90,49 @@
             "color": "color",
             "variant": "solid",
             "class": {
-                "base": "text-inverted bg-${color} hover:bg-${color}\/75 active:bg-${color}\/75 disabled:bg-${color} aria-disabled:bg-${color} focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-${color}"
+                "base": "text-inverted bg-phcolorph hover:bg-phcolorph/75 active:bg-phcolorph/75 disabled:bg-phcolorph aria-disabled:bg-phcolorph focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-phcolorph"
             }
         },
         {
             "color": "color",
             "variant": "outline",
             "class": {
-                "base": "ring ring-inset ring-${color}\/50 text-${color} hover:bg-${color}\/10 active:bg-${color}\/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-${color}"
+                "base": "ring ring-inset ring-phcolorph/50 text-phcolorph hover:bg-phcolorph/10 active:bg-phcolorph/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-phcolorph"
             }
         },
         {
             "color": "color",
             "variant": "soft",
             "class": {
-                "base": "text-${color} bg-${color}\/10 hover:bg-${color}\/15 active:bg-${color}\/15 focus:outline-none focus-visible:bg-${color}\/15 disabled:bg-${color}\/10 aria-disabled:bg-${color}\/10"
+                "base": "text-phcolorph bg-phcolorph/10 hover:bg-phcolorph/15 active:bg-phcolorph/15 focus:outline-none focus-visible:bg-phcolorph/15 disabled:bg-phcolorph/10 aria-disabled:bg-phcolorph/10"
             }
         },
         {
             "color": "color",
             "variant": "subtle",
             "class": {
-                "base": "text-${color} ring ring-inset ring-${color}\/25 bg-${color}\/10 hover:bg-${color}\/15 active:bg-${color}\/15 disabled:bg-${color}\/10 aria-disabled:bg-${color}\/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-${color}"
+                "base": "text-phcolorph ring ring-inset ring-phcolorph/25 bg-phcolorph/10 hover:bg-phcolorph/15 active:bg-phcolorph/15 disabled:bg-phcolorph/10 aria-disabled:bg-phcolorph/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-phcolorph"
             }
         },
         {
             "color": "color",
             "variant": "ghost",
             "class": {
-                "base": "text-${color} hover:bg-${color}\/10 active:bg-${color}\/10 focus:outline-none focus-visible:bg-${color}\/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
+                "base": "text-phcolorph hover:bg-phcolorph/10 active:bg-phcolorph/10 focus:outline-none focus-visible:bg-phcolorph/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
             }
         },
         {
             "color": "color",
             "variant": "link",
             "class": {
-                "base": "text-${color} hover:text-${color}\/75 active:text-${color}\/75 disabled:text-${color} aria-disabled:text-${color} focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}"
+                "base": "text-phcolorph hover:text-phcolorph/75 active:text-phcolorph/75 disabled:text-phcolorph aria-disabled:text-phcolorph focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph"
             }
         },
         {
             "color": "neutral",
             "variant": "solid",
             "class": {
-                "base": "text-inverted bg-inverted hover:bg-inverted\/90 active:bg-inverted\/90 disabled:bg-inverted aria-disabled:bg-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inverted"
+                "base": "text-inverted bg-inverted hover:bg-inverted/90 active:bg-inverted/90 disabled:bg-inverted aria-disabled:bg-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inverted"
             }
         },
         {
@@ -146,14 +146,14 @@
             "color": "neutral",
             "variant": "soft",
             "class": {
-                "base": "text-default bg-elevated hover:bg-accented\/75 active:bg-accented\/75 focus:outline-none focus-visible:bg-accented\/75 disabled:bg-elevated aria-disabled:bg-elevated"
+                "base": "text-default bg-elevated hover:bg-accented/75 active:bg-accented/75 focus:outline-none focus-visible:bg-accented/75 disabled:bg-elevated aria-disabled:bg-elevated"
             }
         },
         {
             "color": "neutral",
             "variant": "subtle",
             "class": {
-                "base": "ring ring-inset ring-accented text-default bg-elevated hover:bg-accented\/75 active:bg-accented\/75 disabled:bg-elevated aria-disabled:bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted"
+                "base": "ring ring-inset ring-accented text-default bg-elevated hover:bg-accented/75 active:bg-accented/75 disabled:bg-elevated aria-disabled:bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted"
             }
         },
         {

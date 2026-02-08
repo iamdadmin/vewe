@@ -11,7 +11,7 @@
     "variants": {
         "color": {
             "color": {
-                "border": "border-${color}"
+                "border": "border-phcolorph"
             },
             "neutral": {
                 "border": "border-default"

@@ -26,7 +26,7 @@
         },
         "variant": {
             "outline": "text-highlighted bg-default ring ring-inset ring-accented",
-            "soft": "text-highlighted bg-elevated\/50 hover:bg-elevated focus:bg-elevated disabled:bg-elevated\/50",
+            "soft": "text-highlighted bg-elevated/50 hover:bg-elevated focus:bg-elevated disabled:bg-elevated/50",
             "subtle": "text-highlighted bg-elevated ring ring-inset ring-accented",
             "ghost": "text-highlighted bg-transparent hover:bg-elevated focus:bg-elevated disabled:bg-transparent dark:disabled:bg-transparent",
             "none": "text-highlighted bg-transparent"
@@ -47,14 +47,14 @@
                 "subtle"
             ],
             "class": {
-                "base": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}"
+                "base": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph"
             }
         },
         {
             "color": "color",
             "highlight": true,
             "class": {
-                "base": "ring ring-inset ring-${color}"
+                "base": "ring ring-inset ring-phcolorph"
             }
         },
         {

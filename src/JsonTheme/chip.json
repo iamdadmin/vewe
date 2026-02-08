@@ -5,7 +5,7 @@
     },
     "variants": {
         "color": {
-            "color": "bg-${color}",
+            "color": "bg-phcolorph",
             "neutral": "bg-inverted"
         },
         "size": {
@@ -37,28 +37,28 @@
             "position": "top-right",
             "inset": false,
             "class": {
-                "base": "-translate-y-1\/2 translate-x-1\/2 transform"
+                "base": "-translate-y-1/2 translate-x-1/2 transform"
             }
         },
         {
             "position": "bottom-right",
             "inset": false,
             "class": {
-                "base": "translate-y-1\/2 translate-x-1\/2 transform"
+                "base": "translate-y-1/2 translate-x-1/2 transform"
             }
         },
         {
             "position": "top-left",
             "inset": false,
             "class": {
-                "base": "-translate-y-1\/2 -translate-x-1\/2 transform"
+                "base": "-translate-y-1/2 -translate-x-1/2 transform"
             }
         },
         {
             "position": "bottom-left",
             "inset": false,
             "class": {
-                "base": "translate-y-1\/2 -translate-x-1\/2 transform"
+                "base": "translate-y-1/2 -translate-x-1/2 transform"
             }
         }
     ],

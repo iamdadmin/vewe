@@ -16,8 +16,8 @@
         },
         "color": {
             "color": {
-                "indicator": "bg-${color}",
-                "steps": "text-${color}"
+                "indicator": "bg-phcolorph",
+                "steps": "text-phcolorph"
             },
             "neutral": {
                 "indicator": "bg-inverted",

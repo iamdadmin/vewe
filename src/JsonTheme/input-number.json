@@ -61,14 +61,14 @@
                 "subtle"
             ],
             "class": {
-                "base": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}"
+                "base": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph"
             }
         },
         {
             "color": "color",
             "highlight": true,
             "class": {
-                "base": "ring ring-inset ring-${color}"
+                "base": "ring ring-inset ring-phcolorph"
             }
         },
         {

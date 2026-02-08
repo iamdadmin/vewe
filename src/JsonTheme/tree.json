@@ -18,7 +18,7 @@
         },
         "color": {
             "color": {
-                "link": "focus-visible:before:ring-${color}"
+                "link": "focus-visible:before:ring-phcolorph"
             },
             "neutral": {
                 "link": "focus-visible:before:ring-inverted"
@@ -72,7 +72,7 @@
             "color": "color",
             "selected": true,
             "class": {
-                "link": "text-${color}"
+                "link": "text-phcolorph"
             }
         },
         {
@@ -87,7 +87,7 @@
             "disabled": false,
             "class": {
                 "link": [
-                    "hover:text-highlighted hover:before:bg-elevated\/50",
+                    "hover:text-highlighted hover:before:bg-elevated/50",
                     "(options.theme.transitions) && transition-colors before:transition-colors"
                 ]
             }

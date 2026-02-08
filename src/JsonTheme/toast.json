@@ -14,8 +14,8 @@
     "variants": {
         "color": {
             "color": {
-                "root": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-${color}",
-                "icon": "text-${color}"
+                "root": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph",
+                "icon": "text-phcolorph"
             },
             "neutral": {
                 "root": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-inverted",

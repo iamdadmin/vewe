@@ -23,13 +23,13 @@
         },
         "size": {
             "xs": {
-                "base": "text-[8px]\/3 px-1 py-0.5 gap-1 rounded-sm",
+                "base": "text-[8px]/3 px-1 py-0.5 gap-1 rounded-sm",
                 "leadingIcon": "size-3",
                 "leadingAvatarSize": "3xs",
                 "trailingIcon": "size-3"
             },
             "sm": {
-                "base": "text-[10px]\/3 px-1.5 py-1 gap-1 rounded-sm",
+                "base": "text-[10px]/3 px-1.5 py-1 gap-1 rounded-sm",
                 "leadingIcon": "size-3",
                 "leadingAvatarSize": "3xs",
                 "trailingIcon": "size-3"
@@ -62,28 +62,28 @@
             "color": "color",
             "variant": "solid",
             "class": {
-                "base": "bg-${color} text-inverted"
+                "base": "bg-phcolorph text-inverted"
             }
         },
         {
             "color": "color",
             "variant": "outline",
             "class": {
-                "base": "text-${color} ring ring-inset ring-${color}\/50"
+                "base": "text-phcolorph ring ring-inset ring-phcolorph/50"
             }
         },
         {
             "color": "color",
             "variant": "soft",
             "class": {
-                "base": "bg-${color}\/10 text-${color}"
+                "base": "bg-phcolorph/10 text-phcolorph"
             }
         },
         {
             "color": "color",
             "variant": "subtle",
             "class": {
-                "base": "bg-${color}\/10 text-${color} ring ring-inset ring-${color}\/25"
+                "base": "bg-phcolorph/10 text-phcolorph ring ring-inset ring-phcolorph/25"
             }
         },
         {

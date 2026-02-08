@@ -8,12 +8,12 @@
     "variants": {
         "color": {
             "color": {
-                "range": "bg-${color}",
-                "thumb": "ring-${color} focus-visible:outline-${color}\/50"
+                "range": "bg-phcolorph",
+                "thumb": "ring-phcolorph focus-visible:outline-phcolorph/50"
             },
             "neutral": {
                 "range": "bg-inverted",
-                "thumb": "ring-inverted focus-visible:outline-inverted\/50"
+                "thumb": "ring-inverted focus-visible:outline-inverted/50"
             }
         },
         "size": {
