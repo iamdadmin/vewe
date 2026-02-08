@@ -20,7 +20,7 @@
     },
     "variants": {
         "color": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "active": {
@@ -94,7 +94,7 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "active": false,
             "class": {
                 "item": "text-phcolorph data-highlighted:text-phcolorph data-highlighted:before:bg-phcolorph/10 data-[state=open]:before:bg-phcolorph/10",
@@ -102,7 +102,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "active": true,
             "class": {
                 "item": "text-phcolorph before:bg-phcolorph/10",

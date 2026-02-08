@@ -19,7 +19,7 @@
     },
     "variants": {
         "color": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "highlightColor": {
@@ -52,7 +52,7 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "active": true,
             "class": {
                 "link": "text-phcolorph",
@@ -69,7 +69,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "primary",
+        "color": "phcolorph",
         "highlightColor": "primary"
     }
 }

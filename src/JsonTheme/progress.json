@@ -260,7 +260,7 @@
     ],
     "defaultVariants": {
         "animation": "carousel",
-        "color": "primary",
+        "color": "phcolorph",
         "size": "md"
     }
 }

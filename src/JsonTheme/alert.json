@@ -12,7 +12,7 @@
     },
     "variants": {
         "color": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "variant": {
@@ -39,28 +39,28 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "solid",
             "class": {
                 "root": "bg-phcolorph text-inverted"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "outline",
             "class": {
                 "root": "text-phcolorph ring ring-inset ring-phcolorph/25"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "soft",
             "class": {
                 "root": "bg-phcolorph/10 text-phcolorph"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "subtle",
             "class": {
                 "root": "bg-phcolorph/10 text-phcolorph ring ring-inset ring-phcolorph/25"
@@ -96,7 +96,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "primary",
+        "color": "phcolorph",
         "variant": "solid"
     }
 }

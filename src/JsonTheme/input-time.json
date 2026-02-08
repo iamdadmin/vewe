@@ -62,7 +62,7 @@
         {
             "variant": "soft",
             "class": {
-                "segment": "focus:bg-accented\/50 group-hover:focus:bg-accented"
+                "segment": "focus:bg-accented/50 group-hover:focus:bg-accented"
             }
         },
         {

@@ -64,7 +64,7 @@
     ],
     "defaultVariants": {
         "size": "md",
-        "color": "primary",
+        "color": "phcolorph",
         "position": "top-right"
     }
 }

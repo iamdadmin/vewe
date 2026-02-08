@@ -12,7 +12,7 @@
             "import": "(fieldGroupVariant)"
         },
         "color": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "variant": {
@@ -59,28 +59,28 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "solid",
             "class": {
                 "base": "bg-phcolorph text-inverted"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "outline",
             "class": {
                 "base": "text-phcolorph ring ring-inset ring-phcolorph/50"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "soft",
             "class": {
                 "base": "bg-phcolorph/10 text-phcolorph"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "subtle",
             "class": {
                 "base": "bg-phcolorph/10 text-phcolorph ring ring-inset ring-phcolorph/25"
@@ -151,7 +151,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "primary",
+        "color": "phcolorph",
         "variant": "solid",
         "size": "md"
     }

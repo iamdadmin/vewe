@@ -1,7 +1,7 @@
 {
     "slots": {
-        "root": "relative group\/blog-post flex flex-col rounded-lg overflow-hidden",
-        "header": "relative overflow-hidden aspect-[16\/9] w-full pointer-events-none",
+        "root": "relative group/blog-post flex flex-col rounded-lg overflow-hidden",
+        "header": "relative overflow-hidden aspect-[16/9] w-full pointer-events-none",
         "body": "min-w-0 flex-1 flex flex-col",
         "footer": "",
         "image": "object-cover object-top w-full h-full",
@@ -31,12 +31,12 @@
                 "description": "text-muted"
             },
             "soft": {
-                "root": "bg-elevated\/50",
+                "root": "bg-elevated/50",
                 "date": "text-muted",
                 "description": "text-toned"
             },
             "subtle": {
-                "root": "bg-elevated\/50 ring ring-default",
+                "root": "bg-elevated/50 ring ring-default",
                 "date": "text-muted",
                 "description": "text-toned"
             },
@@ -58,7 +58,7 @@
                     "has-focus-visible:ring-2 has-focus-visible:ring-primary",
                     "(options.theme.transitions) && transition"
                 ],
-                "image": "transform transition-transform duration-200 group-hover\/blog-post:scale-110",
+                "image": "transform transition-transform duration-200 group-hover/blog-post:scale-110",
                 "avatar": "transform transition-transform duration-200 hover:scale-115 focus-visible:outline-primary"
             }
         },
@@ -71,7 +71,7 @@
             "variant": "outline",
             "to": true,
             "class": {
-                "root": "hover:bg-elevated\/50"
+                "root": "hover:bg-elevated/50"
             }
         },
         {
@@ -92,9 +92,9 @@
             "variant": "ghost",
             "to": true,
             "class": {
-                "root": "hover:bg-elevated\/50",
+                "root": "hover:bg-elevated/50",
                 "header": [
-                    "group-hover\/blog-post:shadow-none",
+                    "group-hover/blog-post:shadow-none",
                     "(options.theme.transitions) && transition-all"
                 ]
             }
@@ -104,7 +104,7 @@
             "to": true,
             "orientation": "vertical",
             "class": {
-                "header": "group-hover\/blog-post:rounded-b-none"
+                "header": "group-hover/blog-post:rounded-b-none"
             }
         },
         {
@@ -112,7 +112,7 @@
             "to": true,
             "orientation": "horizontal",
             "class": {
-                "header": "group-hover\/blog-post:rounded-r-none"
+                "header": "group-hover/blog-post:rounded-r-none"
             }
         },
         {

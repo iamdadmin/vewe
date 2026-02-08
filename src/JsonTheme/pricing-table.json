@@ -42,9 +42,9 @@
         },
         "highlight": {
             "true": {
-                "tier": "bg-elevated\/50 border-x border-t border-default rounded-t-lg",
-                "td": "bg-elevated\/50 border-x border-default",
-                "item": "bg-elevated\/50"
+                "tier": "bg-elevated/50 border-x border-t border-default rounded-t-lg",
+                "td": "bg-elevated/50 border-x border-default",
+                "item": "bg-elevated/50"
             }
         }
     }

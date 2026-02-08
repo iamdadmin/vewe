@@ -1,6 +1,6 @@
 {
     "slots": {
-        "root": "relative group\/user",
+        "root": "relative group/user",
         "wrapper": "",
         "name": "font-medium",
         "description": "text-muted",
@@ -25,7 +25,7 @@
                     "peer-hover:text-toned peer-focus-visible:text-toned",
                     "(options.theme.transitions) && transition-colors"
                 ],
-                "avatar": "transform transition-transform duration-200 group-hover\/user:scale-115 group-has-focus-visible\/user:scale-115"
+                "avatar": "transform transition-transform duration-200 group-hover/user:scale-115 group-has-focus-visible/user:scale-115"
             },
             "false": {
                 "name": "text-highlighted",

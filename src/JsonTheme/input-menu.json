@@ -135,7 +135,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "multiple": true,
             "variant": [
                 "outline",

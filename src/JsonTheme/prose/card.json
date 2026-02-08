@@ -32,7 +32,7 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "to": true,
             "class": {
                 "base": "hover:bg-phcolorph/10 hover:border-phcolorph has-focus-visible:border-phcolorph",

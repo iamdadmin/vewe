@@ -109,7 +109,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "table",
             "class": {
                 "item": "has-data-[state=checked]:bg-phcolorph/10 has-data-[state=checked]:border-phcolorph/50 has-data-[state=checked]:z-[1]"

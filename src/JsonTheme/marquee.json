@@ -40,7 +40,7 @@
             "orientation": "horizontal",
             "overlay": true,
             "class": {
-                "root": "before:inset-y-0 before:left-0 before:h-full before:w-1\/3 before:bg-gradient-to-r after:inset-y-0 after:right-0 after:h-full after:w-1\/3 after:bg-gradient-to-l backface-hidden"
+                "root": "before:inset-y-0 before:left-0 before:h-full before:w-1/3 before:bg-gradient-to-r after:inset-y-0 after:right-0 after:h-full after:w-1/3 after:bg-gradient-to-l backface-hidden"
             }
         },
         {
@@ -54,7 +54,7 @@
             "orientation": "vertical",
             "overlay": true,
             "class": {
-                "root": "before:inset-x-0 before:top-0 before:w-full before:h-1\/3 before:bg-gradient-to-b after:inset-x-0 after:bottom-0 after:w-full after:h-1\/3 after:bg-gradient-to-t backface-hidden"
+                "root": "before:inset-x-0 before:top-0 before:w-full before:h-1/3 before:bg-gradient-to-b after:inset-x-0 after:bottom-0 after:w-full after:h-1/3 after:bg-gradient-to-t backface-hidden"
             }
         }
     ]

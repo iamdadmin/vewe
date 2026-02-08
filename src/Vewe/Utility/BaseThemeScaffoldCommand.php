@@ -111,7 +111,7 @@ final class BaseThemeScaffoldCommand
         return file_put_contents($targetPath, $stub);
     }
 
-    private function stringify(mixed $value, int $depth = 2): string
+    private function stringify(mixed $value, int $depth = 3): string
     {
         $indent = str_repeat('    ', $depth);
         $nextIndent = str_repeat('    ', $depth + 1);

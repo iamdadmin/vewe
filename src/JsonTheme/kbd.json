@@ -2,7 +2,7 @@
     "base": "inline-flex items-center justify-center px-1 rounded-sm font-medium font-sans uppercase",
     "variants": {
         "color": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "variant": {
@@ -19,28 +19,28 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "solid",
             "class": {
                 "base": "text-inverted bg-phcolorph"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "outline",
             "class": {
                 "base": "ring ring-inset ring-phcolorph/50 text-phcolorph"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "soft",
             "class": {
                 "base": "text-phcolorph bg-phcolorph/10"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "subtle",
             "class": {
                 "base": "text-phcolorph ring ring-inset ring-phcolorph/25 bg-phcolorph/10"

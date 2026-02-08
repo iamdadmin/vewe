@@ -17,7 +17,7 @@
     },
     "variants": {
         "color": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "variant": {
@@ -105,7 +105,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "pill",
             "class": {
                 "indicator": "bg-phcolorph",
@@ -121,7 +121,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "link",
             "class": {
                 "indicator": "bg-phcolorph",
@@ -138,7 +138,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "primary",
+        "color": "phcolorph",
         "variant": "pill",
         "size": "md"
     }

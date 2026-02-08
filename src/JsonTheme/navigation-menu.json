@@ -42,7 +42,7 @@
             }
         },
         "highlightColor": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "variant": {
@@ -210,7 +210,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "pill",
             "active": true,
             "class": {
@@ -273,7 +273,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "link",
             "active": true,
             "class": {
@@ -310,7 +310,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "primary",
+        "color": "phcolorph",
         "highlightColor": "primary",
         "variant": "pill"
     }

@@ -41,7 +41,7 @@
             "xs": {
                 "input": "[&>input]:h-10",
                 "empty": "py-3 text-xs",
-                "label": "p-1 text-[10px]\/3 gap-1",
+                "label": "p-1 text-[10px]/3 gap-1",
                 "item": "p-1 text-xs gap-1",
                 "itemLeadingIcon": "size-4",
                 "itemLeadingAvatarSize": "3xs",
@@ -56,7 +56,7 @@
             "sm": {
                 "input": "[&>input]:h-11",
                 "empty": "py-4 text-xs",
-                "label": "p-1.5 text-[10px]\/3 gap-1.5",
+                "label": "p-1.5 text-[10px]/3 gap-1.5",
                 "item": "p-1.5 text-xs gap-1.5",
                 "itemLeadingIcon": "size-4",
                 "itemLeadingAvatarSize": "3xs",
@@ -121,7 +121,7 @@
             },
             "false": {
                 "item": [
-                    "text-default data-highlighted:not-data-disabled:text-highlighted data-highlighted:not-data-disabled:before:bg-elevated\/50",
+                    "text-default data-highlighted:not-data-disabled:text-highlighted data-highlighted:not-data-disabled:before:bg-elevated/50",
                     "(options.theme.transitions) && transition-colors before:transition-colors"
                 ],
                 "itemLeadingIcon": [

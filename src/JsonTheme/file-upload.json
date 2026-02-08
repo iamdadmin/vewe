@@ -21,7 +21,7 @@
     },
     "variants": {
         "color": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "variant": {
@@ -96,13 +96,13 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "class": {
                 "base": "focus-visible:outline-phcolorph"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "highlight": true,
             "class": {
                 "base": "border-phcolorph"
@@ -215,7 +215,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "primary",
+        "color": "phcolorph",
         "variant": "area",
         "size": "md"
     }

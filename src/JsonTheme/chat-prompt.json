@@ -4,18 +4,18 @@
         "header": "flex items-center gap-1.5",
         "body": "items-start",
         "footer": "flex items-center justify-between gap-1.5",
-        "base": "text-base\/5"
+        "base": "text-base/5"
     },
     "variants": {
         "variant": {
             "outline": {
-                "root": "bg-default\/75 ring ring-default"
+                "root": "bg-default/75 ring ring-default"
             },
             "soft": {
-                "root": "bg-elevated\/50"
+                "root": "bg-elevated/50"
             },
             "subtle": {
-                "root": "bg-elevated\/50 ring ring-default"
+                "root": "bg-elevated/50 ring ring-default"
             },
             "naked": {
                 "root": ""

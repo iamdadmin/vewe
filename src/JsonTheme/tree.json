@@ -69,7 +69,7 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "selected": true,
             "class": {
                 "link": "text-phcolorph"
@@ -94,7 +94,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "primary",
+        "color": "phcolorph",
         "size": "md"
     }
 }

@@ -13,7 +13,7 @@
     "yarn.lock": "i-vscode-icons-file-type-yarn",
     ".env": "i-vscode-icons-file-type-dotenv",
     ".env.example": "i-vscode-icons-file-type-dotenv",
-    ".vscode\/settings.json": "i-vscode-icons-file-type-vscode",
+    ".vscode/settings.json": "i-vscode-icons-file-type-vscode",
     "nuxt": "i-vscode-icons-file-type-nuxt",
     ".nuxtrc": "i-vscode-icons-file-type-nuxt",
     ".nuxtignore": "i-vscode-icons-file-type-nuxt",

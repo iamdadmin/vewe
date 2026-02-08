@@ -48,14 +48,14 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "reverse": false,
             "class": {
                 "separator": "group-data-[state=completed]:bg-phcolorph"
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "reverse": true,
             "class": {
                 "separator": "group-data-[state=active]:bg-phcolorph group-data-[state=completed]:bg-phcolorph"

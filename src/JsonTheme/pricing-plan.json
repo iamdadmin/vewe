@@ -20,7 +20,7 @@
         "badge": "",
         "button": "",
         "tagline": "text-base font-semibold text-default",
-        "terms": "text-xs\/5 text-muted text-center text-balance"
+        "terms": "text-xs/5 text-muted text-center text-balance"
     },
     "variants": {
         "orientation": {
@@ -50,10 +50,10 @@
                 "root": "bg-default ring ring-default"
             },
             "soft": {
-                "root": "bg-elevated\/50"
+                "root": "bg-elevated/50"
             },
             "subtle": {
-                "root": "bg-elevated\/50 ring ring-default"
+                "root": "bg-elevated/50 ring ring-default"
             }
         },
         "highlight": {

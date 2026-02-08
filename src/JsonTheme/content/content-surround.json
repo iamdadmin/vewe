@@ -2,11 +2,11 @@
     "slots": {
         "root": "grid grid-cols-1 sm:grid-cols-2 gap-8",
         "link": [
-            "group block px-6 py-8 rounded-lg border border-default hover:bg-elevated\/50 focus-visible:outline-primary",
+            "group block px-6 py-8 rounded-lg border border-default hover:bg-elevated/50 focus-visible:outline-primary",
             "(options.theme.transitions) && transition-colors"
         ],
         "linkLeading": [
-            "inline-flex items-center rounded-full p-1.5 bg-elevated group-hover:bg-primary\/10 ring ring-accented mb-4 group-hover:ring-primary\/50",
+            "inline-flex items-center rounded-full p-1.5 bg-elevated group-hover:bg-primary/10 ring ring-accented mb-4 group-hover:ring-primary/50",
             "(options.theme.transitions) && transition"
         ],
         "linkLeadingIcon": [

@@ -6,7 +6,7 @@
         "header": "",
         "headline": "mb-4",
         "title": "text-5xl sm:text-7xl text-pretty tracking-tight font-bold text-highlighted",
-        "description": "text-lg sm:text-xl\/8 text-muted",
+        "description": "text-lg sm:text-xl/8 text-muted",
         "body": "mt-10",
         "footer": "mt-10",
         "links": "flex flex-wrap gap-x-6 gap-y-3"

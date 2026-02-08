@@ -1,6 +1,6 @@
 {
     "slots": {
-        "root": "group\/message relative w-full",
+        "root": "group/message relative w-full",
         "container": "relative flex items-start",
         "leading": "inline-flex items-center justify-center min-h-6",
         "leadingIcon": "shrink-0",
@@ -8,7 +8,7 @@
         "leadingAvatarSize": "",
         "content": "relative text-pretty min-w-0 *:first:mt-0 *:last:mb-0",
         "actions": [
-            "opacity-0 group-hover\/message:opacity-100 absolute bottom-0 flex items-center",
+            "opacity-0 group-hover/message:opacity-100 absolute bottom-0 flex items-center",
             "(options.theme.transitions) && transition-opacity"
         ]
     },
@@ -21,10 +21,10 @@
                 "content": "bg-default ring ring-default"
             },
             "soft": {
-                "content": "bg-elevated\/50"
+                "content": "bg-elevated/50"
             },
             "subtle": {
-                "content": "bg-elevated\/50 ring ring-default"
+                "content": "bg-elevated/50 ring ring-default"
             },
             "naked": {
                 "content": ""

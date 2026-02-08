@@ -1,7 +1,7 @@
 {
     "slots": {
         "root": "relative flex rounded-lg",
-        "spotlight": "absolute inset-0 rounded-[inherit] pointer-events-none bg-default\/90",
+        "spotlight": "absolute inset-0 rounded-[inherit] pointer-events-none bg-default/90",
         "container": "relative flex flex-col flex-1 lg:grid gap-x-8 gap-y-4 p-4 sm:p-6",
         "wrapper": "flex flex-col flex-1 items-start",
         "header": "mb-4",
@@ -37,11 +37,11 @@
                 "description": "text-muted"
             },
             "soft": {
-                "root": "bg-elevated\/50",
+                "root": "bg-elevated/50",
                 "description": "text-toned"
             },
             "subtle": {
-                "root": "bg-elevated\/50 ring ring-default",
+                "root": "bg-elevated/50 ring ring-default",
                 "description": "text-toned"
             },
             "ghost": {
@@ -71,7 +71,7 @@
             }
         },
         "highlightColor": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "spotlight": {
@@ -80,7 +80,7 @@
             }
         },
         "spotlightColor": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         }
     },
@@ -89,14 +89,14 @@
             "variant": "solid",
             "to": true,
             "class": {
-                "root": "hover:bg-inverted\/90"
+                "root": "hover:bg-inverted/90"
             }
         },
         {
             "variant": "outline",
             "to": true,
             "class": {
-                "root": "hover:bg-elevated\/50"
+                "root": "hover:bg-elevated/50"
             }
         },
         {
@@ -125,7 +125,7 @@
             "variant": "ghost",
             "to": true,
             "class": {
-                "root": "hover:bg-elevated\/50"
+                "root": "hover:bg-elevated/50"
             }
         },
         {

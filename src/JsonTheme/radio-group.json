@@ -179,7 +179,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "card",
             "class": {
                 "item": "has-data-[state=checked]:border-phcolorph"
@@ -193,7 +193,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "table",
             "class": {
                 "item": "has-data-[state=checked]:bg-phcolorph/10 has-data-[state=checked]:border-phcolorph/50 has-data-[state=checked]:z-[1]"
@@ -219,7 +219,7 @@
     ],
     "defaultVariants": {
         "size": "md",
-        "color": "primary",
+        "color": "phcolorph",
         "variant": "list",
         "orientation": "vertical",
         "indicator": "start"

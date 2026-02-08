@@ -32,7 +32,7 @@
             "none": "text-highlighted bg-transparent"
         },
         "color": {
-            "color": "",
+            "phcolorph": "",
             "neutral": ""
         },
         "highlight": {
@@ -41,7 +41,7 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": [
                 "outline",
                 "subtle"
@@ -51,7 +51,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "highlight": true,
             "class": {
                 "base": "ring ring-inset ring-phcolorph"
@@ -77,7 +77,7 @@
     ],
     "defaultVariants": {
         "size": "md",
-        "color": "primary",
+        "color": "phcolorph",
         "variant": "outline"
     }
 }

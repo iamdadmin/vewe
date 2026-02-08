@@ -123,7 +123,7 @@
             }
         },
         {
-            "color": "color",
+            "color": "phcolorph",
             "variant": "card",
             "class": {
                 "root": "has-data-[state=checked]:border-phcolorph"
@@ -146,7 +146,7 @@
     ],
     "defaultVariants": {
         "size": "md",
-        "color": "primary",
+        "color": "phcolorph",
         "variant": "list",
         "indicator": "start"
     }

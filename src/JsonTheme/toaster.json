@@ -9,7 +9,7 @@
                 "viewport": "left-4"
             },
             "top-center": {
-                "viewport": "left-1\/2 transform -translate-x-1\/2"
+                "viewport": "left-1/2 transform -translate-x-1/2"
             },
             "top-right": {
                 "viewport": "right-4"
@@ -18,7 +18,7 @@
                 "viewport": "left-4"
             },
             "bottom-center": {
-                "viewport": "left-1\/2 transform -translate-x-1\/2"
+                "viewport": "left-1/2 transform -translate-x-1/2"
             },
             "bottom-right": {
                 "viewport": "right-4"

@@ -28,7 +28,7 @@
     },
     "compoundVariants": [
         {
-            "color": "color",
+            "color": "phcolorph",
             "to": true,
             "class": {
                 "root": "hover:bg-phcolorph/90"
