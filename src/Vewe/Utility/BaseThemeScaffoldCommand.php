@@ -86,6 +86,22 @@ final class BaseThemeScaffoldCommand
             // Json decode into array
             $json = json_decode($inputFile, true);
 
+            // Check if we need to mergeWith another
+            if (isset($json['mergeWith'])) {
+                $mergeWith = $json['mergeWith'] ?? null;
+                unset($json['mergeWith']);
+            }
+
+            // Check if we need to replace anything
+            if (isset($json['replace'])) {
+                $replace = $json['replace'] ?? null;
+                unset($json['replace']);
+            }
+            if (isset($json['replaceWith'])) {
+                $replaceWith = $json['replaceWith'] ?? null;
+                unset($json['replaceWith']);
+            }
+
             // Namespace
             $replacements['namespace Vewe\Stubs'] = 'namespace Vewe\Ui\Theme\Base' . (str_ends_with($file->getPath(), '/prose') ? '\Prose' : '');
 
@@ -111,7 +127,7 @@ final class BaseThemeScaffoldCommand
             $replacements["'fieldGroupVariantWithRoot' => [\n                    'import' => '(fieldGroupVariantWithRoot)',\n                ],"] = "'fieldGroup' => (new FieldGroupRootBaseTheme())->variants['fieldGroup'],";
 
             $stubFile = $this->publish(
-                stubFile: root_path('src/Vewe/Stubs/BaseThemeStub.php'),
+                stubFile: root_path('src/Vewe/Stubs/BaseThemeStub.php'), // Alternate version for mergetheme usage
                 targetPath: $targetPath,
                 replacements: $replacements,
             );

@@ -83,4 +83,19 @@ trait IsTheme
             new ImmutableArray([]),
         );
     }
+
+    private function replacePlaceholder(mixed $subject, string $replace, string $replaceWith): mixed
+    {
+        if (is_string($subject)) {
+            return $this->replacePlaceholder($subject, $replace, $replaceWith);
+        }
+
+        if (is_array($subject)) {
+            return new ImmutableArray($subject)
+                ->map(fn (mixed $value) => $this->replacePlaceholder($value, $replace, $replaceWith))
+                ->toArray();
+        }
+
+        return $subject;
+    }
 }
