@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vewe\Ui\Theme\Base;
 
+use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
 
@@ -11,150 +12,168 @@ final class DrawerBaseTheme implements Theme
 {
     use IsTheme;
 
-    protected const array SLOTS = [
-        'overlay' => 'fixed inset-0 bg-elevated/75',
-        'content' => 'fixed bg-default ring ring-default flex focus:outline-none',
-        'handle' => [
-            'shrink-0 !bg-accented',
-            '(options.theme.transitions) && transition-opacity',
-        ],
-        'container' => 'w-full flex flex-col gap-4 p-4 overflow-y-auto',
-        'header' => '',
-        'title' => 'text-highlighted font-semibold',
-        'description' => 'mt-1 text-muted text-sm',
-        'body' => 'flex-1',
-        'footer' => 'flex flex-col gap-1.5',
-    ];
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $slots {
+        get => new ImmutableArray(
+            [
+                'overlay' => 'fixed inset-0 bg-elevated/75',
+                'content' => 'fixed bg-default ring ring-default flex focus:outline-none',
+                'handle' => [
+                    'shrink-0 !bg-accented',
+                    '(options.theme.transitions) && transition-opacity',
+                ],
+                'container' => 'w-full flex flex-col gap-4 p-4 overflow-y-auto',
+                'header' => '',
+                'title' => 'text-highlighted font-semibold',
+                'description' => 'mt-1 text-muted text-sm',
+                'body' => 'flex-1',
+                'footer' => 'flex flex-col gap-1.5',
+            ],
+        );
+    }
 
-    protected const array VARIANTS = [
-        'direction' => [
-            'top' => [
-                'content' => 'mb-24 flex-col-reverse',
-                'handle' => 'mb-4',
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $variants {
+        get => new ImmutableArray(
+            [
+                'direction' => [
+                    'top' => [
+                        'content' => 'mb-24 flex-col-reverse',
+                        'handle' => 'mb-4',
+                    ],
+                    'right' => [
+                        'content' => 'flex-row',
+                        'handle' => '!ml-4',
+                    ],
+                    'bottom' => [
+                        'content' => 'mt-24 flex-col',
+                        'handle' => 'mt-4',
+                    ],
+                    'left' => [
+                        'content' => 'flex-row-reverse',
+                        'handle' => '!mr-4',
+                    ],
+                ],
+                'inset' => [
+                    'true' => [
+                        'content' => 'rounded-lg after:hidden overflow-hidden [--initial-transform:calc(100%+1.5rem)]',
+                    ],
+                ],
+                'snapPoints' => [
+                    'true' => '',
+                ],
             ],
-            'right' => [
-                'content' => 'flex-row',
-                'handle' => '!ml-4',
-            ],
-            'bottom' => [
-                'content' => 'mt-24 flex-col',
-                'handle' => 'mt-4',
-            ],
-            'left' => [
-                'content' => 'flex-row-reverse',
-                'handle' => '!mr-4',
-            ],
-        ],
-        'inset' => [
-            'true' => [
-                'content' => 'rounded-lg after:hidden overflow-hidden [--initial-transform:calc(100%+1.5rem)]',
-            ],
-        ],
-        'snapPoints' => [
-            'true' => [
-                'base' => '',
-            ],
-        ],
-    ];
+        );
+    }
 
-    protected const array COMPOUND_VARIANTS = [
-        [
-            'direction' => [
-                'top',
-                'bottom',
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $compoundVariants {
+        get => new ImmutableArray(
+            [
+                [
+                    'direction' => [
+                        'top',
+                        'bottom',
+                    ],
+                    'class' => [
+                        'content' => 'h-auto max-h-[96%]',
+                        'handle' => '!w-12 !h-1.5 mx-auto',
+                    ],
+                ],
+                [
+                    'direction' => [
+                        'top',
+                        'bottom',
+                    ],
+                    'snapPoints' => true,
+                    'class' => [
+                        'content' => 'h-full',
+                    ],
+                ],
+                [
+                    'direction' => [
+                        'right',
+                        'left',
+                    ],
+                    'class' => [
+                        'content' => 'w-auto max-w-[calc(100%-2rem)]',
+                        'handle' => '!h-12 !w-1.5 mt-auto mb-auto',
+                    ],
+                ],
+                [
+                    'direction' => [
+                        'right',
+                        'left',
+                    ],
+                    'snapPoints' => true,
+                    'class' => [
+                        'content' => 'w-full',
+                    ],
+                ],
+                [
+                    'direction' => 'top',
+                    'inset' => true,
+                    'class' => [
+                        'content' => 'inset-x-4 top-4',
+                    ],
+                ],
+                [
+                    'direction' => 'top',
+                    'inset' => false,
+                    'class' => [
+                        'content' => 'inset-x-0 top-0 rounded-b-lg',
+                    ],
+                ],
+                [
+                    'direction' => 'bottom',
+                    'inset' => true,
+                    'class' => [
+                        'content' => 'inset-x-4 bottom-4',
+                    ],
+                ],
+                [
+                    'direction' => 'bottom',
+                    'inset' => false,
+                    'class' => [
+                        'content' => 'inset-x-0 bottom-0 rounded-t-lg',
+                    ],
+                ],
+                [
+                    'direction' => 'left',
+                    'inset' => true,
+                    'class' => [
+                        'content' => 'inset-y-4 left-4',
+                    ],
+                ],
+                [
+                    'direction' => 'left',
+                    'inset' => false,
+                    'class' => [
+                        'content' => 'inset-y-0 left-0 rounded-r-lg',
+                    ],
+                ],
+                [
+                    'direction' => 'right',
+                    'inset' => true,
+                    'class' => [
+                        'content' => 'inset-y-4 right-4',
+                    ],
+                ],
+                [
+                    'direction' => 'right',
+                    'inset' => false,
+                    'class' => [
+                        'content' => 'inset-y-0 right-0 rounded-l-lg',
+                    ],
+                ],
             ],
-            'class' => [
-                'content' => 'h-auto max-h-[96%]',
-                'handle' => '!w-12 !h-1.5 mx-auto',
-            ],
-        ],
-        [
-            'direction' => [
-                'top',
-                'bottom',
-            ],
-            'snapPoints' => true,
-            'class' => [
-                'content' => 'h-full',
-            ],
-        ],
-        [
-            'direction' => [
-                'right',
-                'left',
-            ],
-            'class' => [
-                'content' => 'w-auto max-w-[calc(100%-2rem)]',
-                'handle' => '!h-12 !w-1.5 mt-auto mb-auto',
-            ],
-        ],
-        [
-            'direction' => [
-                'right',
-                'left',
-            ],
-            'snapPoints' => true,
-            'class' => [
-                'content' => 'w-full',
-            ],
-        ],
-        [
-            'direction' => 'top',
-            'inset' => true,
-            'class' => [
-                'content' => 'inset-x-4 top-4',
-            ],
-        ],
-        [
-            'direction' => 'top',
-            'inset' => false,
-            'class' => [
-                'content' => 'inset-x-0 top-0 rounded-b-lg',
-            ],
-        ],
-        [
-            'direction' => 'bottom',
-            'inset' => true,
-            'class' => [
-                'content' => 'inset-x-4 bottom-4',
-            ],
-        ],
-        [
-            'direction' => 'bottom',
-            'inset' => false,
-            'class' => [
-                'content' => 'inset-x-0 bottom-0 rounded-t-lg',
-            ],
-        ],
-        [
-            'direction' => 'left',
-            'inset' => true,
-            'class' => [
-                'content' => 'inset-y-4 left-4',
-            ],
-        ],
-        [
-            'direction' => 'left',
-            'inset' => false,
-            'class' => [
-                'content' => 'inset-y-0 left-0 rounded-r-lg',
-            ],
-        ],
-        [
-            'direction' => 'right',
-            'inset' => true,
-            'class' => [
-                'content' => 'inset-y-4 right-4',
-            ],
-        ],
-        [
-            'direction' => 'right',
-            'inset' => false,
-            'class' => [
-                'content' => 'inset-y-0 right-0 rounded-l-lg',
-            ],
-        ],
-    ];
+        );
+    }
 
-    protected const array DEFAULT_VARIANTS = [];
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $defaultVariants {
+        get => new ImmutableArray(
+            ['PHdefaultVariants'],
+        );
+    }
 }

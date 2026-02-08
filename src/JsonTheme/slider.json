@@ -7,7 +7,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "range": "bg-phcolorph",
                 "thumb": "ring-phcolorph focus-visible:outline-phcolorph/50"
             },

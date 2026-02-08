@@ -15,7 +15,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "root": "bg-phcolorph"
             },
             "neutral": {

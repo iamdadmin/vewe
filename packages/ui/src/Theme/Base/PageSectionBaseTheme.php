@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vewe\Ui\Theme\Base;
 
+use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
 
@@ -11,89 +12,105 @@ final class PageSectionBaseTheme implements Theme
 {
     use IsTheme;
 
-    protected const array SLOTS = [
-        'root' => 'relative isolate',
-        'container' => 'flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16',
-        'wrapper' => '',
-        'header' => '',
-        'leading' => 'flex items-center mb-6',
-        'leadingIcon' => 'size-10 shrink-0 text-primary',
-        'headline' => 'mb-3',
-        'title' => 'text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted',
-        'description' => 'text-base sm:text-lg text-muted',
-        'body' => 'mt-8',
-        'features' => 'grid',
-        'footer' => 'mt-8',
-        'links' => 'flex flex-wrap gap-x-6 gap-y-3',
-    ];
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $slots {
+        get => new ImmutableArray(
+            [
+                'root' => 'relative isolate',
+                'container' => 'flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16',
+                'wrapper' => '',
+                'header' => '',
+                'leading' => 'flex items-center mb-6',
+                'leadingIcon' => 'size-10 shrink-0 text-primary',
+                'headline' => 'mb-3',
+                'title' => 'text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted',
+                'description' => 'text-base sm:text-lg text-muted',
+                'body' => 'mt-8',
+                'features' => 'grid',
+                'footer' => 'mt-8',
+                'links' => 'flex flex-wrap gap-x-6 gap-y-3',
+            ],
+        );
+    }
 
-    protected const array VARIANTS = [
-        'orientation' => [
-            'horizontal' => [
-                'container' => 'lg:grid-cols-2 lg:items-center',
-                'description' => 'text-pretty',
-                'features' => 'gap-4',
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $variants {
+        get => new ImmutableArray(
+            [
+                'orientation' => [
+                    'horizontal' => [
+                        'container' => 'lg:grid-cols-2 lg:items-center',
+                        'description' => 'text-pretty',
+                        'features' => 'gap-4',
+                    ],
+                    'vertical' => [
+                        'container' => '',
+                        'headline' => 'justify-center',
+                        'leading' => 'justify-center',
+                        'title' => 'text-center',
+                        'description' => 'text-center text-balance',
+                        'links' => 'justify-center',
+                        'features' => 'sm:grid-cols-2 lg:grid-cols-3 gap-8',
+                    ],
+                ],
+                'reverse' => [
+                    'true' => [
+                        'wrapper' => 'order-last',
+                    ],
+                ],
+                'headline' => [
+                    'true' => [
+                        'headline' => 'font-semibold text-primary flex items-center gap-1.5',
+                    ],
+                ],
+                'title' => [
+                    'true' => [
+                        'description' => 'mt-6',
+                    ],
+                ],
+                'description' => [
+                    'true' => '',
+                ],
+                'body' => [
+                    'true' => '',
+                ],
             ],
-            'vertical' => [
-                'container' => '',
-                'headline' => 'justify-center',
-                'leading' => 'justify-center',
-                'title' => 'text-center',
-                'description' => 'text-center text-balance',
-                'links' => 'justify-center',
-                'features' => 'sm:grid-cols-2 lg:grid-cols-3 gap-8',
-            ],
-        ],
-        'reverse' => [
-            'true' => [
-                'wrapper' => 'order-last',
-            ],
-        ],
-        'headline' => [
-            'true' => [
-                'headline' => 'font-semibold text-primary flex items-center gap-1.5',
-            ],
-        ],
-        'title' => [
-            'true' => [
-                'description' => 'mt-6',
-            ],
-        ],
-        'description' => [
-            'true' => [
-                'base' => '',
-            ],
-        ],
-        'body' => [
-            'true' => [
-                'base' => '',
-            ],
-        ],
-    ];
+        );
+    }
 
-    protected const array COMPOUND_VARIANTS = [
-        [
-            'orientation' => 'vertical',
-            'title' => true,
-            'class' => [
-                'body' => 'mt-16',
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $compoundVariants {
+        get => new ImmutableArray(
+            [
+                [
+                    'orientation' => 'vertical',
+                    'title' => true,
+                    'class' => [
+                        'body' => 'mt-16',
+                    ],
+                ],
+                [
+                    'orientation' => 'vertical',
+                    'description' => true,
+                    'class' => [
+                        'body' => 'mt-16',
+                    ],
+                ],
+                [
+                    'orientation' => 'vertical',
+                    'body' => true,
+                    'class' => [
+                        'footer' => 'mt-16',
+                    ],
+                ],
             ],
-        ],
-        [
-            'orientation' => 'vertical',
-            'description' => true,
-            'class' => [
-                'body' => 'mt-16',
-            ],
-        ],
-        [
-            'orientation' => 'vertical',
-            'body' => true,
-            'class' => [
-                'footer' => 'mt-16',
-            ],
-        ],
-    ];
+        );
+    }
 
-    protected const array DEFAULT_VARIANTS = [];
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $defaultVariants {
+        get => new ImmutableArray(
+            ['PHdefaultVariants'],
+        );
+    }
 }

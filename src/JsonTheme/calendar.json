@@ -19,7 +19,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "headCell": "text-phcolorph",
                 "cellTrigger": "focus-visible:ring-phcolorph"
             },

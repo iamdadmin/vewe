@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vewe\Ui\Theme\Base;
 
+use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
 
@@ -11,32 +12,50 @@ final class PricingPlansBaseTheme implements Theme
 {
     use IsTheme;
 
-    protected const array SLOTS = [];
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $slots {
+        get => new ImmutableArray(
+            ['PHslots'],
+        );
+    }
 
-    protected const array VARIANTS = [
-        'orientation' => [
-            'horizontal' => 'lg:grid lg:grid-cols-[repeat(var(--count),minmax(0,1fr))]',
-            'vertical' => '',
-        ],
-        'compact' => [
-            'false' => 'gap-x-8',
-        ],
-        'scale' => [
-            'true' => [
-                'base' => '',
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $variants {
+        get => new ImmutableArray(
+            [
+                'orientation' => [
+                    'horizontal' => 'lg:grid lg:grid-cols-[repeat(var(--count),minmax(0,1fr))]',
+                    'vertical' => '',
+                ],
+                'compact' => [
+                    'false' => 'gap-x-8',
+                ],
+                'scale' => [
+                    'true' => '',
+                ],
             ],
-        ],
-    ];
+        );
+    }
 
-    protected const array COMPOUND_VARIANTS = [
-        [
-            'compact' => false,
-            'scale' => true,
-            'class' => [
-                'base' => 'lg:gap-x-13',
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $compoundVariants {
+        get => new ImmutableArray(
+            [
+                [
+                    'compact' => false,
+                    'scale' => true,
+                    'class' => [
+                        'base' => 'lg:gap-x-13',
+                    ],
+                ],
             ],
-        ],
-    ];
+        );
+    }
 
-    protected const array DEFAULT_VARIANTS = [];
+    /** @var ImmutableArray<mixed,mixed> */
+    public ImmutableArray $defaultVariants {
+        get => new ImmutableArray(
+            ['PHdefaultVariants'],
+        );
+    }
 }

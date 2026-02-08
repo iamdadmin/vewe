@@ -17,7 +17,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "base": "data-[state=checked]:bg-phcolorph focus-visible:outline-phcolorph",
                 "icon": "group-data-[state=checked]:text-phcolorph"
             },

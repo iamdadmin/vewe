@@ -32,7 +32,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "link": "focus-visible:before:ring-phcolorph",
                 "childLink": "focus-visible:before:ring-phcolorph"
             },

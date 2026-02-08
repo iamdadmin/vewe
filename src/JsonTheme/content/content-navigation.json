@@ -18,7 +18,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "trigger": "focus-visible:ring-phcolorph",
                 "link": "focus-visible:before:ring-phcolorph"
             },

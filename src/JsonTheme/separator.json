@@ -10,7 +10,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "border": "border-phcolorph"
             },
             "neutral": {
@@ -30,11 +30,21 @@
             }
         },
         "size": {
-            "xs": "",
-            "sm": "",
-            "md": "",
-            "lg": "",
-            "xl": ""
+            "xs": {
+                "border": ""
+            },
+            "sm": {
+                "border": ""
+            },
+            "md": {
+                "border": ""
+            },
+            "lg": {
+                "border": ""
+            },
+            "xl": {
+                "border": ""
+            }
         },
         "type": {
             "solid": {

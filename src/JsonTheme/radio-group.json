@@ -13,7 +13,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "base": "focus-visible:outline-phcolorph",
                 "indicator": "bg-phcolorph"
             },

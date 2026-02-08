@@ -15,7 +15,7 @@
             "elastic": ""
         },
         "color": {
-            "color": {
+            "phcolorph": {
                 "indicator": "bg-phcolorph",
                 "steps": "text-phcolorph"
             },

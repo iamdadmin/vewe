@@ -65,7 +65,7 @@
             }
         },
         "color": {
-            "color": {
+            "phcolorph": {
                 "trigger": "group-data-[state=completed]:bg-phcolorph group-data-[state=active]:bg-phcolorph focus-visible:outline-phcolorph",
                 "separator": "group-data-[state=completed]:bg-phcolorph"
             },

@@ -49,19 +49,25 @@ final class BaseThemeScaffoldCommand
                 continue;
             }
 
-            // Get the file
-            $inputFile = file_get_contents($file->getPathName());
-
-            // Json decode into array
-            $json = json_decode($inputFile, true);
-
             // This is convoluted but required to handle the subfolders
             $targetPath = $this->depositPath . str_replace($this->collectPath, '', $file->getPath()) . '/';
             $targetPath .= Str\to_pascal_case(str_replace('.' . $file->getExtension(), '', $file->getFileName()));
             str_ends_with($file->getPath(), '/prose') ? ($targetPath = str_replace('/prose', '/Prose', $targetPath)) : '';
             $targetPath .= 'BaseTheme.php';
 
+            // Prepare array
             $replacements = [];
+
+            // Get the file
+            /** @var string $inputFile */
+            $inputFile = file_get_contents($file->getPathName());
+
+            if (str_contains($inputFile, '"import": "(fieldGroupVariant)"') === true) {
+                $replacements['use Vewe\Ui\Theme\Theme;'] = "use Vewe\Ui\Theme\Theme;\nuseVewe\Ui\Theme\Base\FieldGroupVariantBaseTheme;";
+            }
+
+            // Json decode into array
+            $json = json_decode($inputFile, true);
 
             // Namespace
             $replacements['namespace Vewe\Stubs'] = 'namespace Vewe\Ui\Theme\Base' . (str_ends_with($file->getPath(), '/prose') ? '\Prose' : '');

@@ -14,7 +14,7 @@
     },
     "variants": {
         "color": {
-            "color": {
+            "phcolorph": {
                 "icon": "text-phcolorph"
             },
             "neutral": {

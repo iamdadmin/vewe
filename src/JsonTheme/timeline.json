@@ -24,7 +24,7 @@
             }
         },
         "color": {
-            "color": {
+            "phcolorph": {
                 "indicator": "group-data-[state=completed]:bg-phcolorph group-data-[state=active]:bg-phcolorph"
             },
             "neutral": {
@@ -32,15 +32,33 @@
             }
         },
         "size": {
-            "3xs": "",
-            "2xs": "",
-            "xs": "",
-            "sm": "",
-            "md": "",
-            "lg": "",
-            "xl": "",
-            "2xl": "",
-            "3xl": ""
+            "3xs": {
+                "wrapper": ""
+            },
+            "2xs": {
+                "wrapper": ""
+            },
+            "xs": {
+                "wrapper": ""
+            },
+            "sm": {
+                "wrapper": ""
+            },
+            "md": {
+                "wrapper": ""
+            },
+            "lg": {
+                "wrapper": ""
+            },
+            "xl": {
+                "wrapper": ""
+            },
+            "2xl": {
+                "wrapper": ""
+            },
+            "3xl": {
+                "wrapper": ""
+            }
         },
         "reverse": {
             "true": ""
