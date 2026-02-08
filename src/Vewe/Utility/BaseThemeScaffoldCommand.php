@@ -77,7 +77,7 @@ final class BaseThemeScaffoldCommand
                 'defaultVariants' => 'PHdefaultVariants',
             ] as $key => $value) {
                 if (isset($json[$key])) {
-                    $replacements["'{$value}'"] = $this->stringify($json[$key]);
+                    $replacements["['{$value}']"] = $this->stringify($json[$key]);
                 }
             }
 
@@ -164,6 +164,6 @@ final class BaseThemeScaffoldCommand
             }
         }
 
-        return "\n" . implode("\n", $lines) . "\n" . $indent . '';
+        return "[\n" . implode("\n", $lines) . "\n" . $indent . ']';
     }
 }
