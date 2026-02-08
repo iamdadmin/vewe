@@ -12,11 +12,11 @@ final class DashboardNavbarBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
-                'root' => 'h-(--ui-header-height) shrink-0 flex items-center justify-between border-b border-default px-4 sm:px-6 gap-1.5',
+                'root' => 'h-(--vewe-header-height) shrink-0 flex items-center justify-between border-b border-default px-4 sm:px-6 gap-1.5',
                 'left' => 'flex items-center gap-1.5 min-w-0',
                 'icon' => 'shrink-0 size-5 self-center me-1.5',
                 'title' => 'flex items-center gap-1.5 font-semibold text-highlighted truncate',
@@ -27,7 +27,7 @@ final class DashboardNavbarBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
@@ -43,17 +43,17 @@ final class DashboardNavbarBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
-            ['PHcompoundVariants'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
-            ['PHdefaultVariants'],
+            [],
         );
     }
 }

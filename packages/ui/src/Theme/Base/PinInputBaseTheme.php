@@ -12,7 +12,7 @@ final class PinInputBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -25,7 +25,7 @@ final class PinInputBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
@@ -54,17 +54,23 @@ final class PinInputBaseTheme implements Theme
                     'none' => 'text-highlighted bg-transparent',
                 ],
                 'color' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phcolorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
                 'highlight' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -106,7 +112,7 @@ final class PinInputBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

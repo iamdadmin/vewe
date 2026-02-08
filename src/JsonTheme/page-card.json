@@ -71,8 +71,12 @@
             }
         },
         "highlightColor": {
-            "phcolorph": "",
-            "neutral": ""
+            "phhighlightColorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "spotlight": {
             "true": {
@@ -80,8 +84,12 @@
             }
         },
         "spotlightColor": {
-            "phcolorph": "",
-            "neutral": ""
+            "phspotlightColorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         }
     },
     "compoundVariants": [
@@ -129,10 +137,10 @@
             }
         },
         {
-            "highlightColor": "highlightColor",
+            "highlightColor": "phhighlightColorph",
             "highlight": true,
             "class": {
-                "root": "ring-${highlightColor}"
+                "root": "ring-phhighlightColorph"
             }
         },
         {
@@ -146,14 +154,14 @@
             "spotlightColor": "spotlightColor",
             "spotlight": true,
             "class": {
-                "root": "[--spotlight-color:var(--ui-${spotlightColor}]"
+                "root": "[--spotlight-color:var(--vewe-phspotlightColorph]"
             }
         },
         {
             "spotlightColor": "neutral",
             "spotlight": true,
             "class": {
-                "root": "[--spotlight-color:var(--ui-bg-inverted)]"
+                "root": "[--spotlight-color:var(--vewe-bg-inverted)]"
             }
         }
     ],

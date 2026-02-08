@@ -42,12 +42,20 @@
             }
         },
         "highlightColor": {
-            "phcolorph": "",
-            "neutral": ""
+            "phhighlightColorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "variant": {
-            "pill": "",
-            "link": ""
+            "pill": {
+                "base": ""
+            },
+            "link": {
+                "base": ""
+            }
         },
         "orientation": {
             "horizontal": {
@@ -100,13 +108,19 @@
             }
         },
         "highlight": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         },
         "level": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         },
         "collapsed": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         }
     },
     "compoundVariants": [
@@ -291,12 +305,12 @@
             }
         },
         {
-            "highlightColor": "highlightColor",
+            "highlightColor": "phhighlightColorph",
             "highlight": true,
             "level": true,
             "active": true,
             "class": {
-                "link": "after:bg-${highlightColor}"
+                "link": "after:bg-phhighlightColorph"
             }
         },
         {
@@ -311,7 +325,7 @@
     ],
     "defaultVariants": {
         "color": "phcolorph",
-        "highlightColor": "primary",
+        "highlightColor": "phhighlightColorph",
         "variant": "pill"
     }
 }

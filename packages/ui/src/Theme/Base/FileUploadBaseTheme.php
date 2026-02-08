@@ -12,7 +12,7 @@ final class FileUploadBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -38,20 +38,26 @@ final class FileUploadBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phcolorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
                 'variant' => [
                     'area' => [
                         'wrapper' => 'px-4 py-3',
                         'base' => 'p-4',
                     ],
-                    'button' => [],
+                    'button' => [
+                        'base' => '',
+                    ],
                 ],
                 'size' => [
                     'xs' => [
@@ -101,25 +107,35 @@ final class FileUploadBaseTheme implements Theme
                     'outside' => '',
                 ],
                 'dropzone' => [
-                    'true' => 'border-dashed data-[dragging=true]:bg-elevated/25',
+                    'true' => [
+                        'base' => 'border-dashed data-[dragging=true]:bg-elevated/25',
+                    ],
                 ],
                 'interactive' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'highlight' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'multiple' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'disabled' => [
-                    'true' => 'cursor-not-allowed opacity-75',
+                    'true' => [
+                        'base' => 'cursor-not-allowed opacity-75',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -245,7 +261,7 @@ final class FileUploadBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

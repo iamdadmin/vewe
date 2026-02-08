@@ -7,21 +7,15 @@ declare(strict_types=1);
 
 namespace Vewe\Ui\Theme;
 
+use Tempest\Support\Arr\ImmutableArray;
 use Vewe\ClassVariance\Cv;
-
-/**
- * @return array|string|null
- */
 
 trait IsTheme
 {
-    private static ?TailwindMerge $merger = null;
-
     protected string $color;
 
     /**
      * Get CSS classes for a slot with variants applied
-     *
      * @param string $slot Slot name
      * @param array $variants Variant values
      * @param string|array|null $merge Additional classes to merge
@@ -36,91 +30,57 @@ trait IsTheme
 
         // @mago-expect analysis:mixed-property-type-coercion
         $instance->color = $variants['color'] ?? 'primary';
-        $instance->slot = $slot;
 
         return $instance->build($variants, $merge);
     }
 
     protected function build(array $variants, string|array|null $merge): string
     {
-        $variance = [];
-
-        // Get CVA result for this slot
-        $cva = ClassVarianceAuthority::new(
-            self::SLOTS[$this->slot] ?? [],
-            $variance,
-        );
-
-        // Append user classes
-        // if ($merge !== null) {
-        //     $classes .= ' ' . (is_array($merge) ? implode(' ', $merge) : $merge);
-        // }
-
-        // TailwindMerge
-        return (self::$merger ??= TailwindMerge::instance())->merge($cva);
+        // TODO
+        return '';
     }
 
-    /**
-     * Extract slot-specific data from VARIANTS or COMPOUND_VARIANTS
-     */
-    protected function getSlotData(array $data, string $slot): array
+    private function mergeTheme(ImmutableArray $override, ImmutableArray $base): ImmutableArray
     {
-        $result = [];
+        // Get all unique keys from both arrays
+        $allKeys = $base->keys()->merge($override->keys())->unique();
 
-        foreach ($data as $key => $value) {
-            // VARIANTS: [variantType => [optionName => value]]
-            if (is_array($value) && ! isset($value['class'])) {
-                foreach ($value as $name => $val) {
-                    if (! is_array($val)) {
-                        // String/empty: include as-is
-                        $result[$key][$name] = $val;
-                    } elseif (isset($val[$slot])) {
-                        // Array with slot key: extract it
-                        $result[$key][$name] = $val[$slot];
-                    }
+        // Build merged result by processing each key
+        return $allKeys->reduce(
+            /** @param string $key */
+            function (ImmutableArray $result, mixed $key) use ($base, $override) {
+                $hasInBase = $base->hasKey($key);
+                $hasInOverride = $override->hasKey($key);
+
+                if (! $hasInOverride) {
+                    // Only in base, keep base value
+                    return $result->set($key, $base->get($key));
                 }
-            }
-            // COMPOUND_VARIANTS: [['conditions', 'class' => [slot => value]]]
-            elseif (isset($value['class'][$slot])) {
-                $result[] = [...$value, 'class' => $value['class'][$slot]];
-            }
-        }
 
-        return $result;
-    }
+                if (! $hasInBase) {
+                    // Only in override, use override value
+                    return $result->set($key, $override->get($key));
+                }
 
-    protected function replacePlaceholders(array $data): array
-    {
-        $replacements = [
-            '{{color}}' => $this->color,
-        ];
+                // In both - check if we need deep merge
+                $baseValue = $base->get($key);
+                $overrideValue = $override->get($key);
 
-        $result = [];
+                if (is_array($baseValue) && is_array($overrideValue)) {
+                    // Both are arrays - recursively merge
+                    return $result->set(
+                        $key,
+                        $this->mergeTheme(
+                            new ImmutableArray($overrideValue),
+                            new ImmutableArray($baseValue),
+                        ),
+                    );
+                }
 
-        foreach ($data as $key => $value) {
-            // Replace placeholders in the key
-            $newKey = is_string($key)
-                ? str_replace(
-                    array_keys($replacements),
-                    array_values($replacements),
-                    $key,
-                )
-                : $key;
-
-            // Recurse or replace value
-            if (is_array($value)) {
-                $result[$newKey] = $this->replacePlaceholders($value);
-            } elseif (is_string($value)) {
-                $result[$newKey] = str_replace(
-                    array_keys($replacements),
-                    array_values($replacements),
-                    $value,
-                );
-            } else {
-                $result[$newKey] = $value;
-            }
-        }
-
-        return $result;
+                // Override wins for non-array values
+                return $result->set($key, $overrideValue);
+            },
+            new ImmutableArray([]),
+        );
     }
 }

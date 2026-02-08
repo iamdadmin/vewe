@@ -29,10 +29,18 @@
             }
         },
         "variant": {
-            "solid": "",
-            "outline": "",
-            "soft": "",
-            "subtle": ""
+            "solid": {
+                "cellTrigger": ""
+            },
+            "outline": {
+                "cellTrigger": ""
+            },
+            "soft": {
+                "cellTrigger": ""
+            },
+            "subtle": {
+                "cellTrigger": ""
+            }
         },
         "size": {
             "xs": {

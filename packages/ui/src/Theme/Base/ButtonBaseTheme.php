@@ -7,12 +7,13 @@ namespace Vewe\Ui\Theme\Base;
 use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
+use Vewe\Ui\Theme\Base\FieldGroupBaseTheme;
 
 final class ButtonBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -29,16 +30,18 @@ final class ButtonBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
-                'fieldGroupVariant' => [
-                    'import' => '(fieldGroupVariant)',
-                ],
+                'fieldGroup' => (new FieldGroupBaseTheme())->variants['fieldGroup'],
                 'color' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phcolorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
                 'variant' => [
                     'solid' => '',
@@ -110,7 +113,7 @@ final class ButtonBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -252,7 +255,7 @@ final class ButtonBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

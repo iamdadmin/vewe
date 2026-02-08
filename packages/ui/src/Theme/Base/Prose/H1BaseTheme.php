@@ -12,34 +12,34 @@ final class H1BaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
-                'base' => 'text-4xl text-highlighted font-bold mb-8 scroll-mt-[calc(45px+var(--ui-header-height))] lg:scroll-mt-(--ui-header-height)',
+                'base' => 'text-4xl text-highlighted font-bold mb-8 scroll-mt-[calc(45px+var(--vewe-header-height))] lg:scroll-mt-(--vewe-header-height)',
                 'link' => 'inline-flex items-center gap-2',
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
-            ['PHvariants'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
-            ['PHcompoundVariants'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
-            ['PHdefaultVariants'],
+            [],
         );
     }
 }

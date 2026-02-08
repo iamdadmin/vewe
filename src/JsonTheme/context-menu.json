@@ -20,8 +20,12 @@
     },
     "variants": {
         "color": {
-            "phcolorph": "",
-            "neutral": ""
+            "phcolorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "active": {
             "true": {

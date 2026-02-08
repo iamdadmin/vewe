@@ -23,7 +23,9 @@
             }
         },
         "to": {
-            "true": ""
+            "true": {
+                "root": ""
+            }
         }
     },
     "compoundVariants": [

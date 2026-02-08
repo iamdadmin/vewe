@@ -12,7 +12,7 @@ final class CalendarBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -36,12 +36,12 @@ final class CalendarBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
                 'color' => [
-                    'color' => [
+                    'phcolorph' => [
                         'headCell' => 'text-phcolorph',
                         'cellTrigger' => 'focus-visible:ring-phcolorph',
                     ],
@@ -51,10 +51,18 @@ final class CalendarBaseTheme implements Theme
                     ],
                 ],
                 'variant' => [
-                    'solid' => '',
-                    'outline' => '',
-                    'soft' => '',
-                    'subtle' => '',
+                    'solid' => [
+                        'cellTrigger' => '',
+                    ],
+                    'outline' => [
+                        'cellTrigger' => '',
+                    ],
+                    'soft' => [
+                        'cellTrigger' => '',
+                    ],
+                    'subtle' => [
+                        'cellTrigger' => '',
+                    ],
                 ],
                 'size' => [
                     'xs' => [
@@ -105,7 +113,7 @@ final class CalendarBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -169,7 +177,7 @@ final class CalendarBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

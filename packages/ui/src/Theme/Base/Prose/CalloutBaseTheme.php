@@ -12,7 +12,7 @@ final class CalloutBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -32,12 +32,12 @@ final class CalloutBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
                 'color' => [
-                    'color' => [
+                    'phcolorph' => [
                         'base' => 'border border-phcolorph/25 bg-phcolorph/10 text-phcolorph-600 dark:text-phcolorph-300 [&_a]:text-phcolorph [&_a]:hover:border-phcolorph [&_a]:focus-visible:outline-phcolorph [&_code]:text-phcolorph-600 dark:[&_code]:text-phcolorph-300 [&_code]:border-phcolorph/25 [&_a]:hover:[&>code]:border-phcolorph [&_a]:hover:[&>code]:text-phcolorph [&_a]:focus-visible:[&>code]:border-phcolorph [&_a]:focus-visible:[&>code]:text-phcolorph [&>ul]:marker:text-phcolorph/50',
                         'icon' => 'text-phcolorph',
                         'externalIcon' => 'text-phcolorph-600 dark:text-phcolorph-300',
@@ -55,7 +55,7 @@ final class CalloutBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -79,7 +79,7 @@ final class CalloutBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

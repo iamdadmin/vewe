@@ -28,7 +28,7 @@
             }
         },
         "highlightColor": {
-            "phcolorph": "",
+            "phhighlightColorph": "",
             "neutral": ""
         },
         "variant": {
@@ -157,12 +157,12 @@
             }
         },
         {
-            "highlightColor": "highlightColor",
+            "highlightColor": "phhighlightColorph",
             "highlight": true,
             "level": true,
             "active": true,
             "class": {
-                "link": "after:bg-${highlightColor}"
+                "link": "after:bg-phhighlightColorph"
             }
         },
         {

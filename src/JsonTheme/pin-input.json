@@ -32,11 +32,17 @@
             "none": "text-highlighted bg-transparent"
         },
         "color": {
-            "phcolorph": "",
-            "neutral": ""
+            "phcolorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "highlight": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         }
     },
     "compoundVariants": [

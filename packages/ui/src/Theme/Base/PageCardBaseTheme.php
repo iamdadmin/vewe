@@ -12,7 +12,7 @@ final class PageCardBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -31,7 +31,7 @@ final class PageCardBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
@@ -93,8 +93,12 @@ final class PageCardBaseTheme implements Theme
                     ],
                 ],
                 'highlightColor' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phhighlightColorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
                 'spotlight' => [
                     'true' => [
@@ -102,14 +106,18 @@ final class PageCardBaseTheme implements Theme
                     ],
                 ],
                 'spotlightColor' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phspotlightColorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -157,10 +165,10 @@ final class PageCardBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'highlightColor' => 'highlightColor',
+                    'highlightColor' => 'phhighlightColorph',
                     'highlight' => true,
                     'class' => [
-                        'root' => 'ring-${highlightColor}',
+                        'root' => 'ring-phhighlightColorph',
                     ],
                 ],
                 [
@@ -174,21 +182,21 @@ final class PageCardBaseTheme implements Theme
                     'spotlightColor' => 'spotlightColor',
                     'spotlight' => true,
                     'class' => [
-                        'root' => '[--spotlight-color:var(--ui-${spotlightColor}]',
+                        'root' => '[--spotlight-color:var(--vewe-phspotlightColorph]',
                     ],
                 ],
                 [
                     'spotlightColor' => 'neutral',
                     'spotlight' => true,
                     'class' => [
-                        'root' => '[--spotlight-color:var(--ui-bg-inverted)]',
+                        'root' => '[--spotlight-color:var(--vewe-bg-inverted)]',
                     ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

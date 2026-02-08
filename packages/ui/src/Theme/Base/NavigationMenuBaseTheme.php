@@ -12,7 +12,7 @@ final class NavigationMenuBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -49,12 +49,12 @@ final class NavigationMenuBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
                 'color' => [
-                    'color' => [
+                    'phcolorph' => [
                         'link' => 'focus-visible:before:ring-phcolorph',
                         'childLink' => 'focus-visible:before:ring-phcolorph',
                     ],
@@ -64,12 +64,20 @@ final class NavigationMenuBaseTheme implements Theme
                     ],
                 ],
                 'highlightColor' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phhighlightColorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
                 'variant' => [
-                    'pill' => '',
-                    'link' => '',
+                    'pill' => [
+                        'base' => '',
+                    ],
+                    'link' => [
+                        'base' => '',
+                    ],
                 ],
                 'orientation' => [
                     'horizontal' => [
@@ -122,19 +130,25 @@ final class NavigationMenuBaseTheme implements Theme
                     ],
                 ],
                 'highlight' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'level' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'collapsed' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -319,12 +333,12 @@ final class NavigationMenuBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'highlightColor' => 'highlightColor',
+                    'highlightColor' => 'phhighlightColorph',
                     'highlight' => true,
                     'level' => true,
                     'active' => true,
                     'class' => [
-                        'link' => 'after:bg-${highlightColor}',
+                        'link' => 'after:bg-phhighlightColorph',
                     ],
                 ],
                 [
@@ -340,12 +354,12 @@ final class NavigationMenuBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
                 'color' => 'phcolorph',
-                'highlightColor' => 'primary',
+                'highlightColor' => 'phhighlightColorph',
                 'variant' => 'pill',
             ],
         );

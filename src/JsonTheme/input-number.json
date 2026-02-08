@@ -13,8 +13,12 @@
             "import": "(fieldGroupVariantWithRoot)"
         },
         "color": {
-            "phcolorph": "",
-            "neutral": ""
+            "phcolorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "size": {
             "xs": "px-2 py-1 text-xs gap-1",

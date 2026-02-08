@@ -12,7 +12,7 @@ final class TimelineBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -29,7 +29,7 @@ final class TimelineBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
@@ -46,7 +46,7 @@ final class TimelineBaseTheme implements Theme
                     ],
                 ],
                 'color' => [
-                    'color' => [
+                    'phcolorph' => [
                         'indicator' => 'group-data-[state=completed]:bg-phcolorph group-data-[state=active]:bg-phcolorph',
                     ],
                     'neutral' => [
@@ -54,24 +54,44 @@ final class TimelineBaseTheme implements Theme
                     ],
                 ],
                 'size' => [
-                    '3xs' => '',
-                    '2xs' => '',
-                    'xs' => '',
-                    'sm' => '',
-                    'md' => '',
-                    'lg' => '',
-                    'xl' => '',
-                    '2xl' => '',
-                    '3xl' => '',
+                    '3xs' => [
+                        'base' => '',
+                    ],
+                    '2xs' => [
+                        'base' => '',
+                    ],
+                    'xs' => [
+                        'base' => '',
+                    ],
+                    'sm' => [
+                        'base' => '',
+                    ],
+                    'md' => [
+                        'base' => '',
+                    ],
+                    'lg' => [
+                        'base' => '',
+                    ],
+                    'xl' => [
+                        'base' => '',
+                    ],
+                    '2xl' => [
+                        'base' => '',
+                    ],
+                    '3xl' => [
+                        'base' => '',
+                    ],
                 ],
                 'reverse' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -233,7 +253,7 @@ final class TimelineBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

@@ -15,12 +15,20 @@
             }
         },
         "color": {
-            "color": [],
-            "neutral": []
+            "phcolorph": {
+                "item": ""
+            },
+            "neutral": {
+                "item": ""
+            }
         },
         "variant": {
-            "list": [],
-            "card": [],
+            "list": {
+                "item": ""
+            },
+            "card": {
+                "item": ""
+            },
             "table": {
                 "item": "border border-muted"
             }

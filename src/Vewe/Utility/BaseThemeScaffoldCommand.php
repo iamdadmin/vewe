@@ -49,6 +49,11 @@ final class BaseThemeScaffoldCommand
                 continue;
             }
 
+            if (in_array($file->getBasename(), ['icons.json'])) {
+                // Skip this file
+                continue;
+            }
+
             // This is convoluted but required to handle the subfolders
             $targetPath = $this->depositPath . str_replace($this->collectPath, '', $file->getPath()) . '/';
             $targetPath .= Str\to_pascal_case(str_replace('.' . $file->getExtension(), '', $file->getFileName()));
@@ -63,7 +68,19 @@ final class BaseThemeScaffoldCommand
             $inputFile = file_get_contents($file->getPathName());
 
             if (str_contains($inputFile, '"import": "(fieldGroupVariant)"') === true) {
-                $replacements['use Vewe\Ui\Theme\Theme;'] = "use Vewe\Ui\Theme\Theme;\nuseVewe\Ui\Theme\Base\FieldGroupVariantBaseTheme;";
+                $replacements['use Vewe\Ui\Theme\Theme;'] = "use Vewe\Ui\Theme\Theme;\nuse Vewe\Ui\Theme\Base\FieldGroupBaseTheme;";
+            }
+
+            if (str_contains($inputFile, '"import": "(fieldGroupVariantWithRoot)"') === true) {
+                $replacements['use Vewe\Ui\Theme\Theme;'] = "use Vewe\Ui\Theme\Theme;\nuse Vewe\Ui\Theme\Base\FieldGroupRootBaseTheme;";
+            }
+
+            if (str_contains($inputFile, '"mergeWith": "input') === true) {
+                $replacements['use Vewe\Ui\Theme\Theme;'] = "use Vewe\Ui\Theme\Theme;\nuse Vewe\Ui\Theme\Base\InputBaseTheme;";
+            }
+
+            if (str_contains($inputFile, '"mergeWith": "select') === true) {
+                $replacements['use Vewe\Ui\Theme\Theme;'] = "use Vewe\Ui\Theme\Theme;\nuse Vewe\Ui\Theme\Base\SelectBaseTheme;";
             }
 
             // Json decode into array
@@ -75,7 +92,7 @@ final class BaseThemeScaffoldCommand
             // Class name
             $replacements['final class BaseThemeStub'] = 'final class ' . Str\to_pascal_case(str_replace('.' . $file->getExtension(), '', $file->getBaseName()) . 'BaseTheme');
 
-            // Render CONST ARRAYs from JsonTheme
+            // Render data from JsonTheme
             foreach ([
                 'slots' => 'PHslots',
                 'variants' => 'PHvariants',
@@ -84,8 +101,14 @@ final class BaseThemeScaffoldCommand
             ] as $key => $value) {
                 if (isset($json[$key])) {
                     $replacements["['{$value}']"] = $this->stringify($json[$key]);
+                } else {
+                    $replacements["['{$value}']"] = '[]';
                 }
             }
+
+            $replacements["'fieldGroupVariant' => [\n                    'import' => '(fieldGroupVariant)',\n                ],"] = "'fieldGroup' => (new FieldGroupBaseTheme())->variants['fieldGroup'],";
+
+            $replacements["'fieldGroupVariantWithRoot' => [\n                    'import' => '(fieldGroupVariantWithRoot)',\n                ],"] = "'fieldGroup' => (new FieldGroupRootBaseTheme())->variants['fieldGroup'],";
 
             $stubFile = $this->publish(
                 stubFile: root_path('src/Vewe/Stubs/BaseThemeStub.php'),

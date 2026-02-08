@@ -12,36 +12,40 @@ final class BlogPostsBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            ['PHslots'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
                 'orientation' => [
-                    'horizontal' => 'sm:grid sm:grid-cols-2 lg:grid-cols-3',
-                    'vertical' => '',
+                    'horizontal' => [
+                        'base' => 'sm:grid sm:grid-cols-2 lg:grid-cols-3',
+                    ],
+                    'vertical' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
-            ['PHcompoundVariants'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
-            ['PHdefaultVariants'],
+            [],
         );
     }
 }

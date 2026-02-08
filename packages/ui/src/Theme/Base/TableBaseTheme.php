@@ -12,7 +12,7 @@ final class TableBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -25,14 +25,14 @@ final class TableBaseTheme implements Theme
                 'tr' => 'data-[selected=true]:bg-elevated/50',
                 'th' => 'px-4 py-3.5 text-sm text-highlighted text-left rtl:text-right font-semibold [&:has([role=checkbox])]:pe-0',
                 'td' => 'p-4 text-sm text-muted whitespace-nowrap [&:has([role=checkbox])]:pe-0',
-                'separator' => 'absolute z-1 left-0 w-full h-px bg-(--ui-border-accented)',
+                'separator' => 'absolute z-1 left-0 w-full h-px bg-(--vewe-border-accented)',
                 'empty' => 'py-6 text-center text-sm text-muted',
                 'loading' => 'py-6 text-center',
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
@@ -66,28 +66,40 @@ final class TableBaseTheme implements Theme
                     ],
                 ],
                 'loadingAnimation' => [
-                    'carousel' => '',
-                    'carousel-inverse' => '',
-                    'swing' => '',
-                    'elastic' => '',
+                    'carousel' => [
+                        'base' => '',
+                    ],
+                    'carousel-inverse' => [
+                        'base' => '',
+                    ],
+                    'swing' => [
+                        'base' => '',
+                    ],
+                    'elastic' => [
+                        'base' => '',
+                    ],
                 ],
                 'loadingColor' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phloadingColorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
                 [
                     'loading' => true,
-                    'loadingColor' => 'loadingColor',
+                    'loadingColor' => 'phloadingColorph',
                     'class' => [
-                        'thead' => 'after:bg-${loadingColor}',
+                        'thead' => 'after:bg-phloadingColorph',
                     ],
                 ],
                 [
@@ -129,11 +141,11 @@ final class TableBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'loadingColor' => 'primary',
+                'loadingColor' => 'phloadingColorph',
                 'loadingAnimation' => 'carousel',
             ],
         );

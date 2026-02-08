@@ -12,29 +12,35 @@ final class LinkBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            ['PHslots'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
                 'active' => [
-                    'true' => 'text-primary',
-                    'false' => 'text-muted',
+                    'true' => [
+                        'base' => 'text-primary',
+                    ],
+                    'false' => [
+                        'base' => 'text-muted',
+                    ],
                 ],
                 'disabled' => [
-                    'true' => 'cursor-not-allowed opacity-75',
+                    'true' => [
+                        'base' => 'cursor-not-allowed opacity-75',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -50,10 +56,10 @@ final class LinkBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
-            ['PHdefaultVariants'],
+            [],
         );
     }
 }

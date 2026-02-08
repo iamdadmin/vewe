@@ -63,7 +63,9 @@
             }
         },
         "image": {
-            "true": ""
+            "true": {
+                "root": ""
+            }
         }
     },
     "compoundVariants": [

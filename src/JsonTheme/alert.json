@@ -12,14 +12,26 @@
     },
     "variants": {
         "color": {
-            "phcolorph": "",
-            "neutral": ""
+            "phcolorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "variant": {
-            "solid": "",
-            "outline": "",
-            "soft": "",
-            "subtle": ""
+            "solid": {
+                "root": ""
+            },
+            "outline": {
+                "root": ""
+            },
+            "soft": {
+                "root": ""
+            },
+            "subtle": {
+                "root": ""
+            }
         },
         "orientation": {
             "horizontal": {

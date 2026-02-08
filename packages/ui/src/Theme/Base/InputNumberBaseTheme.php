@@ -7,12 +7,13 @@ namespace Vewe\Ui\Theme\Base;
 use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
+use Vewe\Ui\Theme\Base\FieldGroupRootBaseTheme;
 
 final class InputNumberBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -27,16 +28,18 @@ final class InputNumberBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
-                'fieldGroupVariantWithRoot' => [
-                    'import' => '(fieldGroupVariantWithRoot)',
-                ],
+                'fieldGroup' => (new FieldGroupRootBaseTheme())->variants['fieldGroup'],
                 'color' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phcolorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
                 'size' => [
                     'xs' => 'px-2 py-1 text-xs gap-1',
@@ -78,7 +81,7 @@ final class InputNumberBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -197,7 +200,7 @@ final class InputNumberBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

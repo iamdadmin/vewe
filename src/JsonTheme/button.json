@@ -15,8 +15,12 @@
             "import": "(fieldGroupVariant)"
         },
         "color": {
-            "phcolorph": "",
-            "neutral": ""
+            "phcolorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "variant": {
             "solid": "",

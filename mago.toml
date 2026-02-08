@@ -56,5 +56,6 @@ excessive-parameter-list = { enabled = false } # https://github.com/carthage-sof
 halstead = { enabled = false }
 strict-behavior = { allow-loose-behavior = true }
 no-redundant-use = { enabled = true }
+no-literal-password = { enabled = false }
 
 [analyzer]

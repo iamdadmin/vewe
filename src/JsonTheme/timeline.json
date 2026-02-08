@@ -33,35 +33,37 @@
         },
         "size": {
             "3xs": {
-                "wrapper": ""
+                "base": ""
             },
             "2xs": {
-                "wrapper": ""
+                "base": ""
             },
             "xs": {
-                "wrapper": ""
+                "base": ""
             },
             "sm": {
-                "wrapper": ""
+                "base": ""
             },
             "md": {
-                "wrapper": ""
+                "base": ""
             },
             "lg": {
-                "wrapper": ""
+                "base": ""
             },
             "xl": {
-                "wrapper": ""
+                "base": ""
             },
             "2xl": {
-                "wrapper": ""
+                "base": ""
             },
             "3xl": {
-                "wrapper": ""
+                "base": ""
             }
         },
         "reverse": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         }
     },
     "compoundVariants": [

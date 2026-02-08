@@ -7,10 +7,14 @@
     },
     "variants": {
         "left": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         },
         "right": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         }
     },
     "compoundVariants": [

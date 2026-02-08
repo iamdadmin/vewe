@@ -12,37 +12,55 @@ final class KbdBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            ['PHslots'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => '',
-                    'neutral' => '',
+                    'phcolorph' => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
                 ],
                 'variant' => [
-                    'solid' => '',
-                    'outline' => '',
-                    'soft' => '',
-                    'subtle' => '',
+                    'solid' => [
+                        'base' => '',
+                    ],
+                    'outline' => [
+                        'base' => '',
+                    ],
+                    'soft' => [
+                        'base' => '',
+                    ],
+                    'subtle' => [
+                        'base' => '',
+                    ],
                 ],
                 'size' => [
-                    'sm' => 'h-4 min-w-[16px] text-[10px]',
-                    'md' => 'h-5 min-w-[20px] text-[11px]',
-                    'lg' => 'h-6 min-w-[24px] text-[12px]',
+                    'sm' => [
+                        'base' => 'h-4 min-w-[16px] text-[10px]',
+                    ],
+                    'md' => [
+                        'base' => 'h-5 min-w-[20px] text-[11px]',
+                    ],
+                    'lg' => [
+                        'base' => 'h-6 min-w-[24px] text-[12px]',
+                    ],
                 ],
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -106,7 +124,7 @@ final class KbdBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

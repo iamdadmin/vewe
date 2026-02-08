@@ -12,11 +12,11 @@ final class HeaderBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
-                'root' => 'bg-default/75 backdrop-blur border-b border-default h-(--ui-header-height) sticky top-0 z-50',
+                'root' => 'bg-default/75 backdrop-blur border-b border-default h-(--vewe-header-height) sticky top-0 z-50',
                 'container' => 'flex items-center justify-between gap-3 h-full',
                 'left' => 'lg:flex-1 flex items-center gap-1.5',
                 'center' => 'hidden lg:flex',
@@ -25,13 +25,13 @@ final class HeaderBaseTheme implements Theme
                 'toggle' => 'lg:hidden',
                 'content' => 'lg:hidden',
                 'overlay' => 'lg:hidden',
-                'header' => 'px-4 sm:px-6 h-(--ui-header-height) shrink-0 flex items-center justify-between gap-3',
+                'header' => 'px-4 sm:px-6 h-(--vewe-header-height) shrink-0 flex items-center justify-between gap-3',
                 'body' => 'p-4 sm:p-6 overflow-y-auto',
             ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
@@ -47,17 +47,17 @@ final class HeaderBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
-            ['PHcompoundVariants'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
-            ['PHdefaultVariants'],
+            [],
         );
     }
 }

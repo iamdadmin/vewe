@@ -47,10 +47,14 @@
             }
         },
         "description": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         },
         "body": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         }
     },
     "compoundVariants": [

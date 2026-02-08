@@ -8,7 +8,7 @@ use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
 
-final class TextareaBaseTheme implements Theme
+final class FieldGroupRootBaseTheme implements Theme
 {
     use IsTheme;
 
@@ -16,8 +16,7 @@ final class TextareaBaseTheme implements Theme
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
-                'leading' => 'absolute start-0 flex items-start',
-                'trailing' => 'absolute end-0 flex items-start',
+                'base' => 'relative',
             ],
         );
     }
@@ -26,31 +25,39 @@ final class TextareaBaseTheme implements Theme
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
-                'autoresize' => [
-                    'true' => [
-                        'base' => 'resize-none',
+                'fieldGroup' => [
+                    'horizontal' => [
+                        'root' => 'group has-focus-visible:z-[1]',
+                        'base' => 'group-not-only:group-first:rounded-e-none group-not-only:group-last:rounded-s-none group-not-last:group-not-first:rounded-none',
+                    ],
+                    'vertical' => [
+                        'root' => 'group has-focus-visible:z-[1]',
+                        'base' => 'group-not-only:group-first:rounded-b-none group-not-only:group-last:rounded-t-none group-not-last:group-not-first:rounded-none',
                     ],
                 ],
                 'size' => [
                     'xs' => [
-                        'leading' => 'ps-2 inset-y-1',
-                        'trailing' => 'pe-2 inset-y-1',
+                        'base' => '',
                     ],
                     'sm' => [
-                        'leading' => 'ps-2.5 inset-y-1.5',
-                        'trailing' => 'pe-2.5 inset-y-1.5',
+                        'base' => '',
                     ],
                     'md' => [
-                        'leading' => 'ps-2.5 inset-y-1.5',
-                        'trailing' => 'pe-2.5 inset-y-1.5',
+                        'base' => '',
                     ],
                     'lg' => [
-                        'leading' => 'ps-3 inset-y-2',
-                        'trailing' => 'pe-3 inset-y-2',
+                        'base' => '',
                     ],
                     'xl' => [
-                        'leading' => 'ps-3 inset-y-2',
-                        'trailing' => 'pe-3 inset-y-2',
+                        'base' => '',
+                    ],
+                ],
+                'orientation' => [
+                    'horizontal' => [
+                        'base' => 'inline-flex -space-x-px',
+                    ],
+                    'vertical' => [
+                        'base' => 'flex flex-col -space-y-px',
                     ],
                 ],
             ],

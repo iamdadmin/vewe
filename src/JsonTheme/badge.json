@@ -12,14 +12,26 @@
             "import": "(fieldGroupVariant)"
         },
         "color": {
-            "phcolorph": "",
-            "neutral": ""
+            "phcolorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "variant": {
-            "solid": "",
-            "outline": "",
-            "soft": "",
-            "subtle": ""
+            "solid": {
+                "base": ""
+            },
+            "outline": {
+                "base": ""
+            },
+            "soft": {
+                "base": ""
+            },
+            "subtle": {
+                "base": ""
+            }
         },
         "size": {
             "xs": {

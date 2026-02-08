@@ -39,10 +39,14 @@
             }
         },
         "leading": {
-            "true": ""
+            "true": {
+                "root": ""
+            }
         },
         "actions": {
-            "true": ""
+            "true": {
+                "root": ""
+            }
         },
         "compact": {
             "true": {

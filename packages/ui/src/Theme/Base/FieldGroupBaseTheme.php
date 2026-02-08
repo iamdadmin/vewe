@@ -12,31 +12,67 @@ final class FieldGroupBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            ['PHslots'],
+            [
+                'base' => 'relative',
+            ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
-            ['PHvariants'],
+            [
+                'fieldGroup' => [
+                    'horizontal' => [
+                        'base' => 'not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1]',
+                    ],
+                    'vertical' => [
+                        'base' => 'not-only:first:rounded-b-none not-only:last:rounded-t-none not-last:not-first:rounded-none focus-visible:z-[1]',
+                    ],
+                ],
+                'size' => [
+                    'xs' => [
+                        'base' => '',
+                    ],
+                    'sm' => [
+                        'base' => '',
+                    ],
+                    'md' => [
+                        'base' => '',
+                    ],
+                    'lg' => [
+                        'base' => '',
+                    ],
+                    'xl' => [
+                        'base' => '',
+                    ],
+                ],
+                'orientation' => [
+                    'horizontal' => [
+                        'base' => 'inline-flex -space-x-px',
+                    ],
+                    'vertical' => [
+                        'base' => 'flex flex-col -space-y-px',
+                    ],
+                ],
+            ],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
-            ['PHcompoundVariants'],
+            [],
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
-            ['PHdefaultVariants'],
+            [],
         );
     }
 }

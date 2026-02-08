@@ -12,7 +12,7 @@ final class StepperBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -32,7 +32,7 @@ final class StepperBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
@@ -87,7 +87,7 @@ final class StepperBaseTheme implements Theme
                     ],
                 ],
                 'color' => [
-                    'color' => [
+                    'phcolorph' => [
                         'trigger' => 'group-data-[state=completed]:bg-phcolorph group-data-[state=active]:bg-phcolorph focus-visible:outline-phcolorph',
                         'separator' => 'group-data-[state=completed]:bg-phcolorph',
                     ],
@@ -100,7 +100,7 @@ final class StepperBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -183,7 +183,7 @@ final class StepperBaseTheme implements Theme
         );
     }
 
-    /** @var ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [

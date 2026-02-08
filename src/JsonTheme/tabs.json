@@ -17,8 +17,12 @@
     },
     "variants": {
         "color": {
-            "phcolorph": "",
-            "neutral": ""
+            "phcolorph": {
+                "base": ""
+            },
+            "neutral": {
+                "base": ""
+            }
         },
         "variant": {
             "pill": {

@@ -2,11 +2,17 @@
     "base": "focus-visible:outline-primary",
     "variants": {
         "active": {
-            "true": "text-primary",
-            "false": "text-muted"
+            "true": {
+                "base": "text-primary"
+            },
+            "false": {
+                "base": "text-muted"
+            }
         },
         "disabled": {
-            "true": "cursor-not-allowed opacity-75"
+            "true": {
+                "base": "cursor-not-allowed opacity-75"
+            }
         }
     },
     "compoundVariants": [
