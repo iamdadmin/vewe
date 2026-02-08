@@ -63,6 +63,15 @@ final class BaseThemeScaffoldCommand
             // Prepare array
             $replacements = [];
 
+            // Namespace
+            $replacements['namespace Vewe\Stubs'] = 'namespace Vewe\Ui\Theme\Base' . (str_ends_with($file->getPath(), '/prose') ? '\Prose' : '');
+
+            // Class name
+            $replacements['final class BaseThemeStub'] = 'final class ' . Str\to_pascal_case(str_replace('.' . $file->getExtension(), '', $file->getBaseName()) . 'BaseTheme');
+
+            // Set stubfile
+            $stubFile = root_path('src/Vewe/Stubs/BaseThemeStub.stub.php');
+
             // Get the file
             /** @var string $inputFile */
             $inputFile = file_get_contents($file->getPathName());
@@ -77,10 +86,12 @@ final class BaseThemeScaffoldCommand
 
             if (str_contains($inputFile, '"mergeWith": "input') === true) {
                 $replacements['use Vewe\Ui\Theme\Theme;'] = "use Vewe\Ui\Theme\Theme;\nuse Vewe\Ui\Theme\Base\InputBaseTheme;";
+                $stubFile = root_path('src/Vewe/Stubs/MergeBaseThemeStub.stub.php');
             }
 
             if (str_contains($inputFile, '"mergeWith": "select') === true) {
                 $replacements['use Vewe\Ui\Theme\Theme;'] = "use Vewe\Ui\Theme\Theme;\nuse Vewe\Ui\Theme\Base\SelectBaseTheme;";
+                $stubFile = root_path('src/Vewe/Stubs/MergeBaseThemeStub.stub.php');
             }
 
             // Json decode into array
@@ -88,25 +99,22 @@ final class BaseThemeScaffoldCommand
 
             // Check if we need to mergeWith another
             if (isset($json['mergeWith'])) {
-                $mergeWith = $json['mergeWith'] ?? null;
+                if ((string) $json['mergeWith'] == 'select') {
+                    $replacements['new InputBaseTheme()'] = 'new SelectBaseTheme()';
+                }
                 unset($json['mergeWith']);
             }
 
             // Check if we need to replace anything
             if (isset($json['replace'])) {
-                $replace = $json['replace'] ?? null;
+                $replacements["'needle'"] = "'" . (string) $json['replace'] . "'";
+                $stubFile = root_path('src/Vewe/Stubs/ReplaceMergeBaseThemeStub.stub.php');
                 unset($json['replace']);
             }
             if (isset($json['replaceWith'])) {
-                $replaceWith = $json['replaceWith'] ?? null;
+                $replacements["'replaceWith'"] = "'" . (string) $json['replaceWith'] . "'";
                 unset($json['replaceWith']);
             }
-
-            // Namespace
-            $replacements['namespace Vewe\Stubs'] = 'namespace Vewe\Ui\Theme\Base' . (str_ends_with($file->getPath(), '/prose') ? '\Prose' : '');
-
-            // Class name
-            $replacements['final class BaseThemeStub'] = 'final class ' . Str\to_pascal_case(str_replace('.' . $file->getExtension(), '', $file->getBaseName()) . 'BaseTheme');
 
             // Render data from JsonTheme
             foreach ([
@@ -126,8 +134,15 @@ final class BaseThemeScaffoldCommand
 
             $replacements["'fieldGroupVariantWithRoot' => [\n                    'import' => '(fieldGroupVariantWithRoot)',\n                ],"] = "'fieldGroup' => (new FieldGroupRootBaseTheme())->variants['fieldGroup'],";
 
+            // I should probably regex this later
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'xs\\'][\\'base\\'] . \\'gap-0.25\\''"] = "(new InputBaseTheme())->variants['size']['xs']['base'] . 'gap-0.25'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'sm\\'][\\'base\\'] . \\'gap-0.5\\''"] = "(new InputBaseTheme())->variants['size']['sm']['base'] . 'gap-0.5'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'md\\'][\\'base\\'] . \\'gap-0.5\\''"] = "(new InputBaseTheme())->variants['size']['md']['base'] . 'gap-0.5'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'lg\\'][\\'base\\'] . \\'gap-0.75\\''"] = "(new InputBaseTheme())->variants['size']['lg']['base'] . 'gap-0.75'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'xl\\'][\\'base\\'] . \\'gap-0.75\\''"] = "(new InputBaseTheme())->variants['size']['xl']['base'] . 'gap-0.75'";
+
             $stubFile = $this->publish(
-                stubFile: root_path('src/Vewe/Stubs/BaseThemeStub.php'), // Alternate version for mergetheme usage
+                stubFile: $stubFile,
                 targetPath: $targetPath,
                 replacements: $replacements,
             );

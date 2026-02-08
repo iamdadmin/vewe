@@ -7,15 +7,19 @@ namespace Vewe\Ui\Theme\Base;
 use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
+use Vewe\Ui\Theme\Base\InputBaseTheme;
 
 final class InputTagsBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
-        get => new ImmutableArray(
-            [
+        get => (new InputBaseTheme())->slots->merge(
+            // @mago-expect analysis:less-specific-argument
+            new ImmutableArray(
+                [
                 'root' => [
                     'mergeWithParent',
                     'flex-wrap',
@@ -33,13 +37,17 @@ final class InputTagsBaseTheme implements Theme
                 'itemDeleteIcon' => 'shrink-0',
                 'input' => 'flex-1 border-0 bg-transparent placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75',
             ],
+            ),
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
-        get => new ImmutableArray(
-            [
+        get => (new InputBaseTheme())->variants->merge(
+            // @mago-expect analysis:less-specific-argument
+            new ImmutableArray(
+                [
                 'size' => [
                     'xs' => [
                         'item' => 'text-[10px]/3',
@@ -67,23 +75,32 @@ final class InputTagsBaseTheme implements Theme
                     'Object.entries(prev).map(([key, value]) => [key, replaceFocus(value)])' => '',
                 ],
             ],
+            ),
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
-        get => new ImmutableArray(
-            [
+        get => (new InputBaseTheme())->compoundVariants->merge(
+            // @mago-expect analysis:less-specific-argument
+            new ImmutableArray(
+                [
                 '(prev: Record<string, any>[]) => prev.map(item => ({' => '...item',
                 'class' => 'typeof item.class === \'string\' ? replaceFocus(item.class) : item.class',
             ],
+            ),
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
-        get => new ImmutableArray(
-            [],
+        get => (new InputBaseTheme())->defaultVariants->merge(
+            // @mago-expect analysis:less-specific-argument
+            new ImmutableArray(
+                [],
+            ),
         );
     }
 }

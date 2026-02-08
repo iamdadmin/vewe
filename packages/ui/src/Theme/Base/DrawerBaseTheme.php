@@ -12,7 +12,8 @@ final class DrawerBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
@@ -32,7 +33,8 @@ final class DrawerBaseTheme implements Theme
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
             [
@@ -66,7 +68,8 @@ final class DrawerBaseTheme implements Theme
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
         get => new ImmutableArray(
             [
@@ -170,7 +173,8 @@ final class DrawerBaseTheme implements Theme
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [],

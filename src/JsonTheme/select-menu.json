@@ -22,5 +22,5 @@
     "compoundVariants": [],
     "mergeWith": "select",
     "replace": "focus:",
-    "replaceWith": "focus-visible"
+    "replaceWith": "focus-visible:"
 }

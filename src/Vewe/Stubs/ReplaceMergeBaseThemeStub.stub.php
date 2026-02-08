@@ -2,33 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Vewe\Ui\Theme\Base;
+namespace Vewe\Stubs;
 
 use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
-use Vewe\Ui\Theme\Base\SelectBaseTheme;
 
-final class SelectMenuBaseTheme implements Theme
+final class BaseThemeStub implements Theme
 {
     use IsTheme;
 
     /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
-        get => (new SelectBaseTheme())->slots->merge(
+        get => (new InputBaseTheme())->slots->merge(
             // @mago-expect analysis:less-specific-argument
             new ImmutableArray(
-                [
-                'input' => 'border-b border-default',
-                'focusScope' => 'flex flex-col min-h-0',
-                'viewport' => 'relative scroll-py-1 overflow-y-auto flex-1',
-                'content' => [
-                    'contentFromParent',
-                    'origin-(--reka-combobox-content-transform-origin) w-(--reka-combobox-trigger-width)',
-                ],
-                'trailingClear' => 'p-0',
-            ],
+                ['PHslots'],
             ),
         );
     }
@@ -36,19 +26,10 @@ final class SelectMenuBaseTheme implements Theme
     /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
-        get => (new SelectBaseTheme())->variants->merge(
+        get => (new InputBaseTheme())->variants->merge(
             // @mago-expect analysis:less-specific-argument
             new ImmutableArray(
-                [
-                'virtualize' => [
-                    'true' => [
-                        'viewport' => 'p-1 isolate',
-                    ],
-                    'false' => [
-                        'viewport' => 'divide-y divide-default',
-                    ],
-                ],
-            ],
+                ['PHvariants'],
             ),
         );
     }
@@ -56,24 +37,24 @@ final class SelectMenuBaseTheme implements Theme
     /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
-        get => (new SelectBaseTheme())->compoundVariants->merge(
+        get => (new InputBaseTheme())->compoundVariants->merge(
             // @mago-expect analysis:less-specific-argument
             new ImmutableArray(
-                [],
+                ['PHcompoundVariants'],
             ),
         )->map(fn (array $item) => [
             ...$item,
-            'class' => $this->replacePlaceholder($item['class'], 'focus:', 'focus-visible:'),
+            'class' => $this->replacePlaceholder($item['class'], 'needle', 'replaceWith'),
         ]);
     }
 
     /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
-        get => (new SelectBaseTheme())->defaultVariants->merge(
+        get => (new InputBaseTheme())->defaultVariants->merge(
             // @mago-expect analysis:less-specific-argument
             new ImmutableArray(
-                [],
+                ['PHdefaultVariants'],
             ),
         );
     }

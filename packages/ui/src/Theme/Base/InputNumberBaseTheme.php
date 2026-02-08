@@ -7,16 +7,19 @@ namespace Vewe\Ui\Theme\Base;
 use Tempest\Support\Arr\ImmutableArray;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
-use Vewe\Ui\Theme\Base\FieldGroupRootBaseTheme;
+use Vewe\Ui\Theme\Base\InputBaseTheme;
 
 final class InputNumberBaseTheme implements Theme
 {
     use IsTheme;
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
-        get => new ImmutableArray(
-            [
+        get => (new InputBaseTheme())->slots->merge(
+            // @mago-expect analysis:less-specific-argument
+            new ImmutableArray(
+                [
                 'root' => 'relative inline-flex items-center',
                 'base' => [
                     'w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75',
@@ -25,13 +28,17 @@ final class InputNumberBaseTheme implements Theme
                 'increment' => 'absolute flex items-center',
                 'decrement' => 'absolute flex items-center',
             ],
+            ),
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
-        get => new ImmutableArray(
-            [
+        get => (new InputBaseTheme())->variants->merge(
+            // @mago-expect analysis:less-specific-argument
+            new ImmutableArray(
+                [
                 'fieldGroup' => (new FieldGroupRootBaseTheme())->variants['fieldGroup'],
                 'color' => [
                     'phcolorph' => [
@@ -78,13 +85,17 @@ final class InputNumberBaseTheme implements Theme
                     'false' => '',
                 ],
             ],
+            ),
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $compoundVariants {
-        get => new ImmutableArray(
-            [
+        get => (new InputBaseTheme())->compoundVariants->merge(
+            // @mago-expect analysis:less-specific-argument
+            new ImmutableArray(
+                [
                 [
                     'color' => 'phcolorph',
                     'variant' => [
@@ -197,17 +208,22 @@ final class InputNumberBaseTheme implements Theme
                     ],
                 ],
             ],
+            ),
         );
     }
 
-    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
-        get => new ImmutableArray(
-            [
+        get => (new InputBaseTheme())->defaultVariants->merge(
+            // @mago-expect analysis:less-specific-argument
+            new ImmutableArray(
+                [
                 'size' => 'md',
                 'color' => 'phcolorph',
                 'variant' => 'outline',
             ],
+            ),
         );
     }
 }

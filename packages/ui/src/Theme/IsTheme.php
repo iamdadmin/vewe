@@ -40,50 +40,6 @@ trait IsTheme
         return '';
     }
 
-    private function mergeTheme(ImmutableArray $override, ImmutableArray $base): ImmutableArray
-    {
-        // Get all unique keys from both arrays
-        $allKeys = $base->keys()->merge($override->keys())->unique();
-
-        // Build merged result by processing each key
-        return $allKeys->reduce(
-            /** @param string $key */
-            function (ImmutableArray $result, mixed $key) use ($base, $override) {
-                $hasInBase = $base->hasKey($key);
-                $hasInOverride = $override->hasKey($key);
-
-                if (! $hasInOverride) {
-                    // Only in base, keep base value
-                    return $result->set($key, $base->get($key));
-                }
-
-                if (! $hasInBase) {
-                    // Only in override, use override value
-                    return $result->set($key, $override->get($key));
-                }
-
-                // In both - check if we need deep merge
-                $baseValue = $base->get($key);
-                $overrideValue = $override->get($key);
-
-                if (is_array($baseValue) && is_array($overrideValue)) {
-                    // Both are arrays - recursively merge
-                    return $result->set(
-                        $key,
-                        $this->mergeTheme(
-                            new ImmutableArray($overrideValue),
-                            new ImmutableArray($baseValue),
-                        ),
-                    );
-                }
-
-                // Override wins for non-array values
-                return $result->set($key, $overrideValue);
-            },
-            new ImmutableArray([]),
-        );
-    }
-
     private function replacePlaceholder(mixed $subject, string $replace, string $replaceWith): mixed
     {
         if (is_string($subject)) {
