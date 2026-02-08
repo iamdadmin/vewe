@@ -32,6 +32,7 @@ final class FixupCommand
     )]
     public function __invoke(): ExitCode
     {
+        ld('This command is disabled');
         $iterator = new RecursiveIteratorIterator(
             new RecursiveDirectoryIterator($this->depositPath, RecursiveDirectoryIterator::SKIP_DOTS),
         );

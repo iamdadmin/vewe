@@ -37,6 +37,7 @@ final class CollectCommand
         #[ConsoleArgument(description: 'Specifies the path to collect')]
         string $collect,
     ): ExitCode {
+        ld('This command is disabled');
         $this->collectPath = $collect;
 
         $iterator = new RecursiveIteratorIterator(

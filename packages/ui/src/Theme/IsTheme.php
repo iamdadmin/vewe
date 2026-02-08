@@ -7,8 +7,7 @@ declare(strict_types=1);
 
 namespace Vewe\Ui\Theme;
 
-use FeatureNinja\Cva\ClassVarianceAuthority;
-use TalesFromADev\TailwindMerge\TailwindMerge;
+use Vewe\ClassVariance\Cv;
 
 /**
  * @return array|string|null
@@ -19,32 +18,6 @@ trait IsTheme
     private static ?TailwindMerge $merger = null;
 
     protected string $color;
-
-    protected string $slot;
-
-    public array $slotData {
-        get {
-            return self::VARIANTS[$this->$slot];
-        }
-    }
-
-    public array $variantData {
-        get {
-            return $this->replacePlaceholders(self::VARIANTS);
-        }
-    }
-
-    public array $compoundVariantData {
-        get {
-            return $this->replacePlaceholders(self::COMPOUND_VARIANTS);
-        }
-    }
-
-    public array $defaultVariantData {
-        get {
-            return self::DEFAULT_VARIANTS ?? [];
-        }
-    }
 
     /**
      * Get CSS classes for a slot with variants applied
