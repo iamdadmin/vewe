@@ -1,3 +1,5 @@
 {
-    "base": "w-full max-w-(--vewe-container) mx-auto px-4 sm:px-6 lg:px-8"
+    "slots": {
+        "base": "w-full max-w-(--vewe-container) mx-auto px-4 sm:px-6 lg:px-8"
+    }
 }

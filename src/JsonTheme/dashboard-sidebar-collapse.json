@@ -1,9 +1,15 @@
 {
-    "base": "hidden lg:flex",
+    "slots": {
+        "base": "hidden lg:flex"
+    },
     "variants": {
         "side": {
-            "left": "",
-            "right": ""
+            "left": {
+                "base": ""
+            },
+            "right": {
+                "base": ""
+            }
         }
     }
 }

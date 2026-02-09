@@ -16,7 +16,9 @@ final class DashboardResizeHandleBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            [],
+            [
+                'base' => 'hidden lg:block touch-none select-none cursor-ew-resize relative before:absolute before:inset-y-0 before:-left-1.5 before:-right-1.5 before:z-1',
+            ],
         );
     }
 

@@ -16,7 +16,9 @@ final class DashboardSidebarToggleBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            [],
+            [
+                'base' => 'lg:hidden',
+            ],
         );
     }
 
@@ -26,8 +28,12 @@ final class DashboardSidebarToggleBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'side' => [
-                    'left' => '',
-                    'right' => '',
+                    'left' => [
+                        'base' => '',
+                    ],
+                    'right' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );

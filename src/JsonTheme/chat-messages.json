@@ -7,8 +7,12 @@
     },
     "variants": {
         "compact": {
-            "true": "",
-            "false": ""
+            "true": {
+                "base": ""
+            },
+            "false": {
+                "base": ""
+            }
         }
     }
 }

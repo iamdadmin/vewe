@@ -31,8 +31,12 @@ final class ChatMessagesBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'compact' => [
-                    'true' => '',
-                    'false' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
+                    'false' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );

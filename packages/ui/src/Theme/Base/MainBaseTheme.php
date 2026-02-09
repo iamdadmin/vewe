@@ -16,7 +16,9 @@ final class MainBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            [],
+            [
+                'base' => 'min-h-[calc(100vh-var(--vewe-header-height))]',
+            ],
         );
     }
 

@@ -16,7 +16,9 @@ final class ContainerBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            [],
+            [
+                'base' => 'w-full max-w-(--vewe-container) mx-auto px-4 sm:px-6 lg:px-8',
+            ],
         );
     }
 

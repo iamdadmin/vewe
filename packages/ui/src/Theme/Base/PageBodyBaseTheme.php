@@ -16,7 +16,9 @@ final class PageBodyBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            [],
+            [
+                'base' => 'mt-8 pb-24 space-y-12',
+            ],
         );
     }
 

@@ -40,6 +40,18 @@ final class ChatMessagesBaseThemeTest extends TestCase
     #[Test]
     public function variant_tests(): void
     {
+
+        // Ensure the variant for the named slot is retrieved correctly
+        $this->assertSame(
+            "",
+            ChatMessagesBaseTheme::make(props: ['compact' => 'true'], slot: 'base'),
+        );
+
+        // Ensure the variant for the named slot is retrieved correctly
+        $this->assertSame(
+            "",
+            ChatMessagesBaseTheme::make(props: ['compact' => 'false'], slot: 'base'),
+        );
     }
 
 }

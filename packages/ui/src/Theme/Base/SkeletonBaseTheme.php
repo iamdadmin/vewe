@@ -16,7 +16,9 @@ final class SkeletonBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            [],
+            [
+                'base' => 'animate-pulse rounded-md bg-elevated',
+            ],
         );
     }
 

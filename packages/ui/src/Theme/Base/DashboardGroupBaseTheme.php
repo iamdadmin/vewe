@@ -16,7 +16,9 @@ final class DashboardGroupBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $slots {
         get => new ImmutableArray(
-            [],
+            [
+                'base' => 'fixed inset-0 flex overflow-hidden',
+            ],
         );
     }
 
