@@ -45,31 +45,31 @@ final class InputTimeBaseTheme implements Theme
                     'size' => [
                         'xs' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['xs']['base'] . 'gap-0.25',
+                                (new InputBaseTheme())->variants['size']['xs']['base'] ?? '' . 'gap-0.25',
                             ],
                             'segment' => 'not-data-[segment=literal]:w-6',
                         ],
                         'sm' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['sm']['base'] . 'gap-0.5',
+                                (new InputBaseTheme())->variants['size']['sm']['base'] ?? '' . 'gap-0.5',
                             ],
                             'segment' => 'not-data-[segment=literal]:w-6',
                         ],
                         'md' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['md']['base'] . 'gap-0.5',
+                                (new InputBaseTheme())->variants['size']['md']['base'] ?? '' . 'gap-0.5',
                             ],
                             'segment' => 'not-data-[segment=literal]:w-7',
                         ],
                         'lg' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['lg']['base'] . 'gap-0.75',
+                                (new InputBaseTheme())->variants['size']['lg']['base'] ?? '' . 'gap-0.75',
                             ],
                             'segment' => 'not-data-[segment=literal]:w-7',
                         ],
                         'xl' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['xl']['base'] . 'gap-0.75',
+                                (new InputBaseTheme())->variants['size']['xl']['base'] ?? '' . 'gap-0.75',
                             ],
                             'segment' => 'not-data-[segment=literal]:w-8',
                         ],

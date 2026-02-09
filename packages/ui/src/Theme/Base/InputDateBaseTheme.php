@@ -46,31 +46,31 @@ final class InputDateBaseTheme implements Theme
                     'size' => [
                         'xs' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['xs']['base'] . 'gap-0.25',
+                                (new InputBaseTheme())->variants['size']['xs']['base'] ?? '' . 'gap-0.25',
                             ],
                             'segment' => 'data-[segment=day]:w-6 data-[segment=month]:w-6 data-[segment=year]:w-9',
                         ],
                         'sm' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['sm']['base'] . 'gap-0.5',
+                                (new InputBaseTheme())->variants['size']['sm']['base'] ?? '' . 'gap-0.5',
                             ],
                             'segment' => 'data-[segment=day]:w-6 data-[segment=month]:w-6 data-[segment=year]:w-9',
                         ],
                         'md' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['md']['base'] . 'gap-0.5',
+                                (new InputBaseTheme())->variants['size']['md']['base'] ?? '' . 'gap-0.5',
                             ],
                             'segment' => 'data-[segment=day]:w-7 data-[segment=month]:w-7 data-[segment=year]:w-11',
                         ],
                         'lg' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['lg']['base'] . 'gap-0.75',
+                                (new InputBaseTheme())->variants['size']['lg']['base'] ?? '' . 'gap-0.75',
                             ],
                             'segment' => 'data-[segment=day]:w-7 data-[segment=month]:w-7 data-[segment=year]:w-11',
                         ],
                         'xl' => [
                             'base' => [
-                                (new InputBaseTheme())->variants['size']['xl']['base'] . 'gap-0.75',
+                                (new InputBaseTheme())->variants['size']['xl']['base'] ?? '' . 'gap-0.75',
                             ],
                             'segment' => 'data-[segment=day]:w-8 data-[segment=month]:w-8 data-[segment=year]:w-13',
                         ],

@@ -135,11 +135,11 @@ final class BaseThemeScaffoldCommand
             $replacements["'fieldGroupVariantWithRoot' => [\n                    'import' => '(fieldGroupVariantWithRoot)',\n                ],"] = "'fieldGroup' => (new FieldGroupRootBaseTheme())->variants['fieldGroup'],";
 
             // I should probably regex this later
-            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'xs\\'][\\'base\\'] . \\'gap-0.25\\''"] = "(new InputBaseTheme())->variants['size']['xs']['base'] . 'gap-0.25'";
-            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'sm\\'][\\'base\\'] . \\'gap-0.5\\''"] = "(new InputBaseTheme())->variants['size']['sm']['base'] . 'gap-0.5'";
-            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'md\\'][\\'base\\'] . \\'gap-0.5\\''"] = "(new InputBaseTheme())->variants['size']['md']['base'] . 'gap-0.5'";
-            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'lg\\'][\\'base\\'] . \\'gap-0.75\\''"] = "(new InputBaseTheme())->variants['size']['lg']['base'] . 'gap-0.75'";
-            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'xl\\'][\\'base\\'] . \\'gap-0.75\\''"] = "(new InputBaseTheme())->variants['size']['xl']['base'] . 'gap-0.75'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'xs\\'][\\'base\\'] . \\'gap-0.25\\''"] = "(new InputBaseTheme())->variants['size']['xs']['base'] ?? '' . 'gap-0.25'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'sm\\'][\\'base\\'] . \\'gap-0.5\\''"] = "(new InputBaseTheme())->variants['size']['sm']['base'] ?? '' . 'gap-0.5'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'md\\'][\\'base\\'] . \\'gap-0.5\\''"] = "(new InputBaseTheme())->variants['size']['md']['base'] ?? '' . 'gap-0.5'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'lg\\'][\\'base\\'] . \\'gap-0.75\\''"] = "(new InputBaseTheme())->variants['size']['lg']['base'] ?? '' . 'gap-0.75'";
+            $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'xl\\'][\\'base\\'] . \\'gap-0.75\\''"] = "(new InputBaseTheme())->variants['size']['xl']['base'] ?? '' . 'gap-0.75'";
 
             $stubFile = $this->publish(
                 stubFile: $stubFile,

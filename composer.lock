@@ -4561,16 +4561,16 @@
         },
         {
             "name": "vewe/classvariance",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iamdadmin/vewe-classvariance.git",
-                "reference": "904bb1417eaebe3cea4794ae4fc3b39b6abbdbb1"
+                "reference": "bb8f6f06bd8deb813c907a987a52c949b92e2cee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iamdadmin/vewe-classvariance/zipball/904bb1417eaebe3cea4794ae4fc3b39b6abbdbb1",
-                "reference": "904bb1417eaebe3cea4794ae4fc3b39b6abbdbb1",
+                "url": "https://api.github.com/repos/iamdadmin/vewe-classvariance/zipball/bb8f6f06bd8deb813c907a987a52c949b92e2cee",
+                "reference": "bb8f6f06bd8deb813c907a987a52c949b92e2cee",
                 "shasum": ""
             },
             "require": {
@@ -4611,7 +4611,7 @@
                 "issues": "https://github.com/iamdadmin/vewe-classvariance/issues",
                 "source": "https://github.com/iamdadmin/vewe-classvariance"
             },
-            "time": "2026-02-08T08:57:24+00:00"
+            "time": "2026-02-08T20:07:59+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
