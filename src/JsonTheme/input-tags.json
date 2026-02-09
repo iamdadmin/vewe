@@ -44,14 +44,5 @@
         "class": "typeof item.class === 'string' ? replaceFocus(item.class) : item.class"
     },
     "mergeWith": "input",
-    "replaces": {
-
-    }
-    "replaceWith": "focus-visible:"
-    "replaceFocus": [
-        "function replaceFocus(str: string): string {",
-        "return str",
-        ".replace(/focus:/g, 'has-focus:')",
-        ".replace(/focus-visible:/g, 'has-focus-visible:')"
-    ]
+    "replaces": {}
 }
