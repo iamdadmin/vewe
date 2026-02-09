@@ -20,7 +20,7 @@
     },
     "variants": {
         "color": {
-            "phcolorph": {
+            "$this->color": {
                 "base": ""
             },
             "neutral": {
@@ -111,16 +111,16 @@
     },
     "compoundVariants": [
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "class": {
-                "base": "focus-visible:outline-phcolorph"
+                "base": "focus-visible:outline-'.$this->color"
             }
         },
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "highlight": true,
             "class": {
-                "base": "border-phcolorph"
+                "base": "border-'.$this->color"
             }
         },
         {
@@ -230,7 +230,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "phcolorph",
+        "color": "$this->color",
         "variant": "area",
         "size": "md"
     }

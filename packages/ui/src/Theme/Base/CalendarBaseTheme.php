@@ -42,9 +42,9 @@ final class CalendarBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'headCell' => 'text-phcolorph',
-                        'cellTrigger' => 'focus-visible:ring-phcolorph',
+                    $this->color => [
+                        'headCell' => 'text-'.$this->color,
+                        'cellTrigger' => 'focus-visible:ring-'.$this->color,
                     ],
                     'neutral' => [
                         'headCell' => 'text-highlighted',
@@ -120,31 +120,31 @@ final class CalendarBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'solid',
                     'class' => [
-                        'cellTrigger' => 'data-[selected]:bg-phcolorph data-[selected]:text-inverted data-today:not-data-[selected]:text-phcolorph data-[highlighted]:bg-phcolorph/20 hover:not-data-[selected]:bg-phcolorph/20',
+                        'cellTrigger' => 'data-[selected]:bg-'.$this->color.' data-[selected]:text-inverted data-today:not-data-[selected]:text-'.$this->color.' data-[highlighted]:bg-'.$this->color.'/20 hover:not-data-[selected]:bg-'.$this->color.'/20',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'outline',
                     'class' => [
-                        'cellTrigger' => 'data-[selected]:ring data-[selected]:ring-inset data-[selected]:ring-phcolorph/50 data-[selected]:text-phcolorph data-today:not-data-[selected]:text-phcolorph data-[highlighted]:bg-phcolorph/10 hover:not-data-[selected]:bg-phcolorph/10',
+                        'cellTrigger' => 'data-[selected]:ring data-[selected]:ring-inset data-[selected]:ring-'.$this->color.'/50 data-[selected]:text-'.$this->color.' data-today:not-data-[selected]:text-'.$this->color.' data-[highlighted]:bg-'.$this->color.'/10 hover:not-data-[selected]:bg-'.$this->color.'/10',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'soft',
                     'class' => [
-                        'cellTrigger' => 'data-[selected]:bg-phcolorph/10 data-[selected]:text-phcolorph data-today:not-data-[selected]:text-phcolorph data-[highlighted]:bg-phcolorph/20 hover:not-data-[selected]:bg-phcolorph/20',
+                        'cellTrigger' => 'data-[selected]:bg-'.$this->color.'/10 data-[selected]:text-'.$this->color.' data-today:not-data-[selected]:text-'.$this->color.' data-[highlighted]:bg-'.$this->color.'/20 hover:not-data-[selected]:bg-'.$this->color.'/20',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'subtle',
                     'class' => [
-                        'cellTrigger' => 'data-[selected]:bg-phcolorph/10 data-[selected]:text-phcolorph data-[selected]:ring data-[selected]:ring-inset data-[selected]:ring-phcolorph/25 data-today:not-data-[selected]:text-phcolorph data-[highlighted]:bg-phcolorph/20 hover:not-data-[selected]:bg-phcolorph/20',
+                        'cellTrigger' => 'data-[selected]:bg-'.$this->color.'/10 data-[selected]:text-'.$this->color.' data-[selected]:ring data-[selected]:ring-inset data-[selected]:ring-'.$this->color.'/25 data-today:not-data-[selected]:text-'.$this->color.' data-[highlighted]:bg-'.$this->color.'/20 hover:not-data-[selected]:bg-'.$this->color.'/20',
                     ],
                 ],
                 [
@@ -185,7 +185,7 @@ final class CalendarBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'size' => 'md',
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'solid',
             ],
         );

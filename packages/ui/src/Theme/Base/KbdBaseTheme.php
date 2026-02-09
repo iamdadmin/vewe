@@ -26,7 +26,7 @@ final class KbdBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -68,31 +68,31 @@ final class KbdBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'solid',
                     'class' => [
-                        'base' => 'text-inverted bg-phcolorph',
+                        'base' => 'text-inverted bg-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'outline',
                     'class' => [
-                        'base' => 'ring ring-inset ring-phcolorph/50 text-phcolorph',
+                        'base' => 'ring ring-inset ring-'.$this->color.'/50 text-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'soft',
                     'class' => [
-                        'base' => 'text-phcolorph bg-phcolorph/10',
+                        'base' => 'text-'.$this->color.' bg-'.$this->color.'/10',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'subtle',
                     'class' => [
-                        'base' => 'text-phcolorph ring ring-inset ring-phcolorph/25 bg-phcolorph/10',
+                        'base' => 'text-'.$this->color.' ring ring-inset ring-'.$this->color.'/25 bg-'.$this->color.'/10',
                     ],
                 ],
                 [

@@ -19,7 +19,7 @@
     },
     "variants": {
         "color": {
-            "phcolorph": {
+            "$this->color": {
                 "base": ""
             },
             "neutral": {
@@ -28,7 +28,7 @@
         },
         "highlightColor": {
             "color": {
-                "indicator": "bg-phcolorph"
+                "indicator": "bg-'.$this->color"
             },
             "neutral": {
                 "indicator": "bg-inverted"
@@ -55,11 +55,11 @@
     },
     "compoundVariants": [
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "active": true,
             "class": {
-                "link": "text-phcolorph",
-                "linkLeadingIcon": "text-phcolorph"
+                "link": "text-'.$this->color",
+                "linkLeadingIcon": "text-'.$this->color"
             }
         },
         {
@@ -72,7 +72,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "phcolorph",
+        "color": "$this->color",
         "highlightColor": "primary"
     }
 }

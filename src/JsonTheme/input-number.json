@@ -12,7 +12,7 @@
             "import": "(fieldGroupVariantWithRoot)"
         },
         "color": {
-            "phcolorph": {
+            "$this->color": {
                 "base": ""
             },
             "neutral": {
@@ -58,20 +58,20 @@
     },
     "compoundVariants": [
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "variant": [
                 "outline",
                 "subtle"
             ],
             "class": {
-                "base": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph"
+                "base": "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-'.$this->color"
             }
         },
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "highlight": true,
             "class": {
-                "base": "ring ring-inset ring-phcolorph"
+                "base": "ring ring-inset ring-'.$this->color"
             }
         },
         {
@@ -171,7 +171,7 @@
     ],
     "defaultVariants": {
         "size": "md",
-        "color": "phcolorph",
+        "color": "$this->color",
         "variant": "outline"
     }
 }

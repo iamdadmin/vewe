@@ -128,7 +128,9 @@ final class SelectBaseTheme implements Theme
             ),
         )->map(fn (array $item) => [
             ...$item,
-            'class' => $this->replacePlaceholder($item['class'], 'focus-visible:', 'focus:'),
+            'class' => isset($item['class']['base'])
+                ? [...$item['class'], 'base' => str_replace('focus-visible:', 'focus:', $item['class']['base'])]
+                : $item['class'],
         ]);
     }
 

@@ -38,8 +38,8 @@ final class BannerBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'root' => 'bg-phcolorph',
+                    $this->color => [
+                        'root' => 'bg-'.$this->color,
                     ],
                     'neutral' => [
                         'root' => 'bg-inverted',
@@ -60,10 +60,10 @@ final class BannerBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'to' => true,
                     'class' => [
-                        'root' => 'hover:bg-phcolorph/90',
+                        'root' => 'hover:bg-'.$this->color.'/90',
                     ],
                 ],
                 [

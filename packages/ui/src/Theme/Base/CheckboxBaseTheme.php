@@ -35,9 +35,9 @@ final class CheckboxBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'base' => 'focus-visible:outline-phcolorph',
-                        'indicator' => 'bg-phcolorph',
+                    $this->color => [
+                        'base' => 'focus-visible:outline-'.$this->color,
+                        'indicator' => 'bg-'.$this->color,
                     ],
                     'neutral' => [
                         'base' => 'focus-visible:outline-inverted',
@@ -154,10 +154,10 @@ final class CheckboxBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'card',
                     'class' => [
-                        'root' => 'has-data-[state=checked]:border-phcolorph',
+                        'root' => 'has-data-[state=checked]:border-'.$this->color,
                     ],
                 ],
                 [
@@ -184,7 +184,7 @@ final class CheckboxBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'size' => 'md',
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'list',
                 'indicator' => 'start',
             ],

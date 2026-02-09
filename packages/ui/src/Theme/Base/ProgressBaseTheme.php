@@ -39,9 +39,9 @@ final class ProgressBaseTheme implements Theme
                     'elastic' => '',
                 ],
                 'color' => [
-                    'phcolorph' => [
-                        'indicator' => 'bg-phcolorph',
-                        'steps' => 'text-phcolorph',
+                    $this->color => [
+                        'indicator' => 'bg-'.$this->color,
+                        'steps' => 'text-'.$this->color,
                     ],
                     'neutral' => [
                         'indicator' => 'bg-inverted',
@@ -298,7 +298,7 @@ final class ProgressBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'animation' => 'carousel',
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'size' => 'md',
             ],
         );

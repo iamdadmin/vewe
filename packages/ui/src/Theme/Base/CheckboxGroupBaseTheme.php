@@ -39,7 +39,7 @@ final class CheckboxGroupBaseTheme implements Theme
                     ],
                 ],
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'item' => '',
                     ],
                     'neutral' => [
@@ -148,10 +148,10 @@ final class CheckboxGroupBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'table',
                     'class' => [
-                        'item' => 'has-data-[state=checked]:bg-phcolorph/10 has-data-[state=checked]:border-phcolorph/50 has-data-[state=checked]:z-[1]',
+                        'item' => 'has-data-[state=checked]:bg-'.$this->color.'/10 has-data-[state=checked]:border-'.$this->color.'/50 has-data-[state=checked]:z-[1]',
                     ],
                 ],
                 [

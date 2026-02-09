@@ -48,8 +48,8 @@ final class TimelineBaseTheme implements Theme
                     ],
                 ],
                 'color' => [
-                    'phcolorph' => [
-                        'indicator' => 'group-data-[state=completed]:bg-phcolorph group-data-[state=active]:bg-phcolorph',
+                    $this->color => [
+                        'indicator' => 'group-data-[state=completed]:bg-'.$this->color.' group-data-[state=active]:bg-'.$this->color,
                     ],
                     'neutral' => [
                         'indicator' => 'group-data-[state=completed]:bg-inverted group-data-[state=active]:bg-inverted',
@@ -99,17 +99,17 @@ final class TimelineBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'reverse' => false,
                     'class' => [
-                        'separator' => 'group-data-[state=completed]:bg-phcolorph',
+                        'separator' => 'group-data-[state=completed]:bg-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'reverse' => true,
                     'class' => [
-                        'separator' => 'group-data-[state=active]:bg-phcolorph group-data-[state=completed]:bg-phcolorph',
+                        'separator' => 'group-data-[state=active]:bg-'.$this->color.' group-data-[state=completed]:bg-'.$this->color,
                     ],
                 ],
                 [

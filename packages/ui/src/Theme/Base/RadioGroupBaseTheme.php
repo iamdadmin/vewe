@@ -37,9 +37,9 @@ final class RadioGroupBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'base' => 'focus-visible:outline-phcolorph',
-                        'indicator' => 'bg-phcolorph',
+                    $this->color => [
+                        'base' => 'focus-visible:outline-'.$this->color,
+                        'indicator' => 'bg-'.$this->color,
                     ],
                     'neutral' => [
                         'base' => 'focus-visible:outline-inverted',
@@ -210,10 +210,10 @@ final class RadioGroupBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'card',
                     'class' => [
-                        'item' => 'has-data-[state=checked]:border-phcolorph',
+                        'item' => 'has-data-[state=checked]:border-'.$this->color,
                     ],
                 ],
                 [
@@ -224,10 +224,10 @@ final class RadioGroupBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'table',
                     'class' => [
-                        'item' => 'has-data-[state=checked]:bg-phcolorph/10 has-data-[state=checked]:border-phcolorph/50 has-data-[state=checked]:z-[1]',
+                        'item' => 'has-data-[state=checked]:bg-'.$this->color.'/10 has-data-[state=checked]:border-'.$this->color.'/50 has-data-[state=checked]:z-[1]',
                     ],
                 ],
                 [
@@ -257,7 +257,7 @@ final class RadioGroupBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'size' => 'md',
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'list',
                 'orientation' => 'vertical',
                 'indicator' => 'start',

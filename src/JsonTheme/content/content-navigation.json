@@ -18,9 +18,9 @@
     },
     "variants": {
         "color": {
-            "phcolorph": {
-                "trigger": "focus-visible:ring-phcolorph",
-                "link": "focus-visible:before:ring-phcolorph"
+            "$this->color": {
+                "trigger": "focus-visible:ring-'.$this->color",
+                "link": "focus-visible:before:ring-'.$this->color"
             },
             "neutral": {
                 "trigger": "focus-visible:ring-inverted",
@@ -28,7 +28,7 @@
             }
         },
         "highlightColor": {
-            "phhighlightColorph": "",
+            "$this->highlightColor": "",
             "neutral": ""
         },
         "variant": {
@@ -83,12 +83,12 @@
             }
         },
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "variant": "pill",
             "active": true,
             "class": {
-                "link": "text-phcolorph",
-                "linkLeadingIcon": "text-phcolorph group-data-[state=open]:text-phcolorph"
+                "link": "text-'.$this->color",
+                "linkLeadingIcon": "text-'.$this->color.' group-data-[state=open]:text-'.$this->color"
             }
         },
         {
@@ -133,12 +133,12 @@
             }
         },
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "variant": "link",
             "active": true,
             "class": {
-                "link": "text-phcolorph",
-                "linkLeadingIcon": "text-phcolorph group-data-[state=open]:text-phcolorph"
+                "link": "text-'.$this->color",
+                "linkLeadingIcon": "text-'.$this->color.' group-data-[state=open]:text-'.$this->color"
             }
         },
         {
@@ -151,12 +151,12 @@
             }
         },
         {
-            "highlightColor": "phhighlightColorph",
+            "highlightColor": "$this->highlightColor",
             "highlight": true,
             "level": true,
             "active": true,
             "class": {
-                "link": "after:bg-phhighlightColorph"
+                "link": "after:bg-'.$this->highlightColor"
             }
         },
         {
@@ -170,7 +170,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "phcolorph",
+        "color": "$this->color",
         "highlightColor": "primary",
         "variant": "pill"
     }

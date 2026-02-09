@@ -44,7 +44,9 @@ final class BaseThemeStub implements Theme
             ),
         )->map(fn (array $item) => [
             ...$item,
-            'class' => $this->replacePlaceholder($item['class'], 'needle', 'replaceWith'),
+            'class' => isset($item['class']['base'])
+                ? [...$item['class'], 'base' => str_replace('needle', 'replaceWith', $item['class']['base'])]
+                : $item['class'],
         ]);
     }
 

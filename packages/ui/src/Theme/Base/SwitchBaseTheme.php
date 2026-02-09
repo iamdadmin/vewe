@@ -39,9 +39,9 @@ final class SwitchBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'base' => 'data-[state=checked]:bg-phcolorph focus-visible:outline-phcolorph',
-                        'icon' => 'group-data-[state=checked]:text-phcolorph',
+                    $this->color => [
+                        'base' => 'data-[state=checked]:bg-'.$this->color.' focus-visible:outline-'.$this->color,
+                        'icon' => 'group-data-[state=checked]:text-'.$this->color,
                     ],
                     'neutral' => [
                         'base' => 'data-[state=checked]:bg-inverted focus-visible:outline-inverted',
@@ -125,7 +125,7 @@ final class SwitchBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'size' => 'md',
             ],
         );

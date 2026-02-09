@@ -17,15 +17,11 @@ final class CardBaseTheme implements Theme
     public ImmutableArray $slots {
         get => new ImmutableArray(
             [
-                'base' => [
-                    'group relative block my-5 p-4 sm:p-6 border border-default rounded-md bg-default transition-colors',
-                ],
+                'base' => 'group relative block my-5 p-4 sm:p-6 border border-default rounded-md bg-default transition-colors',
                 'icon' => 'size-6 mb-2 block',
                 'title' => 'text-highlighted font-semibold',
                 'description' => 'text-[15px] text-muted *:first:mt-0 *:last:mb-0 *:my-1',
-                'externalIcon' => [
-                    'size-4 align-top absolute right-2 top-2 text-dimmed pointer-events-none transition-colors',
-                ],
+                'externalIcon' => 'size-4 align-top absolute right-2 top-2 text-dimmed pointer-events-none transition-colors',
             ],
         );
     }
@@ -36,15 +32,17 @@ final class CardBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'icon' => 'text-phcolorph',
+                    $this->color => [
+                        'icon' => 'text-'.$this->color,
                     ],
                     'neutral' => [
                         'icon' => 'text-highlighted',
                     ],
                 ],
                 'to' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'title' => [
                     'true' => [
@@ -61,11 +59,11 @@ final class CardBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'to' => true,
                     'class' => [
-                        'base' => 'hover:bg-phcolorph/10 hover:border-phcolorph has-focus-visible:border-phcolorph',
-                        'externalIcon' => 'group-hover:text-phcolorph',
+                        'base' => 'hover:bg-'.$this->color.'/10 hover:border-'.$this->color.' has-focus-visible:border-'.$this->color,
+                        'externalIcon' => 'group-hover:text-'.$this->color,
                     ],
                 ],
                 [

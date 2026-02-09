@@ -1,8 +1,6 @@
 {
     "slots": {
-        "base": [
-            "group relative block px-4 py-3 rounded-md text-sm/6 my-5 last:mb-0 [&_code]:text-xs/5 [&_code]:bg-default [&_pre]:bg-default [&>div]:my-2.5 [&_ul]:my-2.5 [&_ol]:my-2.5 [&>*]:last:!mb-0 [&_ul]:ps-4.5 [&_ol]:ps-4.5 [&_li]:my-0 transition-colors"
-        ],
+        "base": "group relative block px-4 py-3 rounded-md text-sm/6 my-5 last:mb-0 [&_code]:text-xs/5 [&_code]:bg-default [&_pre]:bg-default [&>div]:my-2.5 [&_ul]:my-2.5 [&_ol]:my-2.5 [&>*]:last:!mb-0 [&_ul]:ps-4.5 [&_ol]:ps-4.5 [&_li]:my-0 transition-colors",
         "icon": [
             "size-4 shrink-0 align-sub me-1.5 inline-block transition-colors"
         ],
@@ -12,10 +10,10 @@
     },
     "variants": {
         "color": {
-            "phcolorph": {
-                "base": "border border-phcolorph/25 bg-phcolorph/10 text-phcolorph-600 dark:text-phcolorph-300 [&_a]:text-phcolorph [&_a]:hover:border-phcolorph [&_a]:focus-visible:outline-phcolorph [&_code]:text-phcolorph-600 dark:[&_code]:text-phcolorph-300 [&_code]:border-phcolorph/25 [&_a]:hover:[&>code]:border-phcolorph [&_a]:hover:[&>code]:text-phcolorph [&_a]:focus-visible:[&>code]:border-phcolorph [&_a]:focus-visible:[&>code]:text-phcolorph [&>ul]:marker:text-phcolorph/50",
-                "icon": "text-phcolorph",
-                "externalIcon": "text-phcolorph-600 dark:text-phcolorph-300"
+            "$this->color": {
+                "base": "border border-'.$this->color.'/25 bg-'.$this->color.'/10 text-'.$this->color.'-600 dark:text-'.$this->color.'-300 [&_a]:text-'.$this->color.' [&_a]:hover:border-'.$this->color.' [&_a]:focus-visible:outline-'.$this->color.' [&_code]:text-'.$this->color.'-600 dark:[&_code]:text-'.$this->color.'-300 [&_code]:border-'.$this->color.'/25 [&_a]:hover:[&>code]:border-'.$this->color.' [&_a]:hover:[&>code]:text-'.$this->color.' [&_a]:focus-visible:[&>code]:border-'.$this->color.' [&_a]:focus-visible:[&>code]:text-'.$this->color.' [&>ul]:marker:text-'.$this->color.'/50",
+                "icon": "text-'.$this->color",
+                "externalIcon": "text-'.$this->color.'-600 dark:text-'.$this->color.'-300"
             },
             "neutral": {
                 "base": "border border-muted bg-muted text-default",
@@ -29,11 +27,11 @@
     },
     "compoundVariants": [
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "to": true,
             "class": {
-                "base": "hover:border-phcolorph has-focus-visible:border-phcolorph",
-                "externalIcon": "group-hover:text-phcolorph"
+                "base": "hover:border-'.$this->color.' has-focus-visible:border-'.$this->color",
+                "externalIcon": "group-hover:text-'.$this->color"
             }
         },
         {

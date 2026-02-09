@@ -16,7 +16,7 @@ excludes = [
 ]
 
 [formatter]
-print-width = 180
+print-width = 240
 tab-width = 4
 use-tabs = false
 space-after-logical-not-unary-prefix-operator = true

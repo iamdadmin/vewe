@@ -70,7 +70,7 @@
             }
         },
         "highlightColor": {
-            "phhighlightColorph": {
+            "$this->highlightColor": {
                 "base": ""
             },
             "neutral": {
@@ -83,7 +83,7 @@
             }
         },
         "spotlightColor": {
-            "phspotlightColorph": {
+            "$this->spotlightColor": {
                 "base": ""
             },
             "neutral": {
@@ -136,10 +136,10 @@
             }
         },
         {
-            "highlightColor": "phhighlightColorph",
+            "highlightColor": "$this->highlightColor",
             "highlight": true,
             "class": {
-                "root": "ring-phhighlightColorph"
+                "root": "ring-'.$this->highlightColor"
             }
         },
         {
@@ -153,7 +153,7 @@
             "spotlightColor": "spotlightColor",
             "spotlight": true,
             "class": {
-                "root": "[--spotlight-color:var(--vewe-phspotlightColorph]"
+                "root": "[--spotlight-color:var(--vewe-bg-'.$this->spotlightColor.')]"
             }
         },
         {

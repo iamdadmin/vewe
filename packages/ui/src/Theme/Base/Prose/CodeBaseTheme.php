@@ -18,15 +18,6 @@ final class CodeBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'base' => 'px-1.5 py-0.5 text-sm font-mono font-medium rounded-md inline-block',
-                'variants' => [
-                    'color' => [
-                        'color' => 'border border-phcolorph/25 bg-phcolorph/10 text-phcolorph',
-                        'neutral' => 'border border-muted text-highlighted bg-muted',
-                    ],
-                ],
-                'defaultVariants' => [
-                    'color' => 'neutral',
-                ],
             ],
         );
     }
@@ -35,7 +26,16 @@ final class CodeBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $variants {
         get => new ImmutableArray(
-            [],
+            [
+                'color' => [
+                    $this->color => [
+                        'base' => 'border border-'.$this->color.'/25 bg-'.$this->color.'/10 text-'.$this->color,
+                    ],
+                    'neutral' => [
+                        'base' => 'border border-muted text-highlighted bg-muted',
+                    ],
+                ],
+            ],
         );
     }
 
@@ -51,7 +51,9 @@ final class CodeBaseTheme implements Theme
      * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
-            [],
+            [
+                'color' => 'neutral',
+            ],
         );
     }
 }

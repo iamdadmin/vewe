@@ -19,9 +19,9 @@
         {
             "active": false,
             "disabled": false,
-            "class": [
-                "hover:text-default transition-colors"
-            ]
+            "class": {
+                "base": "hover:text-default transition-colors"
+            }
         }
     ]
 }

@@ -82,7 +82,7 @@ final class TableBaseTheme implements Theme
                     ],
                 ],
                 'loadingColor' => [
-                    'phloadingColorph' => [
+                    $this->loadingColor => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -100,9 +100,9 @@ final class TableBaseTheme implements Theme
             [
                 [
                     'loading' => true,
-                    'loadingColor' => 'phloadingColorph',
+                    'loadingColor' => $this->loadingColor,
                     'class' => [
-                        'thead' => 'after:bg-phloadingColorph',
+                        'thead' => 'after:bg-'.$this->loadingColor,
                     ],
                 ],
                 [
@@ -149,7 +149,7 @@ final class TableBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'loadingColor' => 'phloadingColorph',
+                'loadingColor' => $this->loadingColor,
                 'loadingAnimation' => 'carousel',
             ],
         );

@@ -55,7 +55,7 @@ final class PinInputBaseTheme implements Theme
                     'none' => 'text-highlighted bg-transparent',
                 ],
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -77,20 +77,20 @@ final class PinInputBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => [
                         'outline',
                         'subtle',
                     ],
                     'class' => [
-                        'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph',
+                        'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'highlight' => true,
                     'class' => [
-                        'base' => 'ring ring-inset ring-phcolorph',
+                        'base' => 'ring ring-inset ring-'.$this->color,
                     ],
                 ],
                 [
@@ -120,7 +120,7 @@ final class PinInputBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'size' => 'md',
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'outline',
             ],
         );

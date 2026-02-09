@@ -30,7 +30,7 @@ final class ChipBaseTheme implements Theme
             [
                 'color' => [
                     'color' => [
-                        'base' => 'bg-phcolorph',
+                        'base' => 'bg-'.$this->color,
                     ],
                     'neutral' => [
                         'base' => 'bg-inverted',
@@ -136,7 +136,7 @@ final class ChipBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'size' => 'md',
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'position' => 'top-right',
             ],
         );

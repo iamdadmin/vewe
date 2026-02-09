@@ -35,7 +35,7 @@ final class BadgeBaseTheme implements Theme
             [
                 'fieldGroup' => (new FieldGroupBaseTheme())->variants['fieldGroup'],
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -101,31 +101,31 @@ final class BadgeBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'solid',
                     'class' => [
-                        'base' => 'bg-phcolorph text-inverted',
+                        'base' => 'bg-'.$this->color.' text-inverted',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'outline',
                     'class' => [
-                        'base' => 'text-phcolorph ring ring-inset ring-phcolorph/50',
+                        'base' => 'text-'.$this->color.' ring ring-inset ring-'.$this->color.'/50',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'soft',
                     'class' => [
-                        'base' => 'bg-phcolorph/10 text-phcolorph',
+                        'base' => 'bg-'.$this->color.'/10 text-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'subtle',
                     'class' => [
-                        'base' => 'bg-phcolorph/10 text-phcolorph ring ring-inset ring-phcolorph/25',
+                        'base' => 'bg-'.$this->color.'/10 text-'.$this->color.' ring ring-inset ring-'.$this->color.'/25',
                     ],
                 ],
                 [
@@ -200,7 +200,7 @@ final class BadgeBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'solid',
                 'size' => 'md',
             ],

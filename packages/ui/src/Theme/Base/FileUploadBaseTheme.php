@@ -44,7 +44,7 @@ final class FileUploadBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -142,16 +142,16 @@ final class FileUploadBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'class' => [
-                        'base' => 'focus-visible:outline-phcolorph',
+                        'base' => 'focus-visible:outline-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'highlight' => true,
                     'class' => [
-                        'base' => 'border-phcolorph',
+                        'base' => 'border-'.$this->color,
                     ],
                 ],
                 [
@@ -268,7 +268,7 @@ final class FileUploadBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'area',
                 'size' => 'md',
             ],

@@ -49,8 +49,18 @@ final class BaseThemeScaffoldCommand
                 continue;
             }
 
-            if (in_array($file->getBasename(), ['icons.json'])) {
-                // Skip this file
+            if (in_array($file->getBasename(), [
+                'icons.json',
+                'code-icon.json',
+                'input-date.json',
+                'input-menu.json',
+                'input-number.json',
+                'input-tags.json',
+                'input-time.json',
+                'input.json',
+                'textarea.json',
+            ])) {
+                // Skip these files
                 continue;
             }
 
@@ -134,6 +144,8 @@ final class BaseThemeScaffoldCommand
 
             $replacements["'fieldGroupVariantWithRoot' => [\n                    'import' => '(fieldGroupVariantWithRoot)',\n                ],"] = "'fieldGroup' => (new FieldGroupRootBaseTheme())->variants['fieldGroup'],";
 
+            $replacements["'variant' => [\n                    'mergeWith' => 'input.variants.variant'\n                ],"] = "'variant' => (new InputBaseTheme())->variants['variant'],";
+
             // I should probably regex this later
             $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'xs\\'][\\'base\\'] . \\'gap-0.25\\''"] = "(new InputBaseTheme())->variants['size']['xs']['base'] ?? '' . 'gap-0.25'";
             $replacements["'(new InputBaseTheme())->variants[\\'size\\'][\\'sm\\'][\\'base\\'] . \\'gap-0.5\\''"] = "(new InputBaseTheme())->variants['size']['sm']['base'] ?? '' . 'gap-0.5'";
@@ -178,7 +190,22 @@ final class BaseThemeScaffoldCommand
 
         // STRING
         if (is_string($value)) {
-            return $value === '' ? "''" : "'" . addslashes($value) . "'";
+            if (str_contains($value, '$this->') || str_contains($value, '(new SelectBaseTheme')) {
+                if ($value == '$this->color' || $value == '$this->highlightColor' || $value == '$this->spotlightColor' || $value == '$this->loadingColor') {
+                    return $value;
+                }
+                $return = '';
+                if (! str_starts_with($value, '(new SelectBaseTheme')) {
+                    $return = "'";
+                }
+                $return .= $value;
+                if (! str_ends_with($value, 'olor')) {
+                    $return .= "'";
+                }
+                return $return;
+            } else {
+                return $value === '' ? "''" : "'" . addslashes($value) . "'";
+            }
         }
 
         // BOOLEAN
@@ -219,7 +246,11 @@ final class BaseThemeScaffoldCommand
                 $lines[] = $nextIndent . $formattedValue . ',';
             } else {
                 // Associative array: with keys
-                $quotedKey = is_string($key) ? "'$key'" : $key;
+                if ($key == '$this->color' || $key == '$this->highlightColor' || $key == '$this->spotlightColor' || $key == '$this->loadingColor') {
+                    $quotedKey = $key;
+                } else {
+                    $quotedKey = is_string($key) ? "'$key'" : $key;
+                }
                 $lines[] = $nextIndent . $quotedKey . ' => ' . $formattedValue . ',';
             }
         }

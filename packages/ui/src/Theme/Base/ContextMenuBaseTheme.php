@@ -44,7 +44,7 @@ final class ContextMenuBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -127,19 +127,19 @@ final class ContextMenuBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'active' => false,
                     'class' => [
-                        'item' => 'text-phcolorph data-highlighted:text-phcolorph data-highlighted:before:bg-phcolorph/10 data-[state=open]:before:bg-phcolorph/10',
-                        'itemLeadingIcon' => 'text-phcolorph/75 group-data-highlighted:text-phcolorph group-data-[state=open]:text-phcolorph',
+                        'item' => 'text-'.$this->color.' data-highlighted:text-'.$this->color.' data-highlighted:before:bg-'.$this->color.'/10 data-[state=open]:before:bg-'.$this->color.'/10',
+                        'itemLeadingIcon' => 'text-'.$this->color.'/75 group-data-highlighted:text-'.$this->color.' group-data-[state=open]:text-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'active' => true,
                     'class' => [
-                        'item' => 'text-phcolorph before:bg-phcolorph/10',
-                        'itemLeadingIcon' => 'text-phcolorph',
+                        'item' => 'text-'.$this->color.' before:bg-'.$this->color.'/10',
+                        'itemLeadingIcon' => 'text-'.$this->color,
                     ],
                 ],
             ],

@@ -31,10 +31,14 @@ final class ImgBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'zoom' => [
-                    'true' => 'will-change-transform',
+                    'true' => [
+                        'base' => 'will-change-transform',
+                    ],
                 ],
                 'open' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
             ],
         );

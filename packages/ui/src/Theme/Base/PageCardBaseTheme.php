@@ -94,7 +94,7 @@ final class PageCardBaseTheme implements Theme
                     ],
                 ],
                 'highlightColor' => [
-                    'phhighlightColorph' => [
+                    $this->highlightColor => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -107,7 +107,7 @@ final class PageCardBaseTheme implements Theme
                     ],
                 ],
                 'spotlightColor' => [
-                    'phspotlightColorph' => [
+                    $this->spotlightColor => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -167,10 +167,10 @@ final class PageCardBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'highlightColor' => 'phhighlightColorph',
+                    'highlightColor' => $this->highlightColor,
                     'highlight' => true,
                     'class' => [
-                        'root' => 'ring-phhighlightColorph',
+                        'root' => 'ring-'.$this->highlightColor,
                     ],
                 ],
                 [
@@ -184,7 +184,7 @@ final class PageCardBaseTheme implements Theme
                     'spotlightColor' => 'spotlightColor',
                     'spotlight' => true,
                     'class' => [
-                        'root' => '[--spotlight-color:var(--vewe-phspotlightColorph]',
+                        'root' => '[--spotlight-color:var(--vewe-bg-'.$this->spotlightColor.')]',
                     ],
                 ],
                 [

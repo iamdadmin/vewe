@@ -41,8 +41,8 @@ final class TreeBaseTheme implements Theme
                     ],
                 ],
                 'color' => [
-                    'phcolorph' => [
-                        'link' => 'focus-visible:before:ring-phcolorph',
+                    $this->color => [
+                        'link' => 'focus-visible:before:ring-'.$this->color,
                     ],
                     'neutral' => [
                         'link' => 'focus-visible:before:ring-inverted',
@@ -100,10 +100,10 @@ final class TreeBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'selected' => true,
                     'class' => [
-                        'link' => 'text-phcolorph',
+                        'link' => 'text-'.$this->color,
                     ],
                 ],
                 [
@@ -131,7 +131,7 @@ final class TreeBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'size' => 'md',
             ],
         );

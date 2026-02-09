@@ -34,8 +34,8 @@ final class SeparatorBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'border' => 'border-phcolorph',
+                    $this->color => [
+                        'border' => 'border-'.$this->color,
                     ],
                     'neutral' => [
                         'border' => 'border-default',

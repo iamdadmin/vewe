@@ -56,9 +56,9 @@ final class NavigationMenuBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'link' => 'focus-visible:before:ring-phcolorph',
-                        'childLink' => 'focus-visible:before:ring-phcolorph',
+                    $this->color => [
+                        'link' => 'focus-visible:before:ring-'.$this->color,
+                        'childLink' => 'focus-visible:before:ring-'.$this->color,
                     ],
                     'neutral' => [
                         'link' => 'focus-visible:before:ring-inverted',
@@ -66,7 +66,7 @@ final class NavigationMenuBaseTheme implements Theme
                     ],
                 ],
                 'highlightColor' => [
-                    'phhighlightColorph' => [
+                    $this->highlightColor => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -249,12 +249,12 @@ final class NavigationMenuBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'pill',
                     'active' => true,
                     'class' => [
-                        'link' => 'text-phcolorph',
-                        'linkLeadingIcon' => 'text-phcolorph group-data-[state=open]:text-phcolorph',
+                        'link' => 'text-'.$this->color,
+                        'linkLeadingIcon' => 'text-'.$this->color.' group-data-[state=open]:text-'.$this->color,
                     ],
                 ],
                 [
@@ -309,12 +309,12 @@ final class NavigationMenuBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'link',
                     'active' => true,
                     'class' => [
-                        'link' => 'text-phcolorph',
-                        'linkLeadingIcon' => 'text-phcolorph group-data-[state=open]:text-phcolorph',
+                        'link' => 'text-'.$this->color,
+                        'linkLeadingIcon' => 'text-'.$this->color.' group-data-[state=open]:text-'.$this->color,
                     ],
                 ],
                 [
@@ -327,12 +327,12 @@ final class NavigationMenuBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'highlightColor' => 'phhighlightColorph',
+                    'highlightColor' => $this->highlightColor,
                     'highlight' => true,
                     'level' => true,
                     'active' => true,
                     'class' => [
-                        'link' => 'after:bg-phhighlightColorph',
+                        'link' => 'after:bg-'.$this->highlightColor,
                     ],
                 ],
                 [
@@ -353,8 +353,8 @@ final class NavigationMenuBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'color' => 'phcolorph',
-                'highlightColor' => 'phhighlightColorph',
+                'color' => $this->color,
+                'highlightColor' => $this->highlightColor,
                 'variant' => 'pill',
             ],
         );

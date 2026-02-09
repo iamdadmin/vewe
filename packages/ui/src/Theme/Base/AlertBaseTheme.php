@@ -36,7 +36,7 @@ final class AlertBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -82,31 +82,31 @@ final class AlertBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'solid',
                     'class' => [
-                        'root' => 'bg-phcolorph text-inverted',
+                        'root' => 'bg-'.$this->color.' text-inverted',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'outline',
                     'class' => [
-                        'root' => 'text-phcolorph ring ring-inset ring-phcolorph/25',
+                        'root' => 'text-'.$this->color.' ring ring-inset ring-'.$this->color.'/25',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'soft',
                     'class' => [
-                        'root' => 'bg-phcolorph/10 text-phcolorph',
+                        'root' => 'bg-'.$this->color.'/10 text-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'subtle',
                     'class' => [
-                        'root' => 'bg-phcolorph/10 text-phcolorph ring ring-inset ring-phcolorph/25',
+                        'root' => 'bg-'.$this->color.'/10 text-'.$this->color.' ring ring-inset ring-'.$this->color.'/25',
                     ],
                 ],
                 [
@@ -146,7 +146,7 @@ final class AlertBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'solid',
             ],
         );

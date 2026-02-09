@@ -24,8 +24,7 @@ final class SelectMenuBaseTheme implements Theme
                 'focusScope' => 'flex flex-col min-h-0',
                 'viewport' => 'relative scroll-py-1 overflow-y-auto flex-1',
                 'content' => [
-                    'contentFromParent',
-                    'origin-(--reka-combobox-content-transform-origin) w-(--reka-combobox-trigger-width)',
+                    (new SelectBaseTheme())->slots['content'] .' origin-(--reka-combobox-content-transform-origin) w-(--reka-combobox-trigger-width)',
                 ],
                 'trailingClear' => 'p-0',
             ],
@@ -63,7 +62,9 @@ final class SelectMenuBaseTheme implements Theme
             ),
         )->map(fn (array $item) => [
             ...$item,
-            'class' => $this->replacePlaceholder($item['class'], 'focus:', 'focus-visible:'),
+            'class' => isset($item['class']['base'])
+                ? [...$item['class'], 'base' => str_replace('focus:', 'focus-visible:', $item['class']['base'])]
+                : $item['class'],
         ]);
     }
 

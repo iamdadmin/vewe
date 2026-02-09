@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Vewe\Ui\Theme\Base;
 
 use Tempest\Support\Arr\ImmutableArray;
+use Vewe\Ui\Theme\Base\FieldGroupRootBaseTheme;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
-use Vewe\Ui\Theme\Base\FieldGroupRootBaseTheme;
 
 final class InputBaseTheme implements Theme
 {
@@ -19,9 +19,7 @@ final class InputBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'root' => 'relative inline-flex items-center',
-                'base' => [
-                    'w-full rounded-md border-0 appearance-none placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors',
-                ],
+                'base' => 'w-full rounded-md border-0 appearance-none placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors',
                 'leading' => 'absolute inset-y-0 start-0 flex items-center',
                 'leadingIcon' => 'shrink-0 text-dimmed',
                 'leadingAvatar' => 'shrink-0',
@@ -88,7 +86,7 @@ final class InputBaseTheme implements Theme
                     'none' => 'text-highlighted bg-transparent',
                 ],
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -96,19 +94,29 @@ final class InputBaseTheme implements Theme
                     ],
                 ],
                 'leading' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'trailing' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'loading' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'highlight' => [
-                    'true' => '',
+                    'true' => [
+                        'base' => '',
+                    ],
                 ],
                 'type' => [
-                    'file' => 'file:me-1.5 file:font-medium file:text-muted file:outline-none',
+                    'file' => [
+                        'base' => 'file:me-1.5 file:font-medium file:text-muted file:outline-none',
+                    ],
                 ],
             ],
         );
@@ -120,20 +128,20 @@ final class InputBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => [
                         'outline',
                         'subtle',
                     ],
                     'class' => [
-                        'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph',
+                        'base' => 'focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-' . $this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'highlight' => true,
                     'class' => [
-                        'base' => 'ring ring-inset ring-phcolorph',
+                        'base' => 'ring ring-inset ring-' . $this->color,
                     ],
                 ],
                 [
@@ -248,7 +256,7 @@ final class InputBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'size' => 'md',
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'outline',
             ],
         );

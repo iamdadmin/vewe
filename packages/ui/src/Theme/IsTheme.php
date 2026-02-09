@@ -12,7 +12,13 @@ use Vewe\ClassVariance\Cv;
 
 trait IsTheme
 {
-    protected string $color;
+    private string $color = 'primary';
+
+    private string $highlightColor = 'primary';
+
+    private string $spotlightColor = 'primary';
+
+    private string $loadingColor = 'primary';
 
     /**
      * Get CSS classes for a slot with variants applied
@@ -26,8 +32,21 @@ trait IsTheme
     ): string {
         $instance = new static();
 
-        // @mago-expect analysis:mixed-property-type-coercion
-        $instance->color = $props['color'] ?? 'primary';
+        $instance->color = ($props['color'] ?? null) !== 'neutral'
+            ? $props['color'] ?? 'primary'
+            : 'primary';
+
+        $instance->highlightColor = ($props['highlightColor'] ?? null) !== 'neutral'
+            ? $props['hightlightColor'] ?? $instance->color
+            : $instance->color;
+
+        $instance->spotlightColor = ($props['spotlightColor'] ?? null) !== 'neutral'
+            ? $props['spotlightColor'] ?? $instance->color
+            : $instance->color;
+
+        $instance->loadingColor = ($props['loadingColor'] ?? null) !== 'neutral'
+            ? $props['loadingColor'] ?? $instance->color
+            : $instance->color;
 
         return $instance->build($slot, $props);
     }
@@ -56,25 +75,13 @@ trait IsTheme
             $variance,
         );
 
-        $return = $cv(props: $props, slot: $slot);
-
-        $placeholders = [
-            'phcolorph' => $this->color,
-            'phhighlightColorph' => $this->color,
-            'phspotlightColorph' => $this->color,
-        ];
-
-        foreach ($placeholders as $needle => $replaceWith) {
-            $return = str_replace($needle, $replaceWith, $return);
-        }
-
-        return $return;
+        return $cv(props: $props, slot: $slot);
     }
 
     private function replacePlaceholder(mixed $subject, string $replace, string $replaceWith): mixed
     {
         if (is_string($subject)) {
-            return $this->replacePlaceholder($subject, $replace, $replaceWith);
+            return str_replace($subject, $replace, $replaceWith);
         }
 
         if (is_array($subject)) {

@@ -15,9 +15,9 @@
             "elastic": ""
         },
         "color": {
-            "phcolorph": {
-                "indicator": "bg-phcolorph",
-                "steps": "text-phcolorph"
+            "$this->color": {
+                "indicator": "bg-'.$this->color",
+                "steps": "text-'.$this->color"
             },
             "neutral": {
                 "indicator": "bg-inverted",
@@ -260,7 +260,7 @@
     ],
     "defaultVariants": {
         "animation": "carousel",
-        "color": "phcolorph",
+        "color": "$this->color",
         "size": "md"
     }
 }

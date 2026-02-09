@@ -15,9 +15,9 @@
     },
     "variants": {
         "color": {
-            "phcolorph": {
-                "base": "data-[state=checked]:bg-phcolorph focus-visible:outline-phcolorph",
-                "icon": "group-data-[state=checked]:text-phcolorph"
+            "$this->color": {
+                "base": "data-[state=checked]:bg-'.$this->color.' focus-visible:outline-'.$this->color",
+                "icon": "group-data-[state=checked]:text-'.$this->color"
             },
             "neutral": {
                 "base": "data-[state=checked]:bg-inverted focus-visible:outline-inverted",
@@ -86,7 +86,7 @@
         }
     },
     "defaultVariants": {
-        "color": "phcolorph",
+        "color": "$this->color",
         "size": "md"
     }
 }

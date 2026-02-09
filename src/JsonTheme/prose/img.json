@@ -7,10 +7,14 @@
     },
     "variants": {
         "zoom": {
-            "true": "will-change-transform"
+            "true": {
+                "base": "will-change-transform"
+            }
         },
         "open": {
-            "true": ""
+            "true": {
+                "base": ""
+            }
         }
     },
     "compoundVariants": [

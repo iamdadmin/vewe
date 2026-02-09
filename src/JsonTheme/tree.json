@@ -17,8 +17,8 @@
             }
         },
         "color": {
-            "phcolorph": {
-                "link": "focus-visible:before:ring-phcolorph"
+            "$this->color": {
+                "link": "focus-visible:before:ring-'.$this->color"
             },
             "neutral": {
                 "link": "focus-visible:before:ring-inverted"
@@ -69,10 +69,10 @@
     },
     "compoundVariants": [
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "selected": true,
             "class": {
-                "link": "text-phcolorph"
+                "link": "text-'.$this->color"
             }
         },
         {
@@ -93,7 +93,7 @@
         }
     ],
     "defaultVariants": {
-        "color": "phcolorph",
+        "color": "$this->color",
         "size": "md"
     }
 }

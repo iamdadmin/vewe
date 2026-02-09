@@ -40,7 +40,7 @@ final class TabsBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -139,11 +139,11 @@ final class TabsBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'pill',
                     'class' => [
-                        'indicator' => 'bg-phcolorph',
-                        'trigger' => 'data-[state=active]:text-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-phcolorph',
+                        'indicator' => 'bg-'.$this->color,
+                        'trigger' => 'data-[state=active]:text-inverted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-'.$this->color,
                     ],
                 ],
                 [
@@ -155,11 +155,11 @@ final class TabsBaseTheme implements Theme
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'link',
                     'class' => [
-                        'indicator' => 'bg-phcolorph',
-                        'trigger' => 'data-[state=active]:text-phcolorph focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph',
+                        'indicator' => 'bg-'.$this->color,
+                        'trigger' => 'data-[state=active]:text-'.$this->color.' focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-'.$this->color,
                     ],
                 ],
                 [
@@ -179,7 +179,7 @@ final class TabsBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'pill',
                 'size' => 'md',
             ],

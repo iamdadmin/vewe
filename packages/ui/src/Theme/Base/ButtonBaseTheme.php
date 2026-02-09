@@ -37,7 +37,7 @@ final class ButtonBaseTheme implements Theme
             [
                 'fieldGroup' => (new FieldGroupBaseTheme())->variants['fieldGroup'],
                 'color' => [
-                    'phcolorph' => [
+                    $this->color => [
                         'base' => '',
                     ],
                     'neutral' => [
@@ -120,45 +120,45 @@ final class ButtonBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'solid',
                     'class' => [
-                        'base' => 'text-inverted bg-phcolorph hover:bg-phcolorph/75 active:bg-phcolorph/75 disabled:bg-phcolorph aria-disabled:bg-phcolorph focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-phcolorph',
+                        'base' => 'text-inverted bg-'.$this->color.' hover:bg-'.$this->color.'/75 active:bg-'.$this->color.'/75 disabled:bg-'.$this->color.' aria-disabled:bg-'.$this->color.' focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'outline',
                     'class' => [
-                        'base' => 'ring ring-inset ring-phcolorph/50 text-phcolorph hover:bg-phcolorph/10 active:bg-phcolorph/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-phcolorph',
+                        'base' => 'ring ring-inset ring-'.$this->color.'/50 text-'.$this->color.' hover:bg-'.$this->color.'/10 active:bg-'.$this->color.'/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'soft',
                     'class' => [
-                        'base' => 'text-phcolorph bg-phcolorph/10 hover:bg-phcolorph/15 active:bg-phcolorph/15 focus:outline-none focus-visible:bg-phcolorph/15 disabled:bg-phcolorph/10 aria-disabled:bg-phcolorph/10',
+                        'base' => 'text-'.$this->color.' bg-'.$this->color.'/10 hover:bg-'.$this->color.'/15 active:bg-'.$this->color.'/15 focus:outline-none focus-visible:bg-'.$this->color.'/15 disabled:bg-'.$this->color.'/10 aria-disabled:bg-'.$this->color.'/10',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'subtle',
                     'class' => [
-                        'base' => 'text-phcolorph ring ring-inset ring-phcolorph/25 bg-phcolorph/10 hover:bg-phcolorph/15 active:bg-phcolorph/15 disabled:bg-phcolorph/10 aria-disabled:bg-phcolorph/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-phcolorph',
+                        'base' => 'text-'.$this->color.' ring ring-inset ring-'.$this->color.'/25 bg-'.$this->color.'/10 hover:bg-'.$this->color.'/15 active:bg-'.$this->color.'/15 disabled:bg-'.$this->color.'/10 aria-disabled:bg-'.$this->color.'/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-'.$this->color,
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'ghost',
                     'class' => [
-                        'base' => 'text-phcolorph hover:bg-phcolorph/10 active:bg-phcolorph/10 focus:outline-none focus-visible:bg-phcolorph/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent',
+                        'base' => 'text-'.$this->color.' hover:bg-'.$this->color.'/10 active:bg-'.$this->color.'/10 focus:outline-none focus-visible:bg-'.$this->color.'/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent',
                     ],
                 ],
                 [
-                    'color' => 'phcolorph',
+                    'color' => $this->color,
                     'variant' => 'link',
                     'class' => [
-                        'base' => 'text-phcolorph hover:text-phcolorph/75 active:text-phcolorph/75 disabled:text-phcolorph aria-disabled:text-phcolorph focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-phcolorph',
+                        'base' => 'text-'.$this->color.' hover:text-'.$this->color.'/75 active:text-'.$this->color.'/75 disabled:text-'.$this->color.' aria-disabled:text-'.$this->color.' focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-'.$this->color,
                     ],
                 ],
                 [
@@ -262,7 +262,7 @@ final class ButtonBaseTheme implements Theme
     public ImmutableArray $defaultVariants {
         get => new ImmutableArray(
             [
-                'color' => 'phcolorph',
+                'color' => $this->color,
                 'variant' => 'solid',
                 'size' => 'md',
             ],

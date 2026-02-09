@@ -58,7 +58,7 @@
             }
         },
         "loadingColor": {
-            "phloadingColorph": {
+            "$this->loadingColor": {
                 "base": ""
             },
             "neutral": {
@@ -69,9 +69,9 @@
     "compoundVariants": [
         {
             "loading": true,
-            "loadingColor": "phloadingColorph",
+            "loadingColor": "$this->loadingColor",
             "class": {
-                "thead": "after:bg-phloadingColorph"
+                "thead": "after:bg-'.$this->loadingColor"
             }
         },
         {
@@ -111,7 +111,7 @@
         }
     ],
     "defaultVariants": {
-        "loadingColor": "phloadingColorph",
+        "loadingColor": "$this->loadingColor",
         "loadingAnimation": "carousel"
     }
 }

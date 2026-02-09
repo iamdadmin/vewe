@@ -31,9 +31,9 @@ final class SliderBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'color' => [
-                    'phcolorph' => [
-                        'range' => 'bg-phcolorph',
-                        'thumb' => 'ring-phcolorph focus-visible:outline-phcolorph/50',
+                    $this->color => [
+                        'range' => 'bg-'.$this->color,
+                        'thumb' => 'ring-'.$this->color.' focus-visible:outline-'.$this->color.'/50',
                     ],
                     'neutral' => [
                         'range' => 'bg-inverted',

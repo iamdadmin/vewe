@@ -89,9 +89,9 @@ final class StepperBaseTheme implements Theme
                     ],
                 ],
                 'color' => [
-                    'phcolorph' => [
-                        'trigger' => 'group-data-[state=completed]:bg-phcolorph group-data-[state=active]:bg-phcolorph focus-visible:outline-phcolorph',
-                        'separator' => 'group-data-[state=completed]:bg-phcolorph',
+                    $this->color => [
+                        'trigger' => 'group-data-[state=completed]:bg-'.$this->color.' group-data-[state=active]:bg-'.$this->color.' focus-visible:outline-'.$this->color,
+                        'separator' => 'group-data-[state=completed]:bg-'.$this->color,
                     ],
                     'neutral' => [
                         'trigger' => 'group-data-[state=completed]:bg-inverted group-data-[state=active]:bg-inverted focus-visible:outline-inverted',

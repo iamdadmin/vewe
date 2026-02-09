@@ -11,9 +11,9 @@
     },
     "variants": {
         "color": {
-            "phcolorph": {
-                "base": "focus-visible:outline-phcolorph",
-                "indicator": "bg-phcolorph"
+            "$this->color": {
+                "base": "focus-visible:outline-'.$this->color",
+                "indicator": "bg-'.$this->color"
             },
             "neutral": {
                 "base": "focus-visible:outline-inverted",
@@ -123,10 +123,10 @@
             }
         },
         {
-            "color": "phcolorph",
+            "color": "$this->color",
             "variant": "card",
             "class": {
-                "root": "has-data-[state=checked]:border-phcolorph"
+                "root": "has-data-[state=checked]:border-'.$this->color"
             }
         },
         {
@@ -146,7 +146,7 @@
     ],
     "defaultVariants": {
         "size": "md",
-        "color": "phcolorph",
+        "color": "$this->color",
         "variant": "list",
         "indicator": "start"
     }

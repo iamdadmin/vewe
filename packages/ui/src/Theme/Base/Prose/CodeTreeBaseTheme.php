@@ -42,9 +42,7 @@ final class CodeTreeBaseTheme implements Theme
                         'link' => 'text-highlighted before:bg-elevated',
                     ],
                     'false' => [
-                        'link' => [
-                            'hover:text-highlighted hover:before:bg-elevated/50 transition-colors before:transition-colors',
-                        ],
+                        'link' => 'hover:text-highlighted hover:before:bg-elevated/50 transition-colors before:transition-colors',
                     ],
                 ],
             ],

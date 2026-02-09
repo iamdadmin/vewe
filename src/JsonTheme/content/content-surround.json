@@ -16,15 +16,11 @@
     "variants": {
         "direction": {
             "left": {
-                "linkLeadingIcon": [
-                    "(options.theme.transitions) && group-active:-translate-x-0.5"
-                ]
+                "linkLeadingIcon": "group-active:-translate-x-0.5"
             },
             "right": {
                 "link": "text-right",
-                "linkLeadingIcon": [
-                    "(options.theme.transitions) && group-active:translate-x-0.5"
-                ]
+                "linkLeadingIcon": "group-active:translate-x-0.5"
             }
         }
     }
