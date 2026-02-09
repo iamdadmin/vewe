@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Vewe\Ui\Theme\Base;
 
 use Tempest\Support\Arr\ImmutableArray;
-use Vewe\Ui\Theme\Base\SelectBaseTheme;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
+use Vewe\Ui\Theme\Base\SelectBaseTheme;
 
 final class SelectMenuBaseTheme implements Theme
 {
@@ -20,15 +20,15 @@ final class SelectMenuBaseTheme implements Theme
             // @mago-expect analysis:less-specific-argument
             new ImmutableArray(
                 [
-                    'input' => 'border-b border-default',
-                    'focusScope' => 'flex flex-col min-h-0',
-                    'viewport' => 'relative scroll-py-1 overflow-y-auto flex-1',
-                    'content' => [
-                        'contentFromParent',
-                        'origin-(--reka-combobox-content-transform-origin) w-(--reka-combobox-trigger-width)',
-                    ],
-                    'trailingClear' => 'p-0',
+                'input' => 'border-b border-default',
+                'focusScope' => 'flex flex-col min-h-0',
+                'viewport' => 'relative scroll-py-1 overflow-y-auto flex-1',
+                'content' => [
+                    'contentFromParent',
+                    'origin-(--reka-combobox-content-transform-origin) w-(--reka-combobox-trigger-width)',
                 ],
+                'trailingClear' => 'p-0',
+            ],
             ),
         );
     }
@@ -40,15 +40,15 @@ final class SelectMenuBaseTheme implements Theme
             // @mago-expect analysis:less-specific-argument
             new ImmutableArray(
                 [
-                    'virtualize' => [
-                        'true' => [
-                            'viewport' => 'p-1 isolate',
-                        ],
-                        'false' => [
-                            'viewport' => 'divide-y divide-default',
-                        ],
+                'virtualize' => [
+                    'true' => [
+                        'viewport' => 'p-1 isolate',
+                    ],
+                    'false' => [
+                        'viewport' => 'divide-y divide-default',
                     ],
                 ],
+            ],
             ),
         );
     }
@@ -63,7 +63,7 @@ final class SelectMenuBaseTheme implements Theme
             ),
         )->map(fn (array $item) => [
             ...$item,
-            'class' => $this->replacePlaceholder($item['class'] ?? '', 'focus:', 'focus-visible:'),
+            'class' => $this->replacePlaceholder($item['class'], 'focus:', 'focus-visible:'),
         ]);
     }
 

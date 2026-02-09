@@ -117,12 +117,10 @@ final class NavigationMenuBaseTheme implements Theme
                         'link' => 'text-muted',
                         'linkLeadingIcon' => 'text-dimmed',
                         'childLink' => [
-                            'hover:before:bg-elevated/50 text-default hover:text-highlighted',
-                            '(options.theme.transitions) && transition-colors before:transition-colors',
+                            'hover:before:bg-elevated/50 text-default hover:text-highlighted transition-colors before:transition-colors',
                         ],
                         'childLinkIcon' => [
-                            'text-dimmed group-hover:text-default',
-                            '(options.theme.transitions) && transition-colors',
+                            'text-dimmed group-hover:text-default transition-colors',
                         ],
                     ],
                 ],
@@ -194,8 +192,7 @@ final class NavigationMenuBaseTheme implements Theme
                     'highlight' => true,
                     'class' => [
                         'link' => [
-                            'after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full',
-                            '(options.theme.transitions) && after:transition-colors',
+                            'after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors',
                         ],
                     ],
                 ],
@@ -205,8 +202,7 @@ final class NavigationMenuBaseTheme implements Theme
                     'level' => true,
                     'class' => [
                         'link' => [
-                            'after:absolute after:-start-1.5 after:inset-y-0.5 after:block after:w-px after:rounded-full',
-                            '(options.theme.transitions) && after:transition-colors',
+                            'after:absolute after:-start-1.5 after:inset-y-0.5 after:block after:w-px after:rounded-full after:transition-colors',
                         ],
                     ],
                 ],
@@ -216,12 +212,10 @@ final class NavigationMenuBaseTheme implements Theme
                     'variant' => 'pill',
                     'class' => [
                         'link' => [
-                            'hover:text-highlighted hover:before:bg-elevated/50',
-                            '(options.theme.transitions) && transition-colors before:transition-colors',
+                            'hover:text-highlighted hover:before:bg-elevated/50 transition-colors before:transition-colors',
                         ],
                         'linkLeadingIcon' => [
-                            'group-hover:text-default',
-                            '(options.theme.transitions) && transition-colors',
+                            'group-hover:text-default transition-colors',
                         ],
                     ],
                 ],
@@ -287,8 +281,7 @@ final class NavigationMenuBaseTheme implements Theme
                     'disabled' => false,
                     'class' => [
                         'link' => [
-                            'hover:before:bg-elevated/50',
-                            '(options.theme.transitions) && before:transition-colors',
+                            'hover:before:bg-elevated/50 before:transition-colors',
                         ],
                     ],
                 ],
@@ -298,12 +291,10 @@ final class NavigationMenuBaseTheme implements Theme
                     'variant' => 'link',
                     'class' => [
                         'link' => [
-                            'hover:text-highlighted',
-                            '(options.theme.transitions) && transition-colors',
+                            'hover:text-highlighted transition-colors',
                         ],
                         'linkLeadingIcon' => [
-                            'group-hover:text-default',
-                            '(options.theme.transitions) && transition-colors',
+                            'group-hover:text-default transition-colors',
                         ],
                     ],
                 ],

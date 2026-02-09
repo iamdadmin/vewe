@@ -18,15 +18,13 @@ final class CardBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'base' => [
-                    'group relative block my-5 p-4 sm:p-6 border border-default rounded-md bg-default',
-                    '(options.theme.transitions) && transition-colors',
+                    'group relative block my-5 p-4 sm:p-6 border border-default rounded-md bg-default transition-colors',
                 ],
                 'icon' => 'size-6 mb-2 block',
                 'title' => 'text-highlighted font-semibold',
                 'description' => 'text-[15px] text-muted *:first:mt-0 *:last:mb-0 *:my-1',
                 'externalIcon' => [
-                    'size-4 align-top absolute right-2 top-2 text-dimmed pointer-events-none',
-                    '(options.theme.transitions) && transition-colors',
+                    'size-4 align-top absolute right-2 top-2 text-dimmed pointer-events-none transition-colors',
                 ],
             ],
         );

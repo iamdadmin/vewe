@@ -23,12 +23,12 @@
     }
   ],
   "require": {
-    "php": "^8.5",
-    "feature-ninja/cva": "^0.3",
-    "tales-from-a-dev/tailwind-merge-php": "^0.1"
+    "tempest/framework": "^3",
+    "vewe/classvariance": "^0.1.1"
   },
   "require-dev": {
-    "carthage-software/mago": "1.0.0-beta.28"
+    "phpunit/phpunit": "^12",
+    "carthage-software/mago": "^1"
   },
   "autoload": {
     "psr-4": {

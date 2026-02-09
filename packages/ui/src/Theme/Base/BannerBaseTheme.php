@@ -18,8 +18,7 @@ final class BannerBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'root' => [
-                    'relative z-50 w-full',
-                    '(options.theme.transitions) && transition-colors',
+                    'relative z-50 w-full transition-colors',
                 ],
                 'container' => 'flex items-center justify-between gap-3 h-12',
                 'left' => 'hidden lg:flex-1 lg:flex lg:items-center',

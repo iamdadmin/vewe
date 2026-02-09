@@ -19,8 +19,7 @@ final class ButtonBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'base' => [
-                    'rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75',
-                    '(options.theme.transitions) && transition-colors',
+                    'rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors',
                 ],
                 'label' => 'truncate',
                 'leadingIcon' => 'shrink-0',

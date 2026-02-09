@@ -6,14 +6,18 @@
         "vewe/classvariance": "^0.1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^12.3.10",
-        "symfony/var-dumper": "^7.3.3",
+        "phpunit/phpunit": "^12",
         "carthage-software/mago": "^1"
     },
     "autoload": {
         "psr-4": {
             "Vewe\\Ui\\": "packages/ui/src/",
             "Vewe\\Utility\\": "src/Vewe/Utility"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vewe\\Ui\\Tests\\": "packages/ui/tests/"
         }
     },
     "scripts": {

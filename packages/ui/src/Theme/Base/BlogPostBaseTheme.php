@@ -79,8 +79,7 @@ final class BlogPostBaseTheme implements Theme
                 'to' => [
                     'true' => [
                         'root' => [
-                            'has-focus-visible:ring-2 has-focus-visible:ring-primary',
-                            '(options.theme.transitions) && transition',
+                            'has-focus-visible:ring-2 has-focus-visible:ring-primary transition',
                         ],
                         'image' => 'transform transition-transform duration-200 group-hover/blog-post:scale-110',
                         'avatar' => 'transform transition-transform duration-200 hover:scale-115 focus-visible:outline-primary',
@@ -127,8 +126,7 @@ final class BlogPostBaseTheme implements Theme
                     'class' => [
                         'root' => 'hover:bg-elevated/50',
                         'header' => [
-                            'group-hover/blog-post:shadow-none',
-                            '(options.theme.transitions) && transition-all',
+                            'group-hover/blog-post:shadow-none transition-all',
                         ],
                     ],
                 ],

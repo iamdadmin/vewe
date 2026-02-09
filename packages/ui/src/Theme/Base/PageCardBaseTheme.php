@@ -79,8 +79,7 @@ final class PageCardBaseTheme implements Theme
                 'to' => [
                     'true' => [
                         'root' => [
-                            'has-focus-visible:ring-2 has-focus-visible:ring-primary',
-                            '(options.theme.transitions) && transition',
+                            'has-focus-visible:ring-2 has-focus-visible:ring-primary transition',
                         ],
                     ],
                 ],

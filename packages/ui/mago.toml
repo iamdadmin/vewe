@@ -1,8 +1,8 @@
 php-version = "8.5.0"
 
 [source]
-paths = ["packages/**/src/", "packages/**/tests", "src", "tests"]
-includes = ["./vendor"]
+paths = ["src", "tests"]
+includes = ["vendor"]
 excludes = [
 	"./vendor/symfony/cache/Traits/ValueWrapper.php",
 	"./vendor/google/common-protos/metadata",

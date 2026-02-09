@@ -43,8 +43,7 @@ final class CodeTreeBaseTheme implements Theme
                     ],
                     'false' => [
                         'link' => [
-                            'hover:text-highlighted hover:before:bg-elevated/50',
-                            '(options.theme.transitions) && transition-colors before:transition-colors',
+                            'hover:text-highlighted hover:before:bg-elevated/50 transition-colors before:transition-colors',
                         ],
                     ],
                 ],

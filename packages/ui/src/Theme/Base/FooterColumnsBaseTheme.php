@@ -43,8 +43,7 @@ final class FooterColumnsBaseTheme implements Theme
                     ],
                     'false' => [
                         'link' => [
-                            'text-muted hover:text-default',
-                            '(options.theme.transitions) && transition-colors',
+                            'text-muted hover:text-default transition-colors',
                         ],
                     ],
                 ],

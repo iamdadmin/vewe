@@ -18,16 +18,13 @@ final class CalloutBaseTheme implements Theme
         get => new ImmutableArray(
             [
                 'base' => [
-                    'group relative block px-4 py-3 rounded-md text-sm/6 my-5 last:mb-0 [&_code]:text-xs/5 [&_code]:bg-default [&_pre]:bg-default [&>div]:my-2.5 [&_ul]:my-2.5 [&_ol]:my-2.5 [&>*]:last:!mb-0 [&_ul]:ps-4.5 [&_ol]:ps-4.5 [&_li]:my-0',
-                    '(options.theme.transitions) && transition-colors',
+                    'group relative block px-4 py-3 rounded-md text-sm/6 my-5 last:mb-0 [&_code]:text-xs/5 [&_code]:bg-default [&_pre]:bg-default [&>div]:my-2.5 [&_ul]:my-2.5 [&_ol]:my-2.5 [&>*]:last:!mb-0 [&_ul]:ps-4.5 [&_ol]:ps-4.5 [&_li]:my-0 transition-colors',
                 ],
                 'icon' => [
-                    'size-4 shrink-0 align-sub me-1.5 inline-block',
-                    '(options.theme.transitions) && transition-colors',
+                    'size-4 shrink-0 align-sub me-1.5 inline-block transition-colors',
                 ],
                 'externalIcon' => [
-                    'size-4 align-top absolute right-2 top-2 pointer-events-none',
-                    '(options.theme.transitions) && transition-colors',
+                    'size-4 align-top absolute right-2 top-2 pointer-events-none transition-colors',
                 ],
             ],
         );

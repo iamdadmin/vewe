@@ -145,12 +145,10 @@ final class CommandPaletteBaseTheme implements Theme
                     ],
                     'false' => [
                         'item' => [
-                            'text-default data-highlighted:not-data-disabled:text-highlighted data-highlighted:not-data-disabled:before:bg-elevated/50',
-                            '(options.theme.transitions) && transition-colors before:transition-colors',
+                            'text-default data-highlighted:not-data-disabled:text-highlighted data-highlighted:not-data-disabled:before:bg-elevated/50 transition-colors before:transition-colors',
                         ],
                         'itemLeadingIcon' => [
-                            'text-dimmed group-data-highlighted:not-group-data-disabled:text-default',
-                            '(options.theme.transitions) && transition-colors',
+                            'text-dimmed group-data-highlighted:not-group-data-disabled:text-default transition-colors',
                         ],
                     ],
                 ],

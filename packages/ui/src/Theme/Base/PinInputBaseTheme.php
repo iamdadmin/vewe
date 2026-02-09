@@ -19,8 +19,7 @@ final class PinInputBaseTheme implements Theme
             [
                 'root' => 'relative inline-flex items-center gap-1.5',
                 'base' => [
-                    'rounded-md border-0 placeholder:text-dimmed text-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75',
-                    '(options.theme.transitions) && transition-colors',
+                    'rounded-md border-0 placeholder:text-dimmed text-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors',
                 ],
             ],
         );

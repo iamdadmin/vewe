@@ -54,8 +54,7 @@ final class ChangelogVersionBaseTheme implements Theme
                 'to' => [
                     'true' => [
                         'title' => [
-                            'has-focus-visible:ring-2 has-focus-visible:ring-primary rounded-xs',
-                            '(options.theme.transitions) && transition',
+                            'has-focus-visible:ring-2 has-focus-visible:ring-primary rounded-xs transition',
                         ],
                         'image' => 'transform transition-transform duration-200 group-hover/changelog-version-image:scale-105 group-has-focus-visible/changelog-version-image:scale-105',
                     ],

@@ -19,8 +19,7 @@ final class FileUploadBaseTheme implements Theme
             [
                 'root' => 'relative flex flex-col',
                 'base' => [
-                    'w-full flex-1 bg-default border border-default flex flex-col gap-2 items-stretch justify-center rounded-lg focus-visible:outline-2',
-                    '(options.theme.transitions) && transition-[background]',
+                    'w-full flex-1 bg-default border border-default flex flex-col gap-2 items-stretch justify-center rounded-lg focus-visible:outline-2 transition-[background]',
                 ],
                 'wrapper' => 'flex flex-col items-center justify-center text-center',
                 'icon' => 'shrink-0',

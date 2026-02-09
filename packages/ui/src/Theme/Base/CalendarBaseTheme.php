@@ -29,8 +29,7 @@ final class CalendarBaseTheme implements Theme
                 'headCellWeek' => 'rounded-md text-muted',
                 'cell' => 'relative text-center',
                 'cellTrigger' => [
-                    'm-0.5 relative flex items-center justify-center rounded-full whitespace-nowrap focus-visible:ring-2 focus:outline-none data-disabled:text-muted data-unavailable:line-through data-unavailable:text-muted data-unavailable:pointer-events-none data-today:font-semibold data-[outside-view]:text-muted',
-                    '(options.theme.transitions) && transition',
+                    'm-0.5 relative flex items-center justify-center rounded-full whitespace-nowrap focus-visible:ring-2 focus:outline-none data-disabled:text-muted data-unavailable:line-through data-unavailable:text-muted data-unavailable:pointer-events-none data-today:font-semibold data-[outside-view]:text-muted transition',
                 ],
                 'cellWeek' => 'relative text-center text-muted',
             ],

@@ -12,16 +12,13 @@ namespace Vewe\Ui\Theme;
 interface Theme
 {
     /**
-     * Get CSS classes for a specific slot with variants applied
-     *
-     * @param string $slot Slot name (e.g., 'base', 'icon', 'label')
-     * @param array $variants Variant configuration ['color' => 'primary', 'size' => 'md']
-     * @param string|array|null $merge Additional classes to merge (optional)
-     * @return string Space-separated CSS class string
+     * Get CSS classes for a slot with variants applied
+     * @param string $slot Slot name
+     * @param array<array-key, string> $props Props passed to slot
+     * @return string Final CSS class string
      */
     public static function make(
         string $slot = 'base',
-        array $variants = [],
-        string|array|null $merge = null,
+        array $props = [],
     ): string;
 }

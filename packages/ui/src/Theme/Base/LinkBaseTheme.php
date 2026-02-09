@@ -51,8 +51,7 @@ final class LinkBaseTheme implements Theme
                     'active' => false,
                     'disabled' => false,
                     'class' => [
-                        'hover:text-default',
-                        '(options.theme.transitions) && transition-colors',
+                        'hover:text-default transition-colors',
                     ],
                 ],
             ],

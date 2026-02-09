@@ -69,8 +69,7 @@ final class BreadcrumbBaseTheme implements Theme
                     'to' => true,
                     'class' => [
                         'link' => [
-                            'hover:text-default',
-                            '(options.theme.transitions) && transition-colors',
+                            'hover:text-default transition-colors',
                         ],
                     ],
                 ],

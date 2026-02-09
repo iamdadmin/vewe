@@ -41,12 +41,10 @@ final class PageAnchorsBaseTheme implements Theme
                     ],
                     'false' => [
                         'link' => [
-                            'text-muted hover:text-default font-medium',
-                            '(options.theme.transitions) && transition-colors',
+                            'text-muted hover:text-default font-medium transition-colors',
                         ],
                         'linkLeading' => [
-                            'bg-elevated/50 ring-accented text-dimmed group-hover:bg-primary group-hover:ring-primary group-hover:text-inverted',
-                            '(options.theme.transitions) && transition',
+                            'bg-elevated/50 ring-accented text-dimmed group-hover:bg-primary group-hover:ring-primary group-hover:text-inverted transition',
                         ],
                     ],
                 ],

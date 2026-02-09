@@ -17,27 +17,58 @@ trait IsTheme
     /**
      * Get CSS classes for a slot with variants applied
      * @param string $slot Slot name
-     * @param array $variants Variant values
-     * @param string|array|null $merge Additional classes to merge
+     * @param array<array-key, string> $props Props passed to slot
      * @return string Final CSS class string
      */
     public static function make(
         string $slot = 'base',
-        array $variants = [],
-        string|array|null $merge = null,
+        array $props = [],
     ): string {
         $instance = new static();
 
         // @mago-expect analysis:mixed-property-type-coercion
-        $instance->color = $variants['color'] ?? 'primary';
+        $instance->color = $props['color'] ?? 'primary';
 
-        return $instance->build($variants, $merge);
+        return $instance->build($slot, $props);
     }
 
-    protected function build(array $variants, string|array|null $merge): string
+    /**
+     * @param array<array-key, string> $props
+     */
+    protected function build(string $slot, array $props = []): string
     {
-        // TODO
-        return '';
+        /** @var string|array<array-key, string|array<array-key, string>> $base */
+        $base = $this->slots->toArray() ?? [];
+
+        /** @var array{
+         *     variants?: array<array-key, array<array-key, string|array<array-key, string>|array<array-key, string|array<array-key, string>>>>,
+         *     compoundVariants?: array<array-key, array<array-key, string|bool|array<array-key, string>>>,
+         *     defaultVariants?: array<array-key, string|bool>
+         * } $variance */
+        $variance = array(
+            'variants' => $this->variants->toArray() ?? [],
+            'compoundVariants' => $this->compoundVariants->toArray() ?? [],
+            'defaultVariants' => $this->defaultVariants->toArray() ?? [],
+        );
+
+        $cv = Cv::new(
+            $base,
+            $variance,
+        );
+
+        $return = $cv(props: $props, slot: $slot);
+
+        $placeholders = [
+            'phcolorph' => $this->color,
+            'phhighlightColorph' => $this->color,
+            'phspotlightColorph' => $this->color,
+        ];
+
+        foreach ($placeholders as $needle => $replaceWith) {
+            $return = str_replace($needle, $replaceWith, $return);
+        }
+
+        return $return;
     }
 
     private function replacePlaceholder(mixed $subject, string $replace, string $replaceWith): mixed
