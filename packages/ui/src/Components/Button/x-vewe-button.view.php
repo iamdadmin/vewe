@@ -17,14 +17,10 @@ use Vewe\Ui\Theme\Base\ButtonBaseTheme;
     :leadingIcon="$leadingIcon ?? null"
     :trailingIcon="$trailingIcon ?? null"
     :label="$label ?? null"
-    :class="(fn($color) => ClassVarianceAuthority::new(
-            ['slot'],
-            ['variantsForSlot', 'compoundVariantsForSlot','defaultVariantsForSlot'],
-        )([
-            'variant' => $variant ?? null,
-            'color' => $color,
-            'size' => $size ?? 'md',
-            'square' => $square ?? false,
-            'block' => $block ?? false,
-        ]))($color ?? 'primary')"
-    />
+    :class="ButtonBaseTheme::make(slot: 'base', props: [
+        'variant' => $variant ?? null,
+        'color' => $color,
+        'size' => $size ?? 'md',
+        'square' => $square ?? false,
+        'block' => $block ?? false,
+    ])" />
