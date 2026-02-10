@@ -1,0 +1,45 @@
+{
+  "name": "vewe/ui",
+  "description": "Vewe UI beautifully styled components for Tempest/View",
+  "keywords": [
+    "components",
+    "ui",
+    "styled",
+    "tempestphp",
+    "tempest",
+    "vewe"
+  ],
+  "homepage": "https://github.com/iamdadmin/vewe",
+  "support": {
+    "issues": "https://github.com/iamdadmin/vewe/issues",
+    "source": "https://github.com/iamdadmin/vewe/"
+  },
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "iamdadmin",
+      "email": "no@email.yet"
+    }
+  ],
+  "require": {
+    "tempest/framework": "^3",
+    "vewe/classvariance": "^0.1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12",
+    "carthage-software/mago": "^1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vewe\\Ui\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vewe\\Ui\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

@@ -1,0 +1,56 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Vewe\Ui\Theme\Base;
+
+use Tempest\Support\Arr\ImmutableArray;
+use Vewe\Ui\Theme\IsTheme;
+use Vewe\Ui\Theme\Theme;
+
+final class PaginationBaseTheme implements Theme
+{
+    use IsTheme;
+
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    public ImmutableArray $slots {
+        get => new ImmutableArray(
+            [
+                'root' => '',
+                'list' => 'flex items-center gap-1',
+                'ellipsis' => 'pointer-events-none',
+                'label' => 'min-w-5 text-center',
+                'first' => '',
+                'prev' => '',
+                'item' => '',
+                'next' => '',
+                'last' => '',
+            ],
+        );
+    }
+
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    public ImmutableArray $variants {
+        get => new ImmutableArray(
+            [],
+        );
+    }
+
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    public ImmutableArray $compoundVariants {
+        get => new ImmutableArray(
+            [],
+        );
+    }
+
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    public ImmutableArray $defaultVariants {
+        get => new ImmutableArray(
+            [],
+        );
+    }
+}

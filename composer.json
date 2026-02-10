@@ -1,12 +1,56 @@
 {
     "name": "vewe/monorepo",
     "type": "metapackage",
+    "require": {
+        "tempest/framework": "^3",
+        "vewe/classvariance": "^0.1.1"
+    },
     "require-dev": {
-        "phpstan/phpstan": "2.1.x-dev"
+        "phpunit/phpunit": "^12",
+        "carthage-software/mago": "^1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vewe\\Ui\\": "packages/ui/src/",
+            "Vewe\\Utility\\": "src/Vewe/Utility"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vewe\\Ui\\Tests\\": "packages/ui/tests/"
+        }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php ./vendor/bin/tempest install framework -f",
+            "@php ./tempest discovery:generate --no-interaction",
+            "@php ./tempest key:generate"
+        ],
+        "post-autoload-dump": [
+            "@php ./vendor/bin/tempest discovery:generate --no-interaction"
+        ],
+        "phpunit": "vendor/bin/phpunit --display-warnings --display-skipped --display-deprecations --display-errors --display-notices",
+        "fmt": "vendor/bin/mago fmt",
+        "lint": "vendor/bin/mago lint --fix --format-after-fix",
+        "twbuild": "tailwindcss -i app/Views/Assets/Build/index.css -o public/assets/main.css",
+        "twwatch": [
+            "Composer\\Config::disableProcessTimeout",
+            "tailwindcss -i app/Views/Assets/Build/index.css -o public/assets/main.css -w"
+        ],
+        "build": "docker build --pull -t frankenpest:latest .",
+        "qa": [
+            "composer fmt",
+            "composer phpunit",
+            "composer lint"
+        ]
     },
     "license": "MIT",
     "minimum-stability": "dev",
-    "require": {
-        "tempest/framework": "dev-main"
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "carthage-software/mago": true
+        }
     }
 }

@@ -1,0 +1,5 @@
+{
+    "slots": {
+        "base": "min-h-[calc(100vh-var(--vewe-header-height))]"
+    }
+}

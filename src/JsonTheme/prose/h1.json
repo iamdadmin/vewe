@@ -1,0 +1,6 @@
+{
+    "slots": {
+        "base": "text-4xl text-highlighted font-bold mb-8 scroll-mt-[calc(45px+var(--vewe-header-height))] lg:scroll-mt-(--vewe-header-height)",
+        "link": "inline-flex items-center gap-2"
+    }
+}

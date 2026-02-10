@@ -1,0 +1,40 @@
+{
+    "slots": {
+        "base": "relative"
+    },
+    "variants": {
+        "fieldGroup": {
+            "horizontal": {
+                "base": "not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1]"
+            },
+            "vertical": {
+                "base": "not-only:first:rounded-b-none not-only:last:rounded-t-none not-last:not-first:rounded-none focus-visible:z-[1]"
+            }
+        },
+        "size": {
+            "xs": {
+                "base": ""
+            },
+            "sm": {
+                "base": ""
+            },
+            "md": {
+                "base": ""
+            },
+            "lg": {
+                "base": ""
+            },
+            "xl": {
+                "base": ""
+            }
+        },
+        "orientation": {
+            "horizontal": {
+                "base": "inline-flex -space-x-px"
+            },
+            "vertical": {
+                "base": "flex flex-col -space-y-px"
+            }
+        }
+    }
+}

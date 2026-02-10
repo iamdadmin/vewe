@@ -1,0 +1,157 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Vewe\Ui\Theme\Base;
+
+use Tempest\Support\Arr\ImmutableArray;
+use Vewe\Ui\Theme\IsTheme;
+use Vewe\Ui\Theme\Theme;
+
+final class TableBaseTheme implements Theme
+{
+    use IsTheme;
+
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    public ImmutableArray $slots {
+        get => new ImmutableArray(
+            [
+                'root' => 'relative overflow-auto',
+                'base' => 'min-w-full',
+                'caption' => 'sr-only',
+                'thead' => 'relative',
+                'tbody' => 'isolate [&>tr]:data-[selectable=true]:hover:bg-elevated/50 [&>tr]:data-[selectable=true]:focus-visible:outline-primary',
+                'tfoot' => 'relative',
+                'tr' => 'data-[selected=true]:bg-elevated/50',
+                'th' => 'px-4 py-3.5 text-sm text-highlighted text-left rtl:text-right font-semibold [&:has([role=checkbox])]:pe-0',
+                'td' => 'p-4 text-sm text-muted whitespace-nowrap [&:has([role=checkbox])]:pe-0',
+                'separator' => 'absolute z-1 left-0 w-full h-px bg-(--vewe-border-accented)',
+                'empty' => 'py-6 text-center text-sm text-muted',
+                'loading' => 'py-6 text-center',
+            ],
+        );
+    }
+
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    public ImmutableArray $variants {
+        get => new ImmutableArray(
+            [
+                'virtualize' => [
+                    'false' => [
+                        'base' => 'overflow-clip',
+                        'tbody' => 'divide-y divide-default',
+                    ],
+                ],
+                'pinned' => [
+                    'true' => [
+                        'th' => 'sticky bg-default/75 z-1',
+                        'td' => 'sticky bg-default/75 z-1',
+                    ],
+                ],
+                'sticky' => [
+                    'true' => [
+                        'thead' => 'sticky top-0 inset-x-0 bg-default/75 backdrop-blur z-1',
+                        'tfoot' => 'sticky bottom-0 inset-x-0 bg-default/75 backdrop-blur z-1',
+                    ],
+                    'header' => [
+                        'thead' => 'sticky top-0 inset-x-0 bg-default/75 backdrop-blur z-1',
+                    ],
+                    'footer' => [
+                        'tfoot' => 'sticky bottom-0 inset-x-0 bg-default/75 backdrop-blur z-1',
+                    ],
+                ],
+                'loading' => [
+                    'true' => [
+                        'thead' => 'after:absolute after:z-1 after:h-px',
+                    ],
+                ],
+                'loadingAnimation' => [
+                    'carousel' => [
+                        'base' => '',
+                    ],
+                    'carousel-inverse' => [
+                        'base' => '',
+                    ],
+                    'swing' => [
+                        'base' => '',
+                    ],
+                    'elastic' => [
+                        'base' => '',
+                    ],
+                ],
+                'loadingColor' => [
+                    $this->loadingColor => [
+                        'base' => '',
+                    ],
+                    'neutral' => [
+                        'base' => '',
+                    ],
+                ],
+            ],
+        );
+    }
+
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    public ImmutableArray $compoundVariants {
+        get => new ImmutableArray(
+            [
+                [
+                    'loading' => true,
+                    'loadingColor' => $this->loadingColor,
+                    'class' => [
+                        'thead' => 'after:bg-'.$this->loadingColor,
+                    ],
+                ],
+                [
+                    'loading' => true,
+                    'loadingColor' => 'neutral',
+                    'class' => [
+                        'thead' => 'after:bg-inverted',
+                    ],
+                ],
+                [
+                    'loading' => true,
+                    'loadingAnimation' => 'carousel',
+                    'class' => [
+                        'thead' => 'after:animate-[carousel_2s_ease-in-out_infinite] rtl:after:animate-[carousel-rtl_2s_ease-in-out_infinite]',
+                    ],
+                ],
+                [
+                    'loading' => true,
+                    'loadingAnimation' => 'carousel-inverse',
+                    'class' => [
+                        'thead' => 'after:animate-[carousel-inverse_2s_ease-in-out_infinite] rtl:after:animate-[carousel-inverse-rtl_2s_ease-in-out_infinite]',
+                    ],
+                ],
+                [
+                    'loading' => true,
+                    'loadingAnimation' => 'swing',
+                    'class' => [
+                        'thead' => 'after:animate-[swing_2s_ease-in-out_infinite]',
+                    ],
+                ],
+                [
+                    'loading' => true,
+                    'loadingAnimation' => 'elastic',
+                    'class' => [
+                        'thead' => 'after:animate-[elastic_2s_ease-in-out_infinite]',
+                    ],
+                ],
+            ],
+        );
+    }
+
+    /** @var \Tempest\Support\Arr\ImmutableArray<mixed,mixed>
+     * @return \Tempest\Support\Arr\ImmutableArray<mixed,mixed> */
+    public ImmutableArray $defaultVariants {
+        get => new ImmutableArray(
+            [
+                'loadingColor' => $this->loadingColor,
+                'loadingAnimation' => 'carousel',
+            ],
+        );
+    }
+}
