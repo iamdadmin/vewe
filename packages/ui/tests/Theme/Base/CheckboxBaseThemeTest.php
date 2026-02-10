@@ -247,7 +247,7 @@ final class CheckboxBaseThemeTest extends TestCase
 
         // Ensure the variant for the named slot is retrieved correctly
         $this->assertSame(
-            "block font-medium text-default after:content-[\"*\"] after:ms-0.5 after:text-error",
+            "block font-medium text-default after:content-['*'] after:ms-0.5 after:text-error",
             CheckboxBaseTheme::make(props: ['required' => 'true'], slot: 'label'),
         );
 

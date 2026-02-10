@@ -151,7 +151,7 @@ final class CheckboxGroupBaseThemeTest extends TestCase
 
         // Ensure the variant for the named slot is retrieved correctly
         $this->assertSame(
-            "mb-1 block font-medium text-default after:content-[\"*\"] after:ms-0.5 after:text-error text-sm",
+            "mb-1 block font-medium text-default after:content-['*'] after:ms-0.5 after:text-error text-sm",
             CheckboxGroupBaseTheme::make(props: ['required' => 'true'], slot: 'legend'),
         );
     }

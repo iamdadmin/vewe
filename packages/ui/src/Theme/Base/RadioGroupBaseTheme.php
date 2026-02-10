@@ -131,7 +131,7 @@ final class RadioGroupBaseTheme implements Theme
                 ],
                 'required' => [
                     'true' => [
-                        'legend' => 'after:content-[\"*\"] after:ms-0.5 after:text-error',
+                        'legend' => 'after:content-[\'*\'] after:ms-0.5 after:text-error',
                     ],
                 ],
             ],

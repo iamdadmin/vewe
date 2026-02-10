@@ -247,7 +247,7 @@ final class SwitchBaseThemeTest extends TestCase
 
         // Ensure the variant for the named slot is retrieved correctly
         $this->assertSame(
-            "block font-medium text-default after:content-[\"*\"] after:ms-0.5 after:text-error",
+            "block font-medium text-default after:content-['*'] after:ms-0.5 after:text-error",
             SwitchBaseTheme::make(props: ['required' => 'true'], slot: 'label'),
         );
 
