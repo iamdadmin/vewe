@@ -32,11 +32,11 @@ if ($class) {
         )
         ->replace(
             search: ' width="1em"',
-            replace: '',
+            replace: ' width="' . ($width ?? '1em') . '"',
         )
         ->replace(
             search: ' height="1em"',
-            replace: '',
+            replace: ' height="' . ($height ?? '1em') . '"',
         )
         ->toString();
 }

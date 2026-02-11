@@ -47,4 +47,32 @@ use Vewe\Ui\Theme\Base\HeaderBaseTheme;
 
 <x-template :elseif="($mode ?? '') == 'drawer'" />
 
-<x-template :elseif="($mode ?? 'modal') == 'modal'" />
+<x-vewe-modal
+    :elseif="($mode ?? 'modal') == 'modal'"
+    id="x-vewe-header-menu-container"
+    title="t('header.title')"
+    description="t('header.description')"
+    ui="{
+        overlay: ui.overlay({ class: props.ui?.overlay }),
+        content: ui.content({ class: props.ui?.content }),
+    }"
+    hidden
+    >
+    <x-slot name="content" v>
+        <div
+            if="mode !== 'drawer'"
+            class="ui.header({ class: props.ui?.header })"
+        >
+            <ReuseLeftTemplate />
+
+            <ReuseRightTemplate />
+        </div>
+
+        <div
+            data-slot="body"
+            :class="ui.body({ class: props.ui?.body })"
+        >
+            <slot name="body" />
+        </div>
+    </x-slot>
+</x-vewe-modal>

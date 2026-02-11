@@ -11,5 +11,5 @@
     <script src="/assets/unpoly.min.js"></script>
 
     <link rel="icon" href="/favicon/favicon.ico">
-    <link rel="stylesheet" href="/assets/main.css">
-    <link href="/assets//unpoly.min.css" rel="stylesheet">
+    <link rel="stylesheet" :href="'/assets/main.css?dt=' . time()">
+    <link rel="stylesheet" href="/assets/unpoly.min.css">

@@ -7,16 +7,21 @@ use Vewe\Ui\Theme\Base\HeaderBaseTheme;
  * @var string $siteName { 'Vewe-UI' }
  * @var string $siteTo { '/' }
  * @var string $toggleSide { 'right' }
- * @var bool $toggle { true || false }
+ * @var string $elementToToggle { '' }
+ * @var string $classNames { '' }
  */
 ?>
 <div :class="HeaderBaseTheme::make(slot: 'left')">
-    <x-vewe-header-menu-toggle :if="toggleSide == 'left'" />
+    <x-vewe-header-menu-toggle
+        :if="($toggleSide ?? '') == 'left'"
+        :elementToToggle="$elementToToggle ?? ''"
+    />
 
-    <x-slot name="left">
+    <x-slot>
         <x-vewe-link
-            :to="$siteTo"
-            :class="ui.title({ class: props.ui?.title })"
-        >{{ $title }}</x-vewe-link>
+            :to="$siteTo ?? '/'"
+            :siteName="$siteName ?? 'Vewe-UI'"
+            :class="HeaderBaseTheme::make(slot: 'title', props: ['class' => $classNames ?? ''])"
+        >{{ $siteName }}</x-vewe-link>
     </x-slot>
 </div>

@@ -1,20 +1,29 @@
 <?php
 
-declare(strict_types=1);
-
-/**
- * @var bool $disabled Whether it's disabled, default false
- * @var string $to The destination
+/** Props Definitions
+ * The first value is the default, the options are natsorted
+ * @var bool $disabled { false || true }
+ * @var string $to { '/' }
+ * @var string $rel { null | 'noopener' | 'noreferrer' | "nofollow' | 'sponsored' | 'ugc' | (more than one) }
+ * @var string $target { '' for local, '_blank' for external || {user-defined} }
  */
 
+// NOTE: Make sure not to put spaces before and after the default slot as it will render whitespace
 ?>
-<a :href="$to" :class="$class">
-    <x-vewe-icon :isset="$leadingIcon" :name="$leadingIcon" :class="$classLeadingIcon ?? 'shrink-0'" />
-
-    <span :class="$classLabel ?? 'truncate'">
-        <x-template :isset="$label">{{ $label }}</x-template>
-        <x-template :else>Link</x-template>
-    </span>
-
-    <x-vewe-icon :isset="$trailingIcon" :name="$trailingIcon" :class="$classTrailingIcon ?? 'shrink-0'" />
-</a>
+<a 
+    :if="isset($to) && $to != ''"
+    :href="($disabled ?? false) ? '' : $to"
+    :aria-disabled="($disabled ?? false) ? true : ''"
+    :role="($disabled ?? false) ? 'link' : ''"
+    :disabled="$disabled ?? ''"
+    :rel="$rel ?? (str_contains($to, '://') ? 'noopener noreferrer' : '')"
+    :target="$target ?? (str_contains($to, '://') ? '_blank' : '')"
+    :class="$class ?? ''"
+><x-slot /></a>
+<button
+    :else
+    :disabled="$disabled ?? ''"
+    :rel="$rel ?? (str_contains($to, '://') ? 'noopener noreferrer' : '')"
+    :target="$target ?? (str_contains($to, '://') ? '_blank' : '')"
+    :class="$class ?? ''"
+><x-slot /></button>
