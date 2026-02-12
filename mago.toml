@@ -1,7 +1,7 @@
 php-version = "8.5.0"
 
 [source]
-paths = ["packages/**/src/", "packages/**/tests", "src", "tests"]
+paths = ["src", "tests", "utility"]
 includes = ["./vendor"]
 excludes = [
 	"./vendor/symfony/cache/Traits/ValueWrapper.php",
@@ -13,6 +13,7 @@ excludes = [
 	"**/*.stub.php",
 	"**/*.input.php",
 	"**/*.expected.php",
+	"**/*.view.php",
 ]
 
 [formatter]
