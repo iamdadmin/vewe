@@ -39,7 +39,7 @@ use Vewe\Ui\Theme\Base\PageHeroBaseTheme;
             <div :isset="$links" :class="PageHeroBaseTheme::make(slot: 'footer')">
                 <x-slot name="footer">
                     <div :isset="$links" :class="PageHeroBaseTheme::make(slot: 'links')" >
-                        <x-vewe-page-hero-footer-links :links="$links ?? []" />
+                        <x-slot name="links" />
                     </div>
                 </x-slot>
             </div>

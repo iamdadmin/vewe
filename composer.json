@@ -2,7 +2,7 @@
     "name": "vewe/monorepo",
     "type": "metapackage",
     "require": {
-        "tempest/framework": "^3",
+        "tempest/framework": "@dev",
         "vewe/classvariance": "@dev"
     },
     "require-dev": {
@@ -52,14 +52,5 @@
             "php-http/discovery": true,
             "carthage-software/mago": true
         }
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/iamdadmin/Dev/vewe-classvariance",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
+    }
 }

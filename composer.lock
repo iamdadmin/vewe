@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7719999140886ec51fc27b050d48901",
+    "content-hash": "c5d095409d717abd4252b9569b15f43e",
     "packages": [
         {
             "name": "composer/semver",
@@ -3170,6 +3170,76 @@
             "time": "2024-09-25T14:21:43+00:00"
         },
         {
+            "name": "symfony/filesystem",
+            "version": "v7.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "d551b38811096d0be9c4691d406991b47c0c630a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/d551b38811096d0be9c4691d406991b47c0c630a",
+                "reference": "d551b38811096d0be9c4691d406991b47c0c630a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.8"
+            },
+            "require-dev": {
+                "symfony/process": "^6.4|^7.0|^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides basic utilities for the filesystem",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/filesystem/tree/v7.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-11-27T13:27:24+00:00"
+        },
+        {
             "name": "symfony/mailer",
             "version": "v7.4.4",
             "source": {
@@ -4552,16 +4622,16 @@
         },
         {
             "name": "tempest/framework",
-            "version": "3.x-dev",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tempestphp/tempest-framework.git",
-                "reference": "142501411052ce808b122016196b1611fad0ef1f"
+                "reference": "77d7a2c5e6a86f8d47229fb73a68da768e256664"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tempestphp/tempest-framework/zipball/142501411052ce808b122016196b1611fad0ef1f",
-                "reference": "142501411052ce808b122016196b1611fad0ef1f",
+                "url": "https://api.github.com/repos/tempestphp/tempest-framework/zipball/77d7a2c5e6a86f8d47229fb73a68da768e256664",
+                "reference": "77d7a2c5e6a86f8d47229fb73a68da768e256664",
                 "shasum": ""
             },
             "require": {
@@ -4597,6 +4667,7 @@
                 "psr/log": "^3.0.0",
                 "rector/rector": "^2.3.2",
                 "symfony/cache": "^7.3",
+                "symfony/filesystem": "^7.3",
                 "symfony/mailer": "^7.2.6",
                 "symfony/process": "^7.3",
                 "symfony/uid": "^7.1",
@@ -4668,7 +4739,7 @@
                 "patrickbussmann/oauth2-apple": "^0.3",
                 "phpat/phpat": "^0.11.0",
                 "phpbench/phpbench": "84.x-dev",
-                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan": "2.1.38",
                 "phpunit/phpunit": "^12.5.8",
                 "predis/predis": "^3.0.0",
                 "riskio/oauth2-auth0": "^2.4",
@@ -4689,7 +4760,6 @@
                 "ext-pcntl": "Required to use some interactive console components.",
                 "ext-posix": "Required to use some interactive console components."
             },
-            "default-branch": true,
             "bin": [
                 "packages/console/bin/tempest"
             ],
@@ -4772,7 +4842,7 @@
             "description": "The PHP framework that gets out of your way.",
             "support": {
                 "issues": "https://github.com/tempestphp/tempest-framework/issues",
-                "source": "https://github.com/tempestphp/tempest-framework/tree/3.x"
+                "source": "https://github.com/tempestphp/tempest-framework/tree/v3.0.1"
             },
             "funding": [
                 {
@@ -4780,7 +4850,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-11T12:53:23+00:00"
+            "time": "2026-02-12T10:55:31+00:00"
         },
         {
             "name": "tempest/highlight",
@@ -4843,11 +4913,17 @@
         },
         {
             "name": "vewe/classvariance",
-            "version": "dev-dev-main",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iamdadmin/vewe-classvariance.git",
+                "reference": "25c48d6b26928127cacb8a9c34883967b6b06713"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/iamdadmin/Dev/vewe-classvariance",
-                "reference": "a0e2325ed908720eed08b1b1a5b0f91fe67a5aaf"
+                "type": "zip",
+                "url": "https://api.github.com/repos/iamdadmin/vewe-classvariance/zipball/25c48d6b26928127cacb8a9c34883967b6b06713",
+                "reference": "25c48d6b26928127cacb8a9c34883967b6b06713",
+                "shasum": ""
             },
             "require": {
                 "php": "8.4.* || 8.5.*",
@@ -4863,27 +4939,7 @@
                     "Vewe\\ClassVariance\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Vewe\\ClassVariance\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "phpunit": [
-                    "vendor/bin/phpunit --display-warnings --display-skipped --display-deprecations --display-errors --display-notices"
-                ],
-                "fmt": [
-                    "vendor/bin/mago fmt"
-                ],
-                "lint": [
-                    "vendor/bin/mago lint --fix --format-after-fix"
-                ],
-                "qa": [
-                    "composer fmt",
-                    "composer phpunit",
-                    "composer lint"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4908,10 +4964,7 @@
                 "issues": "https://github.com/iamdadmin/vewe-classvariance/issues",
                 "source": "https://github.com/iamdadmin/vewe-classvariance"
             },
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
+            "time": "2026-02-12T14:23:03+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5075,16 +5128,16 @@
     "packages-dev": [
         {
             "name": "carthage-software/mago",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/carthage-software/mago.git",
-                "reference": "70d1644f55c5ad2a7e87c471df26ef927ab6d522"
+                "reference": "8d58c5c129d7259f42e8de596cf17c41b49c293d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carthage-software/mago/zipball/70d1644f55c5ad2a7e87c471df26ef927ab6d522",
-                "reference": "70d1644f55c5ad2a7e87c471df26ef927ab6d522",
+                "url": "https://api.github.com/repos/carthage-software/mago/zipball/8d58c5c129d7259f42e8de596cf17c41b49c293d",
+                "reference": "8d58c5c129d7259f42e8de596cf17c41b49c293d",
                 "shasum": ""
             },
             "require": {
@@ -5122,7 +5175,7 @@
             ],
             "support": {
                 "issues": "https://github.com/carthage-software/mago/issues",
-                "source": "https://github.com/carthage-software/mago/tree/1.7.0"
+                "source": "https://github.com/carthage-software/mago/tree/1.8.0"
             },
             "funding": [
                 {
@@ -5130,7 +5183,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-09T23:42:45+00:00"
+            "time": "2026-02-12T05:55:55+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -6765,6 +6818,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "tempest/framework": 20,
         "vewe/classvariance": 20
     },
     "prefer-stable": true,
