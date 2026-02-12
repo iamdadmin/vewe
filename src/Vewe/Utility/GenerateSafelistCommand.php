@@ -36,17 +36,20 @@ final class GenerateSafelistCommand
         $opacities = [5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 85, 90, 95];
         $variants = ['', 'hover:', 'active:', 'focus:', 'focus-visible:'];
         $colors = ['primary', 'secondary', 'neutral', 'success', 'info', 'warning', 'error'];
+        $utilities = ['text', 'bg', 'border', 'ring'];
 
         $stubFile = '';
 
         foreach ($colors as $color) {
-            $stubFile .= '<div class="';
             foreach ($variants as $variant) {
                 foreach ($opacities as $opacity) {
-                    $stubFile .= "{$variant}{$color}/{$opacity} ";
+                    $stubFile .= "<div class=\"";
+                    foreach ($utilities as $utility) {
+                        $stubFile .= "{$variant}{$utility}-{$color}/{$opacity} ";
+                    }
+                    $stubFile = rtrim($stubFile) . "\">&nbsp;</div>\n";
                 }
             }
-            $stubFile = rtrim($stubFile) . "\" />\n";
         }
 
         file_put_contents($this->depositPath . '/_safelist.html', $stubFile);

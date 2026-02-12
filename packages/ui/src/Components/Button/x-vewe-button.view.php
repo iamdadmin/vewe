@@ -9,6 +9,7 @@ use Vewe\Ui\Theme\Base\ButtonBaseTheme;
  * @var string $label The button label
  * @var string $leadingIcon The name of an icon to use
  * @var string $trailingIcon The name of an icon to use
+ * @var string $classNames Additional classes to merge
  */
 
 ?>

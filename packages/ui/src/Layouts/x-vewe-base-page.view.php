@@ -1,5 +1,5 @@
 <x-vewe-base-layout :title="$title ?? null">
-    <main>
+    <x-vewe-main>
         <x-slot />
-    </main>
+    </x-vewe-main>
 </x-vewe-base-layout>
