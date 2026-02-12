@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5d095409d717abd4252b9569b15f43e",
+    "content-hash": "54a5d922dc11780dddf6519271f54a63",
     "packages": [
         {
             "name": "composer/semver",
@@ -6817,10 +6817,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "tempest/framework": 20,
-        "vewe/classvariance": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},
