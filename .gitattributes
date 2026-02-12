@@ -1,0 +1,23 @@
+# Exclude tests from distribution
+/tests export-ignore
+
+# Exclude documentation
+/docs export-ignore
+
+# Exclude utility/build files
+/utility export-ignore
+
+# Exclude common development files
+/.github export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/phpunit.xml export-ignore
+/phpunit.xml.dist export-ignore
+/.phpunit.result.cache export-ignore
+/phpcs.xml export-ignore
+/phpcs.xml.dist export-ignore
+/.php-cs-fixer.php export-ignore
+/.editorconfig export-ignore
+/README.md export-ignore
+/CONTRIBUTING.md export-ignore
+/CHANGELOG.md export-ignore
