@@ -9,7 +9,6 @@ declare(strict_types=1);
  */
 
 lw($attributes);
-
 ?>
 
 <div :isset="$headline" :class="PageHeroBaseTheme::make(slot: 'headline')">
