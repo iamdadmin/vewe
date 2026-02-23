@@ -18,18 +18,22 @@ use Vewe\Ui\Theme\Base\PageHeroBaseTheme;
 <div :class="PageHeroBaseTheme::make(slot: 'root', props: ['class' => $classNames ?? ''])">
     <x-slot name="top" />
 
-    <x-vewe-container :class="PageHeroBaseTheme::make(slot: 'container')"
+    <div :class="PageHeroBaseTheme::make(slot: 'container')"
         :title="$title ?? ''"
         :description="$description ?? ''">
-
         <div :isset="$slots['header'] || $slots['headline'] || $headline || $slots['title'] || $title || $slots['description'] || $description || $links" :class="PageHeroBaseTheme::make(slot: 'wrapper')">
-            
             <div :isset="$headline || $title || $description" :class="PageHeroBaseTheme::make(slot: 'header')">
-                <x-vewe-page-hero-header
-                    :headline="$headline ?? ''"
-                    :title="$title ?? ''"
-                    :description="$description ?? ''">
-                </x-vewe-page-hero-header>
+                <div name="header">
+                    <div :isset="$headline || $slots['headline']" :class="PageHeroBaseTheme::make(slot: 'headline')">
+                        <x-slot name="headline">{{ $headline ?? '' }}</x-slot>
+                    </div>
+                    <h1 :isset="$title || $slots['title']" :class="PageHeroBaseTheme::make(slot: 'title')">
+                        <x-slot name="title">{{ $title ?? '' }}</x-slot>
+                    </h1>
+                    <div :isset="$description || $slots['description']" :class="PageHeroBaseTheme::make(slot: 'description')">
+                        <x-slot name="description">{{ $description ?? '' }}</x-slot>
+                    </div>
+                </div>
             </div>
 
             <div :class="PageHeroBaseTheme::make(slot: 'body')">
@@ -37,17 +41,20 @@ use Vewe\Ui\Theme\Base\PageHeroBaseTheme;
             </div>
 
             <div :isset="$links" :class="PageHeroBaseTheme::make(slot: 'footer')">
-                <x-slot name="footer">
+                <div name="footer">
                     <div :isset="$links" :class="PageHeroBaseTheme::make(slot: 'links')" >
-                        <x-slot name="links" />
+                        <x-slot name="links">
+                            <x-template :foreach="$links as $link">
+                                <x-vewe-button :to="$link['to']" size="xl" />
+                            </x-template>
+                        </x-slot>
                     </div>
-                </x-slot>
+                </div>
             </div>
         </div>
         <x-slot />
-        <div :if="($orientation ?? 'vertical') == 'horizontal'" class="hidden lg:block" />
-
-    </x-vewe-container>
+        <div :if="(!isset($slots['default'])) && (($orientation ?? 'vertical') == 'horizontal')" class="hidden lg:block" />
+    </div>
 
     <x-slot name="bottom" />
 </div>

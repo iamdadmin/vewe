@@ -1,5 +1,6 @@
 <?php
 
+use Vewe\Ui\Theme\Base\ContainerBaseTheme;
 use Vewe\Ui\Theme\Base\HeaderBaseTheme;
 
 /** Props Definitions
@@ -15,7 +16,7 @@ use Vewe\Ui\Theme\Base\HeaderBaseTheme;
 
     <x-slot name="top" />
 
-    <x-vewe-container :class="HeaderBaseTheme::make(slot: 'container')">
+    <div data-component="x-vewe-container" :class="ContainerBaseTheme::make(slot: 'base', props: ['class' => HeaderBaseTheme::make(slot: 'container')])">
 
         <x-slot name="left">
             <x-vewe-header-left
@@ -37,7 +38,7 @@ use Vewe\Ui\Theme\Base\HeaderBaseTheme;
             />
         </x-slot>
 
-    </x-vewe-container>
+    </div>
 
     <x-slot name="bottom" />
 

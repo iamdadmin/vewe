@@ -8,7 +8,7 @@
 <body :class="$class ?? 'antialiased text-default bg-default scheme-light dark:scheme-dark dark:prose-invert'">
     
 <x-slot name="page-header">
-    <x-vewe-header :title="$title ?? null" />
+    <x-vewe-header :siteName="$siteName ?? null" />
 </x-slot>
 
 <x-slot />

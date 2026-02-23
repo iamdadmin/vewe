@@ -9,7 +9,5 @@ use Vewe\Ui\Theme\Base\PageHeroBaseTheme;
  */
 ?>
 <x-slot>
-    <x-template :foreach="$links as $link">
-        <x-vewe-button :to="$link['to']" size="xl" />
-    </x-template>
+
 </x-slot>
