@@ -7,11 +7,6 @@
  * @var string $toggle The up-toggle selector value
  * @var string $rel { null | 'noopener' | 'noreferrer' | 'nofollow' | 'sponsored' | 'ugc' | (more than one) }
  * @var string $target { '' for local, '_blank' for external || {user-defined} }
- * @var string $upLayer Unpoly layer attribute (e.g., 'new modal', 'new drawer')
- * @var string $upSize Unpoly size attribute (e.g., 'small', 'medium', 'large', 'full')
- * @var string $upDismissable Unpoly dismissable attribute (e.g., 'button', 'key', 'outside')
- * @var string $upAccept Unpoly accept event
- * @var string $upOnAccepted Unpoly accepted callback
  */
 
 use Tempest\View\Slot;
@@ -19,17 +14,19 @@ use Tempest\View\Slot;
 // NOTE: Make sure not to put spaces before and after the default slot as it will render whitespace
 ?>
 <a 
-    :href="($disabled ?? false) ? '' : $to ?? '#'"
+    :if="isset($to) && $to != ''"
+    :href="($disabled ?? false) ? '' : $to"
     :aria-disabled="($disabled ?? false) ? 'true' : ''"
     :role="($disabled ?? false) ? 'link' : ''"
     :disabled="$disabled ?? ''"
     :rel="$rel ?? (str_contains($to, '://') ? 'noopener noreferrer' : '')"
     :target="$target ?? (str_contains($to, '://') ? '_blank' : '')"
     :up-toggle="$toggle ?? ''"
-    :up-layer="$upLayer ?? ''"
-    :up-size="$upSize ?? ''"
-    :up-dismissable="$upDismissable ?? ''"
-    :up-accept="$upAccept ?? ''"
-    :up-on-accepted="$upOnAccepted ?? ''"
     :class="$class ?? ''"
-><x-slot /></a>
+><x-slot :name="isset($to) && $to != '' ? 'default' : 'unused'" /></a>
+<button
+    :else
+    :disabled="$disabled ?? ''"
+    :up-toggle="$toggle ?? ''"
+    :class="$class ?? ''"
+><x-slot :name="!isset($to) ? 'default' : 'unused'" /></button>

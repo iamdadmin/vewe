@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Vewe\Ui\Theme\Base;
 
 use Tempest\Support\Arr\ImmutableArray;
+use Vewe\Ui\Theme\Base\FieldGroupBaseTheme;
 use Vewe\Ui\Theme\IsTheme;
 use Vewe\Ui\Theme\Theme;
-use Vewe\Ui\Theme\Base\FieldGroupBaseTheme;
 
 final class ButtonBaseTheme implements Theme
 {
@@ -82,6 +82,7 @@ final class ButtonBaseTheme implements Theme
                         'leadingIcon' => 'size-6',
                         'leadingAvatarSize' => 'xs',
                         'trailingIcon' => 'size-6',
+                        'label' => 'text-xl',
                     ],
                 ],
                 'block' => [
@@ -123,42 +124,116 @@ final class ButtonBaseTheme implements Theme
                     'color' => $this->color,
                     'variant' => 'solid',
                     'class' => [
-                        'base' => 'text-inverted bg-'.$this->color.' hover:bg-'.$this->color.'/75 active:bg-'.$this->color.'/75 disabled:bg-'.$this->color.' aria-disabled:bg-'.$this->color.' focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-'.$this->color,
+                        'base' =>
+                            'text-inverted bg-'
+                                . $this->color
+                                . ' hover:bg-'
+                                . $this->color
+                                . '/75 active:bg-'
+                                . $this->color
+                                . '/75 disabled:bg-'
+                                . $this->color
+                                . ' aria-disabled:bg-'
+                                . $this->color
+                                . ' focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-'
+                                . $this->color,
                     ],
                 ],
                 [
                     'color' => $this->color,
                     'variant' => 'outline',
                     'class' => [
-                        'base' => 'ring ring-inset ring-'.$this->color.'/50 text-'.$this->color.' hover:bg-'.$this->color.'/10 active:bg-'.$this->color.'/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-'.$this->color,
+                        'base' =>
+                            'ring ring-inset ring-'
+                                . $this->color
+                                . '/50 text-'
+                                . $this->color
+                                . ' hover:bg-'
+                                . $this->color
+                                . '/10 active:bg-'
+                                . $this->color
+                                . '/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-'
+                                . $this->color,
                     ],
                 ],
                 [
                     'color' => $this->color,
                     'variant' => 'soft',
                     'class' => [
-                        'base' => 'text-'.$this->color.' bg-'.$this->color.'/10 hover:bg-'.$this->color.'/15 active:bg-'.$this->color.'/15 focus:outline-none focus-visible:bg-'.$this->color.'/15 disabled:bg-'.$this->color.'/10 aria-disabled:bg-'.$this->color.'/10',
+                        'base' =>
+                            'text-'
+                                . $this->color
+                                . ' bg-'
+                                . $this->color
+                                . '/10 hover:bg-'
+                                . $this->color
+                                . '/15 active:bg-'
+                                . $this->color
+                                . '/15 focus:outline-none focus-visible:bg-'
+                                . $this->color
+                                . '/15 disabled:bg-'
+                                . $this->color
+                                . '/10 aria-disabled:bg-'
+                                . $this->color
+                                . '/10',
                     ],
                 ],
                 [
                     'color' => $this->color,
                     'variant' => 'subtle',
                     'class' => [
-                        'base' => 'text-'.$this->color.' ring ring-inset ring-'.$this->color.'/25 bg-'.$this->color.'/10 hover:bg-'.$this->color.'/15 active:bg-'.$this->color.'/15 disabled:bg-'.$this->color.'/10 aria-disabled:bg-'.$this->color.'/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-'.$this->color,
+                        'base' =>
+                            'text-'
+                                . $this->color
+                                . ' ring ring-inset ring-'
+                                . $this->color
+                                . '/25 bg-'
+                                . $this->color
+                                . '/10 hover:bg-'
+                                . $this->color
+                                . '/15 active:bg-'
+                                . $this->color
+                                . '/15 disabled:bg-'
+                                . $this->color
+                                . '/10 aria-disabled:bg-'
+                                . $this->color
+                                . '/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-'
+                                . $this->color,
                     ],
                 ],
                 [
                     'color' => $this->color,
                     'variant' => 'ghost',
                     'class' => [
-                        'base' => 'text-'.$this->color.' hover:bg-'.$this->color.'/10 active:bg-'.$this->color.'/10 focus:outline-none focus-visible:bg-'.$this->color.'/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent',
+                        'base' =>
+                            'text-'
+                                . $this->color
+                                . ' hover:bg-'
+                                . $this->color
+                                . '/10 active:bg-'
+                                . $this->color
+                                . '/10 focus:outline-none focus-visible:bg-'
+                                . $this->color
+                                . '/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent',
                     ],
                 ],
                 [
                     'color' => $this->color,
                     'variant' => 'link',
                     'class' => [
-                        'base' => 'text-'.$this->color.' hover:text-'.$this->color.'/75 active:text-'.$this->color.'/75 disabled:text-'.$this->color.' aria-disabled:text-'.$this->color.' focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-'.$this->color,
+                        'base' =>
+                            'text-'
+                                . $this->color
+                                . ' hover:text-'
+                                . $this->color
+                                . '/75 active:text-'
+                                . $this->color
+                                . '/75 disabled:text-'
+                                . $this->color
+                                . ' aria-disabled:text-'
+                                . $this->color
+                                . ' focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-'
+                                . $this->color,
                     ],
                 ],
                 [
